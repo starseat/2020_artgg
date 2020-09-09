@@ -1,0 +1,78 @@
+/**
+ * ArtGG Member
+ * member_type:
+ *  - A: Admin
+ *  - M: Manager
+ *  - B: Basic
+ */
+CREATE TABLE artgg_members (
+	seq BIGINT NOT NULL AUTO_INCREMENT,
+    user_id VARCHAR(32) NOT NULL,    
+	email VARCHAR(64) NOT NULL,
+	name VARCHAR(32) NULL DEFAULT NULL,
+	password VARCHAR(128) NOT NULL,
+	member_type VARCHAR(1) NOT NULL DEFAULT 'B',
+	created_at DATETIME NOT NULL DEFAULT now(),
+	updated_at DATETIME NOT NULL DEFAULT now(),
+	deleted_at DATETIME NULL DEFAULT NULL,
+	PRIMARY KEY (`seq`, `user_id`),
+	UNIQUE INDEX `user_id` (`user_id`)
+)
+COLLATE='utf8mb4_unicode_ci'
+ENGINE=InnoDB
+;
+
+/*
+ ## main 페이지 
+  - 이미지 슬라이드 등록 필요
+  - 이미지당 링크 등록 필요
+  - 아트경기 소개글 등록 필요?. 
+
+ ## 이벤트 혹은 공지 등록 필요 (notice)
+  - 관리자가 등록
+  - 보이기 여부 옵션
+
+ ## 공지사항 
+  - 제목
+  - 글
+  - 등록일
+  - 조회수
+
+ ## 아트경기 사업소개
+  - 이미지 슬라이드 등록 필요
+  - 사업소개 글 등록
+
+ ## 아트경기 작가
+  - 년도별 구분
+  - 년도별 작가 소개 글 (통합 소개글)
+  - 작가별 대표이미지 (thumbnail)
+  - 작가이름
+
+ ## 아트경기 작가 2 (작가 개인 정보들)
+  - 대표이미지 (최대 4개)
+  - 대표이미지별 캡션 글 (작품 제목?)
+  - 작가명 (한글)
+  - 작가명 (영문)
+  - 작가 관련 글(작가소개, 학력, 주요개인전, 주요단체전, 작가인터뷰) -- ?? 각각 따로인지 통합 텍스트인지 물어보기
+
+ ## 아트경기 프로그램
+  - 년도별
+  - 프로그램 대표 이미지
+  - 사업명
+  - 일자
+  - 장소
+
+ ## 아트경기 프로그램 2 (detail)
+  - 프로그램명
+  - 프로그램 대표 이미지(or 영상)
+  - 프로그램 소개 글
+  - 지도
+  - 관련 참고 자료 다운로드
+
+ ## 뷰잉스페이스
+  - 뷰잉스페이스 전시명
+  - 전시명                -- ?? 위와 차이점이 뭐지???
+  - 프로그래 정보
+  - 날짜
+  - 참조 링크
+*/

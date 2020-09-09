@@ -1,0 +1,6 @@
+# root 계정, pw 변경 필요
+create user artgg_user@localhost identified by 'artgg_pw';
+#select * from user;
+create database artggdb default character set utf8 COLLATE utf8_general_ci;
+GRANT ALL privileges ON artggdb.* TO artgg_user@localhost;
+flush privileges;
