@@ -1,6 +1,153 @@
-# root 계정, pw 변경 필요
-create user artgg_user@localhost identified by 'artgg_pw';
-#select * from user;
-create database artggdb default character set utf8 COLLATE utf8_general_ci;
-GRANT ALL privileges ON artggdb.* TO artgg_user@localhost;
-flush privileges;
+/**
+ * 아트경기 회원
+ * - member_type:
+ *  + A: Admin
+ *  + M: Manager
+ *  + B: Basic
+ */
+CREATE TABLE artgg_members (
+	seq BIGINT NOT NULL AUTO_INCREMENT,
+    user_id VARCHAR(32) NOT NULL,    
+	email VARCHAR(64) NOT NULL,
+	name VARCHAR(32) NULL DEFAULT NULL,
+	password VARCHAR(128) NOT NULL,
+	member_type CHAR(1) NOT NULL DEFAULT 'B',
+	created_at DATETIME NOT NULL DEFAULT now(),
+	updated_at DATETIME NOT NULL DEFAULT now(),
+	deleted_at DATETIME NULL DEFAULT NULL,
+	PRIMARY KEY (seq, user_id),
+	UNIQUE INDEX user_id (user_id)
+) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
+
+/**
+ * 아트경기 페이지 이미지
+ *  - target_type 에 main, business, artist 가 들어가며 각각의 이미지들 저장
+ */
+CREATE TABLE artgg_image (
+	seq BIGINT NOT NULL AUTO_INCREMENT,
+    target_seq BIGINT NOT NULL, 
+    target_type VARCHAR(16) NOT NULL, 
+    sort TINYINT, 
+    path VARCHAR(256) NOT NULL, 
+    caption VARCHAR(256),     
+    created_at DATETIME NOT NULL DEFAULT now(),
+	PRIMARY KEY (`seq` )
+) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
+
+/**
+ * 아트경기 사업소개
+ */
+CREATE TABLE artgg_business (
+	seq BIGINT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(128) NOT NULL, 
+    introduction VARCHAR(2048), 
+	created_at DATETIME NOT NULL DEFAULT now(),
+	updated_at DATETIME NOT NULL DEFAULT now(),
+	deleted_at DATETIME NULL DEFAULT NULL, 
+	PRIMARY KEY (`seq` )
+) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
+
+/**
+ * 아트경기 협력사업자
+ */
+CREATE TABLE artgg_business_partner (
+	seq BIGINT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(128) NOT NULL,    
+    img VARCHAR(128), 
+    introduction VARCHAR(2048), 
+    url VARCHAR(256), 
+	created_at DATETIME NOT NULL DEFAULT now(),
+	updated_at DATETIME NOT NULL DEFAULT now(),
+	deleted_at DATETIME NULL DEFAULT NULL, 
+	PRIMARY KEY (`seq` )
+) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
+
+/**
+ * 아트경기 작가
+ *  - image 는 최대 4개까지 (path, cation)
+ *  - name 이 'common' 이면 작가 전체 소개글
+ */
+CREATE TABLE artgg_artist (
+	seq BIGINT NOT NULL AUTO_INCREMENT,
+    year VARCHAR(4) NOT NULL,
+    name VARCHAR(64) NOT NULL,
+    thumbnail VARCHAR(128),     
+    en_name VARCHAR(128), 
+    introduction VARCHAR(2048), 
+    academic VARCHAR(2048), 
+    individual_exhibition VARCHAR(2048), 
+    team_competition VARCHAR(2048), 
+    interview VARCHAR(2048), 
+	created_at DATETIME NOT NULL DEFAULT now(),
+	updated_at DATETIME NOT NULL DEFAULT now(),
+	deleted_at DATETIME NULL DEFAULT NULL, 
+	PRIMARY KEY (`seq`, `year`, `name` )
+) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
+
+/**
+ * 아트경기 프로그램
+ */
+CREATE TABLE artgg_program (
+	seq BIGINT NOT NULL AUTO_INCREMENT,
+    year VARCHAR(4) NOT NULL,    
+    thumbnail VARCHAR(128) NOT NULL,  
+    name VARCHAR(256) NOT NULL,
+    program_date VARCHAR(16) NOT NULL,
+    place VARCHAR(256) NOT NULL,
+    img_path VARCHAR(256), 
+    introduction VARCHAR(2048), 
+    schedule VARCHAR(2048), 
+    event VARCHAR(2048), 
+    directions VARCHAR(256), 
+	created_at DATETIME NOT NULL DEFAULT now(),
+	updated_at DATETIME NOT NULL DEFAULT now(),
+	deleted_at DATETIME NULL DEFAULT NULL, 
+	PRIMARY KEY (`seq` )
+) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
+
+/**
+ * 아트경기 프로그램의 파일
+ */
+CREATE TABLE artgg_program_file (
+	seq BIGINT NOT NULL AUTO_INCREMENT, 
+    program_seq BIGINT NOT NULL, 
+    file VARCHAR(1024) NOT NULL, 
+	PRIMARY KEY (`seq`, `program_seq` )
+) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
+
+/**
+ * 아트경기 공지사항
+ *  - level: 3: 긴급, 2: 중요, 1: 일반
+ */
+CREATE TABLE artgg_notice (
+	seq BIGINT NOT NULL AUTO_INCREMENT, 
+    level TINYINT, 
+    title VARCHAR(256) NOT NULL, 
+    contents VARCHAR(2046) NOT NULL,       
+	created_at DATETIME NOT NULL DEFAULT now(),
+	updated_at DATETIME NOT NULL DEFAULT now(),
+	deleted_at DATETIME NULL DEFAULT NULL, 
+	PRIMARY KEY (`seq` )
+) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
+
+/**
+ * 아트경기 공지사항 파일  -- 필요시 추가
+ */
+CREATE TABLE artgg_notice_file (
+	seq BIGINT NOT NULL AUTO_INCREMENT, 
+    notice_seq BIGINT NOT NULL, 
+    file VARCHAR(1024) NOT NULL, 
+	PRIMARY KEY (`seq`, `notice_seq` )
+) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
+
+/**
+ * 아트경기 알람 - 알람은 어떤 형태로 뿌릴지 확인
+ */
+CREATE TABLE artgg_alarm (
+	seq BIGINT NOT NULL AUTO_INCREMENT,   
+	created_at DATETIME NOT NULL DEFAULT now(),
+	updated_at DATETIME NOT NULL DEFAULT now(),
+	deleted_at DATETIME NULL DEFAULT NULL, 
+	PRIMARY KEY (`seq` )
+) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
+
