@@ -1,35 +1,7 @@
 ﻿﻿@charset "utf-8";
 
-@font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 400;
-    src: url('/fonts/NotoSansKR-Regular.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Noto Sans KR';
-    font-style: bold;
-    font-weight: 700;
-    src: url('/fonts/NotoSansKR-Bold.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    src: url('/fonts/Montserrat-Medium.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    font-style: bold;
-    font-weight: 700;
-    src: url('/fonts/Montserrat-Bold.woff') format('woff');
-}
-
 /* RESET */
-html,body{-webkit-text-size-adjust:none; font-family: 'Montserrat','Noto Sans KR', Dotum, 돋움, Arial, sans-serif !important; color:#000; font-weight:400; line-height: 1.4; letter-spacing: -0.018em;}
+html,body{-webkit-text-size-adjust:none; font-family: 'NanumSquare', sans-serif !important; color:#000; font-weight:400; line-height: 1.4; letter-spacing: -0.018em;}
 body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select,img,div {margin:0; padding:0;}
 body {position:relative;}
 img,fieldset{border:0}
@@ -42,6 +14,116 @@ legend,caption{visibility:hidden; width:0; height:0; margin:0; padding:0; font-s
 a {text-decoration:none;color:#000;}
 a:hover,a:focus {text-decoration:underline;}
 input,button,select {outline:none; border-radius:0;}
+
+/* common */
+.blind{position:absolute; top:0; left:-9999em; width:0; height:0; font-size:0; line-height:0}
+.ir {zoom:-10; z-index:-1; position:relative; display:block; width:100%; font-size:0px; text-align:center; white-space:nowrap; overflow:hidden;}
+.icn {position:absolute; display:block; .display:inline; .zoom:1;  font:0/0 arial; vertical-align:middle; overflow:hidden; background-repeat:no-repeat; background-color:transparent; background-image:url('../img/set_icon.png'); background-size:500px auto;}
+
+/* 공통 lnb */
+.snb_bg {display:none; position:absolute; left:0; top:100px; z-index:9; width:100%; background-color:#fff;}
+.snb_current {display:block; }
+.common_gnb_w {position:fixed; left:0; top:0; z-index:100; width:100%; height:100px; padding:58px 0 100px 0;  background-color:#fff;}
+    .artgg_lnb_w {position:relative; z-index:10; margin:0 auto; width:100%; max-width:1530px; background-color:#fff;}
+    .artgg_lnb_w:after {display:block; content:''; clear:both;}
+        .artgg_h1_logo {position:Relative; float:left; z-index:103; width:315px; height:100px;}
+            .logolink_main {display:block; width:100%; height:100%;}
+                .icon_logo_gnb {top:50%; left:50%; margin:-30px 0 0 -91px; width:192px; height:60px; background-position:0 0;}
+        .artgg_lnb_inner {float:right; width:calc(100% - 315px);}
+            .artgg_lnb {position:relative; display:flex; justify-content:space-between; z-index:100; max-width:1100px; height:100px; margin:0 auto; box-sizing:border-box;}
+                .slnb_inner {position:relative; height:100px; transition: all ease-in-out 0.5s;}
+                    .slnb_inner.last .artgg_snb {right:15px;left:auto;}
+                    .slnb_inner.last .ssnb_link {text-align:right;}
+                        .slnb_link {position:relative; overflow:hidden; display:inline-block; height:100%; line-height:112px; letter-spacing:0.5px; font-size:18px; color:#151515; max-width:180px; font-weight:700; text-transform:uppercase;}
+                        .slnb_link:hover, .slnb_link:active, .slnb_link:focus {text-decoration:none !important;}
+                            .slnb_txt_box {display:block; position:relative; top:50%; margin-top:-16px; padding:0 2px; overflow:hidden; max-width:180px; height:33px; line-height:33px; letter-spacing:0.5px; text-overflow:ellipsis; white-space:nowrap;transition: all ease-in-out 0.2s;}
+                            .menu_hover .slnb_link:before,
+                        .slnb_link.current:before {display:block;}
+.artgg_snb {position:absolute; top:-1000px; left:0; overflow:hidden; width:170px; height:0; opacity:0; transition:opacity 0.5s ease 0s; }
+.slnb_inner.menu_hover .artgg_snb {height:220px !important; opacity:1; top:100px;}
+.ssnb_inner:first-child .ssnb_link { padding:32px 0 8px;}
+.ssnb_link {display:block;  font-size:15px; font-weight:400; color:#808080; padding:8px 0;  transition: color .2s ease;}
+.ssnb_link:hover,.ssnb_inner.current .ssnb_link {text-decoration:none; width: 100%; left: 0; color:#fff;}
+.ssnb_txt_box {position:relative; z-index:2; padding:0 4px; display:inline-block;}
+.ssnb_txt { transition:color 0.5s;}
+.ssnb_link:hover .ssnb_txt {color:#fff;}
+.ssnb_link:hover .ssnb_txt_box:after,.ssnb_link:hover .ssnb_txt_box:before {width:100%;}
+.slnb_link:hover .slnb_txt_box:after,.slnb_link:hover .slnb_txt_box:before,
+.slnb_link.current .slnb_txt_box:after,.slnb_link.current .slnb_txt_box:before {width:100%; }
+.ssnb_txt_box:after,.ssnb_txt_box:before,
+.slnb_txt_box:after,.slnb_txt_box:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index:1;
+    width: 0;
+    height:21px;
+}
+/* lnb bg효과 */
+.ssnb_txt_box:before {
+    transition: width .4s cubic-bezier(0.51, 0.18, 0, 0.88) .1s;
+    background: #fecb00;
+}
+.ssnb_txt_box:after {
+    transition: width .2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
+    background: #53ae6e;
+}
+/* gnb 보더효과 */
+.slnb_txt_box:before {
+    transition: width .4s cubic-bezier(0.51, 0.18, 0, 0.88) .1s;
+    background: #fecb00;
+    height:4px !important;
+    top:auto;
+    bottom:0;
+    left:0;
+}
+.slnb_txt_box:after {
+    transition: width .2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
+    background: #53ae6e;
+    height:4px !important;
+    top:auto;
+    bottom:0;
+    left:0;
+}
+/* 메뉴current일 경우 */
+.ssnb_inner.current .ssnb_txt_box:after{width:100%;}
+.slnb_link.current .slnb_txt_box:after {width:calc(100% - 5px);}
+.ssnb_txt {position:Relative; z-index:2;}
+
+.snb_bg {position:absolute; z-index:99; top:100px; left:50%; height:0; display:block; margin-left:-1280px; width:2560PX; background-color:rgba(255,255,255,0.95); transition: height 0.2s ease 0s;}
+.snb_bg:after {
+    display: block; content: ''; background:#ccc; opacity:0.4; position: absolute; left: 0; bottom: 0; z-index: 2; width: 100%; height: 2px;}
+.lnbtype_main .snb_bg:after {opacity:1 !important;
+    background: -moz-linear-gradient(left,  rgba(204,204,204,0) 0%, rgba(204,204,204,0.15) 50%, rgba(204,204,204,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  rgba(204,204,204,0) 0%,rgba(204,204,204,0.15) 50%,rgba(204,204,204,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  rgba(204,204,204,0) 0%,rgba(204,204,204,0.15) 50%,rgba(204,204,204,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00cccccc', endColorstr='#00cccccc',GradientType=1 ); /* IE6-9 */
+}
+.snb_bg.snb_current {height:230px !important;}
+.language_select_w {position:absolute; right:50%; top:39px; z-index:101; margin-right:-593px; overflow:hidden; transition: all ease-in-out 0.2s;}
+.btn_language {display:block; position:relative; float:left; width:45px;  height:30px; line-height:30px; text-align:center; font-weight:400; color:#151515; opacity:0.4;}
+.btn_language:hover {text-decoration:none;}
+.lang_txt {display:block; font-size:13px; font-weight:400; letter-spacing:-0.65px; }
+.lang_check {display:block; position:absolute; left:18px; top:0; width:8px; height:8px; background-position:-40px -70px; transition: all ease-in-out 0.3s;}
+.lang_check.lang_eng {left:63px;}
+.btn_language.current {opacity:1;}
+/* 텍스트 흰색 */
+.lnbtype_main .btn_language {color:#fff; }
+.lnbtype_main .lang_check {background-position:-40px -80px;}
+
+/* 메인 lnb 텍스트 흰색 */
+.lnbtype_main {}
+.lnbtype_main .artgg_lnb_w {background-color:transparent;}
+
+/* 스크롤 lnb */
+.sticky {height:75px; background-color:#fff !important;  transition: all ease-in-out 0.3s;}
+.sticky .artgg_logo {width:142px; height:50px; top:12px; }
+.sticky .icon_logo_gnb {width:142px; height:50px; background-position:0 -105px;}
+.sticky .artgg_lnb,.sticky .slnb_inner {height:75px;}
+.sticky .slnb_txt_box,
+.sticky .language_select_w {top:26px; }
+.sticky .snb_bg,.sticky .slnb_inner.menu_hover .artgg_snb {top:75px;}
 
 
 
