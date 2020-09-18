@@ -180,15 +180,30 @@ input,button,select {outline:none; border-radius:0;}
     .info_text_w {display:table-cell; padding-left:5%; max-width:980px; box-sizing:border-box; vertical-align:middle;}
 
 
-/* 메인 : 태블릿 제어 */
-@media screen and (max-width:1450px) {
+/* 메인 : 1170 제어 */
+@media (min-width:769px) and (max-width:1170px) {
     /* T메인 : 공지사항 */
     .section_notice_w {width:726px; margin:160px auto 0;}
     [class^="notice_cont_"]{float:none;}
     .notice_cont_r {margin-top:80px;}
     /* T메인 : 추진사업 */
     .section_service_w {margin-top:160px;}
-        .sl_inner {height:530px;}
+    .sl_inner {height:610px;}
+
+
+}
+
+/* 메인 : 태블릿 제어 */
+@media screen and (max-width:768px) {
+    /* T메인 : 공지사항 */
+    .section_notice_w {width:726px; margin:160px auto 0;}
+    [class^="notice_cont_"]{float:none;}
+    .notice_cont_r {margin-top:80px;}
+    /* T메인 : 추진사업 */
+    .section_service_w {margin-top:160px;}
+        .service_list_w {width:708px; margin:0 auto; overflow:hidden;}
+            .service_list {width:736px; }
+                .sl_inner {width:50%;}
 
 
 }
