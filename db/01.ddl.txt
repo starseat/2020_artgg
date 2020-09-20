@@ -29,7 +29,8 @@ CREATE TABLE artgg_image (
     target_type VARCHAR(16) NOT NULL, 
     sort TINYINT, 
     path VARCHAR(256) NOT NULL, 
-    caption VARCHAR(256),     
+    caption VARCHAR(256), 
+	link VARCHAR(256), 
     created_at DATETIME NOT NULL DEFAULT now(),
 	PRIMARY KEY (`seq` )
 ) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
