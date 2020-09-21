@@ -554,3 +554,5 @@
 </div>
 
 <?php require_once('fragment/footer.php'); ?>
+
+<?php require_once('fragment/tail.php'); ?>
