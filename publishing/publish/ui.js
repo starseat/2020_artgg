@@ -61,13 +61,14 @@ function artggLnb() {
 }
 // gnb 스크롤 Sticky
 function gnbSticky(){
-    var scrollHeight = $(document).scrollTop();
-    if(scrollHeight > 1125){
-        $('.common_gnb_w').addClass('sticky');
-        $('.common_gnb_w').removeClass('lnbtype_main');
-    }else if(scrollHeight < 1125){
-        $('.common_gnb_w').removeClass('sticky');
-    }
+    $(window).scroll(function () {
+        var scrollHeight = $(document).scrollTop();
+        if (scrollHeight > 158) {
+            $('.common_gnb_w').addClass('sticky');
+        } else if (scrollHeight < 157) {
+            $('.common_gnb_w').removeClass('sticky');
+        }
+    });
 }
 
 
