@@ -69,3 +69,15 @@ function gnbSticky(){
         $('.common_gnb_w').removeClass('sticky');
     }
 }
+
+
+function mainvisualSlick(){
+    $('.slick_slide_list').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear'
+    });
+
+}
