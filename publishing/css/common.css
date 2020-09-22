@@ -22,7 +22,7 @@ input,button,select {outline:none; border-radius:0;}
 .wrap {background-color:#fff;}
 .container {padding-top:158px;}
     .content_inner {padding:100px 0; /*max-width:1530px;*/ box-sizing:border-box; margin:0 auto;}
-        .section_box_w {max-width:1630px; padding:0 100px; box-sizing:border-box;}
+        .section_box_w {max-width:1630px; margin:0 auto; padding:0 100px; box-sizing:border-box;}
             .section_title {display:block; position:relative; padding-left:43px; height:80px; line-height:80px; font-size:78px; font-weight:800;}
             .section_title:after {display:block; content:''; position:Absolute; left:0; top:0; width:9px; height:100%; background-color:#000;}
 
@@ -31,7 +31,7 @@ input,button,select {outline:none; border-radius:0;}
 /* 공통 lnb */
 .snb_current {display:block; }
 .common_gnb_w {position:fixed; left:0; top:0; z-index:100; width:100%; height:100px; padding-top:58px;  background-color:#fff;}
-    .artgg_lnb_w {position:relative; z-index:10; box-sizing:border-box; padding:0 100px; width:100%; max-width:1630px; background-color:#fff;}
+    .artgg_lnb_w {position:relative; z-index:10; margin:0 auto; box-sizing:border-box; padding:0 100px; width:100%; max-width:1630px; background-color:#fff;}
     .artgg_lnb_w:after {display:block; content:''; clear:both;}
         .artgg_h1_logo {position:Relative; float:left; z-index:103; width:315px; height:100px;}
             .logolink_main {display:block; width:100%; height:100%;}
@@ -131,7 +131,7 @@ input,button,select {outline:none; border-radius:0;}
 
 
 /* 메인 : 비주얼 슬릭 */
-.section_visual_w {max-width:1630px; padding-right:100px; box-sizing:border-box; }
+.section_visual_w {max-width:1630px; margin:0 auto; padding-right:100px; box-sizing:border-box; }
     .slick_slide_list {/*max-width:1630px;*/}
         .slick_slide_list .slick-dots {position:absolute; right:-50px; top:0;}
             .slick-dots li {padding:6px 0;}
