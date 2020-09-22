@@ -68,7 +68,7 @@ CREATE TABLE artgg_business_partner (
 /**
  * 아트경기 작가
  *  - image 는 최대 4개까지 (path, cation)
- *  - name 이 'common' 이면 작가 전체 소개글
+ *  - name 이 'artist_greeting' 이면 작가 페이지 소개글
  */
 CREATE TABLE artgg_artist (
 	seq BIGINT NOT NULL AUTO_INCREMENT,
