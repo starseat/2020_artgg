@@ -158,13 +158,15 @@ input,button,select {outline:none; border-radius:0;}
                 .sl_odd .sl_cont {padding-bottom:107%;}
                 .sl_even .sl_cont {padding-top:107%}
                     .sl_box_text {position:relative; padding:45px 33px; width:100%; padding-bottom:51%; box-sizing:border-box; background-color:#53ae6e;}
-                        .slt_num {position:absolute; right:0; top:0; }
-                        .slt_info {position:relative; display:block; padding-top:15px;}
+                        .slt_num {position:absolute; right:0; top:0; font-size:53px; font-weight:700; }
+                        .slt_info {position:relative; display:block; padding-top:15px; font-size:15px;}
                         .slt_info:after {display:block; content:''; position:Absolute; left:0; top:0; width:26px; height:2px; background-color:#fff;}
                         .slt_info {display:block;}
-                        .slt_text {display:block;}
-                        .slt_name {display:block; padding:0 33px; height:90px; line-height:90px; position:absolute; left:0; bottom:0;}
-                        .box_picker {display:block; position:absolute; left:50%; margin-left:-30px; width:60px; height:60px; transform:rotate(45deg); background-color:#53ae6e; }
+                        .slt_date,
+                        .slt_date_text {display:block; font-size:13px; font-weight:700;}
+                        .slt_text  {display:block; font-size:13px; font-weight:400;}
+                        .slt_name {display:block; position:relative; z-index:2; padding:0 33px; height:90px; line-height:90px; position:absolute; left:0; bottom:0; font-size:38px; font-weight:700;}
+                        .box_picker {display:block; position:absolute; left:50%; z-index:1; margin-left:-30px; width:60px; height:60px; transform:rotate(45deg); background-color:#53ae6e; }
                         .sl_odd .box_picker {bottom:-30px;}
                         .sl_even .box_picker {top:-30px;}
                     .sl_box_image {position:absolute; left:0; width:100%; padding-bottom:100%;}
