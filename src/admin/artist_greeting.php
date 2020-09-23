@@ -6,7 +6,7 @@
 
 <div class="row">
     <div class="d-none d-md-inline-block ml-auto mr-0 mr-md-3 my-2 my-md-0">
-        <select class="form-control" id="artist_select_year">
+        <select class="form-control" id="artist_select_year" style="width: 240px;">
             <option value="0">없음</option>
         </select>
     </div>

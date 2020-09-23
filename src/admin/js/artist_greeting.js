@@ -1,10 +1,10 @@
 $(document).ready(function () {
     initTextForm();
     getArtistGreeting('0', initPage);
-
+    
     $('#artist_select_year').on('change', function() {
         getArtistGreeting($(this).val(), setGreetingInfo);
-    })
+    });
 });
 
 function initTextForm() {
@@ -50,7 +50,7 @@ function initPage(data) {
         return;
     }
 
-    $select_year = $('#artist_select_year');
+    let $select_year = $('#artist_select_year');
     $select_year.empty();
     for(let i=0; i<data.year_list.length; i++) {
         let $option = '<option value="' + data.year_list[i].year + '">' + data.year_list[i].year + '</option>';
