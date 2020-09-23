@@ -8,6 +8,16 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-images"></i></div>
                         메인화면 이미지
                     </a>
+                    <div class="sb-sidenav-menu-heading">Artist</div>
+                    <a class="nav-link" href="artist_greeting.php">
+                        <div class="sb-nav-link-icon"><i class="fas fa-comment-dots"></i></div>
+                        작가 소개글
+                    </a>
+                    <a class="nav-link" href="artist.php">
+                        <div class="sb-nav-link-icon"><i class="fas fa-address-card"></i></div>
+                        작가
+                    </a>
+
 
 
 
