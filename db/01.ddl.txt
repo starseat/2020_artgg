@@ -76,11 +76,11 @@ CREATE TABLE artgg_artist (
     name VARCHAR(64) NOT NULL,
     thumbnail VARCHAR(128),     
     en_name VARCHAR(128), 
-    introduction VARCHAR(2048), 
-    academic VARCHAR(2048), 
-    individual_exhibition VARCHAR(2048), 
-    team_competition VARCHAR(2048), 
-    interview VARCHAR(2048), 
+    introduction VARCHAR(2048),               -- 작가 소개
+    academic VARCHAR(2048),                   -- 학력
+    individual_exhibition VARCHAR(2048),      -- 주요 개인전
+    team_competition VARCHAR(2048),           -- 주요 단체전
+    interview VARCHAR(2048),                  -- 작가 인터뷰
 	created_at DATETIME NOT NULL DEFAULT now(),
 	updated_at DATETIME NOT NULL DEFAULT now(),
 	deleted_at DATETIME NULL DEFAULT NULL, 
