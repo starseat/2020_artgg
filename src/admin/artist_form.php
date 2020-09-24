@@ -25,14 +25,17 @@
     <div class="card-body">
         <form id="editArtistForm" name="editArtistForm" method="post" action="./action/artist_submit.php" enctype="multipart/form-data">
             <div class="form-row">
-                <div class="form-group col-md-5">
+                <div class="form-group col-md-4">
                     <label for="artist_name"><b>작가명</b></label>
                     <input type="text" class="form-control" id="artist_name" name="artist_name">
                 </div>
-                <div class="form-group col-md-1"></div>
-                <div class="form-group col-md-5">
+                <div class="form-group col-md-4">
                     <label for="artist_name_en"><b>작가명 (영문)</b></label>
                     <input type="text" class="form-control" id="artist_name_en" name="artist_name_en">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="artist_year"><b>년도</b></label>
+                    <input type="number" class="form-control" id="artist_year" name="artist_year">
                 </div>
             </div>
             <hr>
