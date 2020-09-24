@@ -24,10 +24,15 @@ $main_image_length = $result->num_rows;
 </div> -->
 
 <style>
-.insert-button-box { position: fixed; top: 8rem; right: 4rem; }
+    .insert-button-box {
+        position: fixed;
+        top: 8rem;
+        right: 4rem;
+    }
 </style>
 <div class="insert-button-box">
-    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#insertModal">추가</button>
+    <!-- <button type="button" class="btn btn-info" data-toggle="modal" data-target="#insertModal">추가</button> -->
+    <button type="button" class="btn btn-info" onclick="showInsertModal()">추가</button>
 </div>
 
 <div class="row">
@@ -102,6 +107,7 @@ $main_image_length = $result->num_rows;
                         <label for="insert-main-image" class="col-sm-2 col-form-label">이미지</label>
                         <div class="col-sm-10">
                             <input type="file" class="form-control-file" id="insert_main_image" name="insert_main_images[]" accept="image/gif, image/jpg, image/jpeg, image/png">
+                            <img id="insert_main_image_preview" src="#" width="320" />
                         </div>
                     </div>
                     <div class="form-group row">

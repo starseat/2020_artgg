@@ -3,6 +3,10 @@ $(document).ready(function () {
         event.preventDefault();
         doInsert();
     });
+
+    $('#insert_main_image').change(function () {
+        readURL(this, 'insert_main_image_preview');
+    });
 });
 
 function doInsert() {
@@ -55,4 +59,25 @@ function doDelete(mainImgSeq, filename) {
     }
 }
 
+
+function readURL(input, previewElId) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#' + previewElId).attr('src', e.target.result).show();
+        }
+
+        reader.readAsDataURL(input.files[0]); // convert to base64 string
+    }
+}
+
+function showInsertModal() {
+    $('#insert_main_image').val('');
+    $('#insert_main_image_preview').attr('src', '#').hide();;
+    $('#insert_main_caption').val('');
+    $('#insert_main_link').val('');
+
+    $('#insertModal').modal('show');
+}
 
