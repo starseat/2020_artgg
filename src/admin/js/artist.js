@@ -44,13 +44,25 @@ function initImageForm() {
         mimes: ['image/jpeg', 'image/png', 'image/gif'],
         maxFiles: 1,
     });
-    $('#artist_image').imageUploader({
-        imagesInputName: 'artist_images',
-        label: '작가님의 이미지를 업로드 해주세요. (최대 4개)',
+
+    let artist_image_option = {
+        label: '작가님의 이미지를 업로드 해주세요.',
         extensions: ['.jpg', '.jpeg', '.png', '.gif'],
         mimes: ['image/jpeg', 'image/png', 'image/gif'],
-        maxFiles: 4,
-    });
+        maxFiles: 1
+    };
+
+    artist_image_option.imagesInputName = 'artist_image1';
+    $('#artist_image1').imageUploader(artist_image_option);
+
+    artist_image_option.imagesInputName = 'artist_image2';
+    $('#artist_image2').imageUploader(artist_image_option);
+
+    artist_image_option.imagesInputName = 'artist_image3';
+    $('#artist_image3').imageUploader(artist_image_option);
+
+    artist_image_option.imagesInputName = 'artist_image4';
+    $('#artist_image4').imageUploader(artist_image_option);
 }
 
 function readURL(input, previewElId) {
