@@ -21,7 +21,8 @@ function initTextForm() {
             ['color', ['color']],
             ['para', ['ul', 'ol', 'paragraph']],
             ['height', ['height']]
-        ]
+        ], 
+        lang: 'ko-KR'
     });
 }
 
