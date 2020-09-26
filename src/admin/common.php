@@ -85,85 +85,100 @@ function isIE() {
     return false;
 }
 
-/**
- * uploadImage
- *  return
- *    - upload success: $upload_file_names
- *    - upload failed : null
- */
-function uploadImage($upload_files, $type) {
-    //var_dump($upload_files);
-    $upload_file_count = count($upload_files);
-    $upload_file_names = array();
+function uploadImage($upload_file, $type) {
+    $ret_upload_file_array_item = [
+        'upload_file_path' => '',
+        'file_name' => '',
+        'file_save_name' => ''
+    ];
+
+    $file_name = basename($upload_file['name']);
+
+    if (empty($file_name)) {
+        return null;
+    }
+
+    $file_temp_name = $upload_file['tmp_name'];
+    //$file_type = $upload_files['type'][$i];
+    //$file_size = $upload_files['size'][$i];
+    //$file_error = $upload_files['error'][$i];
+
+    if (!isUploadBannedItem($file_name)) {
+        return null;
+    }
+
+    // if( $file_error != UPLOAD_ERR_OK ) {
+    //     $upload_error_msg = "";
+    //     switch( $error ) {
+    //         case UPLOAD_ERR_INI_SIZE:
+    //         case UPLOAD_ERR_FORM_SIZE:
+    //             $upload_error_msg = "파일이 너무 큽니다. ($error)";
+    //             break;
+    //         case UPLOAD_ERR_NO_FILE:
+    //             $upload_error_msg = "파일이 첨부되지 않았습니다. ($error)";
+    //             break;
+    //         default:
+    //             $upload_error_msg = "파일이 제대로 업로드되지 않았습니다. ($error)";
+    //     }
+    //     //error_alert($upload_error_msg);
+    //     exit;
+    // }
+
+    // if($file_size > 500000) {
+    //     //error_alert ("파일이 너무 큽니다.");
+    //     exit;
+    // }
+
+    $upload_path = '../upload/' . $type . '/';
+    $real_upload_path = '../' . $upload_path;
+    if (!is_dir($real_upload_path)) {
+        mkdir($real_upload_path, 766, true);
+    }
+
+    $today = date("Ymd");
+    $file_save_name = $today . '_' . uuidgen() . '_' . $file_name;
+    $real_upload_file = $upload_path . $file_save_name;
+    //$move_resuslt = move_uploaded_file($file_temp_name, $upload_file);
+    // 경로를 action 으로 하나 더 줬으니 실제 저장되는 경로는 한단계 앞으로 가야함.
+    $move_resuslt = move_uploaded_file($file_temp_name, '../' . $real_upload_file);
+    $ret_upload_file_array_item = [
+        'upload_file_path' => $real_upload_file,
+        'file_name' => $file_name,
+        'file_save_name' => $file_save_name
+    ];
+
+    return $ret_upload_file_array_item;
+}
+
+function uploadImages($upload_files, $type) {
+    //echo 'upload_files => '; var_dump($upload_files);
+    $upload_file_count = count($upload_files['name']); // echo 'upload_file_count => ' . $upload_file_count;
+    $upload_file_names = array(); // /echo 'upload_file_names => ';  var_dump($upload_file_names);
 
     for ($i = 0; $i < $upload_file_count; $i++) {
-        $temp_upload_file_array_item = [
-            'upload_file_path' => '',
-            'file_name' => '', 
-            'file_save_name' => ''
+        $temp_upload_file = [
+            'name' => $upload_files['name'][$i],
+            'tmp_name' => $upload_files['tmp_name'][$i],
+            'type' => $upload_files['type'][$i], 
+            'size' => $upload_files['size'][$i], 
+            'error' => $upload_files['error'][$i]
         ];
 
-        $file_name = basename($upload_files['name'][$i]);
-
-        if (empty($file_name)) {
+        $temp_upload_file_array_item = uploadImage($temp_upload_file, $type);
+        if($temp_upload_file_array_item != null) {
             array_push($upload_file_names, $temp_upload_file_array_item);
-            continue;
         }
-
-        $file_temp_name = $upload_files['tmp_name'][$i];
-        //$file_type = $upload_files['type'][$i];
-        //$file_size = $upload_files['size'][$i];
-        //$file_error = $upload_files['error'][$i];
-
-        if( !isUploadBannedItem($file_name) ) {
-            return null;
+        else {
+            array_push($upload_file_names, [
+                'upload_file_path' => '',
+                'file_name' => '',
+                'file_save_name' => ''
+            ]);
         }
-
-        // if( $file_error != UPLOAD_ERR_OK ) {
-        //     $upload_error_msg = "";
-        //     switch( $error ) {
-        //         case UPLOAD_ERR_INI_SIZE:
-        //         case UPLOAD_ERR_FORM_SIZE:
-        //             $upload_error_msg = "파일이 너무 큽니다. ($error)";
-        //             break;
-        //         case UPLOAD_ERR_NO_FILE:
-        //             $upload_error_msg = "파일이 첨부되지 않았습니다. ($error)";
-        //             break;
-        //         default:
-        //             $upload_error_msg = "파일이 제대로 업로드되지 않았습니다. ($error)";
-        //     }
-        //     //error_alert($upload_error_msg);
-        //     exit;
-        // }
-
-        // if($file_size > 500000) {
-        //     //error_alert ("파일이 너무 큽니다.");
-        //     exit;
-        // }
-
-        $upload_path = '../upload/' . $type . '/';
-        if (!is_dir($upload_path)) {
-            mkdir($upload_path, 766, true);
-        }
-
-        $today = date("Ymd");
-        $file_save_name = $today . '_' . uuidgen() . '_' . $file_name;
-        $upload_file = $upload_path . $file_save_name;
-        //$move_resuslt = move_uploaded_file($file_temp_name, $upload_file);
-        // 경로를 action 으로 하나 더 줬으니 실제 저장되는 경로는 한단계 앞으로 가야함.
-        $move_resuslt = move_uploaded_file($file_temp_name, '../' . $upload_file);
-        $temp_upload_file_array_item = [
-            'upload_file_path' => $upload_file, 
-            'file_name' => $file_name,
-            'file_save_name' => $file_save_name
-        ];
-
-        array_push($upload_file_names, $temp_upload_file_array_item);
-
     } // end of for ($i = 0; $i <= $upload_file_count; $i++)
 
     return $upload_file_names;
-} // end of function uploadImage($upload_files, $type) 
+} // end of function uploadImages($upload_files, $type) 
 
 function isUploadBannedItem($file_name) {
     // 파일 업로드 금지
