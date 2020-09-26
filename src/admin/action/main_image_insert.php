@@ -4,10 +4,11 @@ include('../common.php');
 include('../db_conn.php');
 
 $upload_files = $_FILES['insert_main_images'];
-$upload_file_names = uploadImage($upload_files, 'main');
+$upload_file_names = uploadImages($upload_files, 'main');
 
 if ($upload_file_names == null) {
     viewAlert('메인 이미지 등록에 실패하였습니다.');
+    mysqli_close($conn);
     exit;
 }
 
