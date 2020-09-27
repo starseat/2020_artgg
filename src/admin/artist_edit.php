@@ -40,7 +40,7 @@ include('common.php');
 
 <div class="card mt-4 mb-4">
     <div class="card-body">
-        <form id="insertArtistForm" name="insertArtistForm" method="post" action="./action/artist_insert.php" enctype="multipart/form-data">
+        <form id="updateArtistForm" name="updateArtistForm" method="post" action="./action/artist_update.php" enctype="multipart/form-data">
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="artist_name"><strong>* 작가명</strong></label>
@@ -57,9 +57,15 @@ include('common.php');
             </div>
             <hr>
             <div class="form-group">
-                <label for="artist_thumbnail" id="artist_thumbnail_label"><strong>* 썸네일</strong></label>
+                <div class="row">
+                    <div class="col-4"><label for="artist_thumbnail" id="artist_thumbnail_label"><strong>* 썸네일</strong></label></div>
+                    <div class="col"></div>
+                    <div class="col-2 text-right"><button class="btn btn-outline-danger" id="artist_thumbnail_delete_btn" onclick="doDeleteImage(event, 0)">삭제</button></div>
+                    <div class="col-1"></div>
+                </div>
                 <div id="artist_thumbnail"></div>
-                <div class="row ml-4"><img id="artist_thumbnail_saved" src="#" width="220" /></div>
+                <div class="row ml-4"><img id="artist_thumbnail_saved" src="#" width="auto" height="160" /></div>
+                <input type="hidden" id="artist_thumbnail_new" name="artist_thumbnail_new" value=" 0" />
             </div>
             <hr>
             <div class="form-row">
@@ -67,10 +73,14 @@ include('common.php');
                     <div class="row">
                         <div class="col-4"><label for="artist_image1"><strong>* 대표 이미지 1</strong></label></div>
                         <div class="col"></div>
-                        <div class="col-2 text-right"><button class="btn btn-danger" id="artist_image1_delete_btn" onclick="doDeleteImage(event, 1)">삭제</button></div>
+                        <div class="col-2 text-right"><button class="btn btn-outline-danger" id="artist_image1_delete_btn" onclick="doDeleteImage(event, 1)">삭제</button></div>
                     </div>
                     <div id="artist_image1"></div>
-                    <div class="row m-2"><img id="artist_image1_saved" src="#" width="100%" height="400" /></div>
+                    <div class="row m-2 text-center">
+                        <img id="artist_image1_saved" src="#" width="auto" height="160" />
+                        <input type="hidden" id="artist_image1_saved_seq" value="0" />
+                        <input type="hidden" id="artist_image1_new" name="artist_image1_new" value=" 0" />
+                    </div>
                     <div class="row artist_image_caption_box">
                         <div class="col-2"><label for="artist_image1_caption" class="artist_image_caption_label">캡션</label></div>
                         <div class="col-10"><input type="text" id="artist_image1_caption" name="artist_image1_caption" class="form-control artist_image_caption"></div>
@@ -81,10 +91,14 @@ include('common.php');
                     <div class="row">
                         <div class="col-4"><label for="artist_image2"><strong>대표 이미지 2</strong></label></div>
                         <div class="col"></div>
-                        <div class="col-2 text-right"><button class="btn btn-danger" id="artist_image2_delete_btn" onclick="doDeleteImage(event, 2)">삭제</button></div>
+                        <div class="col-2 text-right"><button class="btn btn-outline-danger" id="artist_image2_delete_btn" onclick="doDeleteImage(event, 2)">삭제</button></div>
                     </div>
                     <div id="artist_image2"></div>
-                    <div class="row m-2"><img id="artist_image2_saved" src="#" width="100%" height="400" /></div>
+                    <div class="row m-2 text-center">
+                        <img id="artist_image2_saved" src="#" width="auto" height="160" />
+                        <input type="hidden" id="artist_image2_saved_seq" value="0" />
+                        <!-- <input type="hidden" id="artist_image2_new" name="artist_image2_new" value=" 0" /> -->
+                    </div>
                     <div class="row artist_image_caption_box">
                         <div class="col-2"><label for="artist_image2_caption" class="artist_image_caption_label">캡션</label></div>
                         <div class="col-10"><input type="text" id="artist_image2_caption" name="artist_image2_caption" class="form-control artist_image_caption"></div>
@@ -96,10 +110,14 @@ include('common.php');
                     <div class="row">
                         <div class="col-4"><label for="artist_image3"><strong>대표 이미지 3</strong></label></div>
                         <div class="col"></div>
-                        <div class="col-2 text-right"><button class="btn btn-danger" id="artist_image3_delete_btn" onclick="doDeleteImage(event, 3)">삭제</button></div>
+                        <div class="col-2 text-right"><button class="btn btn-outline-danger" id="artist_image3_delete_btn" onclick="doDeleteImage(event, 3)">삭제</button></div>
                     </div>
                     <div id="artist_image3"></div>
-                    <div class="row m-2"><img id="artist_image3_saved" src="#" width="100%" height="400" /></div>
+                    <div class="row m-2 text-center">
+                        <img id="artist_image3_saved" src="#" width="auto" height="160" />
+                        <input type="hidden" id="artist_image3_saved_seq" value="0" />
+                        <!-- <input type="hidden" id="artist_image3_new" name="artist_image3_new" value=" 0" /> -->
+                    </div>
                     <div class="row artist_image_caption_box">
                         <div class="col-2"><label for="artist_image3_caption" class="artist_image_caption_label">캡션</label></div>
                         <div class="col-10"><input type="text" id="artist_image3_caption" name="artist_image3_caption" class="form-control artist_image_caption"></div>
@@ -110,10 +128,14 @@ include('common.php');
                     <div class="row">
                         <div class="col-4"><label for="artist_image4"><strong>대표 이미지 4</strong></label></div>
                         <div class="col"></div>
-                        <div class="col-2 text-right"><button class="btn btn-danger" id="artist_image4_delete_btn" onclick="doDeleteImage(event, 4)">삭제</button></div>
+                        <div class="col-2 text-right"><button class="btn btn-outline-danger" id="artist_image4_delete_btn" onclick="doDeleteImage(event, 4)">삭제</button></div>
                     </div>
                     <div id="artist_image4"></div>
-                    <div class="row m-2"><img id="artist_image4_saved" src="#" width="100%" height="400" /></div>
+                    <div class="row m-2 text-center">
+                        <img id="artist_image4_saved" src="#" width="auto" height="160" />
+                        <input type="hidden" id="artist_image4_saved_seq" value="0" />
+                        <!-- <input type="hidden" id="artist_image4_new" name="artist_image4_new" value=" 0" /> -->
+                    </div>
                     <div class="row artist_image_caption_box">
                         <div class="col-2"><label for="artist_image4_caption" class="artist_image_caption_label">캡션</label></div>
                         <div class="col-10"><input type="text" id="artist_image4_caption" name="artist_image4_caption" class="form-control artist_image_caption"></div>
@@ -150,9 +172,11 @@ include('common.php');
                 <div id="artist_interview" class="form-control"></div>
                 <textarea class="artist_temp_input_form" id="artist_interview_temp" name="artist_interview"></textarea>
             </div>
+            <input type="hidden" id="artist_seq" name="artist_seq" value="0" />
             <div class="row">
                 <div class="col-12 text-right">
-                    <button class="btn btn-primary" onclick="doInsert(event)">등록</button>
+                    <button class="btn btn-danger" onclick="doDelete(event)">삭제</button>
+                    <button class="btn btn-primary" onclick="doUpdate(event)">수정</button>
                 </div>
             </div>
         </form>
@@ -169,6 +193,6 @@ include('common.php');
 <script src="vendor/image-uploader/dist/image-uploader.min.js"></script>
 
 <script src="./js/common.js"></script>
-<script src="./js/artist_edit.js"></script>
+<script src="./js/artist.edit.js"></script>
 
 <?php require_once('fragment/tail.php'); ?>

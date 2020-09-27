@@ -70,3 +70,44 @@ function isNumeric(num, opt) {
         return false;
     }
 }
+
+function getImageUploadDefaultOption() {
+    return {
+        extensions: [
+            '.jpg', '.jpeg', '.png', '.gif',
+            '.JPG', '.JPEG', '.PNG', '.GIF'
+        ],
+        mimes: ['image/jpeg', 'image/png', 'image/gif'],
+        maxFiles: 1,
+    };
+}
+
+function getSummernoteDefaultOption() {
+    return {
+        tabsize: 2,
+        height: 200,
+        toolbar: [
+            ['style', ['style']],
+            ['insert', ['link', 'table', 'hr']],
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']]
+        ],
+        lang: 'ko-KR'
+    };
+}
+
+function setActiveNavMenu(pageName) {
+    const navList = $('.nav-link');
+    for(let i=0; i<navList.length; i++) {
+        let $targetNav = $(navList[i]);
+        let navPageName = $targetNav.attr('href');
+        if(navPageName == pageName) {
+            $targetNav.addClass('active');
+            break;
+        }
+    }
+}

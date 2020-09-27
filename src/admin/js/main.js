@@ -42,11 +42,11 @@ function doUpdate(mainImgSeq) {
 }
 
 function doDelete(mainImgSeq, filename) {
-    console.log('[doDelete] seq: ' + mainImgSeq);
-    console.log('[doDelete] filename: ' + filename);
+    //console.log('[doDelete] seq: ' + mainImgSeq);
+    //console.log('[doDelete] filename: ' + filename);
     if (confirm(filename + ' 이미지를 삭제하시겠습니까?')) {
         $.ajax({
-            url: './action/main_image_delete.php',
+            url: './action/image_delete.php',
             type: 'post',
             dataType: 'json',
             data: { seq: mainImgSeq },

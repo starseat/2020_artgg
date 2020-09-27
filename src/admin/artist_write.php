@@ -134,6 +134,6 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/lang/summernote-ko-KR.js"></script>
 <script src="vendor/image-uploader/dist/image-uploader.min.js"></script>
 <script src="./js/common.js"></script>
-<script src="./js/artist_write.js"></script>
+<script src="./js/artist.write.js"></script>
 
 <?php require_once('fragment/tail.php'); ?>

@@ -1,25 +1,14 @@
 $(document).ready(function () {
+    // 왼쪽 nav 에서 선택이 안되어 있어서 강제로 active 상태 만들어줌.
+    setActiveNavMenu('artist.php');
+
     initImageForm();
     initTextForm();
 });
 
 
 function initTextForm() {
-    const textFormOption = {
-        tabsize: 2,
-        height: 200,
-        toolbar: [
-            ['style', ['style']],
-            ['insert', ['link', 'table', 'hr']],
-            ['style', ['bold', 'italic', 'underline', 'clear']],
-            ['font', ['strikethrough', 'superscript', 'subscript']],
-            ['fontsize', ['fontsize']],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['height', ['height']]
-        ], 
-        lang: 'ko-KR'
-    };
+    const textFormOption = getSummernoteDefaultOption();
 
     textFormOption.placeholder = '작가님의 소개글을 입려해 주세요.';
     $('#artist_introduction').summernote(textFormOption);
@@ -38,16 +27,10 @@ function initTextForm() {
 }
 
 function initImageForm() {
-    let artist_image_option = {
-        imagesInputName: 'artist_thumbnail',
-        label: '작가님의 대표 이미지(썸네일)를 업로드 해주세요.',
-        extensions: [
-            '.jpg', '.jpeg', '.png', '.gif', 
-            '.JPG', '.JPEG', '.PNG', '.GIF'
-        ],
-        mimes: ['image/jpeg', 'image/png', 'image/gif'],
-        maxFiles: 1,
-    };
+    let artist_image_option = getImageUploadDefaultOption();
+    artist_image_option.imagesInputName = 'artist_thumbnail';
+    artist_image_option.label = '작가님의 대표 이미지(썸네일)를 업로드 해주세요.';
+
     $('#artist_thumbnail').imageUploader(artist_image_option);
 
     artist_image_option.label = '작가님의 이미지를 업로드 해주세요.',
