@@ -1,5 +1,18 @@
 <?php require_once('fragment/content_layout.php'); ?>
 
+<?php
+
+include('common.php');
+
+// $isLogin = $_SESSION['is_login'];
+// if ($isLogin != 1) {
+//     echo ('<meta http-equiv="refresh" content="0 url=./login.html" />');
+// }
+
+
+
+?>
+
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
 <link href="vendor/image-uploader/dist/image-uploader.min.css" type="text/css" rel="stylesheet">
 <style>
@@ -31,27 +44,33 @@
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="artist_name"><strong>* 작가명</strong></label>
-                    <input type="text" class="form-control" id="artist_name" name="artist_name">
+                    <input type="text" class="form-control" id="artist_name" name="artist_name" />
                 </div>
                 <div class="form-group col-md-4">
                     <label for="artist_name_en"><strong>* 작가명 (영문)</strong></label>
-                    <input type="text" class="form-control" id="artist_name_en" name="artist_name_en">
+                    <input type="text" class="form-control" id="artist_name_en" name="artist_name_en" />
                 </div>
                 <div class="form-group col-md-4">
                     <label for="artist_year"><strong>* 년도</strong></label>
-                    <input type="number" class="form-control" id="artist_year" name="artist_year">
+                    <input type="number" class="form-control" id="artist_year" name="artist_year" />
                 </div>
             </div>
             <hr>
             <div class="form-group">
                 <label for="artist_thumbnail" id="artist_thumbnail_label"><strong>* 썸네일</strong></label>
                 <div id="artist_thumbnail"></div>
+                <div class="row ml-4"><img id="artist_thumbnail_saved" src="#" width="220" /></div>
             </div>
             <hr>
             <div class="form-row">
                 <div class="form-group col-md-5">
-                    <label for="artist_image1"><strong>* 대표 이미지 1</strong></label>
+                    <div class="row">
+                        <div class="col-4"><label for="artist_image1"><strong>* 대표 이미지 1</strong></label></div>
+                        <div class="col"></div>
+                        <div class="col-2 text-right"><button class="btn btn-danger" id="artist_image1_delete_btn" onclick="doDeleteImage(event, 1)">삭제</button></div>
+                    </div>
                     <div id="artist_image1"></div>
+                    <div class="row m-2"><img id="artist_image1_saved" src="#" width="100%" height="400" /></div>
                     <div class="row artist_image_caption_box">
                         <div class="col-2"><label for="artist_image1_caption" class="artist_image_caption_label">캡션</label></div>
                         <div class="col-10"><input type="text" id="artist_image1_caption" name="artist_image1_caption" class="form-control artist_image_caption"></div>
@@ -59,8 +78,13 @@
                 </div>
                 <div class="form-group col-md-1"></div>
                 <div class="form-group col-md-5">
-                    <label for="artist_image2"><strong>대표 이미지 2</strong></label>
+                    <div class="row">
+                        <div class="col-4"><label for="artist_image2"><strong>대표 이미지 2</strong></label></div>
+                        <div class="col"></div>
+                        <div class="col-2 text-right"><button class="btn btn-danger" id="artist_image2_delete_btn" onclick="doDeleteImage(event, 2)">삭제</button></div>
+                    </div>
                     <div id="artist_image2"></div>
+                    <div class="row m-2"><img id="artist_image2_saved" src="#" width="100%" height="400" /></div>
                     <div class="row artist_image_caption_box">
                         <div class="col-2"><label for="artist_image2_caption" class="artist_image_caption_label">캡션</label></div>
                         <div class="col-10"><input type="text" id="artist_image2_caption" name="artist_image2_caption" class="form-control artist_image_caption"></div>
@@ -69,8 +93,13 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-5">
-                    <label for="artist_image3"><strong>대표 이미지 3</strong></label>
+                    <div class="row">
+                        <div class="col-4"><label for="artist_image3"><strong>대표 이미지 3</strong></label></div>
+                        <div class="col"></div>
+                        <div class="col-2 text-right"><button class="btn btn-danger" id="artist_image3_delete_btn" onclick="doDeleteImage(event, 3)">삭제</button></div>
+                    </div>
                     <div id="artist_image3"></div>
+                    <div class="row m-2"><img id="artist_image3_saved" src="#" width="100%" height="400" /></div>
                     <div class="row artist_image_caption_box">
                         <div class="col-2"><label for="artist_image3_caption" class="artist_image_caption_label">캡션</label></div>
                         <div class="col-10"><input type="text" id="artist_image3_caption" name="artist_image3_caption" class="form-control artist_image_caption"></div>
@@ -78,8 +107,13 @@
                 </div>
                 <div class="form-group col-md-1"></div>
                 <div class="form-group col-md-5">
-                    <label for="artist_image4"><strong>대표 이미지 4</strong></label>
+                    <div class="row">
+                        <div class="col-4"><label for="artist_image4"><strong>대표 이미지 4</strong></label></div>
+                        <div class="col"></div>
+                        <div class="col-2 text-right"><button class="btn btn-danger" id="artist_image4_delete_btn" onclick="doDeleteImage(event, 4)">삭제</button></div>
+                    </div>
                     <div id="artist_image4"></div>
+                    <div class="row m-2"><img id="artist_image4_saved" src="#" width="100%" height="400" /></div>
                     <div class="row artist_image_caption_box">
                         <div class="col-2"><label for="artist_image4_caption" class="artist_image_caption_label">캡션</label></div>
                         <div class="col-10"><input type="text" id="artist_image4_caption" name="artist_image4_caption" class="form-control artist_image_caption"></div>
@@ -133,7 +167,8 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/lang/summernote-ko-KR.js"></script>
 <script src="vendor/image-uploader/dist/image-uploader.min.js"></script>
+
 <script src="./js/common.js"></script>
-<script src="./js/artist_write.js"></script>
+<script src="./js/artist_edit.js"></script>
 
 <?php require_once('fragment/tail.php'); ?>

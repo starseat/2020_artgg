@@ -71,7 +71,7 @@ function doNewWrite(event) {
     if(typeof event != 'undefined') {
         event.preventDefault();
         event.stopPropagation();
-    }    
+    }
 
     $('#artist_seq').val(0);
     $('#artist_year').val(0);

@@ -64,18 +64,6 @@ function initImageForm() {
     $('#artist_image4').imageUploader(artist_image_option);
 }
 
-function readURL(input, previewElId) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            $('#' + previewElId).attr('src', e.target.result);
-        }
-
-        reader.readAsDataURL(input.files[0]); // convert to base64 string
-    }
-}
-
 function doInsert(event) {
     event.preventDefault();
     event.stopPropagation();

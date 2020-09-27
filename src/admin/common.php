@@ -37,6 +37,11 @@ function debug_console($msg) {
     echo ("<script>console.log('$msg');</script>");
 }
 
+function historyBack() {
+    $prevPage = $_SERVER['HTTP_REFERER'];
+    header('location:' . $prevPage);
+}
+
 function uuidgen() {
     return sprintf('%08x-%04x-%04x-%04x-%04x%08x',
         mt_rand(0, 0xffffffff),
