@@ -8,9 +8,6 @@ $caption = mysqli_real_escape_string($conn, $_POST['caaption']);
 $link = mysqli_real_escape_string($conn, $_POST['link']);
 $sort = mysqli_real_escape_string($conn, $_POST['sort']);
 
-
-
-
 // db - delete
 $sql  = "UPDATE artgg_image SET ";
 $sql .= "caption = '" . $caption . "', ";

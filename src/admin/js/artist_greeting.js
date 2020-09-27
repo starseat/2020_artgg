@@ -8,22 +8,9 @@ $(document).ready(function () {
 });
 
 function initTextForm() {
-    $('#artist_greeting').summernote({
-        placeholder: '작가페이지의 소개글을 입력해 주세요.',
-        tabsize: 2,
-        height: 200,
-        toolbar: [
-            ['style', ['style']],
-            ['insert', ['link', 'table', 'hr']],
-            ['style', ['bold', 'italic', 'underline', 'clear']],
-            ['font', ['strikethrough', 'superscript', 'subscript']],
-            ['fontsize', ['fontsize']],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['height', ['height']]
-        ], 
-        lang: 'ko-KR'
-    });
+    let option = getSummernoteDefaultOption();
+    option.placeholder = '작가페이지의 소개글을 입력해 주세요.';
+    $('#artist_greeting').summernote(option);
 }
 
 function getArtistGreeting(req_year, callback) {
@@ -71,7 +58,7 @@ function doNewWrite(event) {
     if(typeof event != 'undefined') {
         event.preventDefault();
         event.stopPropagation();
-    }    
+    }
 
     $('#artist_seq').val(0);
     $('#artist_year').val(0);

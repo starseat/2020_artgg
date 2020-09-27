@@ -31,5 +31,3 @@ $result_array['message'] = $message;
 echo json_encode($result_array, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 
 ?>
-
-    

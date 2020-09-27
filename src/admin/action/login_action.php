@@ -11,7 +11,7 @@ $sql .= "user_id, email, name, member_type, password ";
 $sql .= "FROM artgg_members ";
 $sql .= "WHERE user_id = '" . $login_id . "'";
 
-$result = mysqli_query($conn, $sql) or exit(mysql_error());
+$result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 $user_count = mysqli_num_rows($result);
 
 mysqli_close($conn);

@@ -132,8 +132,14 @@ $main_image_length = $result->num_rows;
     </div>
 </div>
 
+<?php
+mysqli_close($conn);
+flush();
+?>
+
 <?php require_once('fragment/footer.php'); ?>
 
+<script src="js/common.js"></script>
 <script src="js/main.js"></script>
 
 <?php require_once('fragment/tail.php'); ?>

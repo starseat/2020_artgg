@@ -82,6 +82,10 @@ $year_length = $result->num_rows;
     </div>
 </div>
 
+<?php
+mysqli_close($conn);
+flush();
+?>
 <?php require_once('fragment/footer.php'); ?>
 
 <script src="./js/artist.js"></script>
