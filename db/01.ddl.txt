@@ -34,7 +34,7 @@ CREATE TABLE artgg_image (
     caption VARCHAR(256), 
 	link VARCHAR(256), 
     created_at DATETIME NOT NULL DEFAULT now(),
-	PRIMARY KEY (`seq` )
+	PRIMARY KEY (`seq`, `target_seq`, `target_type` )
 ) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
 
 /**
