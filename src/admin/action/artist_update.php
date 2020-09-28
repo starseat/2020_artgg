@@ -31,7 +31,7 @@ $artist_image1_name_save = '';
 $artist_image1_name_upload_path = '';
 if($new_artist_image1 > 0) {
     $artist_image1 = $_FILES['artist_image1']; // var_dump($artist_image1);
-    if ($artist_image1 == null) {
+    if ($artist_image1 == null ) {
         viewAlert('대표이미지 1은 필수로 등록되어야 합니다.');
         mysqli_close($conn);
         exit;
@@ -48,11 +48,12 @@ if($new_artist_image1 > 0) {
 }
 
 // -- 대표 이미지 2 등록
+$artist_image2 = null;
 $artist_image2_name = '';
 $artist_image2_name_save = '';
 $artist_image2_name_upload_path = '';
-$artist_image2 = $_FILES['artist_image2']; echo ('img2 => '); var_dump($artist_image2);
-if($artist_image2 != null) {
+$artist_image2 = $_FILES['artist_image2']; // echo ('img2 => '); var_dump($artist_image2);
+if($artist_image2 != null && $artist_image2['name'][0] != '') {
     $artist_image2_info = uploadImages($artist_image2, 'artist');
     if ($artist_image2_info == null) {
         viewAlert('대표이미지 2 등록에 실패하였습니다.');
@@ -65,11 +66,12 @@ if($artist_image2 != null) {
 }
 
 // -- 대표 이미지 3 등록
+$artist_image3 = null;
 $artist_image3_name = '';
 $artist_image3_name_save = '';
 $artist_image3_name_upload_path = '';
-$artist_image3 = $_FILES['artist_image3']; echo ('img3 => '); var_dump($artist_image3);
-if ($artist_image3 != null) {
+$artist_image3 = $_FILES['artist_image3']; // echo ('img3 => '); var_dump($artist_image3);
+if ($artist_image3 != null && $artist_image3['name'][0] != '') {
     $artist_image3_info = uploadImages($artist_image3, 'artist');
     if ($artist_image3_info == null) {
         viewAlert('대표이미지 3 등록에 실패하였습니다.');
@@ -82,11 +84,12 @@ if ($artist_image3 != null) {
 }
 
 // -- 대표 이미지 4 등록
+$artist_image4 = null;
 $artist_image4_name = '';
 $artist_image4_name_save = '';
 $artist_image4_name_upload_path = '';
-$artist_image4 = $_FILES['artist_image4']; echo ('img4 => '); var_dump($artist_image4);
-if ($artist_image4 != null) {
+$artist_image4 = $_FILES['artist_image4']; // echo ('img4 => '); var_dump($artist_image4);
+if ($artist_image4 != null && $artist_image4['name'][0] != '') {
     $artist_image4_info = uploadImages($artist_image4, 'artist');
     if ($artist_image4_info == null) {
         viewAlert('대표이미지 4 등록에 실패하였습니다.');
@@ -115,16 +118,21 @@ if (!isEmpty($artist_image1_caption)) {
 }
 $artist_image2_caption = $_POST['artist_image2_caption'];
 if (!isEmpty($artist_image2_caption)) {
-    $artist_image1_caption = mysqli_real_escape_string($conn, $_POST['artist_image2_caption']);
+    $artist_image2_caption = mysqli_real_escape_string($conn, $_POST['artist_image2_caption']);
 }
 $artist_image3_caption = $_POST['artist_image3_caption'];
 if (!isEmpty($artist_image3_caption)) {
-    $artist_image1_caption = mysqli_real_escape_string($conn, $_POST['artist_image3_caption']);
+    $artist_image3_caption = mysqli_real_escape_string($conn, $_POST['artist_image3_caption']);
 }
 $artist_image4_caption = $_POST['artist_image4_caption'];
 if (!isEmpty($artist_image4_caption)) {
-    $artist_image1_caption = mysqli_real_escape_string($conn, $_POST['artist_image4_caption']);
+    $artist_image4_caption = mysqli_real_escape_string($conn, $_POST['artist_image4_caption']);
 }
+
+$artist_image1_saved_seq = intval(mysqli_real_escape_string($conn, $_POST['artist_image1_saved_seq']));
+$artist_image2_saved_seq = intval(mysqli_real_escape_string($conn, $_POST['artist_image2_saved_seq']));
+$artist_image3_saved_seq = intval(mysqli_real_escape_string($conn, $_POST['artist_image3_saved_seq']));
+$artist_image4_saved_seq = intval(mysqli_real_escape_string($conn, $_POST['artist_image4_saved_seq']));
 
 // 작가소개
 $artist_introduction = $_POST['artist_introduction'];
@@ -177,6 +185,10 @@ if ($artist_image1_name != '') {
     $sql .= "'') ";
     $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 }
+else if($artist_image1_saved_seq > 0) {
+    $sql  = "UPDATE artgg_image SET caption = '" . $artist_image1_caption . "' WHERE seq = " . $artist_image1_saved_seq;
+    $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+}
 
 if ($artist_image2_name != '') {
     $sql  = "INSERT INTO artgg_image (target_type, target_seq, sort, file_name, file_name_save, upload_path, caption, link) ";
@@ -187,6 +199,10 @@ if ($artist_image2_name != '') {
     $sql .= "'" . mysqli_real_escape_string($conn, $artist_image2_name_upload_path) . "', ";
     $sql .= "'" . $artist_image2_caption . "', ";
     $sql .= "'') ";
+    $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+}
+else if($artist_image2_saved_seq > 0) {
+    $sql  = "UPDATE artgg_image SET caption = '" . $artist_image2_caption . "' WHERE seq = " . $artist_image2_saved_seq;
     $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 }
 
@@ -201,6 +217,10 @@ if ($artist_image3_name != '') {
     $sql .= "'') ";
     $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 }
+else if($artist_image3_saved_seq > 0) {
+    $sql  = "UPDATE artgg_image SET caption = '" . $artist_image3_caption . "' WHERE seq = " . $artist_image3_saved_seq;
+    $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+}
 
 if ($artist_image4_name != '') {
     $sql  = "INSERT INTO artgg_image (target_type, target_seq, sort, file_name, file_name_save, upload_path, caption, link) ";
@@ -211,6 +231,10 @@ if ($artist_image4_name != '') {
     $sql .= "'" . mysqli_real_escape_string($conn, $artist_image4_name_upload_path) . "', ";
     $sql .= "'" . $artist_image4_caption . "', ";
     $sql .= "'') ";
+    $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+}
+else if($artist_image4_saved_seq > 0) {
+    $sql  = "UPDATE artgg_image SET caption = '" . $artist_image4_caption . "' WHERE seq = " . $artist_image4_saved_seq;
     $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 }
 

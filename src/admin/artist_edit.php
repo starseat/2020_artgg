@@ -78,7 +78,7 @@ include('common.php');
                     <div id="artist_image1"></div>
                     <div class="row m-2 text-center">
                         <img id="artist_image1_saved" src="#" width="auto" height="160" />
-                        <input type="hidden" id="artist_image1_saved_seq" value="0" />
+                        <input type="hidden" id="artist_image1_saved_seq" name="artist_image1_saved_seq" value="0" />
                         <input type="hidden" id="artist_image1_new" name="artist_image1_new" value=" 0" />
                     </div>
                     <div class="row artist_image_caption_box">
@@ -96,7 +96,7 @@ include('common.php');
                     <div id="artist_image2"></div>
                     <div class="row m-2 text-center">
                         <img id="artist_image2_saved" src="#" width="auto" height="160" />
-                        <input type="hidden" id="artist_image2_saved_seq" value="0" />
+                        <input type="hidden" id="artist_image2_saved_seq" name="artist_image2_saved_seq" value="0" />
                         <!-- <input type="hidden" id="artist_image2_new" name="artist_image2_new" value=" 0" /> -->
                     </div>
                     <div class="row artist_image_caption_box">
@@ -115,7 +115,7 @@ include('common.php');
                     <div id="artist_image3"></div>
                     <div class="row m-2 text-center">
                         <img id="artist_image3_saved" src="#" width="auto" height="160" />
-                        <input type="hidden" id="artist_image3_saved_seq" value="0" />
+                        <input type="hidden" id="artist_image3_saved_seq" name="artist_image3_saved_seq" value="0" />
                         <!-- <input type="hidden" id="artist_image3_new" name="artist_image3_new" value=" 0" /> -->
                     </div>
                     <div class="row artist_image_caption_box">
@@ -133,7 +133,7 @@ include('common.php');
                     <div id="artist_image4"></div>
                     <div class="row m-2 text-center">
                         <img id="artist_image4_saved" src="#" width="auto" height="160" />
-                        <input type="hidden" id="artist_image4_saved_seq" value="0" />
+                        <input type="hidden" id="artist_image4_saved_seq" name="artist_image4_saved_seq" value="0" />
                         <!-- <input type="hidden" id="artist_image4_new" name="artist_image4_new" value=" 0" /> -->
                     </div>
                     <div class="row artist_image_caption_box">

@@ -23,6 +23,8 @@ $year_length = $result->num_rows;
         top: 5.6rem;
         right: 1.8rem;
     }
+
+    .artgg-border-top { border-top: solid; }
 </style>
 <div class="insert-button-box">
     <button type="button" class="btn btn-info" onclick="javascript: location.href='./artist_write.php';">등록</button>
@@ -31,18 +33,17 @@ $year_length = $result->num_rows;
 <div class="row">
     <div class="d-none d-md-inline-block ml-auto mr-0 mr-md-3 my-2 my-md-0">
         <select class="form-control" id="artist_select_year" style="width: 240px;">
-        <?php
-        if($year_length > 0) {
-            echo ('<option value="0">전체</option>');
-            while ($year_row = $result->fetch_array()) {
-                echo ('<option value="' . RemoveXSS($year_row['year']) .'">' . RemoveXSS($year_row['year']) . '</option>');
+            <?php
+            if ($year_length > 0) {
+                echo ('<option value="0">전체</option>');
+                while ($year_row = $result->fetch_array()) {
+                    echo ('<option value="' . RemoveXSS($year_row['year']) . '">' . RemoveXSS($year_row['year']) . '</option>');
+                }
+            } else {
+                echo ('<option value="0">없음</option>');
             }
-        }
-        else {
-            echo ('<option value="0">없음</option>');
-        }
-        $result->free();
-        ?>
+            $result->free();
+            ?>
         </select>
     </div>
 </div>
@@ -59,10 +60,10 @@ $year_length = $result->num_rows;
 
         if ($artist_length > 0) {
             while ($artist_info = $result->fetch_array()) {
-                echo ('<div class="col-sm-4 col-md-3 col-lg-2">');
-                echo ('    <div class="card" style="width: 18rem;">');
-                echo ('        <img src="' . RemoveXSS($artist_info['thumbnail']) . '" class="card-img-top" alt="thumbnail">');
-                echo ('        <div class="card-body">');
+                echo ('<div class="col-sm-4 col-md-3">');
+                echo ('    <div class="card">');
+                echo ('        <img src="' . RemoveXSS($artist_info['thumbnail']) . '" class="card-img-top" alt="thumbnail" width="220" height="220">');
+                echo ('        <div class="card-body artgg-border-top">');
                 echo ('            <h5 class="card-title">' . RemoveXSS($artist_info['name']) . '</h5>');
                 echo ('            <p class="card-text">' . RemoveXSS($artist_info['en_name']) . '</p>');
                 echo ('            <div class="row">');

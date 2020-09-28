@@ -219,7 +219,27 @@ function doDelete(event) {
         event.stopPropagation();
     }
 
-    alert('[doDelete] 작가 정보 삭제');
+    const artist_seq = getArtistSeq();
+    if (artist_seq == 0) {
+        return false;
+    }
+
+    if (confirm('작가 정보를 정말로 삭제하시겠습니까?\n삭제된 정보는 복구할 수 없습니다.')) {
+        $.ajax({
+            type: 'post',
+            url: './action/artist_delete.php',
+            data: { seq: artist_seq },
+            dataType: 'json',
+            success: function (result) {
+                console.log('[doDelete] ajax result:: ', result);
+                alert('작가 정보가 삭제되었습니다.');
+                location.href = '../artist.php';
+            },
+            error: function (xhr, status, error) {
+                console.error('[doDelete] ajax error:: ', error);
+            },
+        });
+    }
 }
 
 function doUpdate(event) {
@@ -238,6 +258,29 @@ function doUpdate(event) {
         return false;
     }
 
+    if ($('#artist_name').val() == '') {
+        alert('작가명은 필수 입력사항 입니다.');
+        $('#artist_name').focus();
+        return false;
+    }
+
+    if ($('#artist_name_en').val() == '') {
+        alert('작가명 (영문) 은 필수 입력사항 입니다.');
+        $('#artist_name_en').focus();
+        return false;
+    }
+
+    let year = $('#artist_year').val();
+    if (year == '' || year == 0 || year < 1000) {
+        alert('년도는 필수 입력사항 입니다.');
+        $('#artist_year').focus();
+        return false;
+    } else if (year > 9999) {
+        alert('년도는 최대 4자리 까지만 입력 가능합니다.');
+        $('#artist_year').focus();
+        return false;
+    }
+    
     if ($('#artist_thumbnail_new').val() == '1') {
         if ( !$($('#artist_thumbnail .image-uploader')[0]).hasClass('has-files')) {
             alert('작가님의 썸네일은 필수로 등록되어야 합니다.');

@@ -69,6 +69,11 @@ function doInsert(event) {
         $('#artist_year').focus();
         return false;
     }
+    else if(year > 9999) {
+        alert('년도는 최대 4자리 까지만 입력 가능합니다.');
+        $('#artist_year').focus();
+        return false;
+    }
 
     if ($('#artist_thumbnail input[type="file"]').val() == '') {
         alert('썸네일은 필수로 등록되어야 합니다.');
