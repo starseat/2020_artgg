@@ -33,6 +33,7 @@ CREATE TABLE artgg_image (
     upload_path VARCHAR(256) NOT NULL, 
     caption VARCHAR(256), 
 	link VARCHAR(256), 
+	storage_type VARCHAR(1) NOT NULL DEFAULT 'L', -- L: local, W: Web
     created_at DATETIME NOT NULL DEFAULT now(),
 	PRIMARY KEY (`seq`, `target_seq`, `target_type` )
 ) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
