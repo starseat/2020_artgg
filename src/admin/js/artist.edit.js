@@ -4,8 +4,7 @@ $(document).ready(function () {
     initTextForm();
 
     const seq = getArtistSeq();
-    if( isEmpty(seq) || !isNumeric(seq) ) { 
-        alert('잘못된 접근입니다.');
+    if( seq == 0) {
         history.back();
     }
 

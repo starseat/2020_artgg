@@ -309,4 +309,37 @@ function RemoveXSS($val) {
     }
     return $val;
 }
+
+function getPagingInfo($current_page, $total_item_count, $item_row_count, $page_block_count) {
+    $page_db = ($current_page - 1) * $item_row_count;
+
+    // 전체 block 수
+    $page_total = ceil($total_item_count / $page_block_count);
+    if ($page_total == 0) {
+        $page_total = 1;
+    }
+    // block 시작
+    $page_start = (((ceil($current_page / $page_block_count) - 1) * $page_block_count) + 1);
+
+    // block 끝
+    $page_end = $page_start + $page_block_count - 1;
+    if ($page_total < $page_end) {
+        $page_end = $page_total;
+    }
+
+    // 시작 바로 전 페이지
+    $page_prev = $page_start - 1;
+    // 마지막 다음 페이지
+    $page_next = $page_end + 1;
+
+    return array(
+        'page_db' => $page_db,  // db 조회시 사용
+        'page_start' => $page_start, 
+        'page_end' => $page_end,
+        'page_prev' => $page_prev,
+        'page_next' => $page_next, 
+        'page_total' => $page_total
+    );
+}
+
 ?>
