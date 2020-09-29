@@ -28,7 +28,7 @@ input,button,select {outline:none; border-radius:0;}
 
 /* 공통 lnb */
 .snb_current {display:block; }
-.common_gnb_w {position:fixed; left:0; top:0; z-index:100; width:100%; height:158px; padding-right:100px; padding-top:58px; box-sizing:border-box; background-color:#fff;}
+.common_gnb_w {position:fixed; left:0; top:0; z-index:100; width:100%; height:158px; padding:58px 100px 0; box-sizing:border-box; background-color:#fff;}
     .artgg_lnb_w {position:relative; z-index:10; margin:0 auto; box-sizing:border-box; width:100%; max-width:1530px; background-color:#fff;}
     .artgg_lnb_w:after {display:block; content:''; clear:both;}
         .artgg_h1_logo {position:Relative; float:left; z-index:98; width:315px; height:100px;}
@@ -225,7 +225,7 @@ input,button,select {outline:none; border-radius:0;}
 /* 메인 : pc 중간 제어 */
 @media screen and (max-width:1350px) {
     .container{padding:158px 40px 0;}
-    .common_gnb_w {padding-right:40px;}
+    .common_gnb_w {padding:58px 40px 0;}
     .sl_inner {width:33.3%;}
 }
 
@@ -238,7 +238,7 @@ input,button,select {outline:none; border-radius:0;}
     .artgg_lnb_w {height:100px;}
     .artgg_h1_logo {width:215px;}
     .artgg_lnb_inner {width:calc(100% - 215px); height:100px;}
-        .common_gnb_w{padding-right:25px;}
+        .common_gnb_w{padding:58px 25px 0;}
     /* T:푸터 */
     .footer {padding:0 25px;}
     /* T:공지사항 */
@@ -273,7 +273,7 @@ input,button,select {outline:none; border-radius:0;}
         .footer_cont_r {width:54% !important; padding-top:28px; float:none; clear:both;}
             .fcr_sl_cont {width:25%;}
     /* M:GNB */
-    .common_gnb_w {height:75px; padding-top:0; }
+    .common_gnb_w {height:75px; padding-top:0; padding-right:0; }
     .artgg_lnb_w,
     .artgg_h1_logo {height:75px;}
         .artgg_lnb_w {}
