@@ -34,6 +34,7 @@ CREATE TABLE artgg_image (
     caption VARCHAR(256), 
 	link VARCHAR(256), 
 	storage_type VARCHAR(1) NOT NULL DEFAULT 'L', -- L: local, W: Web
+	image_type VARCHAR(1) NOT NULL DEFAULT 'I', -- I: image, V: video
     created_at DATETIME NOT NULL DEFAULT now(),
 	PRIMARY KEY (`seq`, `target_seq`, `target_type` )
 ) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
@@ -42,8 +43,9 @@ CREATE TABLE artgg_image (
  * 아트경기 사업소개
  */
 CREATE TABLE artgg_business (
-	seq BIGINT NOT NULL AUTO_INCREMENT,
+	seq BIGINT NOT NULL AUTO_INCREMENT,	
     name VARCHAR(128) NOT NULL, 
+	type VARCHAR(1) NOT NULL DEFAULT 'P', -- A: ArtGG, P: partner
     introduction VARCHAR(2048), 
 	created_at DATETIME NOT NULL DEFAULT now(),
 	updated_at DATETIME NOT NULL DEFAULT now(),
@@ -51,20 +53,6 @@ CREATE TABLE artgg_business (
 	PRIMARY KEY (`seq` )
 ) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
 
-/**
- * 아트경기 협력사업자
- */
-CREATE TABLE artgg_business_partner (
-	seq BIGINT NOT NULL AUTO_INCREMENT,
-    name VARCHAR(128) NOT NULL,    
-    img VARCHAR(128), 
-    introduction VARCHAR(2048), 
-    url VARCHAR(256), 
-	created_at DATETIME NOT NULL DEFAULT now(),
-	updated_at DATETIME NOT NULL DEFAULT now(),
-	deleted_at DATETIME NULL DEFAULT NULL, 
-	PRIMARY KEY (`seq` )
-) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
 
 /**
  * 아트경기 작가
