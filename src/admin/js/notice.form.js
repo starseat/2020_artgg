@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    setActiveNavMenu('notice.php');
     initTextForm();
 
     const notice_seq = getNoticeSeq();
