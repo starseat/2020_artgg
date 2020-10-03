@@ -26,11 +26,15 @@ input,button,select {outline:none; border-radius:0;}
             .section_title {display:block; position:relative; padding-left:43px; height:80px; line-height:80px; font-size:78px; font-weight:800; text-transform:uppercase;}
             .section_title:after {display:block; content:''; position:Absolute; left:0; top:0; width:9px; height:100%; background-color:#000;}
             /* 서브공통 타이틀 */
-            [class^="content_title"] {font-size:120px; text-transform:uppercase; font-weight:800;}
+            [class^="content_title"] {display:inline-block; font-size:120px; text-transform:uppercase; font-weight:800;}
+            .content_title {display:block !important;}
                 .content_info_text {margin-top:100px; font-size:30px; line-height:60px;}
             /* 서브공통 타이틀 : typeb bar */
-            .content_title_b {padding-left:47px; position:relative;}
-                .content_title_b {display:block; content:''; position:absolute; left:0; top:0; width:11px; height:89px; background-color:#000;}
+            [class^="content_title_"] {padding-left:47px; position:relative; height:105px; line-height:105px;}
+            .content_title_c {font-size:90px; height:95px !important; line-height:95px !important;}
+                [class^="content_title_"]:after {display:block; content:''; position:absolute; left:0; top:3px; width:11px; height:89px; background-color:#000;}
+                    .artist_name {display:inline-block; position:relative; left:-20px; font-size:43px; color:#6b6b6b; font-weight:700;}
+
 /* 공통 lnb */
 .snb_current {display:block; }
 .common_gnb_w {position:fixed; left:0; top:0; z-index:100; width:100%; height:158px; padding:58px 100px 0; box-sizing:border-box; background-color:#fff;}
@@ -223,7 +227,7 @@ input,button,select {outline:none; border-radius:0;}
         .info_img {display:inline-block; max-width:100%; height:auto;}
     .info_text_w {display:table-cell; padding-top:1%; padding-left:10%; max-width:980px; box-sizing:border-box; vertical-align:top; font-size:35px; line-height:1.5; font-weight:400;}
 
-/* 작가리스트 */
+/* 서브 : 작가리스트 */
 .section_artistlist_w {margin-top:340px; overflow:hidden;}
     .artist_list {position:relative; top:-82px; display:flex; flex-wrap:wrap; width:calc(100% + 82px);}
         .al_inner {width:20%; padding:82px 82px 0 0; box-sizing:border-box;}
@@ -232,7 +236,29 @@ input,button,select {outline:none; border-radius:0;}
                     .artist_image {display:block; width:100%;}
 
 
+/* 서브 : 작가리스트 엔드 */
+.section_artist_w {margin-top:140px;}
+    .artist_slide_w {}
+        .slide_text_w {margin-top:50px; padding-left:10px; }
+            .slide_text_title {font-size:35px; font-style:italic; font-weight:800;}
+                .slide_info_list {font-size:26px;}
+                    .sil_cont {display:block; margin-top:15px;}
+        /* 작가리스트 슬릭 */
+        .artist_slide_w .slick_slide_list {padding-bottom:0;}
+            .artist_slide_w .slick-dots {bottom:auto; top:20px; right:20px;}
+            .artist_slide_w .slick-arrow {top:33%; margin-top:0 !important;}
 
+        /*  */
+        .article_artist_box {margin-top:340px;}
+            .artist_box_list {margin-top:50px; font-size:40px; line-height:63px;}
+                .abl_inner {padding-left:47px;}
+            .artist_qa_list {margin-top:120px;}
+                .aql_inner {font-size:30px; padding-bottom:170px;}
+                    [class^="qa_text_"] {position:relative; display:block; padding-left:90px; min-height:70px; font-weight:700;}
+                    .qa_text_q {line-height:70px;}
+                    .qa_text_a {margin-top:40px; line-height:60px;}
+                        .qat_title {position:absolute; left:0; top:0; font-size:80px; font-weight:800;}
+/* 서브:  */
 
 
 /* 메인 : pc 중간 제어 */
