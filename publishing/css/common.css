@@ -220,7 +220,6 @@ input,button,select {outline:none; border-radius:0;}
                             .sl_box_image {display:block; height:100%;}
                                 .sl_img {display:block; width:100%;}
 
-
 /* 메인 : 아트경기 소개 */
 .section_info_w {overflow:hidden; position:relative; display:table; width:100%; min-height:297px; margin-top:340px;}
     .info_image {display:table-cell; max-width:263px; vertical-align:top; }
@@ -232,9 +231,9 @@ input,button,select {outline:none; border-radius:0;}
     .artist_list {position:relative; top:-82px; display:flex; flex-wrap:wrap; width:calc(100% + 82px);}
         .al_inner {width:20%; padding:82px 82px 0 0; box-sizing:border-box;}
             .al_cont {display:block;}
-                .artist_thumb_w {display:block;}
-                    .artist_image {display:block; width:100%;}
-
+                .artist_thumb_w {display:block; overflow:hidden;}
+                    .artist_image {display:block; width:100%; -webkit-transition: 0.2s; transition: 0.2s;}
+                    .al_cont:hover .artist_image {transform:scale(1.2);}
 
 /* 서브 : 작가리스트 엔드 */
 .section_artist_w {margin-top:140px;}
@@ -243,12 +242,11 @@ input,button,select {outline:none; border-radius:0;}
             .slide_text_title {font-size:35px; font-style:italic; font-weight:800;}
                 .slide_info_list {font-size:26px;}
                     .sil_cont {display:block; margin-top:15px;}
-        /* 작가리스트 슬릭 */
+        /* 작가리스트 엔드 : 슬라이드 */
         .artist_slide_w .slick_slide_list {padding-bottom:0;}
             .artist_slide_w .slick-dots {bottom:auto; top:20px; right:20px;}
             .artist_slide_w .slick-arrow {top:33%; margin-top:0 !important;}
-
-        /*  */
+        /* 작가리스트 엔드 : 이력 */
         .article_artist_box {margin-top:340px;}
             .artist_box_list {margin-top:50px; font-size:40px; line-height:63px;}
                 .abl_inner {padding-left:47px;}
