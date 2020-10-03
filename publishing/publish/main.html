@@ -21,15 +21,19 @@
 <body>
 <div class="wrap">
     <!-- GNB -->
-    <div class="common_gnb_w"><!-- lnbtype_main / sticky-->
+    <div class="common_gnb_w"><!-- lnbtype_main / sticky / 모바일:gnb_open -->
         <div class="artgg_lnb_w">
             <h1 class="artgg_h1_logo">
                 <a href="#none" class="logolink_main">
                     <span class="icn icon_logo_gnb"><i class="ir">아트경기</i></span>
                 </a>
             </h1>
+            <h2 class="artgg_allmenu_w">
+                <button type="button" class="btn_allmenu">
+                    <span class="icn icon_gnb"><i class="ir">아트경기 전체메뉴</i></span>
+                </button>
+            </h2>
             <div class="artgg_lnb_inner">
-                <h2 class="blind">아트경기 전체메뉴</h2>
                 <ul id="lnb" class="artgg_lnb">
                     <li class="slnb_inner"><!--활성화시 current 추가-->
                         <a href="#none" class="slnb_link"><!--활성화시 current 추가-->
@@ -38,6 +42,7 @@
                                     Artist
                                 </span>
                             </span>
+                            <span class="icn icon_menu_arrow"><i class="ir">서브메뉴 보기</i></span>
                         </a>
                         <ul class="artgg_snb">
                             <li class="ssnb_inner">
@@ -70,6 +75,7 @@
                                     Program
                                 </span>
                             </span>
+                            <span class="icn icon_menu_arrow"><i class="ir">서브메뉴 보기</i></span>
                         </a>
                         <ul class="artgg_snb">
                             <li class="ssnb_inner">
@@ -109,6 +115,7 @@
                                     Space
                                 </span>
                             </span>
+                            <span class="icn icon_menu_arrow"><i class="ir">서브메뉴 보기</i></span>
                         </a>
                         <ul class="artgg_snb">
                             <li class="ssnb_inner">
@@ -134,6 +141,7 @@
                                     Art Shop
                                 </span>
                             </span>
+                            <span class="icn icon_menu_arrow"><i class="ir">서브메뉴 보기</i></span>
                         </a>
                         <ul class="artgg_snb">
                             <li class="ssnb_inner">
@@ -183,6 +191,9 @@
                         </a>
                     </li>
                 </ul>
+                <button type="button" class="btn_allmenu_x">
+                    <span class="icn icon_close"><i class="ir">전체메뉴 닫기</i></span>
+                </button>
             </div>
             <i class="snb_bg"></i>
         </div>
@@ -308,10 +319,15 @@
             <div class="section_box_w">
                 <div class="section_service_w">
                     <div class="service_list_w">
-                        <!--
+                        <!-- 세로모듈 -->
                         <ul class="service_list">
-                            <li class="sl_inner sl_odd">
+                            <li class="sl_inner">
                                 <a href="#none" class="sl_cont">
+                                    <div class="sl_box_image_w">
+                                        <div class="sl_box_image">
+                                            <img src="//via.placeholder.com/688x688" alt="" class="sl_img">
+                                        </div>
+                                    </div>
                                     <div class="sl_box_inner">
                                         <div class="sl_box_text">
                                             <div class="sl_text_top">
@@ -322,18 +338,17 @@
                                             </div>
                                             <span class="slt_text">온-오프라인 연계 전시판매 및 공연, 강연, 경매 등 융합예슬 행사를 진행합니다.</span>
                                             <strong class="slt_name">스튜디오 끼</strong>
-                                            <span class="box_picker"></span>
                                         </div>
                                     </div>
+                                </a>
+                            </li>
+                            <li class="sl_inner">
+                                <a href="#none" class="sl_cont">
                                     <div class="sl_box_image_w">
                                         <div class="sl_box_image">
                                             <img src="//via.placeholder.com/688x688" alt="" class="sl_img">
                                         </div>
                                     </div>
-                                </a>
-                            </li>
-                            <li class="sl_inner sl_even">
-                                <a href="#none" class="sl_cont">
                                     <div class="sl_box_inner">
                                         <div class="sl_box_text">
                                             <div class="sl_text_top">
@@ -342,86 +357,80 @@
                                                 <span class="slt_date">2020.8.21~8.23</span>
                                                 <span class="slt_date_text">유튜브, 네이버TV '광끼채널'</span>
                                             </div>
-                                            <span class="slt_text">온-오프라인 연계 전시판매 및 공연, 강연, 경매 등 융합예슬 행사를 진행합니다.</span>
-                                            <strong class="slt_name">스튜디오 끼</strong>
-                                            <span class="box_picker"></span>
+                                            <span class="slt_text">온-오프라인 연계 전시판매 및 공연, 강연, 경매 등 융합예슬 행사를 진행합니다.온-오프라인 연계 전시판매 및 공연, 강연, 경매 등 융합예슬 행사를 진행합니다.</span>
+                                            <strong class="slt_name">아트플레이스</strong>
                                         </div>
                                     </div>
+                                </a>
+                            </li>
+                            <li class="sl_inner">
+                                <a href="#none" class="sl_cont">
                                     <div class="sl_box_image_w">
                                         <div class="sl_box_image">
                                             <img src="//via.placeholder.com/688x688" alt="" class="sl_img">
                                         </div>
                                     </div>
-                                </a>
-                            </li>
-                            <li class="sl_inner sl_odd">
-                                <a href="#none" class="sl_cont">
                                     <div class="sl_box_inner">
                                         <div class="sl_box_text">
                                             <div class="sl_text_top">
                                                 <span class="slt_num">03</span>
                                                 <span class="slt_info">이광기의 온오프라인 아트쇼</span>
                                                 <span class="slt_date">2020.8.21~8.23</span>
-                                                <span class="slt_date_text">유튜브, 네이버TV '광끼채널'</span>
+                                                <span class="slt_date_text">유튜브, 네이버TV '광끼채널' 유튜브, 네이버TV '광끼채널' </span>
                                             </div>
-                                            <span class="slt_text">온-오프라인 연계 전시판매 및 공연, 강연, 경매 등 융합예슬 행사를 진행합니다.</span>
-                                            <strong class="slt_name">스튜디오 끼</strong>
-                                            <span class="box_picker"></span>
-                                        </div>
-                                    </div>
-                                    <div class="sl_box_image_w">
-                                        <div class="sl_box_image">
-                                            <img src="//via.placeholder.com/688x688" alt="" class="sl_img">
+                                            <span class="slt_text">텍스트 길이 유동 텍스트 길이 유동 텍스트 길이 유동 텍스트 길이 유동 텍스트 길이 유동 </span>
+                                            <strong class="slt_name">텍스트 최대 한줄노출입니다 텍스트 최대 한줄노출입니다 텍스트 최대 한줄노출입니다 </strong>
                                         </div>
                                     </div>
                                 </a>
                             </li>
-                            <li class="sl_inner sl_even">
+                            <li class="sl_inner">
                                 <a href="#none" class="sl_cont">
+                                    <div class="sl_box_image_w">
+                                        <div class="sl_box_image">
+                                            <img src="//via.placeholder.com/688x688" alt="" class="sl_img">
+                                        </div>
+                                    </div>
                                     <div class="sl_box_inner">
                                         <div class="sl_box_text">
                                             <div class="sl_text_top">
                                                 <span class="slt_num">04</span>
-                                                <span class="slt_info">이광기의 온오프라인 아트쇼</span>
+                                                <span class="slt_info">텍스트 길이 유동 2줄인 경우도 있습니다용</span>
                                                 <span class="slt_date">2020.8.21~8.23</span>
                                                 <span class="slt_date_text">유튜브, 네이버TV '광끼채널'</span>
                                             </div>
-                                            <span class="slt_text">온-오프라인 연계 전시판매 및 공연, 강연, 경매 등 융합예슬 행사를 진행합니다.</span>
-                                            <strong class="slt_name">스튜디오 끼</strong>
-                                            <span class="box_picker"></span>
-                                        </div>
-                                    </div>
-                                    <div class="sl_box_image_w">
-                                        <div class="sl_box_image">
-                                            <img src="//via.placeholder.com/688x688" alt="" class="sl_img">
+                                            <span class="slt_text">텍스트 길이 유동 </span>
+                                            <strong class="slt_name">칸</strong>
                                         </div>
                                     </div>
                                 </a>
                             </li>
                             <li class="sl_inner sl_odd">
                                 <a href="#none" class="sl_cont">
-                                    <div class="sl_box_inner">
-                                        <div class="sl_box_text">
-                                            <div class="sl_text_top">
-                                                <span class="slt_num">05</span>
-                                                <span class="slt_info">이광기의 온오프라인 아트쇼</span>
-                                                <span class="slt_date">2020.8.21~8.23</span>
-                                                <span class="slt_date_text">유튜브, 네이버TV '광끼채널'</span>
-                                            </div>
-                                            <span class="slt_text">온-오프라인 연계 전시판매 및 공연, 강연, 경매 등 융합예슬 행사를 진행합니다.</span>
-                                            <strong class="slt_name">스튜디오 끼</strong>
-                                            <span class="box_picker"></span>
-                                        </div>
-                                    </div>
                                     <div class="sl_box_image_w">
                                         <div class="sl_box_image">
                                             <img src="//via.placeholder.com/688x688" alt="" class="sl_img">
                                         </div>
                                     </div>
+                                    <div class="sl_box_inner">
+                                        <div class="sl_box_text">
+                                            <div class="sl_text_top">
+                                                <span class="slt_num">05</span>
+                                                <span class="slt_info">퍼블릭아트 프로모션</span>
+                                            </div>
+                                            <span class="slt_text">텍스트 길이 유동 </span>
+                                            <strong class="slt_name">칸</strong>
+                                        </div>
+                                    </div>
                                 </a>
                             </li>
-                            <li class="sl_inner sl_even">
+                            <li class="sl_inner">
                                 <a href="#none" class="sl_cont">
+                                    <div class="sl_box_image_w">
+                                        <div class="sl_box_image">
+                                            <img src="//via.placeholder.com/688x688" alt="" class="sl_img">
+                                        </div>
+                                    </div>
                                     <div class="sl_box_inner">
                                         <div class="sl_box_text">
                                             <div class="sl_text_top">
@@ -432,66 +441,11 @@
                                             </div>
                                             <span class="slt_text">온-오프라인 연계 전시판매 및 공연, 강연, 경매 등 융합예슬 행사를 진행합니다.</span>
                                             <strong class="slt_name">스튜디오 끼</strong>
-                                            <span class="box_picker"></span>
-                                        </div>
-                                    </div>
-                                    <div class="sl_box_image_w">
-                                        <div class="sl_box_image">
-                                            <img src="//via.placeholder.com/688x688" alt="" class="sl_img">
                                         </div>
                                     </div>
                                 </a>
                             </li>
-                            <li class="sl_inner sl_odd">
-                                <a href="#none" class="sl_cont">
-                                    <div class="sl_box_inner">
-                                        <div class="sl_box_text">
-                                            <div class="sl_text_top">
-                                                <span class="slt_num">01</span>
-                                                <span class="slt_info">이광기의 온오프라인 아트쇼</span>
-                                                <span class="slt_date">2020.8.21~8.23</span>
-                                                <span class="slt_date_text">유튜브, 네이버TV '광끼채널'</span>
-                                            </div>
-                                            <span class="slt_text">온-오프라인 연계 전시판매 및 공연, 강연, 경매 등 융합예슬 행사를 진행합니다.</span>
-                                            <strong class="slt_name">스튜디오 끼</strong>
-                                            <span class="box_picker"></span>
-                                        </div>
-                                    </div>
-                                    <div class="sl_box_image_w">
-                                        <div class="sl_box_image">
-                                            <img src="//via.placeholder.com/688x688" alt="" class="sl_img">
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="sl_inner sl_even">
-                                <a href="#none" class="sl_cont">
-                                    <div class="sl_box_inner">
-                                        <div class="sl_box_text">
-                                            <div class="sl_text_top">
-                                                <span class="slt_num">01</span>
-                                                <span class="slt_info">이광기의 온오프라인 아트쇼</span>
-                                                <span class="slt_date">2020.8.21~8.23</span>
-                                                <span class="slt_date_text">유튜브, 네이버TV '광끼채널'</span>
-                                            </div>
-                                            <span class="slt_text">온-오프라인 연계 전시판매 및 공연, 강연, 경매 등 융합예슬 행사를 진행합니다.</span>
-                                            <strong class="slt_name">스튜디오 끼</strong>
-                                            <span class="box_picker"></span>
-                                        </div>
-                                    </div>
-                                    <div class="sl_box_image_w">
-                                        <div class="sl_box_image">
-                                            <img src="//via.placeholder.com/688x688" alt="" class="sl_img">
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                        -->
-
-                        <!-- 가로모듈
-                        <ul class="service_list">
-                            <li class="sl_inner sl_odd">
+                            <li class="sl_inner">
                                 <a href="#none" class="sl_cont">
                                     <div class="sl_box_image_w">
                                         <div class="sl_box_image">
@@ -501,29 +455,7 @@
                                     <div class="sl_box_inner">
                                         <div class="sl_box_text">
                                             <div class="sl_text_top">
-                                                <span class="slt_num">01</span>
-                                                <span class="slt_info">이광기의 온오프라인 아트쇼</span>
-                                                <span class="slt_date">2020.8.21~8.23</span>
-                                                <span class="slt_date_text">유튜브, 네이버TV '광끼채널'</span>
-                                            </div>
-                                            <span class="slt_text">온-오프라인 연계 전시판매 및 공연, 강연, 경매 등 융합예슬 행사를 진행합니다.</span>
-                                            <strong class="slt_name">스튜디오 끼</strong>
-                                        </div>
-                                    </div>
-
-                                </a>
-                            </li>
-                            <li class="sl_inner sl_odd">
-                                <a href="#none" class="sl_cont">
-                                    <div class="sl_box_image_w">
-                                        <div class="sl_box_image">
-                                            <img src="//via.placeholder.com/688x688" alt="" class="sl_img">
-                                        </div>
-                                    </div>
-                                    <div class="sl_box_inner">
-                                        <div class="sl_box_text">
-                                            <div class="sl_text_top">
-                                                <span class="slt_num">02</span>
+                                                <span class="slt_num">07</span>
                                                 <span class="slt_info">이광기의 온오프라인 아트쇼</span>
                                                 <span class="slt_date">2020.8.21~8.23</span>
                                                 <span class="slt_date_text">유튜브, 네이버TV '광끼채널'</span>
@@ -532,10 +464,9 @@
                                             <strong class="slt_name">아트플레이스</strong>
                                         </div>
                                     </div>
-
                                 </a>
                             </li>
-                            <li class="sl_inner sl_odd">
+                            <li class="sl_inner">
                                 <a href="#none" class="sl_cont">
                                     <div class="sl_box_image_w">
                                         <div class="sl_box_image">
@@ -545,167 +476,13 @@
                                     <div class="sl_box_inner">
                                         <div class="sl_box_text">
                                             <div class="sl_text_top">
-                                                <span class="slt_num">03</span>
-                                                <span class="slt_info">이광기의 온오프라인 아트쇼</span>
-                                                <span class="slt_date">2020.8.21~8.23</span>
-                                                <span class="slt_date_text">유튜브, 네이버TV '광끼채널' 유튜브, 네이버TV '광끼채널' </span>
-                                            </div>
-                                            <span class="slt_text">텍스트 길이 유동 텍스트 길이 유동 텍스트 길이 유동 텍스트 길이 유동 텍스트 길이 유동 </span>
-                                            <strong class="slt_name">칸</strong>
-                                        </div>
-                                    </div>
-
-                                </a>
-                            </li>
-                            <li class="sl_inner sl_odd">
-                                <a href="#none" class="sl_cont">
-                                    <div class="sl_box_image_w">
-                                        <div class="sl_box_image">
-                                            <img src="//via.placeholder.com/688x688" alt="" class="sl_img">
-                                        </div>
-                                    </div>
-                                    <div class="sl_box_inner">
-                                        <div class="sl_box_text">
-                                            <div class="sl_text_top">
-                                                <span class="slt_num">04</span>
-                                                <span class="slt_info">텍스트 길이 유동 2줄인 경우도 있습니다용</span>
-                                                <span class="slt_date">2020.8.21~8.23</span>
-                                                <span class="slt_date_text">유튜브, 네이버TV '광끼채널'</span>
-                                            </div>
-                                            <span class="slt_text">텍스트 길이 유동 </span>
-                                            <strong class="slt_name">칸</strong>
-                                        </div>
-                                    </div>
-
-                                </a>
-                            </li>
-                            <li class="sl_inner sl_odd">
-                                <a href="#none" class="sl_cont">
-                                    <div class="sl_box_image_w">
-                                        <div class="sl_box_image">
-                                            <img src="//via.placeholder.com/688x688" alt="" class="sl_img">
-                                        </div>
-                                    </div>
-                                    <div class="sl_box_inner">
-                                        <div class="sl_box_text">
-                                            <div class="sl_text_top">
-                                                <span class="slt_num">05</span>
-                                                <span class="slt_info">퍼블릭아트 프로모션</span>
-                                            </div>
-                                            <span class="slt_text">텍스트 길이 유동 </span>
-                                            <strong class="slt_name">칸</strong>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                        -->
-
-                        <!-- 세로모듈 -->
-                        <ul class="service_list">
-                            <li class="sl_inner sl_odd">
-                                <a href="#none" class="sl_cont">
-                                    <div class="sl_box_image_w">
-                                        <span class="slt_num">01</span>
-                                        <div class="sl_box_image">
-                                            <img src="//via.placeholder.com/688x688" alt="" class="sl_img">
-                                        </div>
-                                    </div>
-                                    <div class="sl_box_inner">
-                                        <div class="sl_box_text">
-                                            <div class="sl_text_top">
-                                                <span class="slt_info">이광기의 온오프라인 아트쇼</span>
-                                                <span class="slt_date">2020.8.21~8.23</span>
-                                                <span class="slt_date_text">유튜브, 네이버TV '광끼채널'</span>
-                                            </div>
-                                            <span class="slt_text">온-오프라인 연계 전시판매 및 공연, 강연, 경매 등 융합예슬 행사를 진행합니다.</span>
-                                            <strong class="slt_name">스튜디오 끼</strong>
-                                        </div>
-                                    </div>
-
-                                </a>
-                            </li>
-                            <li class="sl_inner sl_odd">
-                                <a href="#none" class="sl_cont">
-                                    <div class="sl_box_image_w">
-                                        <span class="slt_num">02</span>
-                                        <div class="sl_box_image">
-                                            <img src="//via.placeholder.com/688x688" alt="" class="sl_img">
-                                        </div>
-                                    </div>
-                                    <div class="sl_box_inner">
-                                        <div class="sl_box_text">
-                                            <div class="sl_text_top">
-                                                <span class="slt_info">이광기의 온오프라인 아트쇼</span>
-                                                <span class="slt_date">2020.8.21~8.23</span>
-                                                <span class="slt_date_text">유튜브, 네이버TV '광끼채널'</span>
-                                            </div>
-                                            <span class="slt_text">온-오프라인 연계 전시판매 및 공연, 강연, 경매 등 융합예슬 행사를 진행합니다.온-오프라인 연계 전시판매 및 공연, 강연, 경매 등 융합예슬 행사를 진행합니다.</span>
-                                            <strong class="slt_name">아트플레이스</strong>
-                                        </div>
-                                    </div>
-
-                                </a>
-                            </li>
-                            <li class="sl_inner sl_odd">
-                                <a href="#none" class="sl_cont">
-                                    <div class="sl_box_image_w">
-                                        <span class="slt_num">03</span>
-                                        <div class="sl_box_image">
-                                            <img src="//via.placeholder.com/688x688" alt="" class="sl_img">
-                                        </div>
-                                    </div>
-                                    <div class="sl_box_inner">
-                                        <div class="sl_box_text">
-                                            <div class="sl_text_top">
+                                                <span class="slt_num">08</span>
                                                 <span class="slt_info">이광기의 온오프라인 아트쇼</span>
                                                 <span class="slt_date">2020.8.21~8.23</span>
                                                 <span class="slt_date_text">유튜브, 네이버TV '광끼채널' 유튜브, 네이버TV '광끼채널' </span>
                                             </div>
                                             <span class="slt_text">텍스트 길이 유동 텍스트 길이 유동 텍스트 길이 유동 텍스트 길이 유동 텍스트 길이 유동 </span>
                                             <strong class="slt_name">텍스트 최대 한줄노출입니다 텍스트 최대 한줄노출입니다 텍스트 최대 한줄노출입니다 </strong>
-                                        </div>
-                                    </div>
-
-                                </a>
-                            </li>
-                            <li class="sl_inner sl_odd">
-                                <a href="#none" class="sl_cont">
-                                    <div class="sl_box_image_w">
-                                        <span class="slt_num">04</span>
-                                        <div class="sl_box_image">
-                                            <img src="//via.placeholder.com/688x688" alt="" class="sl_img">
-                                        </div>
-                                    </div>
-                                    <div class="sl_box_inner">
-                                        <div class="sl_box_text">
-                                            <div class="sl_text_top">
-                                                <span class="slt_info">텍스트 길이 유동 2줄인 경우도 있습니다용</span>
-                                                <span class="slt_date">2020.8.21~8.23</span>
-                                                <span class="slt_date_text">유튜브, 네이버TV '광끼채널'</span>
-                                            </div>
-                                            <span class="slt_text">텍스트 길이 유동 </span>
-                                            <strong class="slt_name">칸</strong>
-                                        </div>
-                                    </div>
-
-                                </a>
-                            </li>
-                            <li class="sl_inner sl_odd">
-                                <a href="#none" class="sl_cont">
-                                    <div class="sl_box_image_w">
-                                        <span class="slt_num">05</span>
-                                        <div class="sl_box_image">
-                                            <img src="//via.placeholder.com/688x688" alt="" class="sl_img">
-                                        </div>
-                                    </div>
-                                    <div class="sl_box_inner">
-                                        <div class="sl_box_text">
-                                            <div class="sl_text_top">
-                                                <span class="slt_info">퍼블릭아트 프로모션</span>
-                                            </div>
-                                            <span class="slt_text">텍스트 길이 유동 </span>
-                                            <strong class="slt_name">칸</strong>
                                         </div>
                                     </div>
                                 </a>
@@ -771,12 +548,21 @@
 <!--#front-->
 <script type="text/javascript">
     $(document).ready(function(){
-        artggLnb();
         mainvisualSlick();
-        gnbSticky();
+
+        var mql = window.matchMedia("screen and (max-width: 720px)");
+        if (mql.matches) {
+            console.log("화면의 너비가 720px 보다 작습니다.");
+            mobileGnb();
+            mobilelnbOpen();
+        } else {
+            console.log("화면의 너비가 720px 보다 큽니다.");
+            artggLnb();
+            gnbSticky();
+        }
     });
-    $(window).resize(function() {
-    });
+
+    $(window).resize(function() {   });
 </script>
 </body>
 </html>
