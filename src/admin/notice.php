@@ -17,7 +17,7 @@ $item_row_count = 10;
 // 하단 페이지 block 수 (1, 2, 3, 4, ...  이런거)
 $page_block_count = 10;
 
-$sql = "SELECT COUNT(*) FROM artgg_notice";
+$sql = "SELECT COUNT(*) FROM artgg_notice WHERE deleted_at IS NULL";
 $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 $total_count = mysqli_fetch_array($result);
 $total_count = intval($total_count[0]);
@@ -81,15 +81,16 @@ $paging_info = getPagingInfo($page, $total_count, $item_row_count, $page_block_c
         <tbody>
             <?php
 
-            $sql  = "SELECT seq, level, title, view_count, created_at FROM artgg_notice ORDER BY seq desc LIMIT " . $paging_info['page_db'] . ", $item_row_count";
+            $sql  = "SELECT seq, level, title, view_count, created_at FROM artgg_notice WHERE deleted_at IS NULL ORDER BY seq desc LIMIT " . $paging_info['page_db'] . ", $item_row_count";
             $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
             $notice_length = $result->num_rows;
 
-            if ($notice_length > 0) {
+            if ($notice_length > 0) {                
                 while ($row = $result->fetch_array()) {
+                    $viewTitle = getNoticeListViewTitme(intval(RemoveXSS($row['level'])), RemoveXSS($row['title']));
                     echo ('<tr onclick=getNoticeInfo(' . RemoveXSS($row['seq']) . ')>');
                     echo ('    <th scope="row">' . RemoveXSS($row['seq']) . '</th>');
-                    echo ('    <td class="notice-title">' . RemoveXSS($row['title']) . '</td>');
+                    echo ('    <td class="notice-title">' . $viewTitle . '</td>');
                     echo ('    <td>' . $row['created_at'] . '</td>');
                     echo ('    <td>' . RemoveXSS($row['view_count']) . '</td>');
                     echo ('</tr>');

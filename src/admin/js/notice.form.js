@@ -42,6 +42,7 @@ function getNoticeInfo(notice_seq) {
 
 function setNoticeInfo(noticeInfo) {
     $('#notice_form_reset_btn').hide();
+    $('#notice_form_delete_btn').show();
 
     $('#notice_date_box').show();
     $('#notice_created_at').val(noticeInfo.created_at);
@@ -102,3 +103,34 @@ function goNoticeList(event) {
 
     location.href = './notice.php';
 }
+
+function doDelete(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const notice_seq = parseInt($('#notice_seq').val(), 10);
+    if (notice_seq == 0) {
+        alert('잘못된 접근 입니다.');
+        location.href = './notice.php';
+        return false;
+    }
+
+    if(confirm('공지사항글을 정말로 삭제하시겠습니까?')) {
+        $.ajax({
+            type: 'post',
+            url: './action/notice_delete.php',
+            data: { seq: notice_seq },
+            dataType: 'json',
+            success: function (result) {
+                console.log('[doDelete] result:: ', result);
+                alert(result.message);
+                location.href = './notice.php';
+            },
+            error: function (xhr, status, error) {
+                console.error('[doDelete] ajax error:: ', error);
+            },
+
+        });
+    }    
+}
+

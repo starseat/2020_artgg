@@ -342,4 +342,15 @@ function getPagingInfo($current_page, $total_item_count, $item_row_count, $page_
     );
 }
 
+function getNoticeListViewTitme($level, $title) {
+    $retViewTitle = '';
+    switch($level) {
+        case 3: { $retViewTitle = '[긴급] ' . $title; } break;
+        case 2: { $retViewTitle = '(중요) ' . $title; } break;
+        default: { $retViewTitle = $title; } break; 
+    }
+
+    return $retViewTitle;
+}
+
 ?>

@@ -6,6 +6,8 @@
     #notice_date_box {
         display: none;
     }
+
+    #notice_form_delete_btn { display: none; }
 </style>
 
 <h1 class="mt-4 mb-4">공자사항</h1>
@@ -57,6 +59,7 @@
                 <div class="col-6 text-left">
                     <button class="btn btn-info" id="notice_list_btn" onclick="goNoticeList(event)">목록</button>
                     <button class="btn btn-secondary" id="notice_form_reset_btn" onclick="doReset(event)">초기화</button>
+                    <button class="btn btn-danger" id="notice_form_delete_btn" onclick="doDelete(event)">삭제</button>
                 </div>
                 <div class="col-6 text-right">
                     <button class="btn btn-primary" onclick="doSubmit(event)">저장</button>
