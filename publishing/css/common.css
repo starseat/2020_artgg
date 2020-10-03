@@ -21,11 +21,16 @@ input,button,select {outline:none; border-radius:0;}
 .icn {position:absolute; display:block; .display:inline; .zoom:1;  font:0/0 arial; vertical-align:middle; overflow:hidden; background-repeat:no-repeat; background-color:transparent; background-image:url('../img/set_icon.png'); background-size:500px auto;}
 .wrap {background-color:#fff;}
 .container {padding:158px 100px 0;}
-    .content_inner {padding:100px 0; /*max-width:1530px;*/ box-sizing:border-box; margin:0 auto;}
+    .content_inner {padding:100px 0; max-width:1430px; box-sizing:border-box; margin:0 auto;}
         .section_box_w {max-width:1530px; margin:0 auto; box-sizing:border-box;}
-            .section_title {display:block; position:relative; padding-left:43px; height:80px; line-height:80px; font-size:78px; font-weight:800;}
+            .section_title {display:block; position:relative; padding-left:43px; height:80px; line-height:80px; font-size:78px; font-weight:800; text-transform:uppercase;}
             .section_title:after {display:block; content:''; position:Absolute; left:0; top:0; width:9px; height:100%; background-color:#000;}
-
+            /* 서브공통 타이틀 */
+            [class^="content_title"] {font-size:120px; text-transform:uppercase; font-weight:800;}
+                .content_info_text {margin-top:100px; font-size:30px; line-height:60px;}
+            /* 서브공통 타이틀 : typeb bar */
+            .content_title_b {padding-left:47px; position:relative;}
+                .content_title_b {display:block; content:''; position:absolute; left:0; top:0; width:11px; height:89px; background-color:#000;}
 /* 공통 lnb */
 .snb_current {display:block; }
 .common_gnb_w {position:fixed; left:0; top:0; z-index:100; width:100%; height:158px; padding:58px 100px 0; box-sizing:border-box; background-color:#fff;}
@@ -133,7 +138,7 @@ input,button,select {outline:none; border-radius:0;}
 .sticky .snb_bg,.sticky .slnb_inner.menu_hover .artgg_snb {top:100px;}
 
 /* 공통 : footer */
-.footer {max-width:1530px; margin:0 auto; padding:0 100px;}
+.footer {max-width:1530px; margin:240px auto 0; padding:0 100px 200px;}
     .footer_inner {display:table; width:100%; overflow:hidden;}
         [class^="footer_cont_"] {display:table-cell; vertical-align:middle; width:30%;}
         .footer_cont_l {width:40% !important; overflow:hidden;}
@@ -155,10 +160,6 @@ input,button,select {outline:none; border-radius:0;}
                         .sns_icon_insta {}
                         .sns_icon_youtube {}
                         .sns_icon_blog {}
-
-
-
-
 
 /* 메인 : 비주얼 슬릭 */
 .section_visual_w {max-width:1530px; margin:0 auto; box-sizing:border-box; }
@@ -222,6 +223,18 @@ input,button,select {outline:none; border-radius:0;}
         .info_img {display:inline-block; max-width:100%; height:auto;}
     .info_text_w {display:table-cell; padding-top:1%; padding-left:10%; max-width:980px; box-sizing:border-box; vertical-align:top; font-size:35px; line-height:1.5; font-weight:400;}
 
+/* 작가리스트 */
+.section_artistlist_w {margin-top:340px; overflow:hidden;}
+    .artist_list {position:relative; top:-82px; display:flex; flex-wrap:wrap; width:calc(100% + 82px);}
+        .al_inner {width:20%; padding:82px 82px 0 0; box-sizing:border-box;}
+            .al_cont {display:block;}
+                .artist_thumb_w {display:block;}
+                    .artist_image {display:block; width:100%;}
+
+
+
+
+
 /* 메인 : pc 중간 제어 */
 @media screen and (max-width:1350px) {
     .container{padding:158px 40px 0;}
@@ -256,6 +269,14 @@ input,button,select {outline:none; border-radius:0;}
     /* T:경기아트 소개 */
     .section_info_w {min-height:auto; margin-top:85px;}
         .info_text_w {font-size:21px;}
+
+    /* T:작가리스트 */
+    .content_info_text{margin-top:50px; }
+    .section_artistlist_w {margin-top:170px;}
+        .artist_list {top:-41px; width:calc(100% + 41px);}
+            .al_inner {width:25%; padding:41px 41px 0 0; }
+    /* T: footer */
+    .footer {margin-top:120px;}
 }
 
 /* 메인 : 모바일 제어 */

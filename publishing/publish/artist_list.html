@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="desc">
+    <title>title</title>
+    <link rel="canonical" href="https://url">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="title">
+    <meta property="og:description" content="deesc">
+    <meta property="og:url" content="url">
+    <script type="text/javascript" src="../lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../lib/slick-1.6.0.min.js"></script>
+    <script type="text/javascript" src="ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
+    <link rel="stylesheet" type="text/css" href="../css/slick.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" media="all" />
+</head>
+<body>
+<div class="wrap">
+    <!-- GNB -->
+    <div class="common_gnb_w"><!-- lnbtype_main / sticky / 모바일:gnb_open -->
+        <div class="artgg_lnb_w">
+            <h1 class="artgg_h1_logo">
+                <a href="#none" class="logolink_main">
+                    <span class="icn icon_logo_gnb"><i class="ir">아트경기</i></span>
+                </a>
+            </h1>
+            <h2 class="artgg_allmenu_w">
+                <button type="button" class="btn_allmenu">
+                    <span class="icn icon_gnb"><i class="ir">아트경기 전체메뉴</i></span>
+                </button>
+            </h2>
+            <div class="artgg_lnb_inner">
+                <ul id="lnb" class="artgg_lnb">
+                    <li class="slnb_inner"><!--활성화시 current 추가-->
+                        <a href="#none" class="slnb_link"><!--활성화시 current 추가-->
+                            <span class="slnb_txt_box">
+                                <span class="slnb_txt">
+                                    Artist
+                                </span>
+                            </span>
+                            <span class="icn icon_menu_arrow"><i class="ir">서브메뉴 보기</i></span>
+                        </a>
+                        <ul class="artgg_snb">
+                            <li class="ssnb_inner">
+                                <a href="#none" class="ssnb_link"><!-- 활성화시 ssnb_current 추가-->
+                                    <span class="ssnb_txt_box">
+                                        <span class="ssnb_txt">서브메뉴1-1</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="ssnb_inner">
+                                <a href="#none" class="ssnb_link">
+                                    <span class="ssnb_txt_box">
+                                        <span class="ssnb_txt">서브메뉴1-2</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="ssnb_inner">
+                                <a href="#none" class="ssnb_link">
+                                    <span class="ssnb_txt_box">
+                                        <span class="ssnb_txt">서브메뉴1-3</span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="slnb_inner">
+                        <a href="#none" class="slnb_link">
+                            <span class="slnb_txt_box">
+                                <span class="slnb_txt">
+                                    Program
+                                </span>
+                            </span>
+                            <span class="icn icon_menu_arrow"><i class="ir">서브메뉴 보기</i></span>
+                        </a>
+                        <ul class="artgg_snb">
+                            <li class="ssnb_inner">
+                                <a href="#none" class="ssnb_link"><!-- 활성화시 ssnb_current 추가-->
+                                    <span class="ssnb_txt_box">
+                                        <span class="ssnb_txt">서브메뉴2-1</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="ssnb_inner">
+                                <a href="#none" class="ssnb_link">
+                                    <span class="ssnb_txt_box">
+                                        <span class="ssnb_txt">서브메뉴2-2</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="ssnb_inner">
+                                <a href="#none" class="ssnb_link">
+                                    <span class="ssnb_txt_box">
+                                        <span class="ssnb_txt">서브메뉴2-3</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="ssnb_inner">
+                                <a href="#none" class="ssnb_link">
+                                    <span class="ssnb_txt_box">
+                                        <span class="ssnb_txt">서브메뉴2-4</span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="slnb_inner">
+                        <a href="#none" class="slnb_link">
+                            <span class="slnb_txt_box">
+                                <span class="slnb_txt">
+                                    Space
+                                </span>
+                            </span>
+                            <span class="icn icon_menu_arrow"><i class="ir">서브메뉴 보기</i></span>
+                        </a>
+                        <ul class="artgg_snb">
+                            <li class="ssnb_inner">
+                                <a href="#none" class="ssnb_link"><!-- 활성화시 ssnb_current 추가-->
+                                    <span class="ssnb_txt_box">
+                                        <span class="ssnb_txt">서브메뉴3-1</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="ssnb_inner">
+                                <a href="#none" class="ssnb_link">
+                                    <span class="ssnb_txt_box">
+                                        <span class="ssnb_txt">서브메뉴3-2</span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="slnb_inner">
+                        <a href="#none" class="slnb_link">
+                            <span class="slnb_txt_box">
+                                <span class="slnb_txt">
+                                    Art Shop
+                                </span>
+                            </span>
+                            <span class="icn icon_menu_arrow"><i class="ir">서브메뉴 보기</i></span>
+                        </a>
+                        <ul class="artgg_snb">
+                            <li class="ssnb_inner">
+                                <a href="#none" class="ssnb_link"><!-- 활성화시 ssnb_current 추가-->
+                                    <span class="ssnb_txt_box">
+                                        <span class="ssnb_txt">서브메뉴4-1</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="ssnb_inner">
+                                <a href="#none" class="ssnb_link">
+                                    <span class="ssnb_txt_box">
+                                        <span class="ssnb_txt">서브메뉴4-2</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="ssnb_inner">
+                                <a href="#none" class="ssnb_link">
+                                    <span class="ssnb_txt_box">
+                                        <span class="ssnb_txt">서브메뉴4-3</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="ssnb_inner">
+                                <a href="#none" class="ssnb_link">
+                                    <span class="ssnb_txt_box">
+                                        <span class="ssnb_txt">서브메뉴4-4</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="ssnb_inner">
+                                <a href="#none" class="ssnb_link">
+                                    <span class="ssnb_txt_box">
+                                        <span class="ssnb_txt">서브메뉴4-5</span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="slnb_inner">
+                        <a href="#none" class="slnb_link">
+                            <span class="slnb_txt_box">
+                                <span class="slnb_txt">
+                                    About
+                                </span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                <button type="button" class="btn_allmenu_x">
+                    <span class="icn icon_close"><i class="ir">전체메뉴 닫기</i></span>
+                </button>
+            </div>
+            <i class="snb_bg"></i>
+        </div>
+
+    </div>
+
+    <!-- 콘텐츠 -->
+    <div class="container">
+        <div class="content_inner">
+            <h2 class="content_title">Artist</h2>
+            <p class="content_info_text">
+                구나영은 한지와 먹을 주재료로, 삶의 희로애락과 일상에서 보고 듣고 경험하고 느끼며 얻은 영감들을 그려오고 있다.<br/>
+                특유의 나무 패턴들이 쌓이고 겹쳐지고 부유하면서 운동감 있는 형상을 이룬다. 수묵으로 그려진 추상적인 작품들은 감정의 스펙트럼을 표현한 것이라 할 수 있다. 작품 속 패턴들은, 나무가 숲을 이루듯 치열함 속에서도 조화를 이루고 있다. 수없이 지나간 붓질이 마음을 다독여주며, 위로와 공감을 이끌어낸다.
+            </p>
+            <div class="section_artistlist_w">
+                <ul class="artist_list">
+                    <li class="al_inner">
+                        <a href="#none" class="al_cont">
+                            <span class="artist_thumb_w">
+                                <img src="//via.placeholder.com/220x220" alt="작가명제공" class="artist_image">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="al_inner">
+                        <a href="#none" class="al_cont">
+                            <span class="artist_thumb_w">
+                                <img src="//via.placeholder.com/220x220" alt="작가명제공" class="artist_image">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="al_inner">
+                        <a href="#none" class="al_cont">
+                            <span class="artist_thumb_w">
+                                <img src="//via.placeholder.com/220x220" alt="작가명제공" class="artist_image">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="al_inner">
+                        <a href="#none" class="al_cont">
+                            <span class="artist_thumb_w">
+                                <img src="//via.placeholder.com/220x220" alt="작가명제공" class="artist_image">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="al_inner">
+                        <a href="#none" class="al_cont">
+                            <span class="artist_thumb_w">
+                                <img src="//via.placeholder.com/220x220" alt="작가명제공" class="artist_image">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="al_inner">
+                        <a href="#none" class="al_cont">
+                            <span class="artist_thumb_w">
+                                <img src="//via.placeholder.com/220x220" alt="작가명제공" class="artist_image">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="al_inner">
+                        <a href="#none" class="al_cont">
+                            <span class="artist_thumb_w">
+                                <img src="//via.placeholder.com/220x220" alt="작가명제공" class="artist_image">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="al_inner">
+                        <a href="#none" class="al_cont">
+                            <span class="artist_thumb_w">
+                                <img src="//via.placeholder.com/220x220" alt="작가명제공" class="artist_image">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="al_inner">
+                        <a href="#none" class="al_cont">
+                            <span class="artist_thumb_w">
+                                <img src="//via.placeholder.com/220x220" alt="작가명제공" class="artist_image">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="al_inner">
+                        <a href="#none" class="al_cont">
+                            <span class="artist_thumb_w">
+                                <img src="//via.placeholder.com/220x220" alt="작가명제공" class="artist_image">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="al_inner">
+                        <a href="#none" class="al_cont">
+                            <span class="artist_thumb_w">
+                                <img src="//via.placeholder.com/220x220" alt="작가명제공" class="artist_image">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="al_inner">
+                        <a href="#none" class="al_cont">
+                            <span class="artist_thumb_w">
+                                <img src="//via.placeholder.com/220x220" alt="작가명제공" class="artist_image">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="al_inner">
+                        <a href="#none" class="al_cont">
+                            <span class="artist_thumb_w">
+                                <img src="//via.placeholder.com/220x220" alt="작가명제공" class="artist_image">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="al_inner">
+                        <a href="#none" class="al_cont">
+                            <span class="artist_thumb_w">
+                                <img src="//via.placeholder.com/220x220" alt="작가명제공" class="artist_image">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="al_inner">
+                        <a href="#none" class="al_cont">
+                            <span class="artist_thumb_w">
+                                <img src="//via.placeholder.com/220x220" alt="작가명제공" class="artist_image">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="al_inner">
+                        <a href="#none" class="al_cont">
+                            <span class="artist_thumb_w">
+                                <img src="//via.placeholder.com/220x220" alt="작가명제공" class="artist_image">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="al_inner">
+                        <a href="#none" class="al_cont">
+                            <span class="artist_thumb_w">
+                                <img src="//via.placeholder.com/220x220" alt="작가명제공" class="artist_image">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="al_inner">
+                        <a href="#none" class="al_cont">
+                            <span class="artist_thumb_w">
+                                <img src="//via.placeholder.com/220x220" alt="작가명제공" class="artist_image">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="al_inner">
+                        <a href="#none" class="al_cont">
+                            <span class="artist_thumb_w">
+                                <img src="//via.placeholder.com/220x220" alt="작가명제공" class="artist_image">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="al_inner">
+                        <a href="#none" class="al_cont">
+                            <span class="artist_thumb_w">
+                                <img src="//via.placeholder.com/220x220" alt="작가명제공" class="artist_image">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="al_inner">
+                        <a href="#none" class="al_cont">
+                            <span class="artist_thumb_w">
+                                <img src="//via.placeholder.com/220x220" alt="작가명제공" class="artist_image">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="al_inner">
+                        <a href="#none" class="al_cont">
+                            <span class="artist_thumb_w">
+                                <img src="//via.placeholder.com/220x220" alt="작가명제공" class="artist_image">
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 푸터 -->
+    <div class="footer">
+        <div class="footer_inner">
+            <div class="footer_cont_l">
+                <a href="#none" class="fcl_gg" title="경기도 홈페이지 바로가기"><img src="../img/footer_01.jpg" alt="새로운 경기 공정한 세상"></a>
+                <a href="#none" class="fcl_gc" title="경기문화재단 홈페이지 바로가기"><img src="../img/footer_02.jpg" alt="경기문화재단"></a>
+            </div>
+            <div class="footer_cont_copy">
+                <strong class="fcc_copy">Copyright ⓒ 2020 아트경기</strong>
+                <span class="fcc_tel">문의 T.<a href="">031-231-7237</a></span>
+                <span class="fcc_email">artgg@cf.kr</span>
+            </div>
+            <div class="footer_cont_r">
+                <ul class="fcr_sns_list">
+                    <li class="fcr_sl_cont">
+                        <a href="#none" class="fcr_sl_link" title="공식 페이스북 바로가기">
+                            <img src="../img/sns_fb.jpg" alt="페이스북 아이콘" class="sns_icon_facebook">
+                        </a>
+                    </li>
+                    <li class="fcr_sl_cont">
+                        <a href="#none" class="fcr_sl_link" title="공식 인스타그램 바로가기">
+                            <img src="../img/sns_ig.jpg" alt="인스타그램 아이콘" class="sns_icon_insta">
+                        </a>
+                    </li>
+                    <li class="fcr_sl_cont youtube">
+                        <a href="#none" class="fcr_sl_link" title="공식 유튜브채널 바로가기">
+                            <img src="../img/sns_yt.jpg" alt="유튜브 아이콘" class="sns_icon_youtube">
+                        </a>
+                    </li>
+                    <li class="fcr_sl_cont">
+                        <a href="#none" class="fcr_sl_link" title="공식 블로그 바로가기">
+                            <img src="../img/sns_blog.jpg" alt="블로그 아이콘" class="sns_icon_blog">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--#front-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        mainvisualSlick();
+
+        var mql = window.matchMedia("screen and (max-width: 720px)");
+        if (mql.matches) {
+            console.log("화면의 너비가 720px 보다 작습니다.");
+            mobileGnb();
+            mobilelnbOpen();
+        } else {
+            console.log("화면의 너비가 720px 보다 큽니다.");
+            artggLnb();
+            gnbSticky();
+        }
+    });
+
+    $(window).resize(function() {   });
+</script>
+</body>
+</html>
