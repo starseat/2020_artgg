@@ -1,0 +1,1 @@
+INSERT INTO artgg_business (name, type, introduction) VALUES ('2020 아트 경기', 'A', '');
