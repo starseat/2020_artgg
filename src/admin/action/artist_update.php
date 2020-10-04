@@ -238,10 +238,10 @@ else if($artist_image4_saved_seq > 0) {
     $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 }
 
-viewAlert('작가 정보가 수정되었습니다.');
-//echo ('<meta http-equiv="refresh" content="0 url=../artist.php" />');
 mysqli_close($conn);
 flush();
 
+viewAlert('작가 정보가 수정되었습니다.');
+echo ('<meta http-equiv="refresh" content="0 url=../artist.php" />');
 
 ?>
