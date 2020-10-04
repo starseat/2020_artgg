@@ -23,12 +23,12 @@
                         프로그램
                     </a>
                     <div class="sb-sidenav-menu-heading">About</div>
-                    <a class="nav-link" href="artgg.php">
+                    <a class="nav-link" href="business.artgg.php">
                         <!-- <div class="sb-nav-link-icon"><i class="fas fa-newspaper"></i></div> -->
                         <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                         아트 경기
                     </a>
-                    <a class="nav-link" href="partner.php">
+                    <a class="nav-link" href="business.partner.php">
                         <div class="sb-nav-link-icon"><i class="fas fa-handshake"></i></div>
                         협력사업자
                     </a>

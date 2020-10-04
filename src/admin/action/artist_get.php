@@ -51,3 +51,5 @@ mysqli_close($conn);
 flush();
 
 echo json_encode($result_array, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+
+?>
