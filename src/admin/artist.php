@@ -51,7 +51,7 @@ $year_length = $result->num_rows;
 <br>
 
 <div class="mt-4 mb-4 container">
-    <div class="row">
+    <div class="row" id="artist-list-box">
 
         <?php
         $sql = "SELECT seq, year, name, en_name, thumbnail FROM artgg_artist ORDER BY name";
