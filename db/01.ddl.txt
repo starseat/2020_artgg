@@ -21,7 +21,7 @@ CREATE TABLE artgg_members (
 
 /**
  * 아트경기 페이지 이미지
- *  - target_type 에 main, business, artist 가 들어가며 각각의 이미지들 저장
+ *  - target_type 에 main, business, artist, program 가 들어가며 각각의 이미지들 저장
  */
 CREATE TABLE artgg_image (
 	seq BIGINT NOT NULL AUTO_INCREMENT,
@@ -87,7 +87,6 @@ CREATE TABLE artgg_program (
     name VARCHAR(256) NOT NULL,
     program_date VARCHAR(16) NOT NULL,
     place VARCHAR(256) NOT NULL,
-    img_path VARCHAR(256), 
     introduction VARCHAR(2048), 
     schedule VARCHAR(2048), 
     event VARCHAR(2048), 
