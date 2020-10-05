@@ -233,15 +233,21 @@ function doUpdate(event) {
         return false;
     }
 
-    if ($('#partner_thumbnail input[type="file"]').val() == '') {
-        alert('썸네일은 필수로 등록되어야 합니다.');
-        return false;
-    }
 
-    if ($('#partner_image input[type="file"]').val() == '') {
-        alert('대표 이미지는 필수로 등록되어야 합니다.');
-        return false;
+    if ($('#partner_thumbnail_new').val() == '1') {
+        if ($('#partner_thumbnail input[type="file"]').val() == '') {
+            alert('썸네일은 필수로 등록되어야 합니다.');
+            return false;
+        }
+    }    
+
+    if ($('#partner_image_new').val() == '1') {
+        if ($('#partner_image input[type="file"]').val() == '') {
+            alert('대표 이미지는 필수로 등록되어야 합니다.');
+            return false;
+        }
     }
+    
 
     if ($('#partner_introduction_textform').summernote('isEmpty')) {
         alert('협력사업자 소개글을 입력해주세요.');
