@@ -11,5 +11,8 @@
  * https://github.com/nolimits4web/Swiper/
  * https://swiperjs.com/          <- 유력!
  
- 작가 thumbnmail
-  * https://fengyuanchen.github.io/cropperjs/
+작가 thumbnmail
+ * https://fengyuanchen.github.io/cropperjs/
+  
+파일 업로드
+ * https://fineuploader.com/index.html
