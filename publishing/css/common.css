@@ -354,7 +354,7 @@ input,button,select {outline:none; border-radius:0;}
     /* T:작가리스트 */
     .content_info_text {margin-top:50px; font-size:21px; line-height:40px;}
     .module_image_list_w {margin-top:85px; }
-        .module_image_list {top:-28px; width:calc(100% + 28px);}
+        .module_image_list {top:-14px; width:calc(100% + 28px); }
             .mdil_inner {width:33.3%; padding:28px 28px 0 0; }
 
     /* T:프로그램리스트 */
@@ -393,7 +393,9 @@ input,button,select {outline:none; border-radius:0;}
     [class^="content_title_"]:after {width:5px;}
     .content_title_d {padding-left:20px; }
     .icn {background-image:url('../img/m_set_icn.png'); background-size:105px auto;}
-    .container {padding:75px 25px 95px;}
+    /*.container {padding:75px 25px 95px;}*/
+    .container {padding:75px 0 95px;}
+    .section_box_w {padding:0 25px;}
         .content_inner {padding:0;}
             .section_title {padding-left:25px; height:28px; line-height:28px; font-size:24px;}
             .section_title:after {width:5px;}
@@ -407,7 +409,7 @@ input,button,select {outline:none; border-radius:0;}
                 .fcr_sl_link {display:inline-block; padding:0 9px;}
 
     /* M:GNB */
-    .common_gnb_w {height:75px; padding-top:0; padding-right:0; }
+    .common_gnb_w {height:75px; padding:0;}
     .artgg_lnb_w,
     .artgg_h1_logo {height:75px;}
         .artgg_lnb_w {}
@@ -440,6 +442,7 @@ input,button,select {outline:none; border-radius:0;}
                             .menu_hover .icon_menu_arrow {background-position:0 -60px; }
 
     /* M:메인비주얼 */
+    .section_visual_w {padding:0 25px;}
     .slick_slide_list {padding-bottom:30px;}
         .slick-next {right:0;}
         .slick-prev {left:0;}
@@ -481,7 +484,7 @@ input,button,select {outline:none; border-radius:0;}
                                     .slt_name {bottom:10px; font-size:18px;}
 
     /* M:아트경기 소개 */
-    .section_info_w {margin-top:95px; min-height:auto;}
+    .section_info_w {margin-top:95px; padding:0 25px; min-height:auto; box-sizing:border-box;}
         .info_image {width:40%;}
         .info_text_w {padding-left:5%; font-size:18px;}
 
@@ -501,6 +504,10 @@ input,button,select {outline:none; border-radius:0;}
         .button_down_text+.button_down_text {margin-top:5px;}
             .btn_dw_txt {font-size:16px; padding-bottom:0;}
             .btn_dw_txt:after {height:1px;}
+    .pg_gallery_w {padding-left:25px;}
+        .pg_gallery_w .module_image_list_w {overflow:hidden; overflow-x:auto; padding-right:25px;}
+                .pg_gallery_w .module_image_list {flex-wrap:nowrap; }
+                    .pg_gallery_w .mdil_inner {flex-shrink: 0; width:110px; padding:14px 14px 0 0;}
 
 
 
