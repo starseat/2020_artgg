@@ -72,14 +72,14 @@ include('db_conn.php');
         text-align: center;
     }
 
-    #modifyContentsModalTagle tbody {
+    #modifyContentsModalTable tbody {
         display: block;
         overflow: auto;
         height: 240px;
     }
 
-    #modifyContentsModalTagle thead,
-    #modifyContentsModalTagle tbody tr {
+    #modifyContentsModalTable thead,
+    #modifyContentsModalTable tbody tr {
         display: table;
         width: 100%;
         table-layout: fixed;
@@ -208,7 +208,7 @@ include('db_conn.php');
             </div>
             <div class="modal-body">
                 <form id="modifyContentsModalForm" name="modifyContentsModalForm">
-                    <table class="table table-hover table-hover-pointer" id="modifyContentsModalTagle">
+                    <table class="table table-hover table-hover-pointer" id="modifyContentsModalTable">
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">no</th>
@@ -221,7 +221,7 @@ include('db_conn.php');
                                 <th scope="col">삭제</th>
                             </tr>
                         </thead>
-                        <tbody cla>
+                        <tbody>
                             <?php
                             if ($main_contents_count > 0) {
                                 for ($i = 0; $i < $main_contents_count; $i++) {

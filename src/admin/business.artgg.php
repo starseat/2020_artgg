@@ -89,14 +89,14 @@ $result->free();
         text-align: center;
     }
 
-    #modifyContentsModalTagle tbody {
+    #modifyContentsModalTable tbody {
         display: block;
         overflow: auto;
         height: 240px;
     }
 
-    #modifyContentsModalTagle thead,
-    #modifyContentsModalTagle tbody tr {
+    #modifyContentsModalTable thead,
+    #modifyContentsModalTable tbody tr {
         display: table;
         width: 100%;
         table-layout: fixed;
@@ -247,7 +247,7 @@ $result->free();
             </div>
             <div class="modal-body">
                 <form id="modifyContentsModalForm" name="modifyContentsModalForm">
-                    <table class="table table-hover table-hover-pointer" id="modifyContentsModalTagle">
+                    <table class="table table-hover table-hover-pointer" id="modifyContentsModalTable">
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">no</th>
@@ -260,7 +260,7 @@ $result->free();
                                 <th scope="col">삭제</th>
                             </tr>
                         </thead>
-                        <tbody cla>
+                        <tbody>
                             <?php
                             if ($artgg_contents_count > 0) {
                                 for ($i = 0; $i < $artgg_contents_count; $i++) {
