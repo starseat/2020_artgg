@@ -12,8 +12,12 @@ include('db_conn.php');
 
 $sql  = "SELECT seq, name, type, thumbnail, introduction FROM artgg_business WHERE type = 'A' LIMIT 1";
 $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+$artgg_count = $result->num_rows;
 $artgg_info = mysqli_fetch_array($result);
-$artgg_seq = intval(RemoveXSS($artgg_info['seq']));
+$artgg_seq = 0;
+if($artgg_count > 0) {
+    $artgg_seq = intval(RemoveXSS($artgg_info['seq']));
+}
 $result->free();
 
 // artgg_business.type = 'A'
@@ -169,7 +173,7 @@ $result->free();
             <div class="form-group">
                 <label for="artgg_introduction_textform"><strong>소개글</strong></label>
                 <div id="artgg_introduction_textform" class="form-control"></div>
-                <textarea id="artgg_introduction" name="artgg_introduction"><?php echo (RemoveXSS($artgg_info['introduction'])); ?></textarea>
+                <textarea id="artgg_introduction" name="artgg_introduction"><?php if($artgg_seq > 0) { echo (RemoveXSS($artgg_info['introduction'])); } ?></textarea>
             </div>
             <div class="row">
                 <div class="col-6"></div>
