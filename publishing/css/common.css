@@ -280,22 +280,27 @@ input,button,select {outline:none; border-radius:0;}
 
 /* 서브: 프로그램 엔드 */
 .section_program_w {}
-    .program_poster_w {}
-        .poster_image {}
-    .program_name_w {}
-        .pn_title {display:block;}
-        .pn_collaborate {display:block;}
-        .pn_date {display:block;}
+    .program_poster_w {margin-top:80px; }
+        .poster_image {display:block; max-width:100%;}
+    .program_name_w {margin-top:30px; font-size:70px; font-weight:800;}
+        .pn_title {display:inline-block; font-weight:800;}
+        .pn_collaborate {display:inline-block; margin-left:25px; padding-left:50px; position:relative;}
+        .pn_collaborate:after {display:block; content:''; position:absolute; left:0; top:20%; width:7px; height:60%; background-color:#000;}
+        .pn_date {display:block; margin-top:10px; font-size:54px; color:#53ae6e;}
     .program_info_text_w {}
         .program_info_box {margin-top:170px;}
             .info_title {display:block; font-size:40px; color:#53ae6e; font-weight:800;}
-            .info_cont {display:block; font-size:30px; color:#000; line-height:60px;}
+            .info_cont {display:block; font-size:30px; color:#000; line-height:60px; font-weight:700;}
+    /* 갤러리 */
     .pg_gallery_w .module_image_list_w {margin-top:10px;}
         .program_down_w {margin-top:340px;}
             .button_down_text {display:block; font-size:40px; font-weight:700; color:#53ae6e; }
+            .button_down_text+.button_down_text {margin-top:10px;}
                 .btn_dw_txt {display:inline-block; position:relative; padding-bottom:2px;}
                 .btn_dw_txt:after {display:block; content:''; position:Absolute; left:0; bottom:0; width:100%; height:3px; background-color:#53ae6e;}
-
+    /* 오시는길 */
+    .roadmap_box {width:100%; height:auto; min-height:415px; position:relative;}
+    .roadmap_box:after {display:block; content:''; position:Absolute; left:0; top:0; box-sizing:border-box; width:100%; height:100%; border:1px solid rgba(0,0,0,0.05); }
 
 
 
@@ -313,16 +318,21 @@ input,button,select {outline:none; border-radius:0;}
 
 /* 메인 : 태블릿 제어 */
 @media screen and (max-width:970px) {
+    /* T:GNB  */
+    .common_gnb_w{padding:28px 25px 0;}
+    .artgg_h1_logo {width:170px;}
+        .icon_logo_gnb {margin-top:-16px; width:104px; height:32px; background-position:0 0;}
+    .artgg_lnb_inner {width:calc(100% - 170px);  height:100px;}
+        .artgg_lnb_w {height:100px;}
+
     /* T:공통 */
+    .icn {background-image:url('../img/t_set_icn.png'); background-size:210px auto;}
     .container {padding:158px 25px 0;}
         .content_inner {padding:0;}
             [class^="content_title"] {font-size:47px; line-height:45px;}
+            [class^="content_title_"]:after {width:7px;}
+            .content_title_d {margin-top:25px; padding-left:27px; font-size:35px; height:40px !important; line-height:40px !important;}
 
-    /* T:GNB */
-    .artgg_lnb_w {height:100px;}
-    .artgg_h1_logo {width:215px;}
-    .artgg_lnb_inner {width:calc(100% - 215px); height:100px;}
-        .common_gnb_w{padding:58px 25px 0;}
     /* T:푸터 */
     .footer {padding:0 25px;}
     /* T:공지사항 */
@@ -344,7 +354,7 @@ input,button,select {outline:none; border-radius:0;}
     /* T:작가리스트 */
     .content_info_text {margin-top:50px; font-size:21px; line-height:40px;}
     .module_image_list_w {margin-top:85px; }
-        .module_image_list {top:-28px; width:calc(100% + 28px);}
+        .module_image_list {top:-14px; width:calc(100% + 28px); }
             .mdil_inner {width:33.3%; padding:28px 28px 0 0; }
 
     /* T:프로그램리스트 */
@@ -357,6 +367,20 @@ input,button,select {outline:none; border-radius:0;}
             [class^="ptext_"] {font-size:21px !important;}
             .ptext_name {font-size:30px !important;}
             .ptext_name:after {height:34px; top:0;}
+    /* T:프로그램엔드 */
+    .program_poster_w {margin-top:50px;}
+        .program_name_w {margin-top:25px;}
+            .pn_collaborate {margin-left:20px; padding-left:30px;}
+            .pn_collaborate:after {width:6px;}
+    .program_name_w {font-size:35px;}
+        .pn_date {margin-top:5px; font-size:30px;}
+        .program_info_box {margin-top:85px;}
+            .info_title {font-size:31px;}
+            .info_cont {font-size:21px; line-height:40px;}
+        .program_down_w {margin-top:85px;}
+            .button_down_text {font-size:31px;}
+
+
 
     /* T: footer */
     .footer {margin-top:85px;}
@@ -365,8 +389,13 @@ input,button,select {outline:none; border-radius:0;}
 /* 메인 : 모바일 제어 */
 @media screen and (max-width:720px) {
     /* M:공통 */
+    [class^="content_title"] {line-height:28px; font-size:24px;}
+    [class^="content_title_"]:after {width:5px;}
+    .content_title_d {padding-left:20px; }
     .icn {background-image:url('../img/m_set_icn.png'); background-size:105px auto;}
-    .container {padding:75px 25px 95px;}
+    /*.container {padding:75px 25px 95px;}*/
+    .container {padding:75px 0 95px;}
+    .section_box_w {padding:0 25px;}
         .content_inner {padding:0;}
             .section_title {padding-left:25px; height:28px; line-height:28px; font-size:24px;}
             .section_title:after {width:5px;}
@@ -374,10 +403,13 @@ input,button,select {outline:none; border-radius:0;}
     [class^="footer_cont_"] {display:block; float:left;}
         .footer_cont_l {width:54% !important;}
         .footer_cont_copy {width:46% !important; padding-left:15px; box-sizing:border-box; font-size:11px;}
-        .footer_cont_r {width:54% !important; padding-top:28px; float:none; clear:both;}
+        .footer_cont_r {width:54% !important; padding-top:28px; padding-bottom:40px; float:none; clear:both;}
             .fcr_sl_cont {width:25%;}
+            .footer_cont_l img {display:block; width:100%;}
+                .fcr_sl_link {display:inline-block; padding:0 9px;}
+
     /* M:GNB */
-    .common_gnb_w {height:75px; padding-top:0; padding-right:0; }
+    .common_gnb_w {height:75px; padding:0;}
     .artgg_lnb_w,
     .artgg_h1_logo {height:75px;}
         .artgg_lnb_w {}
@@ -410,6 +442,7 @@ input,button,select {outline:none; border-radius:0;}
                             .menu_hover .icon_menu_arrow {background-position:0 -60px; }
 
     /* M:메인비주얼 */
+    .section_visual_w {padding:0 25px;}
     .slick_slide_list {padding-bottom:30px;}
         .slick-next {right:0;}
         .slick-prev {left:0;}
@@ -451,9 +484,33 @@ input,button,select {outline:none; border-radius:0;}
                                     .slt_name {bottom:10px; font-size:18px;}
 
     /* M:아트경기 소개 */
-    .section_info_w {margin-top:95px; min-height:auto;}
+    .section_info_w {margin-top:95px; padding:0 25px; min-height:auto; box-sizing:border-box;}
         .info_image {width:40%;}
         .info_text_w {padding-left:5%; font-size:18px;}
+
+    /* M:프로그램엔드 */
+    .content_title_d {margin-top:10px; padding-left:20px; height:20px !important; line-height:20px !important; font-size:18px;}
+    .program_poster_w {margin-top:25px;}
+    .pn_collaborate {margin-left:8px; padding-left:17px;}
+    .pn_collaborate:after {width:4px;}
+    .program_name_w {margin-top:14px; font-size:18px;}
+        .pn_date {font-size:15px;}
+        .program_info_box {margin-top:45px;}
+            .info_title {font-size:15px;}
+            .info_cont {font-size:12px; line-height:24px;}
+            .roadmap_box {min-height:215px;}
+    .program_down_w {margin-top:55px;}
+        .button_down_text {height:26px; line-height:20px;}
+        .button_down_text+.button_down_text {margin-top:5px;}
+            .btn_dw_txt {font-size:16px; padding-bottom:0;}
+            .btn_dw_txt:after {height:1px;}
+    .pg_gallery_w {padding-left:25px;}
+        .pg_gallery_w .module_image_list_w {overflow:hidden; overflow-x:auto; padding-right:25px;}
+                .pg_gallery_w .module_image_list {flex-wrap:nowrap; }
+                    .pg_gallery_w .mdil_inner {flex-shrink: 0; width:110px; padding:14px 14px 0 0;}
+
+
+
 
 }
 
