@@ -12,7 +12,7 @@ include('db_conn.php');
 <div class="container">
     <div class="content_inner">
         <div class="section_visual_w">
-            <div class="swiper-container swiper-youtube-container">
+            <div id="main-swiper-container" class="swiper-container swiper-youtube-container">
                 <div class="swiper-wrapper">
                     <?php
                     $sql  = "SELECT seq, sort, file_name, upload_path, storage_type, image_type FROM artgg_image WHERE target_type = 'main' ORDER BY sort";
@@ -32,10 +32,10 @@ include('db_conn.php');
 
 
                             if ($row['image_type'] == 'I') {
-                                // echo ('<div class="swiper-slide" style="background-image:url(' . RemoveXSS($row['upload_path']) . ')">');
-                                echo ('<div class="swiper-slide">');
-                                echo ('<img class="swiper-lazy" src="' . RemoveXSS($row['upload_path']) . '">');
-                                echo ('</div>');
+                                echo ('<div class="swiper-slide" style="background-image:url(' . getImagePath(RemoveXSS($row['upload_path'])) . ')"></div>');
+                                // echo ('<div class="swiper-slide">');
+                                // echo ('<img class="swiper-lazy" src="' . RemoveXSS($row['upload_path']) . '">');
+                                // echo ('</div>');
                             } else if ($row['image_type'] == 'V') {
                                 echo ('<div class="swiper-slide">');
                                 echo ('<div class="swiper-video-container" data-id="' . RemoveXSS($row['file_name']) . '">');
@@ -94,22 +94,27 @@ include('db_conn.php');
             <div class="notice_cont_r">
                 <div class="notice_slide_w">
                     <div id="artist-thumb-swiper-container">
-                        <?php
+                        <div class="swiper-wrapper ssl_inner">
 
-                        $sql = "SELECT seq, year, name, en_name, thumbnail FROM artgg_artist ORDER BY name";
-                        $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
-                        $artist_length = $result->num_rows;
+                            <?php
+                            $sql = "SELECT seq, year, name, en_name, thumbnail FROM artgg_artist ORDER BY name";
+                            $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+                            $artist_length = $result->num_rows;
 
-                        echo ('<div class="swiper-wrapper">');
-                        if ($artist_length > 0) {
-                            while ($artist_info = $result->fetch_array()) {
-                                echo ('<div class="swiper-slide" style="background-image:url(' . getImagePath(RemoveXSS($artist_info['thumbnail'])) . ')"></div>');
+                            if ($artist_length > 0) {
+                                while ($artist_info = $result->fetch_array()) {
+                                    echo ('<div class="swiper-slide" style="background-image:url(' . getImagePath(RemoveXSS($artist_info['thumbnail'])) . ')"></div>');
+                                }
                             }
-                        } else {
-                        }
 
-                        $result->free();
-                        ?>
+                            $result->free();
+                            ?>
+                        </div>
+                        <!-- Add Pagination -->
+                        <div id="artist-thumb-swiper-pagination"></div>
+                        <!-- Add Arrows -->
+                        <!-- <div id="artist-thumb-swiper-button-prev" class="swiper-button-prev"></div>
+                        <div id="artist-thumb-swiper-button-next" class="swiper-button-next"></div> -->
                     </div>
                 </div> <!-- .notice_slide_w -->
             </div>
@@ -154,7 +159,7 @@ include('db_conn.php');
                             echo ('    </a>');
                             echo ('</li>');
                         }
-                    } 
+                    }
 
                     $result->free();
                     ?>

@@ -20,11 +20,11 @@ $(document).ready(function () {
 function initSwiper(mode) {
     const swiperOption = {
         // spaceBetween: 30,
-        centeredSlides: true,
+        // centeredSlides: true,
         lazy: true,
         loop: true,
-        watchSlidesVisibility: true,
-        watchSlidesProgress: true,
+        // watchSlidesVisibility: true,
+        // watchSlidesProgress: true,
         // loopFillGroupWithBlank: true,
         // autoplay: {
         //     delay: 2500,
@@ -43,11 +43,11 @@ function initSwiper(mode) {
         //debugger: true,
     };
 
-    let swiper = null;
+    let mainSwiper = null;
     if (mode == 'youtube') {
         initSwiper_youtube();
 
-        swiper = new Swiper('.swiper-container', swiperOption).on('slideChange', function () {
+        mainSwiper = new Swiper('#main-swiper-container', swiperOption).on('slideChange', function () {
             const isVideo = swiper.slides[swiper.previousIndex].querySelector('.swiper-video-container');
             if (isVideo) {
                 YT.get(isVideo.querySelector('iframe').id).stopVideo();
@@ -56,23 +56,30 @@ function initSwiper(mode) {
         });
     } else {
         // Init Swiper
-        swiper = new Swiper('.swiper-container', swiperOption);
+        mainSwiper = new Swiper('#main-swiper-container', swiperOption);
     }
 
     // artist swiper
     let artistSwiper = new Swiper('#artist-thumb-swiper-container', {
-        effect: 'cube',
-        grabCursor: true,
-        loop: true,
+        effect: 'cube',         
         cubeEffect: {
             shadow: true,
             slideShadows: true,
             shadowOffset: 20,
             shadowScale: 0.94,
         },
+
+        // effect: 'flip',
+
+        loop: true,
+        grabCursor: true,
         pagination: {
-            el: '.swiper-pagination',
+            el: '#artist-thumb-swiper-pagination',
         },
+        // navigation: {
+        //     nextEl: '.swiper-button-next',
+        //     prevEl: '.swiper-button-prev',
+        // },
     });
 }
 
@@ -121,9 +128,4 @@ function initSwiper_youtube() {
             initPlayer(container[i])
         }
     };
-}
-
-
-function getNoticeInfo(notice_seq) {
-
 }
