@@ -1,11 +1,5 @@
 <?php require_once('./fragment/header.php'); ?>
 
-<?php
-
-include('common.php');
-include('db_conn.php');
-?>
-
 <link rel="stylesheet" type="text/css" href="./css/main.css" media="all" />
 
 <!-- 콘텐츠 -->
@@ -18,19 +12,8 @@ include('db_conn.php');
                     $sql  = "SELECT seq, sort, file_name, upload_path, storage_type, image_type FROM artgg_image WHERE target_type = 'main' ORDER BY sort";
                     $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
                     $main_contents_count = $result->num_rows;
-                    $main_contents_list = array();
                     if ($main_contents_count > 0) {
                         while ($row = $result->fetch_array()) {
-                            array_push($main_contents_list, [
-                                'seq' => $row['seq'],
-                                'sort' => $row['sort'],
-                                'file_name' => $row['file_name'],
-                                'upload_path' => $row['upload_path'],
-                                'storage_type' => $row['storage_type'],
-                                'image_type' => $row['image_type']
-                            ]);
-
-
                             if ($row['image_type'] == 'I') {
                                 echo ('<div class="swiper-slide" style="background-image:url(' . getImagePath(RemoveXSS($row['upload_path'])) . ')"></div>');
                                 // echo ('<div class="swiper-slide">');
@@ -76,7 +59,7 @@ include('db_conn.php');
                         while ($row = $result->fetch_array()) {
                             $viewTitle = getNoticeListViewTitme(intval(RemoveXSS($row['level'])), RemoveXSS($row['title']));
                             echo ('<li class="nl_inner">');
-                            echo ('<a href="./notice_detail?seq=' . RemoveXSS($row['seq']) . '" class="nl_cont">');
+                            echo ('<a href="./notice_detail.php?seq=' . RemoveXSS($row['seq']) . '" class="nl_cont">');
                             echo ('<strong class="nl_text">' . $viewTitle . '</strong>');
                             echo ('<span class="nl_date">' . $row['created_at'] . '</span>');
                             echo ('</a>');
@@ -138,7 +121,7 @@ include('db_conn.php');
                     if ($program_length > 0) {
                         while ($row = $result->fetch_array()) {
                             echo ('<li class="sl_inner">');
-                            echo ('    <a href="./program_detail?seq=' . RemoveXSS($row['seq']) . '" class="sl_cont">');
+                            echo ('    <a href="./program_detail.php?seq=' . RemoveXSS($row['seq']) . '" class="sl_cont">');
                             echo ('        <div class="sl_box_image_w">');
                             echo ('            <div class="sl_box_image">');
                             echo ('                <img src="' . getImagePath(RemoveXSS($row['thumbnail'])) . '" alt="" class="sl_img">');
@@ -197,11 +180,6 @@ include('db_conn.php');
 </div>
 
 </div>
-
-<?php
-mysqli_close($conn);
-flush();
-?>
 
 <?php require_once('./fragment/footer.php'); ?>
 
