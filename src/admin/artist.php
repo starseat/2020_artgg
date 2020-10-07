@@ -54,7 +54,7 @@ $year_length = $result->num_rows;
     <div class="row" id="artist-list-box">
 
         <?php
-        $sql = "SELECT seq, year, name, en_name, thumbnail FROM artgg_artist ORDER BY name";
+        $sql = "SELECT seq, year, name, en_name, thumbnail FROM artgg_artist WHERE name != 'artist_greeting' ORDER BY name";
         $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
         $artist_length = $result->num_rows;
 
