@@ -478,7 +478,7 @@ input,button,select {outline:none; border-radius:0;}
                  .nl_text:after {width:5px;}
                  .nl_text,.nl_date {padding-left:25px;}
 
-    /* M:추진사업 */
+    /* M:추진사업
     .section_service_w {margin-top:95px;}
         .service_list {display:block; width:100%;}
             .sl_inner {width:100%; padding-right:0;}
@@ -496,7 +496,13 @@ input,button,select {outline:none; border-radius:0;}
                                     .slt_date_text,
                                     .slt_text {font-size:12px; line-height:15px;}
                                     .slt_num {top:-14px; font-size:20px;}
-                                    .slt_name {bottom:10px; font-size:18px;}
+                                    .slt_name {bottom:10px; font-size:18px;}*/
+
+    /* M:추진사업 */
+    .service_list_w {overflow:hidden; overflow-x:auto; margin-left:25px;}
+        .service_list {flex-wrap:nowrap; }
+            .sl_inner {flex-shrink: 0; width:220px; padding:0 15px 0 0;}
+
 
     /* M:아트경기 소개 */
     .section_info_w {margin-top:95px; padding:0 25px; min-height:auto; box-sizing:border-box;}
