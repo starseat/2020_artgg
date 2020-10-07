@@ -39,6 +39,11 @@
 
 </div>
 
+<?php
+mysqli_close($conn);
+flush();
+?>
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script type="text/javascript" src="./vendor/slick-1.6.0.min.js"></script>

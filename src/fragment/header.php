@@ -2,6 +2,11 @@
 require_once('head.php');
 ?>
 
+<?php
+include('./common.php');
+include('./db_conn.php');
+?>
+
 <body>
     <div class="wrap">
         <!-- GNB -->
@@ -9,7 +14,7 @@ require_once('head.php');
             <!-- lnbtype_main / sticky / 모바일:gnb_open -->
             <div class="artgg_lnb_w">
                 <h1 class="artgg_h1_logo">
-                    <a href="#none" class="logolink_main">
+                    <a href="./index.php" class="logolink_main">
                         <span class="icn icon_logo_gnb"><i class="ir">아트경기</i></span>
                     </a>
                 </h1>
@@ -22,7 +27,7 @@ require_once('head.php');
                     <ul id="lnb" class="artgg_lnb">
                         <li class="slnb_inner">
                             <!--활성화시 current 추가-->
-                            <a href="#none" class="slnb_link">
+                            <a href="./artist.php" class="slnb_link">
                                 <!--활성화시 current 추가-->
                                 <span class="slnb_txt_box">
                                     <span class="slnb_txt">
@@ -33,31 +38,16 @@ require_once('head.php');
                             </a>
                             <ul class="artgg_snb">
                                 <li class="ssnb_inner">
-                                    <a href="#none" class="ssnb_link">
-                                        <!-- 활성화시 ssnb_current 추가-->
+                                    <a href="./artist.php" class="ssnb_link">
                                         <span class="ssnb_txt_box">
-                                            <span class="ssnb_txt">서브메뉴1-1</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="ssnb_inner">
-                                    <a href="#none" class="ssnb_link">
-                                        <span class="ssnb_txt_box">
-                                            <span class="ssnb_txt">서브메뉴1-2</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="ssnb_inner">
-                                    <a href="#none" class="ssnb_link">
-                                        <span class="ssnb_txt_box">
-                                            <span class="ssnb_txt">서브메뉴1-3</span>
+                                            <span class="ssnb_txt">전체 작가</span>
                                         </span>
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="slnb_inner">
-                            <a href="#none" class="slnb_link">
+                            <a href="./program.php" class="slnb_link">
                                 <span class="slnb_txt_box">
                                     <span class="slnb_txt">
                                         Program
@@ -66,39 +56,31 @@ require_once('head.php');
                                 <span class="icn icon_menu_arrow"><i class="ir">서브메뉴 보기</i></span>
                             </a>
                             <ul class="artgg_snb">
-                                <li class="ssnb_inner">
-                                    <a href="#none" class="ssnb_link">
-                                        <!-- 활성화시 ssnb_current 추가-->
-                                        <span class="ssnb_txt_box">
-                                            <span class="ssnb_txt">서브메뉴2-1</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="ssnb_inner">
-                                    <a href="#none" class="ssnb_link">
-                                        <span class="ssnb_txt_box">
-                                            <span class="ssnb_txt">서브메뉴2-2</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="ssnb_inner">
-                                    <a href="#none" class="ssnb_link">
-                                        <span class="ssnb_txt_box">
-                                            <span class="ssnb_txt">서브메뉴2-3</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="ssnb_inner">
-                                    <a href="#none" class="ssnb_link">
-                                        <span class="ssnb_txt_box">
-                                            <span class="ssnb_txt">서브메뉴2-4</span>
-                                        </span>
-                                    </a>
-                                </li>
+                                <?php
+
+                                $sql = "SELECT seq, year, name FROM artgg_program WHERE year = (SELECT max(year) FROM artgg_program) ORDER BY name ASC";
+                                $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+                                $program_count = $result->num_rows;
+
+                                if ($program_count > 0) {
+                                    while ($row = $result->fetch_array()) {
+                                        echo ('<li class="ssnb_inner">');
+                                        echo ('    <a href="./program_detail?seq=' . RemoveXSS($row['seq']) . '" class="ssnb_link">');
+                                        echo ('        <span class="ssnb_txt_box">');
+                                        echo ('            <span class="ssnb_txt">' . RemoveXSS($row['name']) . '</span>');
+                                        echo ('        </span>');
+                                        echo ('    </a>');
+                                        echo ('</li>');
+                                    }
+                                }
+
+                                $result->free();
+
+                                ?>
                             </ul>
                         </li>
                         <li class="slnb_inner">
-                            <a href="#none" class="slnb_link">
+                            <a href="./viewingroom.php" class="slnb_link">
                                 <span class="slnb_txt_box">
                                     <span class="slnb_txt">
                                         Space
@@ -108,17 +90,17 @@ require_once('head.php');
                             </a>
                             <ul class="artgg_snb">
                                 <li class="ssnb_inner">
-                                    <a href="#none" class="ssnb_link">
+                                    <a href="./viewingroom.php" class="ssnb_link">
                                         <!-- 활성화시 ssnb_current 추가-->
                                         <span class="ssnb_txt_box">
-                                            <span class="ssnb_txt">서브메뉴3-1</span>
+                                            <span class="ssnb_txt">뷰잉 룸</span>
                                         </span>
                                     </a>
                                 </li>
                                 <li class="ssnb_inner">
-                                    <a href="#none" class="ssnb_link">
+                                    <a href="./mediaroom.php" class="ssnb_link">
                                         <span class="ssnb_txt_box">
-                                            <span class="ssnb_txt">서브메뉴3-2</span>
+                                            <span class="ssnb_txt">미디어 룸</span>
                                         </span>
                                     </a>
                                 </li>
@@ -128,58 +110,46 @@ require_once('head.php');
                             <a href="#none" class="slnb_link">
                                 <span class="slnb_txt_box">
                                     <span class="slnb_txt">
-                                        Art Shop
+                                        Art Shop (준비중)
+                                    </span>
+                                </span>
+                                <span class="icn icon_menu_arrow"><i class="ir">서브메뉴 보기</i></span>
+                            </a>
+                        </li>
+                        <li class="slnb_inner">
+                            <a href="./about.php" class="slnb_link">
+                                <span class="slnb_txt_box">
+                                    <span class="slnb_txt">
+                                        About
                                     </span>
                                 </span>
                                 <span class="icn icon_menu_arrow"><i class="ir">서브메뉴 보기</i></span>
                             </a>
                             <ul class="artgg_snb">
                                 <li class="ssnb_inner">
-                                    <a href="#none" class="ssnb_link">
-                                        <!-- 활성화시 ssnb_current 추가-->
+                                    <a href="./about.php" class="ssnb_link">
                                         <span class="ssnb_txt_box">
-                                            <span class="ssnb_txt">서브메뉴4-1</span>
+                                            <span class="ssnb_txt">사업 소개</span>
                                         </span>
                                     </a>
                                 </li>
                                 <li class="ssnb_inner">
-                                    <a href="#none" class="ssnb_link">
+                                    <a href="./notice.php" class="ssnb_link">
                                         <span class="ssnb_txt_box">
-                                            <span class="ssnb_txt">서브메뉴4-2</span>
+                                            <span class="ssnb_txt">공지사항</span>
                                         </span>
                                     </a>
                                 </li>
+                                <!--
                                 <li class="ssnb_inner">
-                                    <a href="#none" class="ssnb_link">
+                                    <a href="./news.php" class="ssnb_link">
                                         <span class="ssnb_txt_box">
-                                            <span class="ssnb_txt">서브메뉴4-3</span>
+                                            <span class="ssnb_txt">보도자료</span>
                                         </span>
                                     </a>
                                 </li>
-                                <li class="ssnb_inner">
-                                    <a href="#none" class="ssnb_link">
-                                        <span class="ssnb_txt_box">
-                                            <span class="ssnb_txt">서브메뉴4-4</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="ssnb_inner">
-                                    <a href="#none" class="ssnb_link">
-                                        <span class="ssnb_txt_box">
-                                            <span class="ssnb_txt">서브메뉴4-5</span>
-                                        </span>
-                                    </a>
-                                </li>
+                                -->
                             </ul>
-                        </li>
-                        <li class="slnb_inner">
-                            <a href="#none" class="slnb_link">
-                                <span class="slnb_txt_box">
-                                    <span class="slnb_txt">
-                                        About
-                                    </span>
-                                </span>
-                            </a>
                         </li>
                     </ul>
                     <button type="button" class="btn_allmenu_x">
