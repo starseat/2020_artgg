@@ -1,3 +1,21 @@
+ $(document).ready(function () {
+    mainvisualSlick();
+
+    var mql = window.matchMedia("screen and (max-width: 720px)");
+    if (mql.matches) {
+        //console.log("화면의 너비가 720px 보다 작습니다.");
+        mobileGnb();
+        mobilelnbOpen();
+    } else {
+        //console.log("화면의 너비가 720px 보다 큽니다.");
+        artggLnb();
+        gnbSticky();
+    }
+});
+
+$(window).resize(function () {});
+
+
 function isEmpty(param) {
     // 일반적인 비어있는지 검사
     if (!param || param == null || param == undefined || param == '' || param.length == 0) {
@@ -42,4 +60,5 @@ function isNumeric(num, opt) {
         return false;
     }
 }
+
 

@@ -1,17 +1,4 @@
 $(document).ready(function () {
-    mainvisualSlick();
-
-    var mql = window.matchMedia("screen and (max-width: 720px)");
-    if (mql.matches) {
-        //console.log("화면의 너비가 720px 보다 작습니다.");
-        mobileGnb();
-        mobilelnbOpen();
-    } else {
-        //console.log("화면의 너비가 720px 보다 큽니다.");
-        artggLnb();
-        gnbSticky();
-    }
-
     initSwiper('youtube');
 });
 
