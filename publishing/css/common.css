@@ -146,7 +146,7 @@ input,button,select {outline:none; border-radius:0;}
 .sticky .snb_bg,.sticky .slnb_inner.menu_hover .artgg_snb {top:100px;}
 
 /* 공통 : footer */
-.footer {max-width:1530px; margin:240px auto 0; padding:0 100px 200px;}
+.footer {max-width:1530px; margin:0 auto 0; padding:0 100px 200px;}
     .footer_inner {display:table; width:100%; overflow:hidden;}
         [class^="footer_cont_"] {display:table-cell; vertical-align:middle; width:30%;}
         .footer_cont_l {width:40% !important; overflow:hidden;}
@@ -210,7 +210,7 @@ input,button,select {outline:none; border-radius:0;}
                 .sl_cont {position:relative; display:block; height:100%; color:#6b6b6b; }
                     .sl_box_inner {width:100%; box-sizing:border-box;}
                         .sl_box_text {position:relative; padding:12% 9% 70px; min-height:305px; box-sizing:border-box;}
-                            .sl_text_top {position:relative; z-index:2; padding-right:30%; line-height:1.4; font-family:'malgun gothic','맑은 고딕', sans-serif}
+                            .sl_text_top {position:relative; z-index:2; padding-right:30%; line-height:1.4; /*font-family:'malgun gothic','맑은 고딕', sans-serif;*/}
                                 .slt_num {position:absolute; right:0; top:0; display:inline-block; height:45px; line-height:45px; font-size:3em; font-weight:800; color:#6b6b6b; font-family:'NanumSquare';}
                                 .slt_info {position:relative; display:block; padding-top:20px; font-size:15px; font-weight:800; letter-spacing:-0.06em;}
                                 .slt_info:after {display:block; content:''; position:Absolute; left:0; top:0; width:26px; height:2px; background-color:#6b6b6b;}
@@ -499,13 +499,21 @@ input,button,select {outline:none; border-radius:0;}
                                     .slt_name {bottom:10px; font-size:18px;}*/
 
     /* M:추진사업 */
-    .service_list_w {overflow:hidden; overflow-x:auto; margin-left:25px;}
+    .service_list_w {overflow:hidden; overflow-x:auto; margin-left:25px; }
         .service_list {flex-wrap:nowrap; }
             .sl_inner {flex-shrink: 0; width:220px; padding:0 15px 0 0;}
-
+            .sl_cont {color:#999;}
+                .sl_box_text {position:static; padding-bottom:50px; min-height:auto;}
+                    .sl_text_top {padding-right:0;}
+                        .slt_num {top:-20px; font-size:20px; color:#999;}
+                        .slt_info {font-size:14px;}
+                        .slt_info:after {background-color:#999;}
+                        .slt_text {height:auto; max-height:55px; font-size:12px;}
+                        .slt_date, .slt_date_text {font-size:12px; font-weight:700;}
+                        .slt_name {font-size:20px;}
 
     /* M:아트경기 소개 */
-    .section_info_w {margin-top:95px; padding:0 25px; min-height:auto; box-sizing:border-box;}
+    .section_info_w {margin-top:95px; min-height:auto; box-sizing:border-box;}
         .info_image {width:40%;}
         .info_text_w {padding-left:5%; font-size:18px;}
     /* M:프로그램리스트 */
