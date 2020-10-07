@@ -1,5 +1,17 @@
 <?php
 
+function isEmpty($value) {
+    if (isset($value) && !empty($value) && $value != null && $value != '') {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function viewAlert($message) {
+    echo ("<script>alert('$message');</script>");
+}
+
 function SQLFiltering($sql){
     // 해킹 공격을 대비하기 위한 코드
     $sql = preg_replace("/\s{1,}1\=(.*)+/", "", $sql); // 공백이후 1=1이 있을 경우 제거
