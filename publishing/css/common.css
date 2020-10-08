@@ -153,7 +153,7 @@ input,button,select {outline:none; border-radius:0;}
             .footer_cont_l [class^="fcl_"] {width:50%; float:left;}
             .fcl_gg {}
             .fcl_gc {}
-        .footer_cont_copy {}
+        .footer_cont_copy {padding-left:5%;}
             .footer_cont_copy [class^="fcc_"] {display:inline-block;}
                 .fcc_copy {display:block !important; }
                 .fcc_tel{}
@@ -162,7 +162,7 @@ input,button,select {outline:none; border-radius:0;}
             .fcr_sns_list {overflow:hidden;}
                 .fcr_sl_cont {float:left; width:24%; text-align:right;}
                 .youtube {width:28%;}
-                    .fcr_sl_link {}
+                    .fcr_sl_link {display:block; padding:0 14px;}
                         [class^="sns_icon_"] {display:inline-block; max-width:100%;}
                         .sns_icon_facebook {}
                         .sns_icon_insta {}
@@ -337,7 +337,7 @@ input,button,select {outline:none; border-radius:0;}
             .content_title_c {font-size:47px; height:50px !important; line-height:50px !important; }
                 .artist_name {font-size:21px; left:-7px;}
     /* T:푸터 */
-    .footer {padding:0 25px;}
+    .footer {margin-top:140px; padding:0 25px;}
     /* T:공지사항 */
     .section_notice_w {margin-top:85px;}
         .section_title {height:52px; line-height:52px; font-size:47px;}
@@ -544,13 +544,13 @@ input,button,select {outline:none; border-radius:0;}
             .btn_dw_txt {font-size:16px; padding-bottom:0;}
             .btn_dw_txt:after {height:1px;}
     .pg_gallery_w {padding-left:25px;}
-        .pg_gallery_w .module_image_list_w {overflow:hidden; overflow-x:auto; padding-right:25px;}
+        .pg_gallery_w .module_image_list_w {overflow:hidden; overflow-x:auto; padding:0 25px 0 0 !important;}
                 .pg_gallery_w .module_image_list {flex-wrap:nowrap; }
                     .pg_gallery_w .mdil_inner {flex-shrink: 0; width:110px; padding:14px 14px 0 0;}
 
     /* M:작가리스트 */
     .content_info_text{font-size:12px; }
-    .module_image_list_w {margin-top:50px;}
+    .module_image_list_w {margin-top:50px; padding:0 25px;}
 
     /* M:작가엔드 */
         .artist_name {left:0; font-size:12px !important;}
