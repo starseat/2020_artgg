@@ -21,7 +21,7 @@ input,button,select {outline:none; border-radius:0;}
 .icn {position:absolute; display:block; .display:inline; .zoom:1;  font:0/0 arial; vertical-align:middle; overflow:hidden; background-repeat:no-repeat; background-color:transparent; background-image:url('../img/set_icon.png'); background-size:500px auto;}
 .wrap {background-color:#fff;}
 .container {padding:158px 100px 0;}
-    .content_inner {position:relative; padding:100px 0; max-width:1430px; box-sizing:border-box; margin:0 auto;}
+    .content_inner {position:relative; padding-top:100px; max-width:1430px; box-sizing:border-box; margin:0 auto;}
         .section_box_w {max-width:1530px; margin:0 auto; box-sizing:border-box;}
             .section_title {display:block; position:relative; padding-left:43px; height:80px; line-height:80px; font-size:78px; font-weight:800; text-transform:uppercase;}
             .section_title:after {display:block; content:''; position:Absolute; left:0; top:0; width:9px; height:100%; background-color:#000;}
@@ -36,9 +36,10 @@ input,button,select {outline:none; border-radius:0;}
                 [class^="content_title_"]:after {display:block; content:''; position:absolute; left:0; top:0px; width:11px; height:calc(100% - 2px); background-color:#000;}
                     .artist_name {display:inline-block; position:relative; left:-20px; font-size:43px; color:#6b6b6b; font-weight:700;}
             .list_title_w {position:relative; margin-top:70px; }
-                .list_title {position:relative; float:left; padding-left:35px; line-height:70px; font-size:70px; font-weight:800;}
-                    .list_title:after {display:block; content:''; width:11px; height:100%; position:Absolute; left:0; top:0; background-color:#000;}
-            .list_title_w:after {display:block; content:''; clear:both;}
+                [class^="list_title"]{position:relative; padding-left:35px; line-height:70px; font-size:70px; font-weight:800;}
+                [class^="list_title"]:after {display:block; content:''; width:11px; height:100%; position:Absolute; left:0; top:0; background-color:#000;}
+                .list_title_w .list_title {float:left; }
+                .list_title_w:after {display:block; content:''; clear:both;}
 /* 공통 lnb */
 .snb_current {display:block; }
 .common_gnb_w {position:fixed; left:0; top:0; z-index:100; width:100%; height:158px; padding:58px 100px 0; box-sizing:border-box; background-color:#fff;}
@@ -146,14 +147,13 @@ input,button,select {outline:none; border-radius:0;}
 .sticky .snb_bg,.sticky .slnb_inner.menu_hover .artgg_snb {top:100px;}
 
 /* 공통 : footer */
-.footer {max-width:1530px; margin:0 auto 0; padding:0 100px 200px;}
+.footer {max-width:1430px; margin:0 auto 0; padding:340px 100px 200px; color:#6b6b6b;;}
     .footer_inner {display:table; width:100%; overflow:hidden;}
         [class^="footer_cont_"] {display:table-cell; vertical-align:middle; width:30%;}
         .footer_cont_l {width:40% !important; overflow:hidden;}
-            .footer_cont_l [class^="fcl_"] {width:50%; float:left;}
-            .fcl_gg {}
-            .fcl_gc {}
-        .footer_cont_copy {padding-left:5%;}
+            .footer_cont_l [class^="fcl_"] {width:50%; padding-right:10%; float:left; box-sizing:border-box;}
+                .footer_cont_l [class^="fcl_"] img {display:block; max-width:100%;}
+        .footer_cont_copy {padding-left:2%; font-size:17px;}
             .footer_cont_copy [class^="fcc_"] {display:inline-block;}
                 .fcc_copy {display:block !important; }
                 .fcc_tel{}
@@ -162,7 +162,7 @@ input,button,select {outline:none; border-radius:0;}
             .fcr_sns_list {overflow:hidden;}
                 .fcr_sl_cont {float:left; width:24%; text-align:right;}
                 .youtube {width:28%;}
-                    .fcr_sl_link {display:block; padding:0 14px;}
+                    .fcr_sl_link {display:block; padding:0 12%;}
                         [class^="sns_icon_"] {display:inline-block; max-width:100%;}
                         .sns_icon_facebook {}
                         .sns_icon_insta {}
@@ -232,12 +232,13 @@ input,button,select {outline:none; border-radius:0;}
 
 /* 서브 : 작가리스트 */
 .module_image_list_w {margin-top:340px; overflow:hidden;}
-    .module_image_list {position:relative; top:-82px; display:flex; flex-wrap:wrap; width:calc(100% + 82px);}
+    .module_image_list {position:relative; margin-top:-82px; display:flex; flex-wrap:wrap; width:calc(100% + 82px);}
         .mdil_inner {width:20%; padding:82px 82px 0 0; box-sizing:border-box;}
             .mdil_cont {display:block;}
-                .mdil_thumb_w {display:block; overflow:hidden;}
+                .mdil_thumb_w {display:block; position:relative; overflow:hidden;}
                     .mdil_image {display:block; width:100%; -webkit-transition: 0.2s; transition: 0.2s;}
                     .mdil_cont:hover .mdil_image {transform:scale(1.2);}
+
 
 /* 서브 : 작가리스트 엔드 */
 .section_artist_w {margin-top:140px;}
@@ -303,6 +304,21 @@ input,button,select {outline:none; border-radius:0;}
     .roadmap_box {width:100%; height:auto; min-height:415px; position:relative;}
     .roadmap_box:after {display:block; content:''; position:Absolute; left:0; top:0; box-sizing:border-box; width:100%; height:100%; border:1px solid rgba(0,0,0,0.05); }
 
+/* 서브: 사업소개 */
+.business_info_w {}
+    .section_artgg_text {overflow:hidden;}
+        .bns_artgg_logo {float:left; width:25%; display:block; max-width:100%;}
+        .bns_text {float:left; width:75%; padding-left:8.5%; font-size:35px; box-sizing:border-box; font-weight:700; word-break:keep-all;}
+    /* 협력사업자 */
+    .business_list_box {margin-top:340px;}
+        .business_info_w .module_image_list_w {margin-top:90px;}
+            .business_info_w .module_image_list {margin-top:-100px; width:112.5%;}
+                .business_info_w .mdil_inner {width:33.3%; padding:100px 12.5% 0 0;}
+        .business_info_w .mdil_thumb_w:after {display:block; content:''; position:absolute; left:0; top:0; width:100%; height:100%; border:10px solid #53ae6e; box-sizing:border-box;}
+    /* 아트경기작가 */
+    .artgg_artist_list_box {margin-top:340px;}
+        .artgg_artist_list {margin-top:55px; width:calc(100% + 35px);}
+            .aal_name {display:inline-block; font-size:35px; padding:35px 35px 0 0;}
 
 
 /* 메인 : pc 중간 제어 */
@@ -310,11 +326,12 @@ input,button,select {outline:none; border-radius:0;}
     .container{padding:158px 40px 0;}
     .common_gnb_w {padding:58px 40px 0;}
     .sl_inner {width:33.3%;}
-    /* T:작가리스트 */
+    /* pc:작가리스트 */
     .module_image_list_w {margin-top:240px;}
-        .module_image_list {top:-62px; width:calc(100% + 62px);}
+        .module_image_list {margin-top:-62px; width:calc(100% + 62px);}
             .mdil_inner {width:25%; padding:62px 62px 0 0;}
-
+    /* pc:footer */
+    .footer{padding:340px 40px 200px;}
 }
 
 /* 메인 : 태블릿 제어 */
@@ -336,8 +353,10 @@ input,button,select {outline:none; border-radius:0;}
             .content_title_d {margin-top:25px; padding-left:27px; font-size:35px; height:40px !important; line-height:40px !important;}
             .content_title_c {font-size:47px; height:50px !important; line-height:50px !important; }
                 .artist_name {font-size:21px; left:-7px;}
-    /* T:푸터 */
-    .footer {margin-top:140px; padding:0 25px;}
+    /* T:footer */
+    .footer {margin-top:140px; padding:0 25px 70px; }
+    .footer_cont_copy {font-size:12px;}
+
     /* T:공지사항 */
     .section_notice_w {margin-top:85px;}
         .section_title {height:52px; line-height:52px; font-size:47px;}
@@ -357,7 +376,7 @@ input,button,select {outline:none; border-radius:0;}
     /* T:작가리스트 */
     .content_info_text {margin-top:35px; font-size:21px; line-height:40px;}
     .module_image_list_w {margin-top:85px; }
-        .module_image_list {top:-14px; width:calc(100% + 28px); }
+        .module_image_list {margin-top:-14px; width:calc(100% + 28px); }
             .mdil_inner {width:33.3%; padding:28px 28px 0 0; }
     /* T:작가엔드 */
     .section_artist_w, .article_artist_box {margin-top:85px;}
@@ -392,18 +411,19 @@ input,button,select {outline:none; border-radius:0;}
             .info_cont {font-size:21px; line-height:40px;}
         .program_down_w {margin-top:85px;}
             .button_down_text {font-size:31px;}
+    /* T:협력사업자 */
+    .bns_text {font-size:21px;}
+    .business_list_box,
+    .artgg_artist_list_box {margin-top:170px;}
+        .business_info_w .module_image_list_w {margin-top:40px;}
+            .business_info_w .module_image_list {margin-top:-2%; width:102%;}
+                .business_info_w .mdil_inner {padding:2% 2% 0 0;}
+        .artgg_artist_list {margin-top:35px;}
+            .aal_name {font-size:21px; padding-top:25px;}
+
+ }
 
 
-
-    /* M: footer */
-    [class^="footer_cont_"] {display:block; float:left;}
-        .footer_cont_l {width:54% !important;}
-            .footer_cont_copy {width:46% !important; padding-left:30px; box-sizing:border-box; font-size:13px;}
-        .footer_cont_r {width:54% !important; padding-top:28px; padding-bottom:40px; float:none; clear:both;}
-            .fcr_sl_cont {width:25%;}
-            .footer_cont_l img {display:block; width:100%;}
-                .fcr_sl_link {display:inline-block; padding:0 9px;}
-}
 
 /* 메인 : 모바일 제어 */
 @media screen and (max-width:720px) {
@@ -421,7 +441,16 @@ input,button,select {outline:none; border-radius:0;}
             .section_title:after {width:5px;}
 
     /* M:footer */
+    [class^="footer_cont_"] {display:block; float:left;}
+    .footer_cont_l {width:54% !important;}
+        .footer_cont_copy {width:46% !important; padding-left:30px; box-sizing:border-box; font-size:13px;}
     .footer_cont_copy {padding-left:15px; font-size:11px;}
+    .footer_cont_r {width:54% !important; padding-top:28px; padding-bottom:40px; float:none; clear:both;}
+        .fcr_sl_cont {width:25%;}
+            .footer_cont_l img {display:block; width:100%;}
+            .fcr_sl_link {display:inline-block; padding:0 9px;}
+
+
 
     /* M:GNB */
     .common_gnb_w {height:75px; padding:0;}
@@ -524,9 +553,6 @@ input,button,select {outline:none; border-radius:0;}
     .ptext_name {font-size:15px !important;}
     .ptext_name:after {width:4px; height:100%;}
 
-
-
-
     /* M:프로그램엔드 */
     .content_title_d {margin-top:10px; padding-left:20px; height:20px !important; line-height:20px !important; font-size:18px;}
     .program_poster_w {margin-top:25px;}
@@ -568,7 +594,6 @@ input,button,select {outline:none; border-radius:0;}
             [class^="qa_text_"] {font-size:20px;}
             .qa_text_a {margin-top:20px;}
                 .qat_title {font-size:30px;}
-
 
 }
 
