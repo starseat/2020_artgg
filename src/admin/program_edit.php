@@ -1,14 +1,7 @@
 <?php require_once('fragment/content_layout.php'); ?>
 
 <?php
-
 include('common.php');
-
-// $isLogin = $_SESSION['is_login'];
-// if ($isLogin != 1) {
-//     echo ('<meta http-equiv="refresh" content="0 url=./login.html" />');
-// }
-
 ?>
 
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">

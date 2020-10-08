@@ -5,11 +5,6 @@
 include('common.php');
 include('db_conn.php');
 
-// $isLogin = $_SESSION['is_login'];
-// if ($isLogin != 1) {
-//     echo ('<meta http-equiv="refresh" content="0 url=./login.html" />');
-// }
-
 $sql  = "SELECT distinct year FROM artgg_artist where name != 'artist_greeting' ORDER BY year desc";
 $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 $year_length = $result->num_rows;

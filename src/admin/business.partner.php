@@ -1,15 +1,8 @@
 <?php require_once('fragment/content_layout.php'); ?>
 
 <?php
-
 include('common.php');
 include('db_conn.php');
-
-// $isLogin = $_SESSION['is_login'];
-// if ($isLogin != 1) {
-//     echo ('<meta http-equiv="refresh" content="0 url=./login.html" />');
-// }
-
 ?>
 
 <h1 class="mt-4">협력사업자</h1>

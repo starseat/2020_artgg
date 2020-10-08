@@ -5,11 +5,6 @@
 include('common.php');
 include('db_conn.php');
 
-// $isLogin = $_SESSION['is_login'];
-// if ($isLogin != 1) {
-//     echo ('<meta http-equiv="refresh" content="0 url=./login.html" />');
-// }
-
 $sql  = "SELECT seq, name, type, thumbnail, introduction FROM artgg_business WHERE type = 'A' LIMIT 1";
 $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 $artgg_count = $result->num_rows;

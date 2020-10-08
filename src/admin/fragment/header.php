@@ -18,7 +18,9 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                    <a class="dropdown-item" href="login.html">Logout</a>
+                    <form id="logoutForm" name="logoutForm" method="post" action="./action/logout.php">
+                        <button type="submit" class="dropdown-item btn btn-outline-dark">Logout</button>
+                    </form>
                 </div>
             </li>
         </ul>

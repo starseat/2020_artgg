@@ -1,4 +1,8 @@
 <?php
+include_once('./action/login_check.php');
+?>
+
+<?php
 require_once('head.php');
 require_once('header.php');
 require_once('side_nav.php');

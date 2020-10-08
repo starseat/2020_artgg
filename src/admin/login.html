@@ -15,22 +15,22 @@
             <div id="layoutAuthentication_content">
                 <main>
                     <div class="container">
-                        <div class="row justify-content-center">
+                        <div class="row justify-content-center" style="margin-top: 6rem;">
                             <div class="col-lg-5">
                                 <h3 class="text-center font-weight-light my-4">아트경기<br>관리자 로그인</h3>
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">                                    
                                     <div class="card-body">
-                                        <form>
+                                        <form id="artggLoginForm" name="artggLoginForm" method="post" action="./action/login.php">
                                             <div class="form-group">
-                                                <label class="small mb-1" for="inputEmailAddress">ID</label>
-                                                <input class="form-control py-4" id="inputEmailAddress" type="email" placeholder="Enter email address" />
+                                                <label class="small mb-1" for="login_id">ID</label>
+                                                <input class="form-control py-4" id="login_id" name="login_id" type="text" placeholder="Enter ID" />
                                             </div>
                                             <div class="form-group">
-                                                <label class="small mb-1" for="inputPassword">Password</label>
-                                                <input class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password" />
+                                                <label class="small mb-1" for="login_pw">Password</label>
+                                                <input class="form-control py-4" id="login_pw" name="login_pw" type="password" placeholder="Enter password" />
                                             </div>
                                             <div class="form-group align-items-center mt-4 mb-0" >
-                                                <a class="btn btn-primary" style="width: 100%;" href="index.html">로그인</a>
+                                                <button type="submit" class="btn btn-primary" style="width: 100%;">로그인</a>
                                             </div>
                                         </form>
                                     </div>

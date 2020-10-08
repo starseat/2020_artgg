@@ -7,11 +7,6 @@
 include('common.php');
 include('db_conn.php');
 
-// $isLogin = $_SESSION['is_login'];
-// if ($isLogin != 1) {
-//     echo ('<meta http-equiv="refresh" content="0 url=./login.html" />');
-// }
-
 // 게시굴 수
 $item_row_count = 10;
 // 하단 페이지 block 수 (1, 2, 3, 4, ...  이런거)
