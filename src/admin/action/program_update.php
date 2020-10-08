@@ -52,29 +52,43 @@ $program_seq = intval(mysqli_real_escape_string($conn, $program_seq));
 
 // 필수 입력 값
 $program_name = mysqli_real_escape_string($conn, $_POST['program_name']);
+$program_partners = mysqli_real_escape_string($conn, $_POST['program_partners']);
 $program_year = mysqli_real_escape_string($conn, $_POST['program_year']);
 $program_date = mysqli_real_escape_string($conn, $_POST['program_date']);
 $program_place = mysqli_real_escape_string($conn, $_POST['program_place']);
 
 // 옵션 입력 값
+$program_online_name = $_POST['program_online_name'];
+if(!isEmpty($program_online_name)) { $program_online_name = mysqli_real_escape_string($conn, $program_online_name); }
+$program_online_url = $_POST['program_online_url'];
+if(!isEmpty($program_online_url)) { $program_online_url = mysqli_real_escape_string($conn, $program_online_url); }
 $program_introduction = $_POST['program_introduction'];
 if(!isEmpty($program_introduction)) { $program_introduction = mysqli_real_escape_string($conn, $program_introduction); }
 $program_schedule = $_POST['program_schedule'];
 if(!isEmpty($program_schedule)) { $program_schedule = mysqli_real_escape_string($conn, $program_schedule); }
 $program_event = $_POST['program_event'];
 if(!isEmpty($program_event)) { $program_event = mysqli_real_escape_string($conn, $program_event); }
+$program_directions = $_POST['program_directions'];
+if(!isEmpty($program_directions)) { $program_directions = mysqli_real_escape_string($conn, $program_directions); }
+$program_directions_name = $_POST['program_directions_name'];
+if(!isEmpty($program_directions_name)) { $program_directions_name = mysqli_real_escape_string($conn, $program_directions_name); }
 
 $sql  = "UPDATE artgg_program SET ";
 $sql .= "name = '" . $program_name . "', ";
+$sql .= "partners = '" . $program_partners . "', ";
 $sql .= "year = '" . $program_year . "', ";
 $sql .= "program_date = '" . $program_date . "', ";
 $sql .= "place = '" . $program_place . "', ";
 
 if ($new_thumbnail > 0) { $sql .= "thumbnail = '" . $thumbnail_name_upload_path . "', "; }
 
+$sql .= "online_url = '" . $program_online_url . "', ";
+$sql .= "online_name = '" . $program_online_name . "', ";
 $sql .= "introduction = '" . $program_introduction . "', ";
 $sql .= "schedule = '" . $program_schedule . "', ";
-$sql .= "event = '" . $program_event . "') ";
+$sql .= "event = '" . $program_event . "', ";
+$sql .= "directions = '" . $program_directions . "', ";
+$sql .= "directions_name = '" . $program_directions_name . "' ";
 
 $sql .= "WHERE seq = " . $program_seq;
 

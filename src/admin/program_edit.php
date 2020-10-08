@@ -21,8 +21,12 @@ include('common.php');
     .program_textarea {
         display: none;
     }
+
+    #directionsModal_add_btn {
+        display: none;
+    }
 </style>
-<h1 class="mt-4">협력사업자 정보</h1>
+<h1 class="mt-4">프로그램 정보</h1>
 
 <div class="card mt-4 mb-4">
     <div class="card-body">
@@ -30,6 +34,10 @@ include('common.php');
             <div class="form-group">
                 <label for="program_name"><strong>* 프로그램 명</strong></label>
                 <input type="text" class="form-control" id="program_name" name="program_name">
+            </div>
+            <div class="form-group">
+                <label for="program_partners"><strong>* 협력사</strong></label>
+                <input type="text" class="form-control" id="program_partners" name="program_partners">
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
@@ -44,6 +52,16 @@ include('common.php');
             <div class="form-group">
                 <label for="program_place"><strong>* 장소</strong></label>
                 <input type="text" class="form-control" id="program_place" name="program_place">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="program_online_name"><strong>온라인 소개 명칭</strong></label>
+                    <input type="text" class="form-control" id="program_online_name" name="program_online_name">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="program_online_url"><strong>온라인 URL</strong></label>
+                    <input type="text" class="form-control" id="program_online_url" name="program_online_url">
+                </div>
             </div>
             <hr>
             <div class="form-group">
@@ -89,8 +107,18 @@ include('common.php');
                 <textarea class="program_textarea" id="program_event" name="program_event"></textarea>
             </div>
             <hr>
-            <div class="form-group">
-                <p style="color: red;">파일 등록, 지도 등록 기능 추가 예정입니다.</p>
+            <div class="form-row">
+                <div class="form-group col-md-5">
+                    <div class="form-row form-input-title-box"><label for="program_directions"><strong>오시는길</strong></label></div>
+                    <input type="text" class="form-control" id="program_directions" name="program_directions" placeholder="지도 추가 버튼을 클릭하세요." readonly>
+                </div>
+                <div class="form-group col-md-5">
+                    <label for="program_directions_name"><strong>장소 표시 명칭</strong></label>
+                    <input type="text" class="form-control" id="program_directions_name" name="program_directions_name" readonly>
+                </div>
+                <div class="form-group col-md-2" style="margin-top: auto !important;">
+                    <button type="button" class="btn btn-info btn-block ml-2 " onclick="showDirectionsModal()">지도 추가</button>
+                </div>
             </div>
             <hr>
             <input type="hidden" id="program_seq" name="program_seq" value="0" />
@@ -104,7 +132,47 @@ include('common.php');
     </div>
 </div>
 
-
+<div class="modal fade" id="directionsModal" tabindex="-1" aria-labelledby="directionsModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="directionsModalLabel">지도 추가</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <input type="hidden" id="insert_type_link" name="insert_type" value="video" />
+                    <div class="form-group">
+                        <label for="directionsModal_address"><strong>* 주소</strong></label>
+                        <input type="text" class="form-control" id="directionsModal_address" name="directionsModal_address" placeholder="검색할 장소의 주소를 입력해 주세요.">
+                    </div>
+                    <div class="form-group">
+                        <label for="directionsModal_address_name"><strong>장소 표시 명칭</strong></label>
+                        <input type="text" class="form-control" id="directionsModal_address_name" name="directionsModal_address_name" placeholder="표시될 명칭을 입력해 주세요.">
+                    </div>
+                    <div class="form-group">
+                        <small id="directionsModal_find_error" style="color: red;"></small>
+                    </div>
+                    <div class="form-group" id="directionsModal_map_box">
+                        <hr>
+                        <small class="form-text text-muted">지도가 잘 안보이면 한번더 검색버튼을 눌러주세요.</small>
+                        <div id="directionsModal_map" style="width:100%;height:280px;"></div>
+                    </div>
+                    <input type="hidden" val="" id="directionsModal_find_success_address">
+                    <input type="hidden" val="" id="directionsModal_find_success_address_name">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-warning" onclick="doSubmit_openKakaoMap(event)">카카오 맵 열기</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                <button type="button" class="btn btn-info" id="directionsModal_find_btn" onclick="doSubmit_FindMap(event)">검색</button>
+                <button type="button" class="btn btn-success" id="directionsModal_add_btn" onclick="doSubmit_insertMap()">추가</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <?php require_once('fragment/footer.php'); ?>
 
@@ -112,7 +180,7 @@ include('common.php');
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/lang/summernote-ko-KR.js"></script>
 <script src="vendor/image-uploader/dist/image-uploader.min.js"></script>
-
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ec6b3e1f28bbc62cb020b79094f74664&libraries=services"></script>
 <script src="./js/common.js"></script>
 <script src="./js/program.edit.js"></script>
 

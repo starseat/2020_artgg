@@ -39,30 +39,43 @@ $program_image_name_upload_path = $program_image_info[0]['upload_file_path'];
 
 // 필수 입력 값
 $program_name = mysqli_real_escape_string($conn, $_POST['program_name']);
+$program_partners = mysqli_real_escape_string($conn, $_POST['program_partners']);
 $program_year = mysqli_real_escape_string($conn, $_POST['program_year']);
 $program_date = mysqli_real_escape_string($conn, $_POST['program_date']);
 $program_place = mysqli_real_escape_string($conn, $_POST['program_place']);
 
 // 옵션 입력 값
+$program_online_name = $_POST['program_online_name'];
+if(!isEmpty($program_online_name)) { $program_online_name = mysqli_real_escape_string($conn, $program_online_name); }
+$program_online_url = $_POST['program_online_url'];
+if(!isEmpty($program_online_url)) { $program_online_url = mysqli_real_escape_string($conn, $program_online_url); }
 $program_introduction = $_POST['program_introduction'];
 if(!isEmpty($program_introduction)) { $program_introduction = mysqli_real_escape_string($conn, $program_introduction); }
 $program_schedule = $_POST['program_schedule'];
 if(!isEmpty($program_schedule)) { $program_schedule = mysqli_real_escape_string($conn, $program_schedule); }
 $program_event = $_POST['program_event'];
 if(!isEmpty($program_event)) { $program_event = mysqli_real_escape_string($conn, $program_event); }
+$program_directions = $_POST['program_directions'];
+if(!isEmpty($program_directions)) { $program_directions = mysqli_real_escape_string($conn, $program_directions); }
+$program_directions_name = $_POST['program_directions_name'];
+if(!isEmpty($program_directions_name)) { $program_directions_name = mysqli_real_escape_string($conn, $program_directions_name); }
 
-
-$sql  = "INSERT INTO artgg_program (name, year, thumbnail, program_date, place, introduction, schedule, event) ";
+$sql  = "INSERT INTO artgg_program (name, year, thumbnail, program_date, place, partners, online_url, online_name, introduction, schedule, event, directions, directions_name) ";
 $sql .= "VALUES ( ";
 $sql .= "'" . $program_name . "', ";
 $sql .= "'" . $program_year . "', ";
 $sql .= "'" . $thumbnail_name_upload_path . "', ";
 $sql .= "'" . $program_date . "', ";
 $sql .= "'" . $program_place . "', ";
+$sql .= "'" . $program_partners . "', ";
 
+$sql .= "'" . $program_online_url . "', ";
+$sql .= "'" . $program_online_name . "', ";
 $sql .= "'" . $program_introduction . "', ";
 $sql .= "'" . $program_schedule . "', ";
-$sql .= "'" . $program_event . "') ";
+$sql .= "'" . $program_event . "', ";
+$sql .= "'" . $program_directions . "', ";
+$sql .= "'" . $program_directions_name . "') ";
 
 $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 

@@ -1,3 +1,4 @@
+// initKakaoMap();
 $(document).ready(function () {
     // 왼쪽 nav 에서 선택이 안되어 있어서 강제로 active 상태 만들어줌.
     setActiveNavMenu('program.php');
@@ -39,6 +40,12 @@ function doInsert(event) {
     if ($('#program_name').val() == '') {
         alert('프로그램명은 필수 입력사항 입니다.');
         $('#program_name').focus();
+        return false;
+    }
+
+    if ($('#program_partners').val() == '') {
+        alert('협력사 정보는 필수 입력사항 입니다.');
+        $('#program_partners').focus();
         return false;
     }
 
@@ -96,4 +103,88 @@ function doInsert(event) {
     $('#program_event').html($('#program_event_textform').summernote('code'));
 
     $('#insertProgramForm').submit();
+}
+
+function showDirectionsModal() {
+    $('#directionsModal').modal('show');
+}
+
+function doSubmit_openKakaoMap(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const win = window.open('https://map.kakao.com', '_blank');
+    win.focus();
+}
+
+const geocoder = new kakao.maps.services.Geocoder();
+function doSubmit_FindMap(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const find_address = $('#directionsModal_address').val();
+    if (find_address == '') {
+        alert('주소는 필수 입력 사항입니다.');
+        $('#directionsModal_address').focus();
+        return false;
+    }
+
+    // 주소로 좌표 검색    
+    geocoder.addressSearch(find_address, function (result, status) {
+        $('#directionsModal_map').empty();
+
+        // 주소 검색 성공
+        if (status === kakao.maps.services.Status.OK) {
+            $('#directionsModal_find_error').text('');
+
+            const coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+            const mapContainer = document.getElementById('directionsModal_map');
+            const mapOption = {
+                center: coords, // 지도의 중심좌표
+                level: 3 // 지도의 확대 레벨
+            };
+            const targetMapObj = new kakao.maps.Map(mapContainer, mapOption);
+
+            // 마커 표시
+            const marker = new kakao.maps.Marker({
+                map: targetMapObj,
+                position: coords
+            });
+
+            // 장소 명칭 표시
+            const address_name = $('#directionsModal_address_name').val();
+            if (typeof address_name != 'undefined' && address_name != '') {
+                const infowindow = new kakao.maps.InfoWindow({
+                    content: '<div style="width:150px;text-align:center;padding:6px 0;">' + address_name + '</div>'
+                });
+                infowindow.open(targetMapObj, marker);
+            }              
+
+            // 위치로 이동
+            targetMapObj.setCenter(coords);
+
+            $('#directionsModal_map_box').show();
+            $('#directionsModal_add_btn').show();
+            $('#directionsModal_find_success_address').val(find_address);
+            $('#directionsModal_find_success_address_name').val(address_name);
+        }
+        // 주소 검색 실패
+        else {
+            $('#directionsModal_map_box').hide();
+            $('#directionsModal_add_btn').hide();
+            $('#directionsModal_find_error').text('주소 검색에 실패하였습니다. 다시검색하여 주세요.');
+            $('#program_directions').val('');
+            $('#program_directions_name').val('');
+            $('#directionsModal_find_success_address').val('');
+            $('#directionsModal_find_success_address_name').val('');
+        }
+    });
+
+}
+
+function doSubmit_insertMap() {
+    $('#program_directions').val($('#directionsModal_find_success_address').val());
+    $('#program_directions_name').val($('#directionsModal_find_success_address_name').val());
+    $('#directionsModal').modal('hide');
 }
