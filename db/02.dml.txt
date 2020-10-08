@@ -1,1 +1,3 @@
+INSERT INTO artgg_members (user_id, name, password, member_type) VALUES ('admin', '관리자', '111', 'A');
+INSERT INTO artgg_members (user_id, name, password, member_type) VALUES ('admin_dev', '프로그램 관리자', '222', 'A');
 INSERT INTO artgg_business (name, type, introduction) VALUES ('2020 아트 경기', 'A', '');
