@@ -102,6 +102,7 @@ CREATE TABLE artgg_program (
     program_date VARCHAR(16) NOT NULL,
     place VARCHAR(256) NOT NULL,
 	online_url VARCHAR(256),
+	online_name VARCHAR(256),
 	partners  VARCHAR(256),  -- 협력사
     introduction VARCHAR(2048), 
     schedule VARCHAR(2048), 
