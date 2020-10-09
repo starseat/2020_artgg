@@ -485,24 +485,20 @@ input,button,select {outline:none; border-radius:0;}
 
     /* M:메인비주얼 */
     .section_visual_w {padding:0 25px;}
-        .slick-next {right:0;}
-        .slick-prev {left:0;}
-        .slick-arrow {opacity:1 !important; margin-top:-38px !important;}
-        .slick-dots li {margin:0 3px;}
-            .slick-dots .slick-active button {width:26px; height:10px;}
-            .slick-dots button {width:10px; height:10px;}
+
 
     /* M:공지사항 */
-    .section_notice_w {margin-top:95px;}
+    .section_notice_w {margin-top:95px; display:block;}
         .notice_cont_r,
         .notice_cont_l {float:none; width:100%;}
-        .notice_cont_r{margin-top:15px;}
+        .notice_cont_r{margin-top:15px;min-height:330px; padding-bottom:50px;}
             .notice_list {padding:17px 0;}
             .nl_inner {margin-top:15px;}
                 .nl_text {height:22px; line-height:22px; font-size:18px; font-weight:600;}
                 .nl_date {height:17px; line-height:18px; margin-top:5px; font-size:14px; color:#6b6b6b;}
                  .nl_text:after {width:5px;}
                  .nl_text,.nl_date {padding-left:25px;}
+    #artist-thumb-swiper-pagination {bottom:-50px;}
 
     /* M:추진사업
     .section_service_w {margin-top:95px;}
