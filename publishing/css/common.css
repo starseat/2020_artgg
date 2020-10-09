@@ -176,7 +176,7 @@ input,button,select {outline:none; border-radius:0;}
         .swiper-wrapper {position:absolute; left:0; top:0;}
     .swiper-pagination-bullet {width:15px; height:15px; border-radius:50%; background-color:#898989;}
     .swiper-pagination-bullet-active {width:44px; height:16px; background-color:#000; border-radius:15px;}
-    #main-swiper-container .swiper-slide {background-size:auto 100%;}
+    #main-swiper-container .swiper-slide {background-size:auto 100% !important; background-repeat:no-repeat !important;}
 
 /* 메인 : 공지사항 */
 .section_notice_w {position:relative; margin-top:340px; display:flex;}
@@ -189,7 +189,8 @@ input,button,select {outline:none; border-radius:0;}
                     .nl_text:after {display:block; content:''; position:absolute; left:0; top:0; width:9px; height:100%; background-color:#000;}
                     .nl_date {display:block; padding-left:43px; height:20px; line-height:20px; margin-top:15px; font-size:21px; color:#6b6b6b;}
     .notice_cont_r {float:right; width:48%; position:relative;}
-        .notice_slide_w {position:relative;}
+        .notice_slide_w {position:absolute; left:50%; top:50%;}
+    #artist-thumb-swiper-pagination {position:Absolute; left:0; bottom:-80px;}
 
 /* 메인 : 추진사업 */
 .section_service_w {margin-top:340px; }
