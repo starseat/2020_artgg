@@ -190,7 +190,7 @@ input,button,select {outline:none; border-radius:0;}
                     .nl_date {display:block; padding-left:43px; height:20px; line-height:20px; margin-top:15px; font-size:21px; color:#6b6b6b;}
     .notice_cont_r {float:right; width:48%; position:relative;}
         .notice_slide_w {position:absolute; left:50%; top:50%;}
-    #artist-thumb-swiper-pagination {position:Absolute; left:0; bottom:-80px;}
+    #artist-thumb-swiper-pagination {position:Absolute; left:0; bottom:-80px; z-index:5;}
 
 /* 메인 : 추진사업 */
 .section_service_w {margin-top:340px; }
@@ -234,7 +234,6 @@ input,button,select {outline:none; border-radius:0;}
                     .mdil_image {display:block; width:100%; -webkit-transition: 0.2s; transition: 0.2s;}
                     .mdil_cont:hover .mdil_image {transform:scale(1.2);}
 
-
 /* 서브 : 작가리스트 엔드 */
 .section_artist_w {margin-top:140px;}
     .artist_slide_w {}
@@ -257,6 +256,7 @@ input,button,select {outline:none; border-radius:0;}
                     .qa_text_q {line-height:70px;}
                     .qa_text_a {margin-top:40px; line-height:60px;}
                         .qat_title {position:absolute; left:0; top:0; font-size:80px; font-weight:800;}
+
 /* 서브: 프로그램리스트 */
 .select_box_w {float:right; position:relative; top:-5px;}
     .select_box_w select { font-family:'NanumSquare' !important; width:220px; height:72px; padding:0 37px 0 20px; box-sizing:border-box; font-size:40px; color:#53ae6e; border:0; background:url('../img/select_arrow.gif') 122px center no-repeat; background-color:#fff; appearance:none; -webkit-appearance:none; -moz-appearance:none; -o-appearance:none; font-weight:800;}
@@ -301,9 +301,9 @@ input,button,select {outline:none; border-radius:0;}
 
 /* 서브: 사업소개 */
 .business_info_w {}
-    .section_artgg_text {overflow:hidden;}
-        .bns_artgg_logo {float:left; width:25%; display:block; max-width:100%;}
-        .bns_text {float:left; width:75%; padding-left:8.5%; font-size:35px; box-sizing:border-box; font-weight:700; word-break:keep-all;}
+    .section_artgg_text {overflow:hidden; position:relative; padding-left:350px; min-height:300px;}
+        .bns_artgg_logo {position:absolute; left:0; top:0; width:300px; height:300px; display:block;}
+        .bns_text {font-size:35px; box-sizing:border-box; font-weight:700; word-break:keep-all;}
     /* 협력사업자 */
     .business_list_box {margin-top:340px;}
         .business_info_w .module_image_list_w {margin-top:90px;}
@@ -317,6 +317,25 @@ input,button,select {outline:none; border-radius:0;}
             .all_link:after {display:block; position:absolute; left:0; bottom:0; content:''; width:0; height:2px; background-color:#000; transition:width .4s cubic-bezier(0.51, 0.18, 0, 0.88) .02s;}
             .all_link:hover:after {width:100%;}
                 .aal_name {display:inline-block; font-size:35px; padding:35px 35px 0 0;}
+/* 뷰잉룸 */
+.viewing_info_w {margin-top:100px; overflow:hidden; min-height:140px; position:Relative; padding:15px 0 15px 250px; border:1px solid #eaeaea; border-width:1px 0;}
+    .viewing_image_w {position:absolute; left:0; top:15px; width:250px; }
+        .viewing_img {display:block; width:100%; }
+    .viewing_text_w {width:100%; padding:0 15px; box-sizing:border-box;}
+        .viewing_text_w [class^="vt_"] {display:block; margin-top:15px; position:relative; font-size:14px;}
+        .vt_sub_title {display:inline-block !important; font-size:65%;}
+        .vt_title {font-size:24px !important;}
+        .vt_name {}
+        .vt_text{}
+.viewing_cont_w {margin-top:15px;}
+
+
+
+
+
+
+
+
 
 /* 메인 : pc 중간 제어 */
 @media screen and (max-width:1350px) {
