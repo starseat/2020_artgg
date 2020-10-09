@@ -36,8 +36,8 @@ input,button,select {outline:none; border-radius:0;}
                 [class^="content_title_"]:after {display:block; content:''; position:absolute; left:0; top:0px; width:11px; height:calc(100% - 2px); background-color:#000;}
                     .artist_name {display:inline-block; position:relative; left:-20px; font-size:43px; color:#6b6b6b; font-weight:700;}
             .list_title_w {position:relative; margin-top:70px; }
-                [class^="list_title"]{position:relative; padding-left:35px; line-height:70px; font-size:70px; font-weight:800;}
-                [class^="list_title"]:after {display:block; content:''; width:11px; height:100%; position:Absolute; left:0; top:0; background-color:#000;}
+                .list_title {position:relative; padding-left:35px; line-height:70px; font-size:70px; font-weight:800;}
+                .list_title:after {display:block; content:''; width:11px; height:100%; position:Absolute; left:0; top:0; background-color:#000;}
                 .list_title_w .list_title {float:left; }
                 .list_title_w:after {display:block; content:''; clear:both;}
 /* 공통 lnb */
@@ -267,8 +267,8 @@ input,button,select {outline:none; border-radius:0;}
     .select_box_w select { font-family:'NanumSquare' !important; width:220px; height:72px; padding:0 37px 0 20px; box-sizing:border-box; font-size:40px; color:#53ae6e; border:0; background:url('../img/select_arrow.gif') 122px center no-repeat; background-color:#fff; appearance:none; -webkit-appearance:none; -moz-appearance:none; -o-appearance:none; font-weight:800;}
     .select_box_w select::-ms-expand {display:none;}
         .select_box_w option { background-color:#53ae6e; color:#fff;}
-.section_programlist_w {overflow:hidden; margin-top:270px; }
-    .program_list {display:flex; flex-wrap:wrap;  width:105%; justify-content:end;}
+.section_programlist_w {overflow:hidden; margin-top:340px; }
+    .program_list {display:flex; flex-wrap:wrap;  margin-top:-170px; width:105%; justify-content:end;}
         .pl_inner {width:25%; padding:170px 5% 0 0; box-sizing:border-box;}
             .pl_cont {display:block;}
                 .program_thumb_w {display:block; overflow:hidden;}
@@ -318,8 +318,10 @@ input,button,select {outline:none; border-radius:0;}
     /* 아트경기작가 */
     .artgg_artist_list_box {margin-top:340px;}
         .artgg_artist_list {margin-top:55px; width:calc(100% + 35px);}
-            .aal_name {display:inline-block; font-size:35px; padding:35px 35px 0 0;}
-
+            .all_link {position:relative; padding-bottom:3px;}
+            .all_link:after {display:block; position:absolute; left:0; bottom:0; content:''; width:0; height:2px; background-color:#000; transition:width .4s cubic-bezier(0.51, 0.18, 0, 0.88) .02s;}
+            .all_link:hover:after {width:100%;}
+                .aal_name {display:inline-block; font-size:35px; padding:35px 35px 0 0;}
 
 /* 메인 : pc 중간 제어 */
 @media screen and (max-width:1350px) {
@@ -391,8 +393,8 @@ input,button,select {outline:none; border-radius:0;}
 
     /* T:프로그램리스트 */
     .list_title {font-size:35px; line-height:35px;}
-    .section_programlist_w {margin-top:0;}
-        .program_list {width:103%; position:relative;}
+    .section_programlist_w {margin-top:85px; width:100%;}
+        .program_list {width:103%; margin-top:-85px; position:relative;}
             .pl_inner {width:33.3%; padding:85px 3% 0 0;}
     .select_box_w {top:-10px;}
         .select_box_w select {height:48px; line-height:45px;}
@@ -546,7 +548,7 @@ input,button,select {outline:none; border-radius:0;}
         .info_image {width:40%;}
         .info_text_w {padding-left:5%; font-size:18px;}
     /* M:프로그램리스트 */
-    .list_title {padding-left:19px; font-size:18px; line-height:27px;}
+    .list_title {margin:0 25px; padding-left:19px; font-size:18px; line-height:27px;}
     .list_title:after {width:5px; top:2px; height:calc(100% - 6px);}
     .select_box_w select {width:95px; padding:0 30px 0 10px; font-size:20px; background-position:right center; background-size:30px auto;}
     [class^="ptext_"] {padding-left:15px; margin-top:3px; font-size:12px !important; line-height:1.3em;}
@@ -594,6 +596,11 @@ input,button,select {outline:none; border-radius:0;}
             [class^="qa_text_"] {font-size:20px;}
             .qa_text_a {margin-top:20px;}
                 .qat_title {font-size:30px;}
-
+    /* M: */
+    .artgg_artist_list_box {overflow:hidden;}
+        .artgg_artist_list {margin-top:18px; padding:0 25px; box-sizing:border-box;}
+            .all_link:after {height:1px;}
+                .aal_name {padding:15px 15px 0 0;}
 }
+
 
