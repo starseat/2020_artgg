@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+#business-artgg-image-swiper-container {
+    width: 640px !important;
+    height: 410px;
+    padding-bottom: 50px;
+    background-color: #fff;
+    box-sizing: border-box;
+    
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* background: #000; */
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+#business-artgg-image-swiper-container .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 640px;
+    height: 360px;
+}
+
+#business-artgg-image-swiper-container .swiper-slide img {
+    width: auto;
+    height: 350px;
+
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+#business-artgg-image-swiper-container .swiper-button-color {
+    color: #000 !important;
+}
+
+#business-artgg-image-swiper-container .swiper-pagination-bullet-active {
+    background-color: #000 !important;
+}
+
