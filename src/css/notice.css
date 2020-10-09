@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+.table-hover-pointer tbody tr:hover {
+    cursor: pointer;
+}
+
+.page-link-dark {
+    color: #343a40;
+}
+
+.page-item.active-dark .page-link {
+    z-index: 3;
+    color: white;
+    background-color: #343a40;
+    border-color: #343a40
+}
+
+.table-hover-pointer th,
+.table-hover-pointer td {
+    text-align: center;
+}
+
+.notice-title {
+    text-align: left !important;
+}
