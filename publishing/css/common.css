@@ -176,6 +176,7 @@ input,button,select {outline:none; border-radius:0;}
         .swiper-wrapper {position:absolute; left:0; top:0;}
     .swiper-pagination-bullet {width:15px; height:15px; border-radius:50%; background-color:#898989;}
     .swiper-pagination-bullet-active {width:44px; height:16px; background-color:#000; border-radius:15px;}
+    #main-swiper-container .swiper-slide {background-size:auto 100%;}
 
 /* 메인 : 공지사항 */
 .section_notice_w {position:relative; margin-top:340px; display:flex;}
