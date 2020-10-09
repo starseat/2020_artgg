@@ -43,7 +43,7 @@ input,button,select {outline:none; border-radius:0;}
 /* 공통 lnb */
 .snb_current {display:block; }
 .common_gnb_w {position:fixed; left:0; top:0; z-index:100; width:100%; height:158px; padding:58px 100px 0; box-sizing:border-box; background-color:#fff;}
-    .artgg_lnb_w {position:relative; z-index:10; margin:0 auto; box-sizing:border-box; width:100%; max-width:1530px; background-color:#fff;}
+    .artgg_lnb_w {position:relative; z-index:10; margin:0 auto; box-sizing:border-box; width:100%; max-width:1430px; background-color:#fff;}
     .artgg_lnb_w:after {display:block; content:''; clear:both;}
         .artgg_h1_logo {position:Relative; float:left; z-index:98; width:315px; height:100px;}
             .logolink_main {display:block; position:relative; width:100%; height:100%;}
@@ -187,7 +187,7 @@ input,button,select {outline:none; border-radius:0;}
             .ssl_image {display:block; width:100%;}
 
 /* 메인 : 공지사항 */
-.section_notice_w {position:relative; margin-top:340px;}
+.section_notice_w {position:relative; margin-top:340px; display:flex;}
 .section_notice_w:after {display:block; content:''; clear:both;}
     .notice_cont_l {float:left; width:45%;}
         .notice_list {padding-top:62px;}
@@ -196,8 +196,8 @@ input,button,select {outline:none; border-radius:0;}
                     .nl_text {display:block; position:relative; padding-left:43px; height:34px; line-height:34px; box-sizing:border-box; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:35px; font-weight:400;}
                     .nl_text:after {display:block; content:''; position:absolute; left:0; top:0; width:9px; height:100%; background-color:#000;}
                     .nl_date {display:block; padding-left:43px; height:20px; line-height:20px; margin-top:15px; font-size:21px; color:#6b6b6b;}
-    .notice_cont_r {float:right; width:48%;}
-        .notice_slide_w {width:100%;}
+    .notice_cont_r {float:right; width:48%; position:relative;}
+        .notice_slide_w {position:relative;}
 
 /* 메인 : 추진사업 */
 .section_service_w {margin-top:340px; }
@@ -226,7 +226,7 @@ input,button,select {outline:none; border-radius:0;}
 
 /* 메인 : 아트경기 소개 */
 .section_info_w {overflow:hidden; position:relative; display:table; width:100%; min-height:297px; margin-top:340px;}
-    .info_image {display:table-cell; max-width:263px; vertical-align:top; }
+    .info_image {display:table-cell; width:20%; max-width:263px; vertical-align:top; }
         .info_img {display:inline-block; max-width:100%; height:auto;}
     .info_text_w {display:table-cell; padding-top:1%; padding-left:10%; max-width:980px; box-sizing:border-box; vertical-align:top; font-size:35px; line-height:1.5; font-weight:400;}
 
