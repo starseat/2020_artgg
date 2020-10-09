@@ -109,6 +109,8 @@ CREATE TABLE artgg_program (
     event VARCHAR(2048), 
     directions VARCHAR(256), -- 오시는길(주소)
 	directions_name VARCHAR(64), -- 오시는길 명칭
+	directions_map_x VARCHAR(64), 
+	directions_map_y VARCHAR(64), 
 	created_at DATETIME NOT NULL DEFAULT now(),
 	updated_at DATETIME NOT NULL DEFAULT now(),
 	deleted_at DATETIME NULL DEFAULT NULL, 
