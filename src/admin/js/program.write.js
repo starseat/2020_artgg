@@ -118,6 +118,7 @@ function doSubmit_openKakaoMap(event) {
 }
 
 const geocoder = new kakao.maps.services.Geocoder();
+let isLoadMap = false;  // 처음 맵 로드시 안보여서 한번더 호출시키 위한 플래그
 function doSubmit_FindMap(event) {
     event.preventDefault();
     event.stopPropagation();
@@ -159,7 +160,7 @@ function doSubmit_FindMap(event) {
                     content: '<div style="width:150px;text-align:center;padding:6px 0;">' + address_name + '</div>'
                 });
                 infowindow.open(targetMapObj, marker);
-            }              
+            } 
 
             // 위치로 이동
             targetMapObj.setCenter(coords);
@@ -168,6 +169,13 @@ function doSubmit_FindMap(event) {
             $('#directionsModal_add_btn').show();
             $('#directionsModal_find_success_address').val(find_address);
             $('#directionsModal_find_success_address_name').val(address_name);
+            $('#directionsModal_find_success_map_x').val(result[0].x);
+            $('#directionsModal_find_success_map_y').val(result[0].y);
+
+            if(isLoadMap == false) {
+                doSubmit_FindMap(event);
+                isLoadMap = true;
+            }
         }
         // 주소 검색 실패
         else {
@@ -178,6 +186,8 @@ function doSubmit_FindMap(event) {
             $('#program_directions_name').val('');
             $('#directionsModal_find_success_address').val('');
             $('#directionsModal_find_success_address_name').val('');
+            $('#directionsModal_find_success_map_x').val('');
+            $('#directionsModal_find_success_map_y').val('');
         }
     });
 
@@ -186,5 +196,7 @@ function doSubmit_FindMap(event) {
 function doSubmit_insertMap() {
     $('#program_directions').val($('#directionsModal_find_success_address').val());
     $('#program_directions_name').val($('#directionsModal_find_success_address_name').val());
+    $('#program_directions_map_x').val($('#directionsModal_find_success_map_x').val());
+    $('#program_directions_map_y').val($('#directionsModal_find_success_map_y').val());
     $('#directionsModal').modal('hide');
 }

@@ -59,8 +59,14 @@ $program_directions = $_POST['program_directions'];
 if(!isEmpty($program_directions)) { $program_directions = mysqli_real_escape_string($conn, $program_directions); }
 $program_directions_name = $_POST['program_directions_name'];
 if(!isEmpty($program_directions_name)) { $program_directions_name = mysqli_real_escape_string($conn, $program_directions_name); }
+$directions_map_x = $_POST['program_directions_map_x'];
+if(!isEmpty($directions_map_x)) { $directions_map_x = mysqli_real_escape_string($conn, $directions_map_x); }
+$directions_map_y = $_POST['program_directions_map_y'];
+if(!isEmpty($directions_map_y)) { $directions_map_y = mysqli_real_escape_string($conn, $directions_map_y); }
 
-$sql  = "INSERT INTO artgg_program (name, year, thumbnail, program_date, place, partners, online_url, online_name, introduction, schedule, event, directions, directions_name) ";
+
+$sql  = "INSERT INTO artgg_program (name, year, thumbnail, program_date, place, partners, online_url, online_name, introduction, ";
+$sql .= "schedule, event, directions, directions_name, directions_map_x, directions_map_y) ";
 $sql .= "VALUES ( ";
 $sql .= "'" . $program_name . "', ";
 $sql .= "'" . $program_year . "', ";
@@ -75,7 +81,9 @@ $sql .= "'" . $program_introduction . "', ";
 $sql .= "'" . $program_schedule . "', ";
 $sql .= "'" . $program_event . "', ";
 $sql .= "'" . $program_directions . "', ";
-$sql .= "'" . $program_directions_name . "') ";
+$sql .= "'" . $program_directions_name . "', ";
+$sql .= "'" . $directions_map_x . "', ";
+$sql .= "'" . $directions_map_y . "') ";
 
 $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 

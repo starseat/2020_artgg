@@ -112,6 +112,8 @@ include('common.php');
                 <div class="form-group col-md-2" style="margin-top: auto !important;">
                     <button type="button" class="btn btn-info btn-block ml-2 " onclick="showDirectionsModal()">지도 추가</button>
                 </div>
+                <input type="hidden" val="" id="directions_map_x" name="directions_map_x">
+                <input type="hidden" val="" id="directions_map_y" name="directions_map_y">
             </div>
             <hr>
             <input type="hidden" id="program_seq" name="program_seq" value="0" />
@@ -155,6 +157,8 @@ include('common.php');
                     </div>
                     <input type="hidden" val="" id="directionsModal_find_success_address">
                     <input type="hidden" val="" id="directionsModal_find_success_address_name">
+                    <input type="hidden" val="" id="directionsModal_find_success_map_x">
+                    <input type="hidden" val="" id="directionsModal_find_success_map_y">
                 </div>
             </div>
             <div class="modal-footer">

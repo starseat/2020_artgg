@@ -14,7 +14,8 @@ if (isEmpty($program_seq) || !is_numeric($program_seq)) {
 
 $program_seq = intval(mysqli_real_escape_string($conn, $program_seq));
 
-$sql  = "SELECT name, year, thumbnail, program_date, place, partners, online_url, online_name, introduction, schedule, event, directions, directions_name ";
+$sql  = "SELECT name, year, thumbnail, program_date, place, partners, online_url, online_name, introduction, schedule, event, ";
+$sql .= "directions, directions_name, directions_map_x, directions_map_y ";
 $sql .= "FROM artgg_program WHERE seq = " . $program_seq;
 $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 

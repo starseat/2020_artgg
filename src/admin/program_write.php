@@ -97,6 +97,8 @@
                 <div class="form-group col-md-2" style="margin-top: auto !important;">
                     <button type="button" class="btn btn-info btn-block ml-2 " onclick="showDirectionsModal()">지도 추가</button>
                 </div>
+                <input type="hidden" val="" id="program_directions_map_x" name="program_directions_map_x">
+                <input type="hidden" val="" id="program_directions_map_y" name="program_directions_map_y">
             </div>
             <hr>
             <div class="row">
@@ -138,6 +140,8 @@
                     </div>
                     <input type="hidden" val="" id="directionsModal_find_success_address">
                     <input type="hidden" val="" id="directionsModal_find_success_address_name">
+                    <input type="hidden" val="" id="directionsModal_find_success_map_x">
+                    <input type="hidden" val="" id="directionsModal_find_success_map_y">
                 </div>
             </div>
             <div class="modal-footer">
