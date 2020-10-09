@@ -27,7 +27,7 @@ include('./db_conn.php');
                     <ul id="lnb" class="artgg_lnb">
                         <li class="slnb_inner">
                             <!--활성화시 current 추가-->
-                            <a href="./artist.php" class="slnb_link">
+                            <a href="#" class="slnb_link"> <!-- ./artist.php -->
                                 <!--활성화시 current 추가-->
                                 <span class="slnb_txt_box">
                                     <span class="slnb_txt">
@@ -47,7 +47,7 @@ include('./db_conn.php');
                             </ul>
                         </li>
                         <li class="slnb_inner">
-                            <a href="./program.php" class="slnb_link">
+                            <a href="#" class="slnb_link"> <!-- ./program.php -->
                                 <span class="slnb_txt_box">
                                     <span class="slnb_txt">
                                         Program
@@ -80,7 +80,7 @@ include('./db_conn.php');
                             </ul>
                         </li>
                         <li class="slnb_inner">
-                            <a href="./viewingroom.php" class="slnb_link">
+                            <a href="#" class="slnb_link"> <!-- ./viewingroom.php -->
                                 <span class="slnb_txt_box">
                                     <span class="slnb_txt">
                                         Space
@@ -115,9 +115,11 @@ include('./db_conn.php');
                                 </span>
                                 <span class="icn icon_menu_arrow"><i class="ir">서브메뉴 보기</i></span>
                             </a>
+                            <ul class="artgg_snb">
+                            </ul>
                         </li>
                         <li class="slnb_inner">
-                            <a href="./about.php" class="slnb_link">
+                            <a href="#" class="slnb_link"> <!-- ./about.php -->
                                 <span class="slnb_txt_box">
                                     <span class="slnb_txt">
                                         About
