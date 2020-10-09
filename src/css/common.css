@@ -21,7 +21,7 @@ input,button,select {outline:none; border-radius:0;}
 .icn {position:absolute; display:block; .display:inline; .zoom:1;  font:0/0 arial; vertical-align:middle; overflow:hidden; background-repeat:no-repeat; background-color:transparent; background-image:url('../img/set_icon.png'); background-size:500px auto;}
 .wrap {background-color:#fff;}
 .container {padding:158px 100px 0;}
-    .content_inner {position:relative; padding-top:100px; max-width:1430px; box-sizing:border-box; margin:0 auto;}
+    .content_inner {position:relative; padding-top:100px; max-width:1530px; box-sizing:border-box; margin:0 auto;}
         .section_box_w {max-width:1530px; margin:0 auto; box-sizing:border-box;}
             .section_title {display:block; position:relative; padding-left:43px; height:80px; line-height:80px; font-size:78px; font-weight:800; text-transform:uppercase;}
             .section_title:after {display:block; content:''; position:Absolute; left:0; top:0; width:9px; height:100%; background-color:#000;}
@@ -43,7 +43,7 @@ input,button,select {outline:none; border-radius:0;}
 /* 공통 lnb */
 .snb_current {display:block; }
 .common_gnb_w {position:fixed; left:0; top:0; z-index:100; width:100%; height:158px; padding:58px 100px 0; box-sizing:border-box; background-color:#fff;}
-    .artgg_lnb_w {position:relative; z-index:10; margin:0 auto; box-sizing:border-box; width:100%; max-width:1530px; background-color:#fff;}
+    .artgg_lnb_w {position:relative; z-index:10; margin:0 auto; box-sizing:border-box; width:100%; max-width:1430px; background-color:#fff;}
     .artgg_lnb_w:after {display:block; content:''; clear:both;}
         .artgg_h1_logo {position:Relative; float:left; z-index:98; width:315px; height:100px;}
             .logolink_main {display:block; position:relative; width:100%; height:100%;}
@@ -169,25 +169,17 @@ input,button,select {outline:none; border-radius:0;}
                         .sns_icon_youtube {}
                         .sns_icon_blog {}
 
-/* 메인 : 비주얼 슬릭 */
-.section_visual_w {max-width:1530px; margin:0 auto; box-sizing:border-box; }
-    .slick_slide_list {padding-bottom:50px;}
-        .ssl_cont {display:block;}
-        .slick_slide_list .slick-dots {position:absolute; left:0; right:0; bottom:0; text-align:right;}
-            .slick-dots li {display:inline-block; margin:0 5px; padding:6px 0;}
-                .slick-dots button {display:block; overflow:hidden; text-indent:9999px; width:15px; height:15px; border-radius:50%; background-color:#898989; cursor:pointer;}
-                .slick-dots .slick-active button {width:44px; height:16px; background-color:#000; border-radius:15px;}
-            .slick-arrow {position:Absolute; top:50%; z-index:2; margin-top:-48px !important; width:34px; height:46px; background-color: rgba(0,0,0,.2);  opacity:0 !important;  }
-            .slick-prev {left:-34px; transition:left .3s ease-in-out;}
-            .slick-next {right: -34px;transition:right .3s ease-in-out;}
-            .slick-arrow:hover {background-color: rgba(0,0,0,.4);}
-            .slick-slider:hover .slick-prev {left:0; opacity:1 !important;}
-            .slick-slider:hover .slick-next {right: 0; opacity:1 !important;}
-        .ssl_inner {}
-            .ssl_image {display:block; width:100%;}
+/* 메인 : 비주얼 */
+.section_visual_w {max-width:1430px; margin:0 auto; box-sizing:border-box; }
+    /* 비주얼 swiper */
+    #main-swiper-container {position:relative; height:0 !important; padding-top:56.25% !important;}
+        .swiper-wrapper {position:absolute; left:0; top:0;}
+    .swiper-pagination-bullet {width:15px; height:15px; border-radius:50%; background-color:#898989;}
+    .swiper-pagination-bullet-active {width:44px; height:16px; background-color:#000; border-radius:15px;}
+    #main-swiper-container .swiper-slide {background-size:auto 100%;}
 
 /* 메인 : 공지사항 */
-.section_notice_w {position:relative; margin-top:340px;}
+.section_notice_w {position:relative; margin-top:340px; display:flex;}
 .section_notice_w:after {display:block; content:''; clear:both;}
     .notice_cont_l {float:left; width:45%;}
         .notice_list {padding-top:62px;}
@@ -196,8 +188,8 @@ input,button,select {outline:none; border-radius:0;}
                     .nl_text {display:block; position:relative; padding-left:43px; height:34px; line-height:34px; box-sizing:border-box; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:35px; font-weight:400;}
                     .nl_text:after {display:block; content:''; position:absolute; left:0; top:0; width:9px; height:100%; background-color:#000;}
                     .nl_date {display:block; padding-left:43px; height:20px; line-height:20px; margin-top:15px; font-size:21px; color:#6b6b6b;}
-    .notice_cont_r {float:right; width:48%;}
-        .notice_slide_w {width:100%;}
+    .notice_cont_r {float:right; width:48%; position:relative;}
+        .notice_slide_w {position:relative;}
 
 /* 메인 : 추진사업 */
 .section_service_w {margin-top:340px; }
@@ -226,7 +218,7 @@ input,button,select {outline:none; border-radius:0;}
 
 /* 메인 : 아트경기 소개 */
 .section_info_w {overflow:hidden; position:relative; display:table; width:100%; min-height:297px; margin-top:340px;}
-    .info_image {display:table-cell; max-width:263px; vertical-align:top; }
+    .info_image {display:table-cell; width:20%; max-width:263px; vertical-align:top; }
         .info_img {display:inline-block; max-width:100%; height:auto;}
     .info_text_w {display:table-cell; padding-top:1%; padding-left:10%; max-width:980px; box-sizing:border-box; vertical-align:top; font-size:35px; line-height:1.5; font-weight:400;}
 

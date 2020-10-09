@@ -65,7 +65,7 @@ include('./db_conn.php');
                                 if ($program_count > 0) {
                                     while ($row = $result->fetch_array()) {
                                         echo ('<li class="ssnb_inner">');
-                                        echo ('    <a href="./program_detail?seq=' . RemoveXSS($row['seq']) . '" class="ssnb_link">');
+                                        echo ('    <a href="./program_detail.php?seq=' . RemoveXSS($row['seq']) . '" class="ssnb_link">');
                                         echo ('        <span class="ssnb_txt_box">');
                                         echo ('            <span class="ssnb_txt">' . RemoveXSS($row['name']) . '</span>');
                                         echo ('        </span>');
