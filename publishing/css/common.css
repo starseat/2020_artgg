@@ -422,6 +422,7 @@ input,button,select {outline:none; border-radius:0;}
                 .business_info_w .mdil_inner {padding:2% 2% 0 0;}
         .artgg_artist_list {margin-top:35px;}
             .aal_name {font-size:21px; padding-top:25px;}
+    .business_info_w .mdil_thumb_w:after {border-width:5px;}
 
  }
 
@@ -596,11 +597,13 @@ input,button,select {outline:none; border-radius:0;}
             [class^="qa_text_"] {font-size:20px;}
             .qa_text_a {margin-top:20px;}
                 .qat_title {font-size:30px;}
-    /* M: */
+    /* M: 협력사업자 */
+    .section_artgg_text {padding:0 25px;}
     .artgg_artist_list_box {overflow:hidden;}
         .artgg_artist_list {margin-top:18px; padding:0 25px; box-sizing:border-box;}
-            .all_link:after {height:1px;}
+            .all_link:after {height:2px;}
                 .aal_name {padding:15px 15px 0 0;}
+    .business_info_w .mdil_thumb_w:after {border-width:4px;}
 }
 
 
