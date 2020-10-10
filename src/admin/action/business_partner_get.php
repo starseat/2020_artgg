@@ -3,6 +3,8 @@
 include('../common.php');
 include('../db_conn.php');
 
+header('Content-Type: text/html; charset=UTF-8');
+
 $partner_seq = $_GET['seq'];
 if (isEmpty($partner_seq) || !is_numeric($partner_seq)) {
     viewAlert('잘못된 접근 입니다.');

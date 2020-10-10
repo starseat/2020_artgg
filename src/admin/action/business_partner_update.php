@@ -3,6 +3,8 @@
 include('../common.php');
 include('../db_conn.php');
 
+header('Content-Type: text/html; charset=UTF-8');
+
 // -- 썸네일 이미지 등록
 $new_thumbnail = $_POST['partner_thumbnail_new'];
 $new_thumbnail = intval(mysqli_real_escape_string($conn, $new_thumbnail));

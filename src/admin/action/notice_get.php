@@ -3,6 +3,8 @@
 include('../common.php');
 include('../db_conn.php');
 
+header('Content-Type: text/html; charset=UTF-8');
+
 $notice_seq = $_GET['seq'];
 if (isEmpty($notice_seq) || !is_numeric($notice_seq)) {
     viewAlert('잘못된 접근 입니다.');

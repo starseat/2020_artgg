@@ -3,6 +3,8 @@
 include('../common.php');
 include('../db_conn.php');
 
+header('Content-Type: text/html; charset=UTF-8');
+
 $notice_seq = intval(mysqli_real_escape_string($conn, $_POST['seq']));
 $notice_level = intval(mysqli_real_escape_string($conn, $_POST['level']));
 $notice_title = mysqli_real_escape_string($conn, $_POST['title']);

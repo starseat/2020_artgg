@@ -3,6 +3,8 @@
 include('../common.php');
 include('../db_conn.php');
 
+header('Content-Type: text/html; charset=UTF-8');
+
 $artist_seq = $_POST['seq'];
 $artist_seq = intval(mysqli_real_escape_string($conn, $artist_seq));
 

@@ -3,6 +3,8 @@
 include('../common.php');
 include('../db_conn.php');
 
+header('Content-Type: text/html; charset=UTF-8');
+
 $content_list = $_POST['artgg_content_list'];
 // var_dump($content_list);
 

@@ -3,6 +3,8 @@
 include('../common.php');
 include('../db_conn.php');
 
+header('Content-Type: text/html; charset=UTF-8');
+
 $result_array = array();
 
 $insert_type = mysqli_real_escape_string($conn, $_POST['insert_type']);

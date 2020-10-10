@@ -3,6 +3,8 @@
 include('../common.php');
 include('../db_conn.php');
 
+header('Content-Type: text/html; charset=UTF-8');
+
 // -- 썸네일 이미지 등록
 $thumbnail = $_FILES['program_thumbnail'];
 if ($thumbnail == null) {

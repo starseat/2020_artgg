@@ -3,6 +3,8 @@
 include('../common.php');
 include('../db_conn.php');
 
+header('Content-Type: text/html; charset=UTF-8');
+
 $sql  = "SELECT seq FROM artgg_business WHERE type = 'A' LIMIT 1";
 $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 $artgg_info = mysqli_fetch_array($result);

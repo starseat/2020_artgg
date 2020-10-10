@@ -3,6 +3,8 @@
 include('../common.php');
 include('../db_conn.php');
 
+header('Content-Type: text/html; charset=UTF-8');
+
 $partner_seq = $_POST['seq'];
 $partner_seq = intval(mysqli_real_escape_string($conn, $partner_seq));
 

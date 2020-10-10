@@ -3,6 +3,8 @@
 include('../common.php');
 include('../db_conn.php');
 
+header('Content-Type: text/html; charset=UTF-8');
+
 $seq = intval(mysqli_real_escape_string($conn, $_POST['seq']));
 $year = mysqli_real_escape_string($conn, $_POST['year']);
 $name = 'artist_greeting'; 
