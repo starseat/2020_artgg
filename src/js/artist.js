@@ -43,6 +43,9 @@ function makeArtistInfo(data) {
         artist_item += '        <span class="mdil_thumb_w">';
         artist_item += '            <img src="' + artist_list[i].thumbnail + '" alt="' + artist_list[i].name + '" class="mdil_image">';
         artist_item += '        </span>';
+        artist_item += '        <strong class="mdil_text_w">';
+        artist_item += '            <span class="mdil_text">' + artist_list[i].name + '</span>';
+        artist_item += '        </strong>';
         artist_item += '    </a>';
         artist_item += '</li>';
         $artist_list.append(artist_item);

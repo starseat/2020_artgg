@@ -9,16 +9,6 @@
         </div>
         <div class="module_image_list_w">
             <ul class="module_image_list" id="artist_list">
-                <li class="mdil_inner">
-                    <a href="#none" class="mdil_cont">
-                        <span class="mdil_thumb_w">
-                            <img src="//via.placeholder.com/220x220" alt="작가명제공" class="mdil_image">
-                        </span>
-                        <strong class="mdil_text_w"><!-- 작가이름 추가된부분!!! -->
-                           <span class="mdil_text">작가이름노출 작가이름노출 작가이름노출 작가이름노출</span>
-                        </strong>
-                    </a>
-                </li>
             </ul>
         </div>
     </div>
