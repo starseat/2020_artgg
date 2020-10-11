@@ -61,7 +61,7 @@ CREATE TABLE artgg_business (
     name VARCHAR(128) NOT NULL, 
 	type VARCHAR(1) NOT NULL DEFAULT 'P', -- A: ArtGG, P: partner
 	thumbnail VARCHAR(128), 
-    introduction VARCHAR(2048), 
+    introduction TEXT, 
 	created_at DATETIME NOT NULL DEFAULT now(),
 	updated_at DATETIME NOT NULL DEFAULT now(),
 	deleted_at DATETIME NULL DEFAULT NULL, 
@@ -80,7 +80,7 @@ CREATE TABLE artgg_artist (
     name VARCHAR(64) NOT NULL,
 	en_name VARCHAR(128), 
     thumbnail VARCHAR(128), 
-    introduction VARCHAR(2048),               -- 작가 소개
+    introduction TEXT,               -- 작가 소개
     academic VARCHAR(2048),                   -- 학력
     individual_exhibition VARCHAR(2048),      -- 주요 개인전
     team_competition VARCHAR(2048),           -- 주요 단체전
@@ -104,7 +104,7 @@ CREATE TABLE artgg_program (
 	online_url VARCHAR(256),
 	online_name VARCHAR(256),
 	partners  VARCHAR(256),  -- 협력사
-    introduction VARCHAR(2048), 
+    introduction TEXT, 
     schedule VARCHAR(2048), 
     event VARCHAR(2048), 
     directions VARCHAR(256), -- 오시는길(주소)
@@ -125,7 +125,7 @@ CREATE TABLE artgg_notice (
 	seq BIGINT NOT NULL AUTO_INCREMENT, 
     level TINYINT, 
     title VARCHAR(256) NOT NULL, 
-    contents VARCHAR(2046) NOT NULL,
+    contents TEXT NOT NULL,
 	view_count INT NOT NULL DEFAULT 0, 
 	created_at DATETIME NOT NULL DEFAULT now(),
 	updated_at DATETIME NOT NULL DEFAULT now(),
