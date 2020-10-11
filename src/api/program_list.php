@@ -3,15 +3,17 @@
 include('../common.php');
 include('../db_conn.php');
 
+header('Content-Type: text/html; charset=UTF-8');
+
 $result_array = array();
 
-$year = $_GET['year'];
-if ($year != 0 && (isEmpty($year) || !is_numeric($year))) {
-    mysqli_close($conn);
-    flush();
-    $result_array['result'] = 0;
-    echo json_encode($result_array, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-    exit;
+$year = 0;
+$is_access = false;
+if ($_SERVER['QUERY_STRING'] != '') {
+    $year = $_GET['year'];
+    if (isEmpty($year) || !is_numeric($year)) {
+        $year = 0;
+    }
 }
 
 $year = intval(mysqli_real_escape_string($conn, $year));

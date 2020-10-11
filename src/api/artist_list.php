@@ -3,15 +3,17 @@
 include('../common.php');
 include('../db_conn.php');
 
+header('Content-Type: text/html; charset=UTF-8');
+
 $result_array = array();
 
-$year = $_GET['year'];
-if ($year != 0 && (isEmpty($year) || !is_numeric($year))) {
-    mysqli_close($conn);
-    flush();
-    $result_array['result'] = 0;
-    echo json_encode($result_array, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-    exit;
+$year = 0;
+$is_access = false;
+if ($_SERVER['QUERY_STRING'] != '') {
+    $year = $_GET['year'];
+    if (isEmpty($year) || !is_numeric($year)) {
+        $year = 0;
+    }
 }
 
 $year = intval(mysqli_real_escape_string($conn, $year));
@@ -24,6 +26,7 @@ if ($year > 0) {
 else {
     $sql .= " AND year = (SELECT max(year) FROM artgg_artist) ";
 }
+
 $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 $greeting_info = $result->fetch_array();
 $result_array['greeting'] = [
@@ -38,6 +41,7 @@ if($year > 0) {
     $sql .= " AND year = $year ";
 }
 $sql .= " ORDER BY name";
+
 $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 $artist_length = $result->num_rows;
 $artist_list = array();
