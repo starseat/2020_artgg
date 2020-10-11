@@ -1,6 +1,6 @@
 <?php require_once('./fragment/header.php'); ?>
 
-<link href="./css/about.css" type="text/css" rel="stylesheet">
+<link href="./css/business.css" type="text/css" rel="stylesheet">
 
 <?php
 
@@ -109,6 +109,6 @@ $result->free();
 
 <?php require_once('./fragment/footer.php'); ?>
 
-<script src="./js/about.js"></script>
+<script src="./js/business.js"></script>
 
 <?php require_once('./fragment/tail.php'); ?>

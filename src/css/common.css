@@ -1,5 +1,11 @@
 ﻿@charset "utf-8";
 
+/* Skip Navigation */
+#skipNav{position:relative;z-index:9999; text-align:center;}
+#skipNav a{position: absolute; top: -200px; left:0; width:100%; line-height: 40px; border: 1px solid #dedede; background-color: #333; color:#fff; font-weight:bold;}
+#skipNav a:focus,
+#skipNav a:active{top: 0;}
+
 /* RESET */
 html,body{-webkit-text-size-adjust:none; color:#000; font-weight:400; line-height: 1.4; letter-spacing: -0.018em;}
 body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select,img,div {margin:0; padding:0;}
@@ -10,12 +16,15 @@ ul,ol{list-style:none}
 input,select{vertical-align:middle; background:#fff;}
 em,address,i{font-style:normal}
 table{border-collapse:collapse; border-spacing:0px; empty-cells:show; table-layout:fixed}
-legend,caption{visibility:hidden; width:0; height:0; margin:0; padding:0; font-size:0; line-height:0}
+legend,caption{visibility:hidden; width:0; height:0; margin:0; padding:0; font-size:0; line-height:0;}
 a {text-decoration:none;color:#000;}
 a:hover,a:focus {text-decoration:none;}
 input,button,select {outline:none; border-radius:0;}
 
 /* common */
+.contents_top_btn_w {display:block; position:fixed; right:50px; bottom:50px;}
+    .contents_top_btn {position:relative; width:70px; height:70px; background-color:#fff; }
+        .icon_toparrow {display:block; position:absolute; left:50%; top:50%; margin:-12px 0 0 -23px; width:46px; height:24px; background-image:url('../img/arrow_top.png'); background-size:46px auto; background-repeat:no-repeat;}
 .blind{position:absolute !important; width:1px; height:1px; overflow:hidden; clip:rect(1px 1px 1px 1px); clip:rect(1px, 1px, 1px, 1px);}
 .ir {zoom:-10; z-index:-1; position:relative; display:block; width:100%; font-size:0px; text-align:center; white-space:nowrap; overflow:hidden;}
 .icn {position:absolute; display:block; .display:inline; .zoom:1;  font:0/0 arial; vertical-align:middle; overflow:hidden; background-repeat:no-repeat; background-color:transparent; background-image:url('../img/set_icon.png'); background-size:500px auto;}
@@ -43,7 +52,7 @@ input,button,select {outline:none; border-radius:0;}
 /* 공통 lnb */
 .snb_current {display:block; }
 .common_gnb_w {position:fixed; left:0; top:0; z-index:100; width:100%; height:158px; padding:58px 100px 0; box-sizing:border-box; background-color:#fff;}
-    .artgg_lnb_w {position:relative; z-index:10; margin:0 auto; box-sizing:border-box; width:100%; max-width:1430px; background-color:#fff;}
+    .artgg_lnb_w {position:relative; z-index:10; margin:0 auto; box-sizing:border-box; width:100%; max-width:1530px; background-color:#fff;}
     .artgg_lnb_w:after {display:block; content:''; clear:both;}
         .artgg_h1_logo {position:Relative; float:left; z-index:98; width:315px; height:100px;}
             .logolink_main {display:block; position:relative; width:100%; height:100%;}
@@ -160,8 +169,7 @@ input,button,select {outline:none; border-radius:0;}
                 .fcc_email {}
         .footer_cont_r {}
             .fcr_sns_list {overflow:hidden;}
-                .fcr_sl_cont {float:left; width:24%; text-align:right;}
-                .youtube {width:28%;}
+                .fcr_sl_cont {float:left; width:25%; text-align:right;}
                     .fcr_sl_link {display:block; padding:0 12%;}
                         [class^="sns_icon_"] {display:inline-block; max-width:100%;}
                         .sns_icon_facebook {}
@@ -228,7 +236,7 @@ input,button,select {outline:none; border-radius:0;}
 /* 서브 : 작가리스트 */
 .module_image_list_w {margin-top:340px; overflow:hidden;}
     .module_image_list {position:relative; margin-top:-82px; display:flex; flex-wrap:wrap; width:calc(100% + 82px);}
-        .mdil_inner {width:20%; padding:82px 82px 0 0; box-sizing:border-box;}
+        .mdil_inner {width:25%; padding:82px 82px 0 0; box-sizing:border-box;}
             .mdil_cont {display:block; position:relative; padding-top:100%; overflow:hidden;}
                 .mdil_thumb_w {display:block; position:relative;}
                     .mdil_image {display:block; width:100%; -webkit-transition: 0.2s; transition: 0.2s;}
@@ -238,8 +246,12 @@ input,button,select {outline:none; border-radius:0;}
                             .mdil_image {display: block; width: auto; transform: translate(-50%,-50%);}
                     .mdil_text_w {display:none; position:Absolute; left:0; top:0; width:100%; height:100%; font-size:18px; line-height:26px; color:#fff; background-color:rgba(0,0,0,.5);}
                     .mdil_text {display:table-cell; padding:0 13%; width:100%; height:100%; vertical-align:middle; box-sizing:border-box;}
-                    .mdil_cont:hover .mdil_text_w {display:table;}
+                    .mdil_cont:hover .mdil_text_w,
+                    .mdil_cont:focus .mdil_text_w {display:table;}
     .module_image_list_w .mdil_cont:hover:before {display:block;}
+    .list_more_w {display:block; margin:80px auto 0; width:50px; height:50px; position:Relative; border-radius:100%; border:1px solid #dfdfdf; background-color:#fff; }
+        .list_more_text {position:Absolute; left:50%; top:50%; margin:-5px 0 0 -10px; width:19px; height:11px; background-image:url('../img/arrow_list_more.png'); background-repeat:no-repeat; background-position:left top;}
+
 /* 서브 : 작가리스트 엔드 */
 .section_artist_w {margin-top:140px;}
     .artist_slide_w {}
@@ -315,7 +327,7 @@ input,button,select {outline:none; border-radius:0;}
         .business_info_w .module_image_list_w {margin-top:90px;}
             .business_info_w .module_image_list {margin-top:-100px; width:112.5%;}
                 .business_info_w .mdil_inner {width:33.3%; padding:100px 12.5% 0 0;}
-        .business_info_w .mdil_cont:after {display:block; content:''; position:absolute; left:0; top:0; width:100%; height:100%; border:10px solid #000; box-sizing:border-box;}
+        .business_info_w .mdil_cont:after {display:block; content:''; position:absolute; left:0; top:0; width:100%; height:100%; border:10px solid #53ae6e; box-sizing:border-box;}
     /* 아트경기작가 */
     .artgg_artist_list_box {margin-top:340px;}
         .artgg_artist_list {margin-top:55px; width:calc(100% + 35px);}
@@ -337,11 +349,20 @@ input,button,select {outline:none; border-radius:0;}
 
 
 
-
-
-
-
-
+/* 공지사항 상세 */
+.board_view_area {margin-top:100px;}
+    .top_title_faq {display:table; width:100%; overflow:hidden; height:90px; border-top:2px solid #343a40; color:#000; }
+        .board_title {display:table-cell; vertical-align:middle; width:60%; padding:0 15px; box-sizing:border-box; font-size:22px; font-weight:800;}
+        .stit_area {display:table-cell; vertical-align:middle; width:15%; box-sizing:border-box; text-align:right;}
+            [class^="stit_regist"] {display:block; width:100%; padding-right:15px; box-sizing:border-box; font-size:16px; line-height:18px; color:#888; overflow:hidden;}
+            .stit_regist_end {margin-top:7px; display:inline-block;}
+                .stit_text {width:50%;}
+                .stit_date {padding-left:10px; box-sizing:border-box;}
+    .view_area {padding:30px 20px; background:url('../img/board_dott.png') repeat-x left top; border-bottom:2px solid #343a40;}
+    .button_box_w {display:block; text-align:right;}
+        .button_board_list {display:inline-block; margin-top:20px; padding:10px 15px; border-radius:5px; color:#fff; background-color:#343a40; font-weight:700; }
+        .button_board_list:hover {text-decoration:underline;}
+            .btn_bl_text {}
 
 /* 메인 : pc 중간 제어 */
 @media screen and (max-width:1350px) {
@@ -377,6 +398,9 @@ input,button,select {outline:none; border-radius:0;}
                 .artist_name {font-size:21px; left:-7px;}
     /* T:footer */
     .footer {margin-top:140px; padding:0 25px 70px; }
+    .contents_top_btn_w {right:10px; bottom:10px;}
+        .contents_top_btn {width:41px; height:37px; border-radius:5px; }
+            .icon_toparrow {width:23px; height:12px; margin:-7px 0 0 -12px; background-size:23px auto;}
     .footer_cont_copy {font-size:12px;}
 
     /* T:공지사항 */
@@ -400,6 +424,9 @@ input,button,select {outline:none; border-radius:0;}
     .module_image_list_w {margin-top:85px; }
         .module_image_list {margin-top:-14px; width:calc(100% + 28px); }
             .mdil_inner {width:33.3%; padding:28px 28px 0 0; }
+    .list_more_w {display:block; width:100%; border:1px solid #efefef; border-width:1px 0; border-radius:0;}
+        .list_more_text {position:static; margin:0; background:none;}
+            .list_more_text .ir {font-size:14px; z-index:0; color:#888;}
     /* T:작가엔드 */
     .section_artist_w, .article_artist_box {margin-top:85px;}
         .slide_text_title {font-size:21px;}
@@ -443,8 +470,15 @@ input,button,select {outline:none; border-radius:0;}
         .artgg_artist_list {margin-top:35px;}
             .aal_name {font-size:21px; padding-top:25px;}
     .business_info_w .mdil_cont:after {border-width:5px;}
+    /* T:공지사항 */
+    .board_view_area {margin-top:35px;}
+    .top_title_faq {height:70px;}
+        .board_title {width:40%; font-size:20px;}
+        [class^="stit_regist"] {font-size:14px;}
+        .stit_regist_end {margin-top:3px;}
+    .view_area {padding:20px 15px; font-size:16px;}
 
- }
+}
 
 
 
@@ -457,23 +491,22 @@ input,button,select {outline:none; border-radius:0;}
     .content_title_d {padding-left:20px; }
     .icn {background-image:url('../img/m_set_icn.png'); background-size:105px auto;}
     /*.container {padding:75px 25px 95px;}*/
-    .container {padding:85px 0 95px;}
+    .container {padding:85px 0;}
     .section_box_w {padding:0 25px;}
         .content_inner {padding:0;}
             .section_title {padding-left:25px; height:28px; line-height:28px; font-size:24px;}
             .section_title:after {width:5px;}
 
     /* M:footer */
+    .footer{margin-top:0; padding:0 25px 50px;}
     [class^="footer_cont_"] {display:block; float:left;}
     .footer_cont_l {width:54% !important;}
         .footer_cont_copy {width:46% !important; padding-left:30px; box-sizing:border-box; font-size:13px;}
     .footer_cont_copy {padding-left:15px; font-size:11px;}
-    .footer_cont_r {width:54% !important; padding-top:28px; padding-bottom:40px; float:none; clear:both;}
+    .footer_cont_r {width:54% !important; padding-top:28px; float:none; clear:both;}
         .fcr_sl_cont {width:25%;}
             .footer_cont_l img {display:block; width:100%;}
             .fcr_sl_link {display:inline-block; padding:0 9px;}
-
-
 
     /* M:GNB */
     .common_gnb_w {height:75px; padding:0;}
@@ -563,6 +596,7 @@ input,button,select {outline:none; border-radius:0;}
     .section_info_w {margin-top:95px; min-height:auto; box-sizing:border-box;}
         .info_image {width:40%;}
         .info_text_w {padding-left:5%; font-size:18px;}
+
     /* M:프로그램리스트 */
     .list_title {margin:0 25px; padding-left:19px; font-size:18px; line-height:27px;}
     .list_title:after {width:5px; top:2px; height:calc(100% - 6px);}
@@ -594,7 +628,13 @@ input,button,select {outline:none; border-radius:0;}
 
     /* M:작가리스트 */
     .content_info_text{font-size:12px; }
-    .module_image_list_w {margin-top:50px; padding:0 25px;}
+        .module_image_list_w {margin-top:50px; padding:0 25px;}
+            .module_image_list {margin-top:-20px; width:calc(100% + 20px);}
+                .mdil_inner {width:50%; padding:20px 20px 0 0;}
+                    .mdil_cont:hover .mdil_text,
+                    .mdil_cont:focus .mdil_text {position:absolute; left:0; top:50%; margin-top:-19px; font-size:12px; line-height:20px; height:38px; overflow:hidden; text-overflow:ellipsis; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient: vertical;}
+        .list_more_w {margin-top:40px; height:40px; line-height:40px; }
+            .list_more_text .ir {font-size:12px;}
 
     /* M:작가엔드 */
         .artist_name {left:0; font-size:12px !important;}
@@ -619,6 +659,14 @@ input,button,select {outline:none; border-radius:0;}
             .all_link:after {height:2px;}
                 .aal_name {padding:15px 15px 0 0;}
     .business_info_w .mdil_cont:after {border-width:4px;}
+
+    /* M:공지사항 상세 */
+    .top_title_faq {height:60px;}
+    [class^="stit_regist"] {font-size:12px;}
+    .stit_regist_end {margin-top:0;}
+    .board_title {font-size:18px;}
+    .view_area {font-size:14px;}
+
 }
 
 
