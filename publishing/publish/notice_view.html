@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="desc">
+    <title>title</title>
+    <link rel="canonical" href="https://url">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="title">
+    <meta property="og:description" content="deesc">
+    <meta property="og:url" content="url">
+    <script type="text/javascript" src="../lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../lib/slick-1.6.0.min.js"></script>
+    <script type="text/javascript" src="ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
+    <link rel="stylesheet" type="text/css" href="../css/slick.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" media="all" />
+</head>
+<body>
+<div class="wrap">
+    <!-- GNB -->
+    <div class="common_gnb_w"><!-- lnbtype_main / sticky / 모바일:gnb_open -->
+      공통gnb영역
+    </div>
+
+    <!-- 콘텐츠 -->
+    <div class="container">
+        <div class="content_inner">
+            <div class="section_box_w">
+                <h2 class="content_title">공지사항</h2>
+                <div class="board_view_area">
+                    <ul class="top_title_faq">
+                        <li class="board_title">공지사항 내용내용</li>
+                        <li class="stit_area">
+                            <span class="stit_regist_day">
+                                <span class="stit_text">등록일</span>
+                                <em class="stit_date">2020.10.01</em>
+                            </span>
+                            <span class="stit_regist_end">
+                                <span class="stit_text">수정일</span>
+                                <em class="stit_date">2020.10.05</em>
+                            </span>
+                        </li>
+                    </ul>
+                    <div class="view_area">
+                        공지사항내용 뿌려지는 영역입니다.공지사항내용 뿌려지는 영역입니다.
+                        공지사항내용 뿌려지는 영역입니다.공지사항내용 뿌려지는 영역입니다.공지사항내용 뿌려지는 영역입니다.
+                    </div>
+                    <div class="button_box_w">
+                        <button type="button" class="button_board_list">
+                            <span class="btn_bl_text">목록으로</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div class="footer">
+        공통 푸터 영역
+    </div>
+
+</div>
+<!--#front-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        mainvisualSlick();
+
+        var mql = window.matchMedia("screen and (max-width: 720px)");
+        if (mql.matches) {
+            console.log("화면의 너비가 720px 보다 작습니다.");
+            mobileGnb();
+            mobilelnbOpen();
+        } else {
+            console.log("화면의 너비가 720px 보다 큽니다.");
+            artggLnb();
+            gnbSticky();
+        }
+    });
+
+    $(window).resize(function() {   });
+</script>
+</body>
+</html>
