@@ -34,7 +34,7 @@ $result->free();
     <div class="content_inner">
         <div class="section_box_w">
             <h2 class="content_title_b">Artist <span class="artist_name"><?php echo RemoveXSS($artist_info['name']) . '(' . RemoveXSS($artist_info['en_name']) . ')'; ?></span></h2>
-            <p class="content_info_text"></p>
+            <div class="content_info_text"><?php echo RemoveXSS($artist_info['introduction']); ?></div>
             <div class="section_artist_w">
                 <div class="artist_slide_w">
                     <div id="artist_slide_swiper_container" class="swiper-container">
@@ -58,13 +58,22 @@ $result->free();
                     </div>
                 </div>
                 <!-- 작가이력 영역 -->
+                <!--
                 <div class="article_artist_box">
                     <h3 class="content_title_c">작가 소개</h3>
                     <ul class="artist_box_list">
-                        <li class="abl_inner"><strong><?php echo RemoveXSS($artist_info['name']) . '(' . RemoveXSS($artist_info['en_name']) . ')'; ?></strong></li>
+                        <li class="abl_inner">
+                            <strong>
+                -->
+                            <?php 
+                                // echo RemoveXSS($artist_info['name']) . '(' . RemoveXSS($artist_info['en_name']) . ')'; 
+                            ?>
+                <!--
+                            </strong>
+                        </li>
                     </ul>
-                    <?php echo RemoveXSS($artist_info['introduction']); ?>
                 </div>
+                -->
                 <div class="article_artist_box">
                     <h3 class="content_title_c">학력</h3>
                     <?php echo RemoveXSS($artist_info['academic']); ?>
