@@ -244,7 +244,7 @@ input,button,select {outline:none; border-radius:0;}
                         .mdil_thumb_w {right: 0; width: 100%; transform: translate(50%,50%);}
                         .mdil_image,.mdil_thumb_w {position: absolute; top: 0; left: 0; height: 100%;}
                             .mdil_image {display: block; width: auto; transform: translate(-50%,-50%);}
-                    .mdil_text_w {display:none; position:Absolute; left:0; top:0; width:100%; height:100%; font-size:18px; line-height:26px; color:#fff; background-color:rgba(0,0,0,.5);}
+                    .mdil_text_w {display:none; position:Absolute; left:0; top:0; width:100%; height:100%; font-size:18px; line-height:26px; color:#fff; background-color:rgba(0,0,0,.5); text-align:center;}
                     .mdil_text {display:table-cell; padding:0 13%; width:100%; height:100%; vertical-align:middle; box-sizing:border-box;}
                     .mdil_cont:hover .mdil_text_w,
                     .mdil_cont:focus .mdil_text_w {display:table;}
