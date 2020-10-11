@@ -136,7 +136,7 @@ include('./db_conn.php');
                             </a>
                             <ul class="artgg_snb">
                                 <li class="ssnb_inner">
-                                    <a href="./about.php" class="ssnb_link">
+                                    <a href="./business.php" class="ssnb_link">
                                         <span class="ssnb_txt_box">
                                             <span class="ssnb_txt">사업 소개</span>
                                         </span>
