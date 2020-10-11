@@ -58,25 +58,32 @@ include('./db_conn.php');
                             <ul class="artgg_snb">
                                 <?php
 
-                                $sql = "SELECT seq, year, name FROM artgg_program WHERE year = (SELECT max(year) FROM artgg_program) ORDER BY name ASC";
-                                $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
-                                $program_count = $result->num_rows;
+                                // $sql = "SELECT seq, year, name FROM artgg_program WHERE year = (SELECT max(year) FROM artgg_program) ORDER BY name ASC";
+                                // $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+                                // $program_count = $result->num_rows;
 
-                                if ($program_count > 0) {
-                                    while ($row = $result->fetch_array()) {
-                                        echo ('<li class="ssnb_inner">');
-                                        echo ('    <a href="./program_detail.php?seq=' . RemoveXSS($row['seq']) . '" class="ssnb_link">');
-                                        echo ('        <span class="ssnb_txt_box">');
-                                        echo ('            <span class="ssnb_txt">' . RemoveXSS($row['name']) . '</span>');
-                                        echo ('        </span>');
-                                        echo ('    </a>');
-                                        echo ('</li>');
-                                    }
-                                }
+                                // if ($program_count > 0) {
+                                //     while ($row = $result->fetch_array()) {
+                                //         echo ('<li class="ssnb_inner">');
+                                //         echo ('    <a href="./program_detail.php?seq=' . RemoveXSS($row['seq']) . '" class="ssnb_link">');
+                                //         echo ('        <span class="ssnb_txt_box">');
+                                //         echo ('            <span class="ssnb_txt">' . RemoveXSS($row['name']) . '</span>');
+                                //         echo ('        </span>');
+                                //         echo ('    </a>');
+                                //         echo ('</li>');
+                                //     }
+                                // }
 
-                                $result->free();
+                                // $result->free();
 
                                 ?>
+                                <li class="ssnb_inner">
+                                    <a href="./program.php" class="ssnb_link">
+                                        <span class="ssnb_txt_box">
+                                            <span class="ssnb_txt">전체 프로그램</span>
+                                        </span>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="slnb_inner">
