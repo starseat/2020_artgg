@@ -62,6 +62,10 @@ function xss_clean($data) {
 }
 
 function RemoveXSS($val) {
+    return $val;
+}
+
+function RemoveXSS_bak($val) {
     // jw add
     //$val = htmlspecialchars($val, ENT_QUOTES, 'UTF-8');
 
