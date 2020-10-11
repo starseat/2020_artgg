@@ -239,6 +239,9 @@ input,button,select {outline:none; border-radius:0;}
                     .mdil_text {display:table-cell; padding:0 13%; width:100%; height:100%; vertical-align:middle; box-sizing:border-box;}
                     .mdil_cont:hover .mdil_text_w {display:table;}
     .module_image_list_w .mdil_cont:hover:before {display:block;}
+    .list_more_w {display:block; margin:80px auto 0; width:50px; height:50px; position:Relative; border-radius:100%; border:1px solid #dfdfdf; background-color:#fff; }
+        .list_more_text {position:Absolute; left:50%; top:50%; margin:-5px 0 0 -10px; width:19px; height:11px; background-image:url('../img/arrow_list_more.png'); background-repeat:no-repeat; background-position:left top;}
+
 /* 서브 : 작가리스트 엔드 */
 .section_artist_w {margin-top:140px;}
     .artist_slide_w {}
@@ -351,18 +354,6 @@ input,button,select {outline:none; border-radius:0;}
         .button_board_list:hover {text-decoration:underline;}
             .btn_bl_text {}
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* 메인 : pc 중간 제어 */
 @media screen and (max-width:1350px) {
     .container{padding:158px 40px 0;}
@@ -420,6 +411,9 @@ input,button,select {outline:none; border-radius:0;}
     .module_image_list_w {margin-top:85px; }
         .module_image_list {margin-top:-14px; width:calc(100% + 28px); }
             .mdil_inner {width:33.3%; padding:28px 28px 0 0; }
+    .list_more_w {display:block; width:100%; border:1px solid #efefef; border-width:1px 0; border-radius:0;}
+        .list_more_text {position:static; margin:0; background:none;}
+            .list_more_text .ir {font-size:14px; z-index:0; color:#888;}
     /* T:작가엔드 */
     .section_artist_w, .article_artist_box {margin-top:85px;}
         .slide_text_title {font-size:21px;}
@@ -622,6 +616,8 @@ input,button,select {outline:none; border-radius:0;}
     /* M:작가리스트 */
     .content_info_text{font-size:12px; }
     .module_image_list_w {margin-top:50px; padding:0 25px;}
+    .list_more_w {margin-top:40px; height:40px; line-height:40px; }
+    .list_more_text .ir {font-size:12px;}
 
     /* M:작가엔드 */
         .artist_name {left:0; font-size:12px !important;}
