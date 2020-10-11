@@ -23,8 +23,8 @@
                         </a>
                     </li>
                     <li class="fcr_sl_cont youtube">
-                        <a href="#none" class="fcr_sl_link" title="공식 유튜브채널 바로가기">
-                            <img src="https://www.youtube.com/channel/UCTgx3C6JrnoNWyBpVYPGkag?view_as=subscriber" alt="유튜브 아이콘" class="sns_icon_youtube">
+                        <a href="https://www.youtube.com/channel/UCTgx3C6JrnoNWyBpVYPGkag?view_as=subscriber" class="fcr_sl_link" title="공식 유튜브채널 바로가기">
+                            <img src="./img/sns_yt.jpg" alt="유튜브 아이콘" class="sns_icon_youtube">
                         </a>
                     </li>
                     <li class="fcr_sl_cont">
