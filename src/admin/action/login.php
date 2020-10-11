@@ -3,37 +3,15 @@
 session_start();
 
 include('../db_conn.php');
+include('../common_login.php');
 
 header('Content-Type: text/html; charset=UTF-8');
-
-// 비밀번호 암호화  // https://cnpnote.tistory.com/entry/passwordhash-%EC%82%AC%EC%9A%A9%EB%B2%95
-$options = [
-    'salt' => 'artgg_admin',
-    'cost' => 12 // the default cost is 10
-];
-
-function password_encrypt($password) {
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT /*, $options */);
-    // $hashed_password = password_hash($password, PASSWORD_DEFAULT, $options);
-    // $hashed_password = password_hash($password, PASSWORD_BCRYPT, $options);
-    return $hashed_password;
-}
-
-function password_matches($password, $hashed_password) {
-    if (password_verify($password, $hashed_password /*, options */)) {
-        //return true;
-        return 1;
-    } else {
-        //return false;
-        return 0;
-    }
-}
 
 $login_id = $_POST['login_id'];
 $login_pw = $_POST['login_pw'];
 
 $sql  = "SELECT ";
-$sql .= "user_id, name, member_type, password ";
+$sql .= "seq, user_id, name, member_type, password ";
 $sql .= "FROM artgg_members ";
 $sql .= "WHERE user_id = '" . $login_id . "'";
 
@@ -60,6 +38,7 @@ if (password_matches($login_pw, $dbPassword) == 0) {
 }
 
 $sessionSavedUserInfo = [
+    'seq' => $row['seq'], 
     'user_id' => $row['user_id'],
     'name' => $row['name'],
     'member_type' => $row['member_type']

@@ -18,8 +18,10 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                    <a class="dropdown-item" href="./change_password.php">비밀번호 변경</a>
+                    <div class="dropdown-divider"></div>
                     <form id="logoutForm" name="logoutForm" method="post" action="./action/logout.php">
-                        <button type="submit" class="dropdown-item btn btn-outline-dark">Logout</button>
+                        <button type="submit" class="dropdown-item btn btn-outline-dark">로그아웃</button>
                     </form>
                 </div>
             </li>
