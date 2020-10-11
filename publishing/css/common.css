@@ -23,8 +23,8 @@ input,button,select {outline:none; border-radius:0;}
 
 /* common */
 .contents_top_btn_w {display:block; position:fixed; right:50px; bottom:50px;}
-    .contents_top_btn {position:relative; width:48px; height:48px; background-color:#fff; border:1px solid #e4e4e4;}
-        .icon_toparrow {display:block; position:absolute; left:50%; top:50%; margin:-5px 0 0 -10px; width:19px; height:11px; background-image:url('../img/arrow_top.png'); background-repeat:no-repeat;}
+    .contents_top_btn {position:relative; width:70px; height:70px; background-color:#fff; }
+        .icon_toparrow {display:block; position:absolute; left:50%; top:50%; margin:-12px 0 0 -23px; width:46px; height:24px; background-image:url('../img/arrow_top.png'); background-size:46px auto; background-repeat:no-repeat;}
 .blind{position:absolute !important; width:1px; height:1px; overflow:hidden; clip:rect(1px 1px 1px 1px); clip:rect(1px, 1px, 1px, 1px);}
 .ir {zoom:-10; z-index:-1; position:relative; display:block; width:100%; font-size:0px; text-align:center; white-space:nowrap; overflow:hidden;}
 .icn {position:absolute; display:block; .display:inline; .zoom:1;  font:0/0 arial; vertical-align:middle; overflow:hidden; background-repeat:no-repeat; background-color:transparent; background-image:url('../img/set_icon.png'); background-size:500px auto;}
@@ -236,7 +236,7 @@ input,button,select {outline:none; border-radius:0;}
 /* 서브 : 작가리스트 */
 .module_image_list_w {margin-top:340px; overflow:hidden;}
     .module_image_list {position:relative; margin-top:-82px; display:flex; flex-wrap:wrap; width:calc(100% + 82px);}
-        .mdil_inner {width:20%; padding:82px 82px 0 0; box-sizing:border-box;}
+        .mdil_inner {width:25%; padding:82px 82px 0 0; box-sizing:border-box;}
             .mdil_cont {display:block; position:relative; padding-top:100%; overflow:hidden;}
                 .mdil_thumb_w {display:block; position:relative;}
                     .mdil_image {display:block; width:100%; -webkit-transition: 0.2s; transition: 0.2s;}
@@ -399,8 +399,8 @@ input,button,select {outline:none; border-radius:0;}
     /* T:footer */
     .footer {margin-top:140px; padding:0 25px 70px; }
     .contents_top_btn_w {right:10px; bottom:10px;}
-        .contents_top_btn {width:41px; height:37px; border-color:rgba(0,0,0,.5); border-radius:5px;}
-            .icon_toparrow {margin-top:-6px;}
+        .contents_top_btn {width:41px; height:37px; border-radius:5px; }
+            .icon_toparrow {width:23px; height:12px; margin:-7px 0 0 -12px; background-size:23px auto;}
     .footer_cont_copy {font-size:12px;}
 
     /* T:공지사항 */
@@ -508,8 +508,6 @@ input,button,select {outline:none; border-radius:0;}
             .footer_cont_l img {display:block; width:100%;}
             .fcr_sl_link {display:inline-block; padding:0 9px;}
 
-
-
     /* M:GNB */
     .common_gnb_w {height:75px; padding:0;}
     .artgg_lnb_w,
@@ -598,6 +596,7 @@ input,button,select {outline:none; border-radius:0;}
     .section_info_w {margin-top:95px; min-height:auto; box-sizing:border-box;}
         .info_image {width:40%;}
         .info_text_w {padding-left:5%; font-size:18px;}
+
     /* M:프로그램리스트 */
     .list_title {margin:0 25px; padding-left:19px; font-size:18px; line-height:27px;}
     .list_title:after {width:5px; top:2px; height:calc(100% - 6px);}
@@ -630,8 +629,10 @@ input,button,select {outline:none; border-radius:0;}
     /* M:작가리스트 */
     .content_info_text{font-size:12px; }
         .module_image_list_w {margin-top:50px; padding:0 25px;}
-            .mdil_cont:hover .mdil_text,
-            .mdil_cont:focus .mdil_text {position:absolute; left:0; top:50%; margin-top:-19px; font-size:12px; line-height:20px; height:38px; overflow:hidden; text-overflow:ellipsis; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient: vertical;}
+            .module_image_list {margin-top:-20px; width:calc(100% + 20px);}
+                .mdil_inner {width:50%; padding:20px 20px 0 0;}
+                    .mdil_cont:hover .mdil_text,
+                    .mdil_cont:focus .mdil_text {position:absolute; left:0; top:50%; margin-top:-19px; font-size:12px; line-height:20px; height:38px; overflow:hidden; text-overflow:ellipsis; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient: vertical;}
         .list_more_w {margin-top:40px; height:40px; line-height:40px; }
             .list_more_text .ir {font-size:12px;}
 
