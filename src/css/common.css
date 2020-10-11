@@ -254,6 +254,7 @@ input,button,select {outline:none; border-radius:0;}
 
 /* 서브 : 작가리스트 엔드 */
 .section_artist_w {margin-top:140px;}
+.section_artist_w img {max-width:100%;}
     .artist_slide_w {}
         .slide_text_w {margin-top:25px; padding-left:10px; }
             .slide_text_title {font-size:27px; font-style:italic; font-weight:800;}
