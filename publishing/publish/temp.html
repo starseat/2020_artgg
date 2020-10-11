@@ -19,6 +19,11 @@
     <link rel="stylesheet" type="text/css" href="../css/common.css" media="all" />
 </head>
 <body style="background:#eee;">
+<ul id="skipNav">
+    <li><a href="#header">헤더 메뉴</a></li>
+    <li><a href="#container">본문컨텐츠</a></li>
+    <li><a href="#footer">푸터 메뉴</a></li>
+</ul>
 <div class="wrap">
     <!-- GNB -->
     <div class="common_gnb_w lnbtype_main"><!-- lnbtype_main / sticky-->
@@ -215,17 +220,69 @@
 
     <!-- 푸터 -->
     <div class="footer">
-
+        <!-- top버튼 -->
+        <div class="contents_top_btn_w">
+            <button type="button" class="contents_top_btn" title="최상단 바로가기">
+                <span class="icon_toparrow"><i class="ir">페이지 위로 가기</i></span>
+            </button>
+        </div>
+        <!-- footer 콘텐츠-->
+        <div class="footer_inner">
+            <div class="footer_cont_l">
+                <a href="#none" class="fcl_gg" title="경기도 홈페이지 바로가기"><img src="../img/footer_01.jpg" alt="새로운 경기 공정한 세상"></a>
+                <a href="#none" class="fcl_gc" title="경기문화재단 홈페이지 바로가기"><img src="../img/footer_02.jpg" alt="경기문화재단"></a>
+            </div>
+            <div class="footer_cont_copy">
+                <strong class="fcc_copy">Copyright ⓒ 2020 아트경기</strong>
+                <span class="fcc_tel">문의 T.<a href="">031-231-7237</a></span>
+                <span class="fcc_email">artgg@cf.kr</span>
+            </div>
+            <div class="footer_cont_r">
+                <ul class="fcr_sns_list">
+                    <li class="fcr_sl_cont">
+                        <a href="#none" class="fcr_sl_link" title="공식 페이스북 바로가기">
+                            <img src="../img/sns_fb.jpg" alt="페이스북 아이콘" class="sns_icon_facebook">
+                        </a>
+                    </li>
+                    <li class="fcr_sl_cont">
+                        <a href="#none" class="fcr_sl_link" title="공식 인스타그램 바로가기">
+                            <img src="../img/sns_ig.jpg" alt="인스타그램 아이콘" class="sns_icon_insta">
+                        </a>
+                    </li>
+                    <li class="fcr_sl_cont youtube">
+                        <a href="#none" class="fcr_sl_link" title="공식 유튜브채널 바로가기">
+                            <img src="../img/sns_yt.jpg" alt="유튜브 아이콘" class="sns_icon_youtube">
+                        </a>
+                    </li>
+                    <li class="fcr_sl_cont">
+                        <a href="#none" class="fcr_sl_link" title="공식 블로그 바로가기">
+                            <img src="../img/sns_blog.jpg" alt="블로그 아이콘" class="sns_icon_blog">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 
 </div>
 <!--#front-->
 <script type="text/javascript">
     $(document).ready(function(){
-        artggLnb();
+        mainvisualSlick();
+
+        var mql = window.matchMedia("screen and (max-width: 720px)");
+        if (mql.matches) {
+            console.log("화면의 너비가 720px 보다 작습니다.");
+            mobileGnb();
+            mobilelnbOpen();
+        } else {
+            console.log("화면의 너비가 720px 보다 큽니다.");
+            artggLnb();
+            gnbSticky();
+        }
     });
-    $(window).resize(function() {
-    });
+
+    $(window).resize(function() {   });
 </script>
 </body>
 </html>
