@@ -1,5 +1,8 @@
 <?php
 
+// 로그인 체크
+include('./login_check.php');
+
 include('../common.php');
 include('../db_conn.php');
 
