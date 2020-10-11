@@ -244,7 +244,7 @@ input,button,select {outline:none; border-radius:0;}
                         .mdil_thumb_w {right: 0; width: 100%; transform: translate(50%,50%);}
                         .mdil_image,.mdil_thumb_w {position: absolute; top: 0; left: 0; height: 100%;}
                             .mdil_image {display: block; width: auto; transform: translate(-50%,-50%);}
-                    .mdil_text_w {display:none; position:Absolute; left:0; top:0; width:100%; height:100%; font-size:18px; line-height:26px; color:#fff; background-color:rgba(0,0,0,.5);}
+                    .mdil_text_w {display:none; position:Absolute; left:0; top:0; width:100%; height:100%; font-size:18px; line-height:26px; color:#fff; background-color:rgba(0,0,0,.5); text-align:center;}
                     .mdil_text {display:table-cell; padding:0 13%; width:100%; height:100%; vertical-align:middle; box-sizing:border-box;}
                     .mdil_cont:hover .mdil_text_w,
                     .mdil_cont:focus .mdil_text_w {display:table;}
@@ -266,9 +266,11 @@ input,button,select {outline:none; border-radius:0;}
             .artist_slide_w .slick-arrow {top:33%; margin-top:0 !important;}
         /* 작가리스트 엔드 : 이력 */
         .article_artist_box {margin-top:170px;}
-            .artist_box_list {margin-top:50px; font-size:27px; line-height:30px;}
-                .abl_inner {padding-left:47px; margin-top:20px;}
-                .abl_inner:first-child {margin-top:0;}
+            .artist_box_list {margin-top:50px; }
+                .abl_inner,
+                .article_artist_box p {padding-left:47px !important; margin-top:20px !important; font-size:27px !important; line-height:30px !important;}
+                .abl_inner:first-child,
+                .article_artist_box p:first-child {margin-top:0 !important;}
             .artist_qa_list {margin-top:70px;}
                 .aql_inner {font-size:27px; padding-bottom:100px;}
                 .aql_inner:last-child {padding-bottom:0;}
@@ -436,8 +438,9 @@ input,button,select {outline:none; border-radius:0;}
         .slide_text_title {font-size:21px;}
         .slide_info_list {padding-top:5px; font-size:16px;}
             .sil_cont {margin-top:5px;}
-        .artist_box_list {margin-top:32px; font-size:21px; line-height:28px; }
-            .abl_inner {margin-top:15px;}
+        .artist_box_list {margin-top:32px; }
+            .abl_inner,
+            .article_artist_box p {margin-top:15px !important; font-size:21px !important; line-height:28px !important; }
         .artist_qa_list {}
                 .qat_title {font-size:40px;}
                 [class^="qa_text_"] {padding-left:40px; font-size:21px; line-height:34px;}
@@ -650,8 +653,9 @@ input,button,select {outline:none; border-radius:0;}
         .slide_text_title {font-size:12px;}
         .slide_info_list {padding-top:4px; font-size:12px;}
             .sil_cont {margin-top:2px;}
-    .artist_box_list {font-size:12px;margin-top:16px; }
-    .abl_inner {margin-top:10px; line-height:16px;}
+    .artist_box_list {margin-top:16px; }
+    .abl_inner,
+    .article_artist_box p {margin-top:10px !important; font-size:12px !important; line-height:16px !important;}
     .section_artist_w, .article_artist_box {margin-top:85px;}
     .artist_qa_list {margin-top:33px;}
         .aql_inner {padding-bottom:85px;}
