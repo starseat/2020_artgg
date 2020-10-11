@@ -237,7 +237,8 @@ input,button,select {outline:none; border-radius:0;}
                             .mdil_image {display: block; width: auto; transform: translate(-50%,-50%);}
                     .mdil_text_w {display:none; position:Absolute; left:0; top:0; width:100%; height:100%; font-size:18px; line-height:26px; color:#fff; background-color:rgba(0,0,0,.5);}
                     .mdil_text {display:table-cell; padding:0 13%; width:100%; height:100%; vertical-align:middle; box-sizing:border-box;}
-                    .mdil_cont:hover .mdil_text_w {display:table;}
+                    .mdil_cont:hover .mdil_text_w,
+                    .mdil_cont:focus .mdil_text_w {display:table;}
     .module_image_list_w .mdil_cont:hover:before {display:block;}
     .list_more_w {display:block; margin:80px auto 0; width:50px; height:50px; position:Relative; border-radius:100%; border:1px solid #dfdfdf; background-color:#fff; }
         .list_more_text {position:Absolute; left:50%; top:50%; margin:-5px 0 0 -10px; width:19px; height:11px; background-image:url('../img/arrow_list_more.png'); background-repeat:no-repeat; background-position:left top;}
@@ -478,18 +479,19 @@ input,button,select {outline:none; border-radius:0;}
     .content_title_d {padding-left:20px; }
     .icn {background-image:url('../img/m_set_icn.png'); background-size:105px auto;}
     /*.container {padding:75px 25px 95px;}*/
-    .container {padding:85px 0 95px;}
+    .container {padding:85px 0;}
     .section_box_w {padding:0 25px;}
         .content_inner {padding:0;}
             .section_title {padding-left:25px; height:28px; line-height:28px; font-size:24px;}
             .section_title:after {width:5px;}
 
     /* M:footer */
+    .footer{margin-top:0; padding:0 25px 50px;}
     [class^="footer_cont_"] {display:block; float:left;}
     .footer_cont_l {width:54% !important;}
         .footer_cont_copy {width:46% !important; padding-left:30px; box-sizing:border-box; font-size:13px;}
     .footer_cont_copy {padding-left:15px; font-size:11px;}
-    .footer_cont_r {width:54% !important; padding-top:28px; padding-bottom:40px; float:none; clear:both;}
+    .footer_cont_r {width:54% !important; padding-top:28px; float:none; clear:both;}
         .fcr_sl_cont {width:25%;}
             .footer_cont_l img {display:block; width:100%;}
             .fcr_sl_link {display:inline-block; padding:0 9px;}
@@ -615,9 +617,11 @@ input,button,select {outline:none; border-radius:0;}
 
     /* M:작가리스트 */
     .content_info_text{font-size:12px; }
-    .module_image_list_w {margin-top:50px; padding:0 25px;}
-    .list_more_w {margin-top:40px; height:40px; line-height:40px; }
-    .list_more_text .ir {font-size:12px;}
+        .module_image_list_w {margin-top:50px; padding:0 25px;}
+            .mdil_cont:hover .mdil_text,
+            .mdil_cont:focus .mdil_text {position:absolute; left:0; top:50%; margin-top:-19px; font-size:12px; line-height:20px; height:38px; overflow:hidden; text-overflow:ellipsis; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient: vertical;}
+        .list_more_w {margin-top:40px; height:40px; line-height:40px; }
+            .list_more_text .ir {font-size:12px;}
 
     /* M:작가엔드 */
         .artist_name {left:0; font-size:12px !important;}
