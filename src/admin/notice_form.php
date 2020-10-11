@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="notice_contents">* 소개글</label>
+                <label for="notice_contents">* 공지사항 내용</label>
                 <div id="notice_contents" class="form-control"></div>
             </div>
             <div class="row">
