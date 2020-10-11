@@ -26,7 +26,7 @@ $paging_info = getPagingInfo($page, $total_count, $item_row_count, $page_block_c
 <div class="container">
     <div class="content_inner">
         <div class="section_box_w">
-            <h3 class="content_title_d">공지사항</h3>
+            <h2 class="content_title">Space</h2>
         </div>
         <br>
         <table class="table table-hover table-hover-pointer">

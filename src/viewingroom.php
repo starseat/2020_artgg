@@ -4,12 +4,12 @@
 <div class="container">
     <div class="content_inner">
         <div class="section_box_w">
-            <h2 class="content_title">Program (sample)</h2>
-            <h3 class="content_title_d">이광기의 온라인 아트쇼</h3>
+            <h2 class="content_title">Space</h2>
+            <h3 class="content_title_d">뷰잉 룸</h3>
             <!-- 뷰잉룸 -->
             <div class="section_viewing_w">
                 <div class="viewing_info_w">
-                    <div class="viewing_image_w">
+                    <!-- <div class="viewing_image_w">
                         <img src="//via.placeholder.com/170x96" alt="" class="viewing_img">
                     </div>
                     <div class="viewing_text_w">
@@ -23,7 +23,8 @@
                 </div>
                 <div class="viewing_cont_w">
                     <iframe width="100%" height="600" src="https://my.matterport.com/show/?m=AgtaYshBYQV&amp;help=1" frameborder="0" allowfullscreen=""></iframe>
-                </div>
+                </div> -->
+                준비중 입니다.
             </div>
         </div>
     </div>
