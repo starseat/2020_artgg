@@ -43,7 +43,7 @@ input,button,select {outline:none; border-radius:0;}
 /* 공통 lnb */
 .snb_current {display:block; }
 .common_gnb_w {position:fixed; left:0; top:0; z-index:100; width:100%; height:158px; padding:58px 100px 0; box-sizing:border-box; background-color:#fff;}
-    .artgg_lnb_w {position:relative; z-index:10; margin:0 auto; box-sizing:border-box; width:100%; max-width:1430px; background-color:#fff;}
+    .artgg_lnb_w {position:relative; z-index:10; margin:0 auto; box-sizing:border-box; width:100%; max-width:1530px; background-color:#fff;}
     .artgg_lnb_w:after {display:block; content:''; clear:both;}
         .artgg_h1_logo {position:Relative; float:left; z-index:98; width:315px; height:100px;}
             .logolink_main {display:block; position:relative; width:100%; height:100%;}
