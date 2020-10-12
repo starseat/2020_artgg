@@ -5,7 +5,7 @@
     <div class="content_inner">
         <div class="section_box_w">
             <h2 class="content_title">Space</h2>
-            <h3 class="content_title_d">뷰잉 룸</h3>
+            <h3 class="content_title_d">뷰잉룸</h3>
             <!-- 뷰잉룸 -->
             <div class="section_viewing_w">
                 <div class="viewing_info_w">

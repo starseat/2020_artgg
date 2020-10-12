@@ -1,9 +1,9 @@
 $(document).ready(function () {
     getArtistList('0', makeArtistInfo);
 
-    // $('#select_year').on('change', function () {
-    //     getArtistList($(this).val(), setGreetingInfo);
-    // });
+    $('#yearSelect').on('change', function () {
+        getArtistList($(this).val(), makeArtistInfo);
+    });
 });
 
 function getArtistList(artist_year, callback) {
@@ -31,7 +31,8 @@ function getArtistList(artist_year, callback) {
 function makeArtistInfo(data) {
     console.log('[makeArtistInfo] data:: ', data);
 
-    $('#artist_info_text').html(data.greeting.introduction);
+    // 작가 소개글 빼기로 협의됨. 2020.10.12
+    //$('#artist_info_text').html(data.greeting.introduction);
 
     const $artist_list = $('#artist_list');
     $artist_list.empty();

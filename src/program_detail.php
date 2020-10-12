@@ -56,7 +56,12 @@ $image_info = $result->fetch_array();
     <div class="content_inner">
         <div class="section_box_w">
             <h2 class="content_title">Program</h2>
-            <h3 class="content_title_d"><?php echo RemoveXSS($program_info['name']); ?></h3>
+            <!-- <h3 class="content_title_d"> -->
+                <?php 
+                    // 상단에 표시되는 프로그램명 삭제 요청 - 2020.10.12
+                    // echo RemoveXSS($program_info['name']); 
+                ?>
+            <!-- </h3> -->
             <div class="section_program_w">
                 <div class="program_poster_w">
                     <img src="<?php echo getImagePath(RemoveXSS($image_info['upload_path'])); ?>" alt="<?php echo RemoveXSS($program_info['name']); ?>" class="poster_image">
