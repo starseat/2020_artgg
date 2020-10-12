@@ -45,7 +45,10 @@ $result->free();
                             $sql .= "ORDER BY sort ASC";
                             $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
                             while ($image_row = $result->fetch_array()) {
-                                echo '<div class="swiper-slide"><img src="' . getImagePath(RemoveXSS($image_row['upload_path'])) . '"></div>';
+                                echo '<div class="swiper-slide">';
+                                echo '<img src="' . getImagePath(RemoveXSS($image_row['upload_path'])) . '" alt="' . RemoveXSS($image_row['caption']) . ')">';
+                                echo '<div class="swiper-slide-item-caption">' . RemoveXSS($image_row['caption']) . '</div>';
+                                echo '</div>';
                             }
                             $result->free();
                             ?>
