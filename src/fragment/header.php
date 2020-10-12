@@ -31,7 +31,7 @@ include('./db_conn.php');
                                 <!--활성화시 current 추가-->
                                 <span class="slnb_txt_box">
                                     <span class="slnb_txt">
-                                        Artist
+                                        Artists
                                     </span>
                                 </span>
                                 <span class="icn icon_menu_arrow"><i class="ir">서브메뉴 보기</i></span>
@@ -50,7 +50,7 @@ include('./db_conn.php');
                             <a href="#" class="slnb_link"> <!-- ./program.php -->
                                 <span class="slnb_txt_box">
                                     <span class="slnb_txt">
-                                        Program
+                                        Programs
                                     </span>
                                 </span>
                                 <span class="icn icon_menu_arrow"><i class="ir">서브메뉴 보기</i></span>
@@ -100,25 +100,24 @@ include('./db_conn.php');
                                     <a href="./viewingroom.php" class="ssnb_link">
                                         <!-- 활성화시 ssnb_current 추가-->
                                         <span class="ssnb_txt_box">
-                                            <span class="ssnb_txt">뷰잉 룸</span>
+                                            <span class="ssnb_txt">뷰잉룸</span>
                                         </span>
                                     </a>
                                 </li>
                                 <li class="ssnb_inner">
                                     <a href="./mediaroom.php" class="ssnb_link">
                                         <span class="ssnb_txt_box">
-                                            <span class="ssnb_txt">미디어 룸</span>
+                                            <span class="ssnb_txt">미디어룸</span>
                                         </span>
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        <!--
                         <li class="slnb_inner">
-                            <a href="#none" class="slnb_link">
+                            <a href="./art_shop.php" class="slnb_link">
                                 <span class="slnb_txt_box">
                                     <span class="slnb_txt">
-                                        Art Shop (준비중)
+                                        Art Shop
                                     </span>
                                 </span>
                                 <span class="icn icon_menu_arrow"><i class="ir">서브메뉴 보기</i></span>
@@ -126,7 +125,6 @@ include('./db_conn.php');
                             <ul class="artgg_snb">
                             </ul>
                         </li>
-                        -->
                         <li class="slnb_inner">
                             <a href="#" class="slnb_link"> <!-- ./about.php -->
                                 <span class="slnb_txt_box">
@@ -140,7 +138,7 @@ include('./db_conn.php');
                                 <li class="ssnb_inner">
                                     <a href="./business.php" class="ssnb_link">
                                         <span class="ssnb_txt_box">
-                                            <span class="ssnb_txt">사업 소개</span>
+                                            <span class="ssnb_txt">아트경기 소개</span>
                                         </span>
                                     </a>
                                 </li>
@@ -151,15 +149,13 @@ include('./db_conn.php');
                                         </span>
                                     </a>
                                 </li>
-                                <!--
                                 <li class="ssnb_inner">
-                                    <a href="./news.php" class="ssnb_link">
+                                    <a href="./press_release.php" class="ssnb_link">
                                         <span class="ssnb_txt_box">
                                             <span class="ssnb_txt">보도자료</span>
                                         </span>
                                     </a>
                                 </li>
-                                -->
                             </ul>
                         </li>
                     </ul>
