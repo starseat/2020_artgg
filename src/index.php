@@ -114,7 +114,7 @@
 
                     $sql  = "SELECT @rownum:=@rownum+1 as num, program.seq, program.year, program.name, program.thumbnail, ";
                     $sql .= "program.program_date, program.place, program.event, program.introduction ";
-                    $sql .= "FROM artgg_program program WHERE (@rownum:=0)=0 ORDER BY name";
+                    $sql .= "FROM artgg_program program WHERE (@rownum:=0)=0 AND year = (SELECT max(year) FROM artgg_program) ORDER BY name";
                     $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
                     $program_length = $result->num_rows;
 
