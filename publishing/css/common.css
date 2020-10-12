@@ -149,7 +149,7 @@ input,button,select {outline:none; border-radius:0;}
 .lnbtype_main .artgg_lnb_w {background-color:transparent;}
 
 /* 스크롤 lnb */
-.sticky {padding-top:0; height:100px; background-color:#fff !important;  transition: all ease-in-out 0.3s;}
+.sticky {padding-top:0 !important; height:100px; background-color:#fff !important;  transition: all ease-in-out 0.3s;}
 .sticky .artgg_lnb_w {height:100px;}
 .sticky .artgg_logo {width:142px; height:50px; top:12px; }
 .sticky .artgg_lnb,.sticky .slnb_inner {height:100px;}
