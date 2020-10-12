@@ -189,15 +189,16 @@ input,button,select {outline:none; border-radius:0;}
 /* 메인 : 공지사항 */
 .section_notice_w {position:relative; margin-top:170px; min-height:300px; display:flex;}
 .section_notice_w:after {display:block; content:''; clear:both;}
-    .notice_cont_l {float:left; width:45%;}
+    .notice_cont_l {float:left; width:50%;}
         .notice_list {padding-top:30px; }
             .nl_inner {margin-top:30px;}
                 .nl_cont {position:relative; display:block;}
                     .nl_text {display:block; position:relative; padding-left:43px; height:30px; line-height:30px; box-sizing:border-box; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:27px; font-weight:400;}
                     .nl_text:after {display:block; content:''; position:absolute; left:0; top:0; width:9px; height:100%; background-color:#000;}
                     .nl_date {display:block; padding-left:43px; height:20px; line-height:20px; margin-top:10px; font-size:21px; color:#6b6b6b;}
-    .notice_cont_r {float:right; width:48%; position:relative;}
+    .notice_cont_r {float:right; width:50%; position:relative;}
         .notice_slide_w {position:absolute; left:50%; top:50%;}
+    #artist-thumb-swiper-container {left:auto; margin-left:0; right:0;}
     #artist-thumb-swiper-pagination {position:Absolute; left:0; bottom:-80px; z-index:5;}
 
 /* 메인 : 추진사업 */
@@ -262,6 +263,14 @@ input,button,select {outline:none; border-radius:0;}
                 .slide_info_list {font-size:16px;}
                     .sil_cont {display:block; margin-top:5px;}
         /* 작가리스트 엔드 : 슬라이드 */
+        .swiper-button-color:before {display:block; content:''; position:absolute;width:100px; height:100px; border-radius:100%; background-color:rgba(0,0,0,.3);}
+        .swiper-button-prev:before  { left:-50px; top:-30px; }
+        .swiper-button-next:before  { left:-20px; top:-30px; }
+        .swiper-button-color {color:#fff !important;}
+        .swiper-button-color .swiper-button-next:after,
+        .swiper-button-color .swiper-button-prev:after {position:relative; z-index:2;}
+        #artist_slide_swiper_container {padding-bottom:50px;}
+
         .artist_slide_w .slick_slide_list {padding-bottom:0;}
             .artist_slide_w .slick-dots {bottom:auto; top:20px; right:20px;}
             .artist_slide_w .slick-arrow {top:33%; margin-top:0 !important;}
