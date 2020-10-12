@@ -187,7 +187,7 @@ input,button,select {outline:none; border-radius:0;}
     #main-swiper-container .swiper-slide {background-size:auto 100% !important; background-repeat:no-repeat !important;}
 
 /* 메인 : 공지사항 */
-.section_notice_w {position:relative; margin-top:170px; display:flex;}
+.section_notice_w {position:relative; margin-top:170px; min-height:300px; display:flex;}
 .section_notice_w:after {display:block; content:''; clear:both;}
     .notice_cont_l {float:left; width:45%;}
         .notice_list {padding-top:30px; }
