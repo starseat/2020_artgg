@@ -269,7 +269,7 @@ input,button,select {outline:none; border-radius:0;}
         .swiper-button-color {color:#fff !important;}
         .swiper-button-color .swiper-button-next:after,
         .swiper-button-color .swiper-button-prev:after {position:relative; z-index:2;}
-        .swiper-slide-item-caption {text-align:left; max-width:85%; padding-top:10px; font-style:italic;}
+        .swiper-slide-item-caption {text-align:left; padding-top:10px; font-style:italic;}
         .artist_slide_w .swiper-pagination {bottom:0;}
         .artist_slide_w .slick_slide_list {padding-bottom:0;}
             .artist_slide_w .slick-dots {bottom:auto; top:20px; right:20px;}
@@ -415,12 +415,12 @@ input,button,select {outline:none; border-radius:0;}
     .icn {background-image:url('../img/t_set_icn.png'); background-size:210px auto;}
     .container {padding:158px 25px 0;}
         .content_inner {padding:0;}
-            [class^="content_title"] {font-size:47px !important; line-height:45px !important;}
-            [class^="content_title_"]{padding-left:27px !important; height:40px; }
+            [class^="content_title"] {font-size:30px !important; line-height:33px !important;}
+            [class^="content_title_"]{padding-left:27px !important; height:30px; }
             [class^="content_title_"]:after {width:7px;}
             .content_title_d {margin-top:25px; padding-left:27px; font-size:35px; height:40px !important; line-height:40px !important;}
-            .content_title_c {font-size:47px; height:50px !important; line-height:50px !important; }
-                .artist_name {font-size:21px; left:-7px;}
+            .content_title_c {font-size:47px; height:30px !important; line-height:30px !important; }
+                .artist_name {font-size:18px; left:2px;}
     /* T:footer */
     .footer {margin-top:140px; padding:0 25px 70px; }
     .contents_top_btn_w {right:10px; bottom:10px;}
@@ -445,7 +445,7 @@ input,button,select {outline:none; border-radius:0;}
         .info_text_w {font-size:21px;}
 
     /* T:작가리스트 */
-    .content_info_text {margin-top:35px; font-size:21px; line-height:40px;}
+    .content_info_text {margin-top:35px; font-size:18px; line-height:40px;}
     .module_image_list_w {margin-top:85px; }
         .module_image_list {margin-top:-14px; width:calc(100% + 28px); }
             .mdil_inner {width:33.3%; padding:28px 28px 0 0; }
@@ -453,17 +453,23 @@ input,button,select {outline:none; border-radius:0;}
         .list_more_text {position:static; margin:0; background:none;}
             .list_more_text .ir {font-size:14px; z-index:0; color:#888;}
     /* T:작가엔드 */
-    .section_artist_w, .article_artist_box {margin-top:85px;}
+    .section_artist_w {margin-top:50px;}
+    .article_artist_box {margin-top:85px;}
         .slide_text_title {font-size:21px;}
         .slide_info_list {padding-top:5px; font-size:16px;}
             .sil_cont {margin-top:5px;}
         .artist_box_list {margin-top:32px; }
             .abl_inner,
-            .article_artist_box p {margin-top:15px !important; font-size:21px !important; line-height:28px !important; }
+            .article_artist_box p {margin-top:8px !important; font-size:18px !important; line-height:28px !important; }
+                .content_title_c + p {margin-top:35px !important;}
         .artist_qa_list {}
                 .qat_title {font-size:40px;}
                 [class^="qa_text_"] {padding-left:40px; font-size:21px; line-height:34px;}
-    #artist_slide_swiper_container {padding-bottom:40px;}
+    #artist_slide_swiper_container {padding-bottom:30px;}
+    .swiper-slide-item-caption {font-size:14px; padding-top:5px;}
+    .swiper-pagination-bullet {width:10px; height:10px; margin:0 4px;}
+    .swiper-pagination-bullet-active {width:22px; height:10px; }
+
     /* T:프로그램리스트 */
     .list_title {font-size:35px; line-height:35px;}
     .section_programlist_w {margin-top:85px; width:100%;}
@@ -658,7 +664,7 @@ input,button,select {outline:none; border-radius:0;}
                     .pg_gallery_w .mdil_inner {flex-shrink: 0; width:110px; padding:14px 14px 0 0;}
 
     /* M:작가리스트 */
-    .content_info_text{font-size:12px; }
+    .content_info_text{font-size:14px; }
         .module_image_list_w {margin-top:50px; padding:0 25px;}
             .module_image_list {margin-top:-20px; width:calc(100% + 20px);}
                 .mdil_inner {width:50%; padding:20px 20px 0 0;}
@@ -669,21 +675,24 @@ input,button,select {outline:none; border-radius:0;}
 
     /* M:작가엔드 */
         .artist_name {left:0; font-size:12px !important;}
-    .content_info_text {margin-top:20px; font-size:12px; line-height:24px;}
-    .section_artist_w {margin-top:85px;}
+    .content_info_text {margin-top:20px; font-size:14px; line-height:24px;}
+    .section_artist_w {margin-top:50px;}
     .slide_text_w {margin-top:5px;}
         .slide_text_title {font-size:12px;}
         .slide_info_list {padding-top:4px; font-size:12px;}
             .sil_cont {margin-top:2px;}
     .artist_box_list {margin-top:16px; }
     .abl_inner,
-    .article_artist_box p {margin-top:10px !important; padding-left:23px !important; font-size:12px !important; line-height:16px !important;}
-    .section_artist_w, .article_artist_box {margin-top:85px;}
+    .article_artist_box p {margin-top:7px !important; padding-left:23px !important; font-size:14px !important; line-height:21px !important;}
+    .article_artist_box {margin-top:85px;}
     .artist_qa_list {margin-top:33px;}
         .aql_inner {padding-bottom:85px;}
             [class^="qa_text_"] {font-size:20px;}
             .qa_text_a {margin-top:20px;}
                 .qat_title {font-size:30px;}
+    .swiper-slide-item-caption {font-size:12px; }
+    .content_title_c + p {margin-top:15px !important;}
+
     /* M: 협력사업자 */
     .section_artgg_text {padding:0 25px;}
     .artgg_artist_list_box {overflow:hidden;}
