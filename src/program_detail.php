@@ -51,16 +51,20 @@ $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 $image_info = $result->fetch_array();
 ?>
 
+<style>
+    #directions_map { margin-top: 1rem; }
+</style>
+
 <!-- 콘텐츠 -->
 <div class="container">
     <div class="content_inner">
         <div class="section_box_w">
             <h2 class="content_title">Program</h2>
             <!-- <h3 class="content_title_d"> -->
-                <?php 
-                    // 상단에 표시되는 프로그램명 삭제 요청 - 2020.10.12
-                    // echo RemoveXSS($program_info['name']); 
-                ?>
+            <?php
+            // 상단에 표시되는 프로그램명 삭제 요청 - 2020.10.12
+            // echo RemoveXSS($program_info['name']); 
+            ?>
             <!-- </h3> -->
             <div class="section_program_w">
                 <div class="program_poster_w">
