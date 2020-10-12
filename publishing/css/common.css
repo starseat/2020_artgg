@@ -370,6 +370,13 @@ input,button,select {outline:none; border-radius:0;}
         .button_board_list:hover {text-decoration:underline;}
             .btn_bl_text {}
 
+/* 보도자료 */
+.report_list_w {margin-top:50px;}
+    .report_list_table {width:100%; border:2px solid #343a40; border-width:2px 0;}
+        .report_list_table th {height:50px; border-bottom:2px solid #343a40; font-size:22px;}
+        .report_list_table td {padding:0 10px; box-sizing:border-box; height:45px; border:1px solid #ebebeb; border-width:1px 0; text-align:center;}
+        .table_title {padding-left:2% !important; text-align:left !important;}
+
 /* 메인 : pc 중간 제어 */
 @media screen and (max-width:1350px) {
     .container{padding:158px 40px 0;}
@@ -485,7 +492,10 @@ input,button,select {outline:none; border-radius:0;}
         [class^="stit_regist"] {font-size:14px;}
         .stit_regist_end {margin-top:3px;}
     .view_area {padding:20px 15px; font-size:16px;}
-
+    /* T:보도자료 */
+    .report_list_w {margin-top:25px;}
+        .report_list_table th {font-size:20px;}
+        .report_list_table td {font-size:16px;}
 }
 
 
@@ -676,6 +686,11 @@ input,button,select {outline:none; border-radius:0;}
     .stit_regist_end {margin-top:0;}
     .board_title {font-size:18px;}
     .view_area {font-size:14px;}
+
+    /* M:보도자료 */
+    .report_list_w {margin-top:15px;}
+        .report_list_table th {font-size:16px;}
+        .report_list_table td {font-size:14px;}
 
 }
 
