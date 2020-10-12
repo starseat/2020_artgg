@@ -1,9 +1,9 @@
 $(document).ready(function () {
     getArtistList('0', makeArtistInfo);
 
-    // $('#select_year').on('change', function () {
-    //     getArtistList($(this).val(), setGreetingInfo);
-    // });
+    $('#yearSelect').on('change', function () {
+        getArtistList($(this).val(), makeArtistInfo);
+    });
 });
 
 function getArtistList(artist_year, callback) {

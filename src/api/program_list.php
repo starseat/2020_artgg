@@ -23,7 +23,7 @@ $sql = "SELECT seq, year, name, thumbnail, program_date, place FROM artgg_progra
 if($year > 0) {
     $sql .= " WHERE year = $year ";
 }
-$sql .= " ORDER BY name";
+$sql .= " ORDER BY year DESC, name ASC ";
 $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 $program_length = $result->num_rows;
 $program_list = array();

@@ -28,11 +28,21 @@ else {
 }
 
 $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
-$greeting_info = $result->fetch_array();
-$result_array['greeting'] = [
-    'year' => $greeting_info['year'],
-    'introduction' => $greeting_info['introduction']
-];
+$greeting_length = $result->num_rows;
+if($greeting_length > 0) {
+    $greeting_info = $result->fetch_array();
+    $result_array['greeting'] = [
+        'year' => $greeting_info['year'],
+        'introduction' => $greeting_info['introduction']
+    ];
+}
+else {
+    $result_array['greeting'] = [
+        'year' => 0,
+        'introduction' => ''
+    ];
+}
+
 $result->free();
 
 // 작가 리스트 조회

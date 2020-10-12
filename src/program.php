@@ -29,7 +29,7 @@
             <div class="section_programlist_w">
                 <ul class="program_list" id="program_list">
                     <?php
-                    $sql = "SELECT seq, year, name, thumbnail, program_date, place FROM artgg_program ORDER BY name";
+                    $sql = "SELECT seq, year, name, thumbnail, program_date, place FROM artgg_program ORDER BY year DESC, name ASC";
                     $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
                     while ($row = $result->fetch_array()) {
                         echo ('<li class="pl_inner">');
@@ -40,7 +40,7 @@
                         echo ('        <div class="program_text_w">');
                         echo ('            <strong class="ptext_name">' . RemoveXSS($row['name']) . '</strong>');
                         echo ('            <span class="ptext_date">' . RemoveXSS($row['program_date']) . '</span>');
-                        echo ('            <span class="ptext_host">' . RemoveXSS($row['place']) . '</span>');
+                        // echo ('            <span class="ptext_host">' . RemoveXSS($row['place']) . '</span>');  // 장소 삭제 요청 받음. - 2020.10.12
                         echo ('        </div>');
                         echo ('    </a>');
                         echo ('</li>');
