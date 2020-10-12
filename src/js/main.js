@@ -62,6 +62,7 @@ function initSwiper(mode) {
         grabCursor: true,
         pagination: {
             el: '#artist-thumb-swiper-pagination',
+            type: 'fraction',
         },
         // navigation: {
         //     nextEl: '.swiper-button-next',
