@@ -20,3 +20,8 @@
 .swiper-pagination-bullet-active {
     background-color: #000 !important;
 }
+
+
+#artist_slide_swiper_container .swiper-wrapper {
+    position: relative !important;
+}
