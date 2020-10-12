@@ -114,7 +114,7 @@ include('./db_conn.php');
                             </ul>
                         </li>
                         <li class="slnb_inner">
-                            <a href="./art_shop.php" class="slnb_link">
+                            <a href="#" class="slnb_link">
                                 <span class="slnb_txt_box">
                                     <span class="slnb_txt">
                                         Art Shop
@@ -123,6 +123,13 @@ include('./db_conn.php');
                                 <span class="icn icon_menu_arrow"><i class="ir">서브메뉴 보기</i></span>
                             </a>
                             <ul class="artgg_snb">
+                                <li class="ssnb_inner">
+                                    <a href="./art_shop.php" class="ssnb_link">
+                                        <span class="ssnb_txt_box">
+                                            <span class="ssnb_txt">Art Shop</span>
+                                        </span>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="slnb_inner">
