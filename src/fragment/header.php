@@ -113,6 +113,7 @@ include('./db_conn.php');
                                 </li>
                             </ul>
                         </li>
+                        <!--
                         <li class="slnb_inner">
                             <a href="#none" class="slnb_link">
                                 <span class="slnb_txt_box">
@@ -125,6 +126,7 @@ include('./db_conn.php');
                             <ul class="artgg_snb">
                             </ul>
                         </li>
+                        -->
                         <li class="slnb_inner">
                             <a href="#" class="slnb_link"> <!-- ./about.php -->
                                 <span class="slnb_txt_box">
