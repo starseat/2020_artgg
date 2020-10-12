@@ -64,10 +64,10 @@ function initSwiper(mode) {
             el: '#artist-thumb-swiper-pagination',
             type: 'fraction',
         },
-        // navigation: {
-        //     nextEl: '.swiper-button-next',
-        //     prevEl: '.swiper-button-prev',
-        // },
+        navigation: {
+            nextEl: '#artist-thumb-swiper-button-next',
+            prevEl: '#artist-thumb-swiper-button-prev',
+        },
     });
 }
 
@@ -116,4 +116,8 @@ function initSwiper_youtube() {
             initPlayer(container[i])
         }
     };
+}
+
+function goArtistDetail(artist_seq) {
+    location.href = './artist_detail.php?seq=' + artist_seq;
 }

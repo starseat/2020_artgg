@@ -4,7 +4,7 @@
 <div class="container">
     <div class="content_inner">
         <div class="section_box_w">
-            <h2 class="content_title">Artist</h2>
+            <h2 class="content_title">Artists</h2>
             <p class="content_info_text" id="artist_info_text"></p>
         </div>
         <div class="module_image_list_w">

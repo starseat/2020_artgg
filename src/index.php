@@ -86,7 +86,7 @@
 
                             if ($artist_length > 0) {
                                 while ($artist_info = $result->fetch_array()) {
-                                    echo ('<div class="swiper-slide" style="background-image:url(' . getImagePath(RemoveXSS($artist_info['thumbnail'])) . ')"></div>');
+                                    echo ('<div onclick="goArtistDetail(' . RemoveXSS($artist_info['seq']) . ')" class="swiper-slide" style="background-image:url(' . getImagePath(RemoveXSS($artist_info['thumbnail'])) . ')"></div>');
                                 }
                             }
 
@@ -96,8 +96,8 @@
                         <!-- Add Pagination -->
                         <div id="artist-thumb-swiper-pagination"></div>
                         <!-- Add Arrows -->
-                        <!-- <div id="artist-thumb-swiper-button-prev" class="swiper-button-prev"></div>
-                        <div id="artist-thumb-swiper-button-next" class="swiper-button-next"></div> -->
+                        <div id="artist-thumb-swiper-button-prev" class="swiper-button-prev"></div>
+                        <div id="artist-thumb-swiper-button-next" class="swiper-button-next"></div>
                     </div>
                 </div> <!-- .notice_slide_w -->
             </div>
