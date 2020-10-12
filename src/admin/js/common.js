@@ -99,7 +99,8 @@ function getSummernoteDefaultOption() {
             ['para', ['ul', 'ol', 'paragraph']],
             ['height', ['height']]
         ],
-        lang: 'ko-KR'
+        lang: 'ko-KR', 
+        fontSizes: [8, 9, 10, 11, 12, 14, 16, 18, 24, 28, 32, 36]
     };
 }
 
