@@ -5,7 +5,7 @@
     <div class="content_inner">
         <div class="section_box_w">
             <h2 class="content_title">Artists</h2>
-            <p class="content_info_text" id="artist_info_text"></p>
+            <!-- <p class="content_info_text" id="artist_info_text"></p> -->
             <!-- 옵션 select -->
             <div class="select_box_w">
                 <label for="yearSelect"><i class="blind">연도를 선택해주세요</i></label>
