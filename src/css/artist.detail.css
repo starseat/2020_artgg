@@ -14,7 +14,8 @@
 }
 
 .swiper-button-color {
-    color: #000 !important;
+    /* color: #000 !important; */
+    color: #fff !important;
 }
 
 .swiper-pagination-bullet-active {
