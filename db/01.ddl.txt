@@ -140,6 +140,7 @@ CREATE TABLE artgg_mediaroom (
 	seq BIGINT NOT NULL AUTO_INCREMENT, 
     title VARCHAR(512) NOT NULL, 
     link VARCHAR(1024) NOT NULL,
+	youtube_id VARCHAR(32) NOT NULL, 
 	created_at DATETIME NOT NULL DEFAULT now(),
 	updated_at DATETIME NOT NULL DEFAULT now(),
 	deleted_at DATETIME NULL DEFAULT NULL, 
