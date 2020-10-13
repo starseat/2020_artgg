@@ -166,7 +166,7 @@ input,button,select {outline:none; border-radius:0;}
         .footer_cont_l {width:40% !important; overflow:hidden;}
             .footer_cont_l [class^="fcl_"] {width:50%; padding-right:10%; float:left; box-sizing:border-box;}
                 .footer_cont_l [class^="fcl_"] img {display:block; max-width:100%;}
-        .footer_cont_copy {padding-left:2%; font-size:17px;}
+        .footer_cont_copy {padding-left:2%; font-size:12px;}
             .footer_cont_copy [class^="fcc_"] {display:inline-block;}
                 .fcc_copy {display:block !important; }
                 .fcc_tel{}
@@ -185,6 +185,7 @@ input,button,select {outline:none; border-radius:0;}
 .section_visual_w {max-width:1530px; margin:0 auto; box-sizing:border-box; padding-bottom:50px; overflow:hidden;}
     /* 비주얼 swiper */
         .swiper-wrapper {position:absolute; left:0; top:0;}
+    #business-artgg-image-swiper-container .swiper-pagination {bottom:0; }
     .swiper-pagination-bullet {width:15px; height:15px; border-radius:50%; background-color:#898989;}
     .swiper-pagination-bullet-active {width:44px; height:16px; background-color:#000; border-radius:15px;}
     #main-swiper-container .swiper-slide {background-size:100% auto !important; background-repeat:no-repeat !important;}
@@ -233,9 +234,9 @@ input,button,select {outline:none; border-radius:0;}
 
 /* 메인 : 아트경기 소개 */
 .section_info_w {overflow:hidden; position:relative; display:table; width:100%; min-height:297px; margin-top:170px;}
-    .info_image {display:table-cell; width:15%; max-width:263px; vertical-align:top; }
+    .info_image {display:table-cell; width:13%; max-width:263px; vertical-align:top; }
         .info_img {display:inline-block; max-width:100%; height:auto;}
-    .info_text_w {display:table-cell; padding-top:1%; padding-left:10%; max-width:980px; box-sizing:border-box; vertical-align:top; font-size:30px; line-height:1.5; font-weight:400;}
+    .info_text_w {display:table-cell; padding-top:1%; padding-left:7%; max-width:980px; box-sizing:border-box; vertical-align:top; font-size:26px; line-height:1.5; font-weight:400;}
 
 /* 서브 : 작가리스트 */
 .module_image_list_w {margin-top:170px; overflow:hidden;}
@@ -530,7 +531,7 @@ input,button,select {outline:none; border-radius:0;}
 
 /* 미디어룸 */
 .module_media_list_w {margin-top:130px;}
-    .module_list_media {}
+    .module_list_media {width:calc(100% + 62px);}
         .module_list_media .mdil_cont {padding-top:56.25%; position:Relative;}
             .module_list_media .mdil_thumb_w {position:absolute; left:0; top:0; padding-top:56.25%; height:auto;}
             .module_list_media .mdil_thumb_w:after {display:block; content:''; width:100%; height:100%; position:Absolute; left:0; top:0; box-sizing:border-box; border:1px solid #eaeaea; transform:translate(-50%,-50%);}
@@ -547,6 +548,7 @@ input,button,select {outline:none; border-radius:0;}
     .module_image_list_w {margin-top:240px;}
         .module_image_list {margin-top:-62px; width:calc(100% + 62px);}
             .mdil_inner {width:25%; padding:62px 62px 0 0;}
+    .info_text_w {font-size:24px;}
     /* pc:footer */
     .footer{padding:170px 40px 200px;}
 }
@@ -690,12 +692,14 @@ input,button,select {outline:none; border-radius:0;}
     .footer{margin-top:0; padding:0 25px 50px;}
     [class^="footer_cont_"] {display:block; float:left;}
     .footer_cont_l {width:54% !important;}
+        .fcl_gc {position:relative; top:5px;}
         .footer_cont_copy {width:46% !important; padding-left:30px; box-sizing:border-box; font-size:13px;}
     .footer_cont_copy {padding-left:15px; font-size:11px;}
     .footer_cont_r {width:54% !important; padding-top:28px; float:none; clear:both;}
         .fcr_sl_cont {width:25%;}
             .footer_cont_l img {display:block; width:100%;}
             .fcr_sl_link {display:inline-block; padding:0 9px;}
+
 
     /* M:GNB */
     .common_gnb_w {height:75px; padding:0;}
@@ -784,7 +788,7 @@ input,button,select {outline:none; border-radius:0;}
 
     /* M:아트경기 소개 */
     .section_info_w {margin-top:95px; min-height:auto; box-sizing:border-box;}
-        .info_image {width:35%;}
+        .info_image {width:25%;}
         .info_text_w {padding-left:8%; font-size:14px;}
 
     /* M:프로그램리스트 */
