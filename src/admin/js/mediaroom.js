@@ -3,8 +3,8 @@ function showEditMediaRoomModal(seq) {
         $('#mediaroom_seq').val(seq);
 
         const $targetItem = $('#mediaroom_item_' + seq);
-        const title = $targetItem.find('td.mediaa-room-title').text();
-        const link = $targetItem.find('td.mediaa-room-link a').attr('href');
+        const title = $targetItem.find('td.media-room-title').text();
+        const link = $targetItem.find('td.media-room-link a').attr('href');
 
         $('#mediaroom_title').val(title);
         $('#mediaroom_link').val(link);
