@@ -125,7 +125,7 @@ function doSubmit_insertLinkModalForm(event) {
     event.stopPropagation();
 
     const main_link = $('#main_link').val();
-    if (main_link.indexOf('https://www.youtube.com/watch') != 0 && main_link.length <= 30) {
+    if( !(main_link.indexOf('https://youtu.be') >= 0 || main_link.indexOf('https://www.youtube.com') >= 0) ) {
         alert('Youtube 링크를 정확히 입력해 주세요.');
         return false;
     }
