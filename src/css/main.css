@@ -100,5 +100,5 @@
 #artist-thumb-swiper-pagination .swiper-button-next,
 #artist-thumb-swiper-pagination .swiper-button-prev {top:auto; bottom:0;}
 :root{--swiper-theme-color:#000 !important;}
-.swiper-button-prev{left:-50px;}
-.swiper-button-next{right:-50px;}
+#artist-thumb-swiper-container .swiper-button-prev{left:-50px;}
+#artist-thumb-swiper-container .swiper-button-next{right:-50px;}

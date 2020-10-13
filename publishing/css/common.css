@@ -266,12 +266,15 @@ input,button,select {outline:none; border-radius:0;}
                     .sil_cont {display:block; margin-top:5px;}
         /* 작가리스트 엔드 : 슬라이드 */
         #artist_slide_swiper_container .swiper-button-color:before,
-        #main-swiper-container .swiper-button-color:before {display:block; content:''; position:absolute;width:100px; height:100px; border-radius:100%; background-color:rgba(0,0,0,.3);}
+        #main-swiper-container .swiper-button-color:before {display:block; content:''; position:absolute;width:100px; height:100px; border-radius:100%; background-color:#000; opacity:0.2;}
+        #artist_slide_swiper_container .swiper-button-color:hover:before,
+        #main-swiper-container .swiper-button-color:hover:before {opacity:0.7;}
         #artist_slide_swiper_container .swiper-button-prev:before,
         #main-swiper-container .swiper-button-prev:before { left:-50px; top:-30px; }
         #artist_slide_swiper_container .swiper-button-next:before,
         #main-swiper-container .swiper-button-next:before {left:-20px; top:-30px; }
-        .swiper-button-color:after {position:Relative;}
+        .swiper-button-color:after {position:Relative; opacity:0.4;}
+        .swiper-button-color:hover:after {opacity:1;}
         .swiper-button-color {color:#fff !important;}
         .swiper-button-color .swiper-button-next:after,
         .swiper-button-color .swiper-button-prev:after {position:relative; z-index:2;}
