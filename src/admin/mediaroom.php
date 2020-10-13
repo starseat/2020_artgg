@@ -106,6 +106,7 @@ include('db_conn.php');
                     <div class="form-group">
                         <label for="mediaroom_link">Youtube Link</label>
                         <input type="text" class="form-control" id="mediaroom_link" name="mediaroom_link" placeholder=" Youtube 링크를 입력해 주세요.">
+                        <input type="hidden" id="mediaroom_link_youtube_id" name="mediaroom_link_youtube_id">
                     </div>
                     <input type="hidden" id="mediaroom_seq" name="mediaroom_seq" value="0">
                     <input type="hidden" id="mediaroom_submit_action" name="mediaroom_submit_action" value="insert">

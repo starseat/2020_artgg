@@ -24,22 +24,25 @@ else {
     
     $title = mysqli_real_escape_string($conn, $_POST['mediaroom_title']);
     $link = mysqli_real_escape_string($conn, $_POST['mediaroom_link']);
+    $youtube_id = mysqli_real_escape_string($conn, $_POST['mediaroom_link_youtube_id']);
 
     // update
     //if ($seq > 0) {
-    if($action == 'update') {
+    if ($action == 'update') {
         $sql  = "UPDATE artgg_mediaroom SET ";
         $sql .= "title = '" . $title . "', ";
-        $sql .= "link = '" . $link . "' ";
+        $sql .= "youtube_id = '" . $youtube_id . "', ";
+        $sql .= "link = '" . $link . "' ";        
         $sql .= "WHERE seq = " . $seq;
 
         $message = '미디어룸 정보가 수정되었습니다.';
     }
     // insert
     else {
-        $sql  = "INSERT INTO artgg_mediaroom (title, link) ";
+        $sql  = "INSERT INTO artgg_mediaroom (title, youtube_id, link) ";
         $sql .= "VALUES (";
         $sql .= "'" . $title . "', ";
+        $sql .= "'" . $youtube_id . "', ";
         $sql .= "'" . $link . "') ";
 
         $message = '미디어룸 정보가 등록되었습니다.';

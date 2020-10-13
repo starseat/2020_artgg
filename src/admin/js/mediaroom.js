@@ -56,6 +56,8 @@ function doSubmit(event) {
         $('#mediaroom_link').focus();
         return false;
     }
+
+    $('#mediaroom_link_youtube_id').val(youtube_id);
     
     // $('#editMediaRoomModalFrom').submit();    
 
@@ -63,7 +65,8 @@ function doSubmit(event) {
     requestParam.mediaroom_seq = $('#mediaroom_seq').val();
     requestParam.mediaroom_title = $('#mediaroom_title').val();
     requestParam.mediaroom_link = $('#mediaroom_link').val();
-
+    requestParam.mediaroom_link_youtube_id = youtube_id;
+    
     sendRequest(requestParam);
     
 }
