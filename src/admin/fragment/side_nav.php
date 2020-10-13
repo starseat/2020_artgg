@@ -22,6 +22,11 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-calendar-alt"></i></div>
                         프로그램
                     </a>
+                    <div class="sb-sidenav-menu-heading">Space</div>
+                    <a class="nav-link" href="mediaroom.php">
+                        <div class="sb-nav-link-icon"><i class="fas fa-photo-video"></i></div>
+                        미디어룸
+                    </a>
                     <div class="sb-sidenav-menu-heading">About</div>
                     <a class="nav-link" href="business.artgg.php">
                         <!-- <div class="sb-nav-link-icon"><i class="fas fa-newspaper"></i></div> -->
@@ -35,6 +40,10 @@
                     <a class="nav-link" href="notice.php">
                         <div class="sb-nav-link-icon"><i class="fas fa-exclamation-circle"></i></div>
                         공지사항
+                    </a>
+                    <a class="nav-link" href="press_release.php">
+                        <div class="sb-nav-link-icon"><i class="fas fa-newspaper"></i></div>
+                        보도자료
                     </a>
                 </div>
             </div>
