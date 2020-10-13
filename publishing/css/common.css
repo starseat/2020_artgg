@@ -389,6 +389,133 @@ input,button,select {outline:none; border-radius:0;}
         .report_list_table td {padding:0 10px; box-sizing:border-box; height:45px; border:1px solid #ebebeb; border-width:1px 0; text-align:center;}
         .table_title {padding-left:2% !important; text-align:left !important;}
 
+/* 미디어룸 */
+.section_mediaroom_w {margin-top:100px; overflow:hidden;}
+    .text_link_list {display:flex; width:calc(100% + 5%); flex-wrap:wrap; padding-bottom:5px; }
+        .tl_inner {position:Relative; width:50%; padding-right:5%; min-height:80px; box-sizing:border-box; }
+            .tl_cont { }
+                .mediaroom_text {}
+.tl_cont {
+    display:table;
+    position:Relative;
+    width:100%;
+    height:100%;
+    padding:2% 3%;
+    box-sizing:border-box;
+    float: right;
+    border: 2px solid transparent;
+    cursor: pointer;
+    line-height: 36px;
+    /*margin-right: -44px;*/
+    font-size: 15px;
+}
+.tl_cont:hover {opacity:1;}
+
+.tl_cont .text {
+    transform: translate3d(0,6px,0);
+    display:table-cell; vertical-align:middle; line-height:24px;
+    transition: transform .4s cubic-bezier(.2,0,0,1) .4s
+}
+
+.tl_cont:after {
+    position: absolute;
+    content: '';
+    bottom: -5px;
+    left: 0;
+    right:0;
+    /*right: calc(.7em * 1.2);*/
+    height: 1px;
+    background: #ddd;
+    transition: transform .8s cubic-bezier(1,0,.37,1) .2s,right .2s cubic-bezier(.04,.48,0,1) .6s,left .4s cubic-bezier(.04,.48,0,1) .6s;
+    transform-origin: left;
+}
+
+.line {
+    position: absolute;
+    background: #53ae6e
+}
+
+.line.-left, .line.-right {
+    width: 2px;
+    bottom: 0;
+    top: 0;
+    transform: scale3d(1,0,1)
+}
+
+.line.-bottom, .line.-top {
+    height: 2px;
+    left: 0;
+    right: 0;
+    transform: scale3d(0,1,1)
+}
+
+.line.-right {
+    right: 0;
+    transition: transform .1s cubic-bezier(1,0,.65,1.01) .23s;
+    transform-origin: top
+}
+
+.line.-top {
+    top: 0;
+    transition: transform 80ms linear .43s;
+    transform-origin: left
+}
+
+.line.-left {
+    left: 0;
+    transition: transform 80ms linear .51s;
+    transform-origin: bottom
+}
+
+.line.-bottom {
+    bottom: 0;
+    transition: transform .3s cubic-bezier(1,0,.65,1.01);
+    transform-origin: right
+}
+
+.tl_cont:active .text,
+.tl_cont:hover .text {
+    transform: translate3d(0,0,0);
+    transition: transform .6s cubic-bezier(.2,0,0,1) .4s
+}
+
+.tl_cont:active:after,
+.tl_cont:hover:after {
+    transform: scale3d(0,1,1);
+    right: 0;
+    left: 0;
+    transform-origin: right;
+    transition: transform .2s cubic-bezier(1,0,.65,1.01) .17s,right .2s cubic-bezier(1,0,.65,1.01),left 0s .3s
+}
+
+.tl_cont:active .line,
+.tl_cont:hover .line {
+    transform: scale3d(1,1,1)
+}
+
+.tl_cont:active .line.-right,
+.tl_cont:hover .line.-right {
+    transition: transform .1s cubic-bezier(1,0,.65,1.01) .2s;
+    transform-origin: bottom
+}
+
+.tl_cont:active .line.-top, .tl_cont:hover .line.-top {
+    transition: transform 80ms linear .4s;
+    transform-origin: right
+}
+
+.tl_cont:active .line.-left, .tl_cont:hover .line.-left {
+    transition: transform 80ms linear .48s;
+    transform-origin: top
+}
+
+.tl_cont:active .line.-bottom, .tl_cont:hover .line.-bottom {
+    transition: transform .5s cubic-bezier(0,.53,.29,1) .56s;
+    transform-origin: left
+}
+
+
+
 /* 메인 : pc 중간 제어 */
 @media screen and (max-width:1350px) {
     .container{padding:158px 40px 0;}
@@ -712,6 +839,9 @@ input,button,select {outline:none; border-radius:0;}
     .report_list_w {margin-top:15px;}
         .report_list_table th {font-size:16px;}
         .report_list_table td {font-size:14px;}
+
+    /* M:미디어룸 */
+    .tl_inner {width:100%;}
 
 }
 
