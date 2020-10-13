@@ -147,6 +147,23 @@ CREATE TABLE artgg_mediaroom (
 ) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
 
 /**
+ * 아트경기 보도자료
+ */
+CREATE TABLE artgg_press_release (
+	seq BIGINT NOT NULL AUTO_INCREMENT, 
+    title VARCHAR(512) NOT NULL, 
+    link VARCHAR(1024) NOT NULL,
+	news_date VARCHAR(32), 
+	news_media VARCHAR(32), 
+	news_author VARCHAR(32), 
+	contents TEXT, 
+	created_at DATETIME NOT NULL DEFAULT now(),
+	updated_at DATETIME NOT NULL DEFAULT now(),
+	deleted_at DATETIME NULL DEFAULT NULL, 
+	PRIMARY KEY (`seq` )
+) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
+
+/**
  * 아트경기 알람 - 알람은 어떤 형태로 뿌릴지 확인
  */
 CREATE TABLE artgg_alarm (
