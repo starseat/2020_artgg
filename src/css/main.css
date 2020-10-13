@@ -11,7 +11,7 @@
 
 #main-swiper-container {
     width: 100%;
-    height: 540px;
+    height: 860px;
     background-color: #fff;
     color: #000;
 }
@@ -86,5 +86,11 @@
 }
 
 #artist-thumb-swiper-pagination {
+    position:Absolute;
+    left:0;
+    bottom:-30px;
+    z-index:5;
     text-align: center;
 }
+#artist-thumb-swiper-pagination .swiper-button-next,
+#artist-thumb-swiper-pagination .swiper-button-prev {top:auto; bottom:0;}
