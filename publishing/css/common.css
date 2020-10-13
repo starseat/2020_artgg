@@ -187,7 +187,7 @@ input,button,select {outline:none; border-radius:0;}
         .swiper-wrapper {position:absolute; left:0; top:0;}
     .swiper-pagination-bullet {width:15px; height:15px; border-radius:50%; background-color:#898989;}
     .swiper-pagination-bullet-active {width:44px; height:16px; background-color:#000; border-radius:15px;}
-    #main-swiper-container .swiper-slide {background-size:auto 100% !important; background-repeat:no-repeat !important;}
+    #main-swiper-container .swiper-slide {background-size:100% auto !important; background-repeat:no-repeat !important;}
 
 /* 메인 : 공지사항 */
 .section_notice_w {position:relative; margin-top:170px; min-height:300px; display:flex;}
@@ -432,51 +432,51 @@ input,button,select {outline:none; border-radius:0;}
 
 .line {
     position: absolute;
-    background: #53ae6e
+    background: #000;
 }
 
 .line.-left, .line.-right {
     width: 2px;
     bottom: 0;
     top: 0;
-    transform: scale3d(1,0,1)
+    transform: scale3d(1,0,1);
 }
 
 .line.-bottom, .line.-top {
     height: 2px;
     left: 0;
     right: 0;
-    transform: scale3d(0,1,1)
+    transform: scale3d(0,1,1);
 }
 
 .line.-right {
     right: 0;
     transition: transform .1s cubic-bezier(1,0,.65,1.01) .23s;
-    transform-origin: top
+    transform-origin: top;
 }
 
 .line.-top {
     top: 0;
     transition: transform 80ms linear .43s;
-    transform-origin: left
+    transform-origin: left;
 }
 
 .line.-left {
     left: 0;
     transition: transform 80ms linear .51s;
-    transform-origin: bottom
+    transform-origin: bottom;
 }
 
 .line.-bottom {
     bottom: 0;
     transition: transform .3s cubic-bezier(1,0,.65,1.01);
-    transform-origin: right
+    transform-origin: right;
 }
 
 .tl_cont:active .text,
 .tl_cont:hover .text {
     transform: translate3d(0,0,0);
-    transition: transform .6s cubic-bezier(.2,0,0,1) .4s
+    transition: transform .6s cubic-bezier(.2,0,0,1) .2s;
 }
 
 .tl_cont:active:after,
@@ -490,13 +490,13 @@ input,button,select {outline:none; border-radius:0;}
 
 .tl_cont:active .line,
 .tl_cont:hover .line {
-    transform: scale3d(1,1,1)
+    transform: scale3d(1,1,1);
 }
 
 .tl_cont:active .line.-right,
 .tl_cont:hover .line.-right {
     transition: transform .1s cubic-bezier(1,0,.65,1.01) .2s;
-    transform-origin: bottom
+    transform-origin: bottom;
 }
 
 .tl_cont:active .line.-top, .tl_cont:hover .line.-top {
@@ -506,12 +506,12 @@ input,button,select {outline:none; border-radius:0;}
 
 .tl_cont:active .line.-left, .tl_cont:hover .line.-left {
     transition: transform 80ms linear .48s;
-    transform-origin: top
+    transform-origin: top;
 }
 
 .tl_cont:active .line.-bottom, .tl_cont:hover .line.-bottom {
     transition: transform .5s cubic-bezier(0,.53,.29,1) .56s;
-    transform-origin: left
+    transform-origin: left;
 }
 
 /* 아트샵 */
@@ -728,7 +728,8 @@ input,button,select {outline:none; border-radius:0;}
                             .menu_hover .icon_menu_arrow {background-position:0 -60px; }
 
     /* M:메인비주얼 */
-    .section_visual_w {padding:0 25px;}
+    .section_visual_w {margin:0 25px; padding-bottom:30px; overflow:hidden;}
+    #main-swiper-container .swiper-pagination {bottom:-30px !important;}
 
 
     /* M:공지사항 */
@@ -780,8 +781,8 @@ input,button,select {outline:none; border-radius:0;}
 
     /* M:아트경기 소개 */
     .section_info_w {margin-top:95px; min-height:auto; box-sizing:border-box;}
-        .info_image {width:40%;}
-        .info_text_w {padding-left:5%; font-size:18px;}
+        .info_image {width:35%;}
+        .info_text_w {padding-left:8%; font-size:14px;}
 
     /* M:프로그램리스트 */
     .section_programlist_w {margin-top:50px;}
