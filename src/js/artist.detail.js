@@ -10,6 +10,10 @@ function initSwiper() {
         spaceBetween: 30,
         centeredSlides: true,
         autoHeight: true, //enable auto height
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
         // slidesPerView: 'auto',
         // effect: 'coverflow',
         // coverflowEffect: {

@@ -13,10 +13,10 @@ function initSwiper(mode) {
         // watchSlidesVisibility: true,
         // watchSlidesProgress: true,
         // loopFillGroupWithBlank: true,
-        // autoplay: {
-        //     delay: 2500,
-        //     disableOnInteraction: false,
-        // },
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -60,6 +60,10 @@ function initSwiper(mode) {
 
         loop: true,
         grabCursor: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
         pagination: {
             el: '#artist-thumb-swiper-pagination',
             type: 'fraction',
