@@ -14,12 +14,14 @@
     height: 860px;
     background-color: #fff;
     color: #000;
+    overflow:visible;
 }
 
 #main-swiper-container .swiper-slide {
     background-position: center;
     background-size: cover;
 }
+#main-swiper-container .swiper-pagination {bottom:-50px;}
 
 /* -bak 지우고 사용하기 */
 .swiper-slide-bak {
@@ -64,6 +66,8 @@
 .swiper-button-color {
     color: #000 !important;
 }
+#main-swiper-container .swiper-button-color,
+#artist_slide_swiper_container .swiper-button-color{ color:#fff !important;}
 
 .swiper-pagination-bullet-active {
     background-color: #000 !important;
