@@ -185,6 +185,7 @@ input,button,select {outline:none; border-radius:0;}
 .section_visual_w {max-width:1530px; margin:0 auto; box-sizing:border-box; padding-bottom:50px; overflow:hidden;}
     /* 비주얼 swiper */
         .swiper-wrapper {position:absolute; left:0; top:0;}
+    #business-artgg-image-swiper-container .swiper-pagination {bottom:0; }
     .swiper-pagination-bullet {width:15px; height:15px; border-radius:50%; background-color:#898989;}
     .swiper-pagination-bullet-active {width:44px; height:16px; background-color:#000; border-radius:15px;}
     #main-swiper-container .swiper-slide {background-size:100% auto !important; background-repeat:no-repeat !important;}
