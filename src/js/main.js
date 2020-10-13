@@ -83,10 +83,12 @@ function initSwiper_youtube() {
         var button = element.querySelector('.swiper-video-play');
         var ytplayer = new YT.Player(player, {
             playerVars: {
-                'autoplay': 0,
-                'modestbranding': 1,
-                'controls': 0,
+                'autoplay': 0, // 자동재생 off
+                'modestbranding': 1, 
+                'controls': 0, // 동영상 플레이어 컨트롤 표기
                 'rel': 0,
+                // 'cc_load_policy' : 0,  // 자막 0 : on, 1 : off
+                // 'disablekb' : 0  // 키보드 컨트롤 사용 off
             },
             videoId: element.dataset.id
         });
