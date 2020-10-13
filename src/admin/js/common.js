@@ -100,7 +100,7 @@ function getSummernoteDefaultOption() {
             ['height', ['height']]
         ],
         lang: 'ko-KR', 
-        fontSizes: [8, 9, 10, 11, 12, 14, 16, 18, 24, 28, 32, 36]
+        // fontSizes: [8, 9, 10, 11, 12, 14, 16, 18, 24, 28, 32, 36] // fontsize 제거 - 에디터가 고장남...
     };
 }
 
