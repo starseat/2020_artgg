@@ -62,14 +62,25 @@ input,button,select {outline:none; border-radius:0;}
 
 /* 모듈 : 리스트 */
 [class^="module_list_"] {display:flex; margin-top:-82px; flex-wrap:wrap; justify-content:end;}
-.swiper-button-color:after {display:block; content:''; z-index:8; width:27px; height:48px; background-size:27px auto; background-position:center center; background-repeat:no-repeat;}
+.swiper-button-color:after,.swiper-button-next:after,.swiper-button-prev:after {display:block; content:''; z-index:8; width:27px; height:48px; background-size:27px auto; background-position:center center; background-repeat:no-repeat;}
+.swiper-button-color,
+.swiper-button-prev, .swiper-button-next{background-image:none !important;}
 .swiper-button-next:after, .swiper-container-rtl .swiper-button-prev:after,
 #artist_slide_swiper_container .swiper-button-next:after {background-image:url('../img/next_arrow.png') !important;}
 .swiper-button-prev:after, .swiper-container-rtl .swiper-button-next:after,
 #artist_slide_swiper_container .swiper-button-prev:after {background-image:url('../img/prev_arrow.png') !important;}
-.swiper-button-color {background:none !important;}
 .swiper-button-color:hover,
 .swiper-button-color:focus {opacity:1;}
+/* 공통: arrow 제어 */
+#artist-thumb-swiper-pagination .swiper-button-next,
+#artist-thumb-swiper-pagination .swiper-button-prev {top:auto; bottom:0;}
+:root{--swiper-theme-color:#000 !important;}
+#artist-thumb-swiper-container .swiper-button-next:after,
+#business-artgg-image-swiper-container .swiper-button-next:after {background-image:url('../img/next_arrow_black.png') !important;}
+#artist-thumb-swiper-container .swiper-button-prev:after,
+#business-artgg-image-swiper-container .swiper-button-prev:after {background-image:url('../img/prev_arrow_black.png') !important;}
+#artist-thumb-swiper-container .swiper-button-prev{left:-40px !important;}
+#artist-thumb-swiper-container .swiper-button-next{right:-40px !important;}
 
 /* 공통 lnb */
 .snb_current {display:block; }
@@ -207,16 +218,7 @@ input,button,select {outline:none; border-radius:0;}
     .swiper-pagination-bullet {width:15px; height:15px; border-radius:50%; background-color:#898989;}
     .swiper-pagination-bullet-active {width:44px; height:16px; background-color:#000; border-radius:15px;}
     #main-swiper-container .swiper-slide {background-size:100% auto !important; background-repeat:no-repeat !important;}
-/* 공통: arrow 제어 */
-#artist-thumb-swiper-pagination .swiper-button-next,
-#artist-thumb-swiper-pagination .swiper-button-prev {top:auto; bottom:0;}
-:root{--swiper-theme-color:#000 !important;}
-#artist-thumb-swiper-container .swiper-button-next,
-#business-artgg-image-swiper-container .swiper-button-next {background-image:url('../img/next_arrow_black.png') !important;}
-#artist-thumb-swiper-container .swiper-button-prev,
-#business-artgg-image-swiper-container .swiper-button-prev {background-image:url('../img/next_arrow_black.png') !important;}
-#artist-thumb-swiper-container .swiper-button-prev{left:-40px !important;}
-#artist-thumb-swiper-container .swiper-button-next{right:-40px !important;}
+
 
 /* 메인 : 공지사항 */
 .section_notice_w {position:relative; margin-top:170px; min-height:300px; display:flex;}
