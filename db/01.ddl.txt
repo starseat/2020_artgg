@@ -97,7 +97,7 @@ CREATE TABLE artgg_artist (
 CREATE TABLE artgg_program (
 	seq BIGINT NOT NULL AUTO_INCREMENT,
     year VARCHAR(4) NOT NULL,    
-    thumbnail VARCHAR(1102428) NOT NULL,  
+    thumbnail VARCHAR(1024) NOT NULL,  
     name VARCHAR(256) NOT NULL,
     program_date VARCHAR(64) NOT NULL,
     place VARCHAR(256) NOT NULL,
