@@ -172,6 +172,6 @@ function getNoticeListViewTitme($level, $title) {
 }
 
 function getImagePath($path) {
-    return substr($path, 1, mb_strlen($path, "UTF-8"));
+    return mb_substr($path, 1, mb_strlen($path, "UTF-8"), "UTF-8");
 }
 ?>

@@ -9,16 +9,17 @@
             <div id="main-swiper-container" class="swiper-container swiper-youtube-container">
                 <div class="swiper-wrapper">
                     <?php
-                    $sql  = "SELECT seq, sort, file_name, upload_path, storage_type, image_type FROM artgg_image WHERE target_type = 'main' ORDER BY sort";
+                    $sql  = "SELECT seq, sort, file_name, upload_path, storage_type, image_type, link FROM artgg_image WHERE target_type = 'main' ORDER BY sort";
                     $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
                     $main_contents_count = $result->num_rows;
                     if ($main_contents_count > 0) {
                         while ($row = $result->fetch_array()) {
                             if ($row['image_type'] == 'I') {
-                                echo ('<div class="swiper-slide" style="background-image:url(' . getImagePath(RemoveXSS($row['upload_path'])) . ')"></div>');
-                                // echo ('<div class="swiper-slide">');
-                                // echo ('<img class="swiper-lazy" src="' . RemoveXSS($row['upload_path']) . '">');
-                                // echo ('</div>');
+                                $item  = '<div class="swiper-slide"';
+                                $item .= ' onclick="moveLink(\'' . RemoveXSS($row['link']) . '\')" ';
+                                $item .= ' style="background-image:url(' . getImagePath(RemoveXSS($row['upload_path'])) . ')">';
+                                $item .= '</div>';
+                                echo $item;
                             } else if ($row['image_type'] == 'V') {
                                 echo ('<div class="swiper-slide">');
                                 echo ('<div class="swiper-video-container" data-id="' . RemoveXSS($row['file_name']) . '">');

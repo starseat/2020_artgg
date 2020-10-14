@@ -13,6 +13,8 @@ function initSwiper(mode) {
         // watchSlidesVisibility: true,
         // watchSlidesProgress: true,
         // loopFillGroupWithBlank: true,
+        // simulateTouch: true,
+        preventClicks: false,
         autoplay: {
             delay: 2500,
             disableOnInteraction: false,
@@ -35,7 +37,7 @@ function initSwiper(mode) {
         initSwiper_youtube();
 
         mainSwiper = new Swiper('#main-swiper-container', swiperOption).on('slideChange', function () {
-            const isVideo = swiper.slides[swiper.previousIndex].querySelector('.swiper-video-container');
+            const isVideo = mainSwiper.slides[mainSwiper.previousIndex].querySelector('.swiper-video-container');
             if (isVideo) {
                 YT.get(isVideo.querySelector('iframe').id).stopVideo();
                 //console.log(isVideo.querySelector('iframe').id);
@@ -126,4 +128,8 @@ function initSwiper_youtube() {
 
 function goArtistDetail(artist_seq) {
     location.href = './artist_detail.php?seq=' + artist_seq;
+}
+
+function moveLink(link) {
+    location.href = link;
 }
