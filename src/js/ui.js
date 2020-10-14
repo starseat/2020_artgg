@@ -1,5 +1,30 @@
 /** 퍼블리셔용 **/
 
+ $(document).ready(function () {
+    mainvisualSlick();
+
+    var mql = window.matchMedia("screen and (max-width: 720px)");
+    if (mql.matches) {
+        mobileGnb();
+        mobilelnbOpen();
+    } else {
+        artggLnb();
+        gnbSticky();
+    }
+});
+
+$(window).resize(function () {
+    if($(window).width() > 720) { 
+        artggLnb();
+        gnbSticky();
+    }
+    else {
+        mobileGnb();
+        mobilelnbOpen();
+    }
+});
+
+
 // lnb 메뉴
 function artggLnb() {
     var snbBg = $('.snb_bg');

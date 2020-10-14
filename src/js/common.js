@@ -69,3 +69,13 @@ function isNumeric(num, opt) {
 }
 
 
+function getYoutubeId(url) {
+    let retId = '';
+
+    const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+    const matchs = url.match(regExp);
+    if (matchs) {
+        retId = matchs[7];
+    }
+    return retId;
+}
