@@ -4,9 +4,9 @@
 <div class="container">
     <div class="content_inner">
         <div class="section_box_w">
-            <h2 class="content_title">Mediaroom</h2>
-            <h3 class="content_title_d">서브텍스트있을경우해당태그사용</h3>
-            <!-- 뷰잉룸 -->
+            <h2 class="content_title">미디어룸</h2>
+            <!-- <h3 class="content_title_d">서브텍스트있을경우해당태그사용</h3> -->
+            <!-- 미디어룸 -->
             <div class="section_mediaroom_w">
                 <div class="mediaroom_vod_w">
                     <div class="vod_inner_box" id="target_youtube_box">
