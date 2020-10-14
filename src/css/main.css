@@ -97,8 +97,4 @@
     z-index:5;
     text-align: center;
 }
-#artist-thumb-swiper-pagination .swiper-button-next,
-#artist-thumb-swiper-pagination .swiper-button-prev {top:auto; bottom:0;}
-:root{--swiper-theme-color:#000 !important;}
-#artist-thumb-swiper-container .swiper-button-prev{left:-50px;}
-#artist-thumb-swiper-container .swiper-button-next{right:-50px;}
+
