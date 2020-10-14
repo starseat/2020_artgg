@@ -1,5 +1,9 @@
 <?php require_once('./fragment/header.php'); ?>
 
+<style>
+    #target_mediaroom_title { height: 156px; }
+</style>
+
 <!-- 콘텐츠 -->
 <div class="container">
     <div class="content_inner">

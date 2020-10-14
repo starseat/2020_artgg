@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    vodlistHeight();  // 퍼블리싱용
+    
     initPage();
 
     $('.ht_link').on('click', function(event) {
@@ -30,8 +32,7 @@ function initPage() {
     const title = $firstItem.find('.ht_title').text();
     const link = $firstItem.find('.ht_youtube_link').val();
     const youtube_id = $firstItem.find('.ht_youtube_id').val();
-
-    console.log('title:: ', title);
+    
     $('#target_mediaroom_title').text(title);
     $('#target_youtube_view').attr('src', getIFrameYoutubeLink(youtube_id));
 }
