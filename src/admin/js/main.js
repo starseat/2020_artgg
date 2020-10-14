@@ -151,11 +151,12 @@ function doSubmit_modifyContentsModalForm(event) {
         main_content_list.push({
             seq: parseInt($item.find('.contents-seq').text(), 10),
             sort: parseInt($item.find('.contents-sort').val(), 10),
+            link: $item.find('.contents-link').val()
         });
     }
 
     $.ajax({
-        url: './action/main_image_modify_contents.php.php',
+        url: './action/main_image_modify_contents.php',
         type: 'post',
         dataType: 'json',
         data: {
@@ -167,9 +168,12 @@ function doSubmit_modifyContentsModalForm(event) {
             location.reload(true);
         },
         error: function (xhr, status, error) {
+            console.log(xhr);
+            console.log(status);
+            console.log(error);
             console.error('[doSubmit_modifyContentsModalForm] ajax error:: ', error);
             alert('컨텐츠 정보 수정중 오류가 발생하였습니다.');
-            location.reload(true);
+            //location.reload(true);
         },
     });
 
