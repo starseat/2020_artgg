@@ -22,7 +22,7 @@ a:hover,a:focus {text-decoration:none;}
 input,button,select {outline:none; border-radius:0;}
 
 /* common */
-.contents_top_btn_w {display:block; position:fixed; right:50px; bottom:50px;}
+.contents_top_btn_w {display:none; position:fixed; right:50px; bottom:50px;}
     .contents_top_btn {position:relative; width:70px; height:70px; background-color:#fff; }
         .icon_toparrow {display:block; position:absolute; left:50%; top:50%; margin:-12px 0 0 -23px; width:46px; height:24px; background-image:url('../img/arrow_top.png'); background-size:46px auto; background-repeat:no-repeat;}
 .blind{position:absolute !important; width:1px; height:1px; overflow:hidden; clip:rect(1px 1px 1px 1px); clip:rect(1px, 1px, 1px, 1px);}
