@@ -1,4 +1,28 @@
 
+// nav 처리
+$(document).ready(function () {
+    mainvisualSlick();
+
+    var mql = window.matchMedia("screen and (max-width: 720px)");
+    if (mql.matches) {
+        mobileGnb();
+        mobilelnbOpen();
+    } else {
+        artggLnb();
+        gnbSticky();
+    }
+});
+
+$(window).resize(function () {
+    if ($(window).width() > 720) {
+        artggLnb();
+        gnbSticky();
+    } else {
+        mobileGnb();
+        mobilelnbOpen();
+    }
+});
+
 function isEmpty(param) {
     // 일반적인 비어있는지 검사
     if (!param || param == null || param == undefined || param == '' || param.length == 0) {
