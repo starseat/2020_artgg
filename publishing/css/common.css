@@ -205,10 +205,6 @@ input,button,select {outline:none; border-radius:0;}
                 .fcr_sl_cont {float:left; width:25%; text-align:right;}
                     .fcr_sl_link {display:block; padding:0 12%;}
                         [class^="sns_icon_"] {display:inline-block; max-width:100%;}
-                        .sns_icon_facebook {}
-                        .sns_icon_insta {}
-                        .sns_icon_youtube {}
-                        .sns_icon_blog {}
 
 /* 메인 : 비주얼 */
 .section_visual_w {max-width:1530px; margin:0 auto; box-sizing:border-box; padding-bottom:50px; overflow:hidden;}
