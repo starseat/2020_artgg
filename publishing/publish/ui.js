@@ -98,3 +98,7 @@ function mobilelnbOpen(){
     } );
 }
 
+function vodlistHeight(){
+    var vodboxHeight = $('.mediaroom_vod_w').outerHeight();
+    $('.module_media_list_w').css('height',vodboxHeight);
+}
