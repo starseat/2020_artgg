@@ -481,13 +481,13 @@
 <script type="text/javascript">
     $(document).ready(function(){
         mainvisualSlick();
+        layerpopupBtn();
 
         var mql = window.matchMedia("screen and (max-width: 720px)");
         if (mql.matches) {
             console.log("화면의 너비가 720px 보다 작습니다.");
             mobileGnb();
             mobilelnbOpen();
-            layerpopupBtn();
         } else {
             console.log("화면의 너비가 720px 보다 큽니다.");
             artggLnb();
