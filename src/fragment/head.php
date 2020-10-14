@@ -14,7 +14,8 @@
     <meta property="og:image" content="./img/meta_image.jpg" />
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="./vendor/swiper-4.5.3/css/swiper.min.css" media="all" />
     <link rel="stylesheet" type="text/css" href="./css/slick.css" media="all" />
     <link rel="stylesheet" type="text/css" href="./css/common.css" media="all" />
 </head>
