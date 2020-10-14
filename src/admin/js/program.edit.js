@@ -116,7 +116,7 @@ function initProgramInfo(programInfo) {
     $('#program_directions_map_y').val(programInfo.program_info.directions_map_x);
     $('#program_directions_map_y').val(programInfo.program_info.directions_map_y);
 
-    doSubmit_FindMap();
+    doSubmit_FindMap(undefined, true);
 }
 
 function doDeleteImage(event, sort) {
@@ -325,14 +325,14 @@ function doSubmit_openKakaoMap(event) {
 
 const geocoder = new kakao.maps.services.Geocoder();
 let isLoadMap = false;  // 처음 맵 로드시 안보여서 한번더 호출시키 위한 플래그
-function doSubmit_FindMap(event) {
+function doSubmit_FindMap(event, isInitMapCheck) {
     if(typeof event != 'undefined') {
         event.preventDefault();
         event.stopPropagation();
-    }    
+    }
 
     const find_address = $('#directionsModal_address').val();
-    if (find_address == '') {
+    if ( !(typeof isInitMapCheck != 'undefined' && isInitMapCheck) && find_address == '') {
         alert('주소는 필수 입력 사항입니다.');
         $('#directionsModal_address').focus();
         return false;

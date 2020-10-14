@@ -81,17 +81,13 @@ include('db_conn.php');
     .contents-file-name {
         text-align: left !important;
     }
-
-    .contents-link { 
-        width: 100%;
-    }
 </style>
 <h1 class="mt-4">메인 화면 이미지</h1>
 
 <div class="mt-4 mb-4">
     <div class="m-4 d-flex justify-content-end main-contents-add-btn-group">
         <button type="button" class="btn btn-info ml-2" onclick="showInsertImageModal()">이미지 추가</button>
-        <!-- <button type="button" class="btn btn-danger ml-2" onclick="showInsertLinkModal()">Youtube 링크 추가</button> -->
+        <button type="button" class="btn btn-danger ml-2" onclick="showInsertLinkModal()">Youtube 링크 추가</button>
         <button type="button" class="btn btn-secondary ml-2" onclick="showModifyContentsModal()">컨텐츠 관리</button>
     </div>
 </div>
@@ -102,7 +98,7 @@ include('db_conn.php');
         <div class="swiper-container swiper-youtube-container">
             <div class="swiper-wrapper">
                 <?php
-                $sql  = "SELECT seq, sort, file_name, upload_path, storage_type, image_type, link FROM artgg_image WHERE target_type = 'main' ORDER BY sort";
+                $sql  = "SELECT seq, sort, file_name, upload_path, storage_type, image_type FROM artgg_image WHERE target_type = 'main' ORDER BY sort";
                 $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
                 $main_contents_count = $result->num_rows;
                 $main_contents_list = array();
@@ -114,8 +110,7 @@ include('db_conn.php');
                             'file_name' => $row['file_name'],
                             'upload_path' => $row['upload_path'],
                             'storage_type' => $row['storage_type'],
-                            'image_type' => $row['image_type'],
-                            'link' => $row['link'],
+                            'image_type' => $row['image_type']
                         ]);
 
                         echo ('<div class="swiper-slide">');
@@ -197,7 +192,7 @@ include('db_conn.php');
 
 <div class="modal fade" id="modifyContentsModal" tabindex="-1" aria-labelledby="modifyContentsModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content" style="width: 900px;">
+        <div class="modal-content" style="width: 800px;">
             <div class="modal-header">
                 <h5 class="modal-title" id="modifyContentsModalLabel">컨텐츠 관리</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -211,10 +206,9 @@ include('db_conn.php');
                             <tr>
                                 <th scope="col">no</th>
                                 <th scope="col"></th>
+                                <th scope="col"></th>
                                 <th scope="col">파일명</th>
                                 <th scope="col"></th>
-                                <th scope="col"></th>
-                                <th scope="col">링크</th>
                                 <th scope="col"></th>
                                 <th scope="col">순서</th>
                                 <th scope="col">삭제</th>
@@ -227,11 +221,10 @@ include('db_conn.php');
                                     echo ('<tr class="main-contents-list">');
                                     echo ('    <th scope="row" class="contents-seq">' . RemoveXSS($main_contents_list[$i]['seq']) . '</th>');
                                     if ($main_contents_list[$i]['storage_type'] == 'W') {
-                                        echo ('    <td colspan="3" class="contents-file-name">' . RemoveXSS($main_contents_list[$i]['upload_path']) . '</td>');
+                                        echo ('    <td colspan="5" class="contents-file-name">' . RemoveXSS($main_contents_list[$i]['upload_path']) . '</td>');
                                     } else if ($main_contents_list[$i]['storage_type'] == 'L') {
-                                        echo ('    <td colspan="3" class="contents-file-name">' . RemoveXSS($main_contents_list[$i]['file_name']) . '</td>');
+                                        echo ('    <td colspan="5" class="contents-file-name">' . RemoveXSS($main_contents_list[$i]['file_name']) . '</td>');
                                     }
-                                    echo ('    <td colspan="3" class="contents-file-name"><input type="text" class="contents-link" value="' . RemoveXSS($main_contents_list[$i]['link']) . '"></td>');
                                     echo ('    <td><input type="number" class="contents-sort" style="width: 60px;" value="' . RemoveXSS($main_contents_list[$i]['sort']) . '"></td>');
                                     echo ('    <td><button class="btn btn-danger" onclick="doDeleteContents(event, ' . RemoveXSS($main_contents_list[$i]['seq']) . ')">삭제</button></td>');
                                     echo ('</tr>');
