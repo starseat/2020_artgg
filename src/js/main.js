@@ -133,3 +133,7 @@ function goArtistDetail(artist_seq) {
 function moveLink(link) {
     location.href = link;
 }
+
+function closePopup(seq) {
+    $('#main-popup-' + seq).hide();
+}

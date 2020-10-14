@@ -4,6 +4,19 @@
 
 <!-- 콘텐츠 -->
 <div class="container">
+
+    <!-- popup -->
+    <div class="layer_popup_w" id="main-popup-1">
+        <div class="layer_popup_inner">
+            <div class="popup_image_w">
+                <img src="../img/popup_notice.jpg" class="popup_image" alt="공지사항 경기도 정책축제 개최에 따라 온택트 아트경기2020 행사기간 중 10월15일~17일 3일간 경기상상캠퍼스 차량 진입 및 주차 이용이 불가하오니 양해부탁드립니다.">
+            </div>
+            <button class="btn_popup_close" title="팝업닫기" onclick="closePopup(1)">
+                <span class="icn icon_close"><i class="ir">팝업 닫기</i></span>
+            </button>
+        </div>
+    </div>
+
     <div class="content_inner">
         <div class="section_visual_w">
             <div id="main-swiper-container" class="swiper-container swiper-youtube-container">
