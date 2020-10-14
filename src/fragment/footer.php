@@ -7,7 +7,7 @@
             </div>
             <div class="footer_cont_copy">
                 <strong class="fcc_copy">Copyright ⓒ 2020 아트경기</strong>
-                <span class="fcc_tel">문의 T.<a href="">031-231-7237</a></span>
+                <span class="fcc_tel">문의 T.<a href="031-231-7237">031-231-7237~8</a></span>
                 <span class="fcc_email">artgg@cf.kr</span>
             </div>
             <div class="footer_cont_r">
