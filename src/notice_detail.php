@@ -21,11 +21,15 @@ if (!$is_access) {
 
 $notice_seq = intval(mysqli_real_escape_string($conn, $notice_seq));
 
-$sql  = "SELECT seq, level, title, contents, created_at, updated_at FROM artgg_notice WHERE seq = $notice_seq";
+$sql  = "SELECT seq, level, title, contents, view_count, created_at, updated_at FROM artgg_notice WHERE seq = $notice_seq";
 $sql .= " Limit 1";
 $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 $notice_info = $result->fetch_array();
 $result->free();
+
+$view_count = intval($notice_info['view_count']) + 1;
+$sql  = "UPDATE artgg_notice SET view_count = " . $view_count . " WHERE seq = $notice_seq";
+$result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 ?>
 
 <!-- 콘텐츠 -->
