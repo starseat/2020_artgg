@@ -413,14 +413,17 @@ input,button,select {outline:none; border-radius:0;}
 
 /* 공지사항 상세 */
 .board_view_area {margin-top:100px;}
-    .top_title_faq {display:table; width:100%; overflow:hidden; height:90px; border-top:2px solid #343a40; color:#000; }
-        .board_title {display:table-cell; vertical-align:middle; width:60%; padding:0 15px; box-sizing:border-box; font-size:22px; font-weight:800;}
-        .stit_area {display:table-cell; vertical-align:middle; width:15%; box-sizing:border-box; text-align:right;}
-            [class^="stit_regist"] {display:block; width:100%; padding-right:15px; box-sizing:border-box; font-size:16px; line-height:18px; color:#888; overflow:hidden;}
-            .stit_regist_end {margin-top:7px; display:inline-block;}
+    .top_title_faq {display:table; width:100%; overflow:hidden; height:50px; background-color:#343a40; color:#fff; }
+        .board_title {display:table-cell; vertical-align:middle; width:100%; padding:0 15px; box-sizing:border-box; font-size:20px; font-weight:700;}
+        .stit_area {margin-top:15px; width:100%; text-align:right; box-sizing:border-box; }
+            [class^="stit_regist"] {display:inline-block; position:Relative; padding:0 15px 0 16px; box-sizing:border-box; font-size:14px; line-height:14px; color:#888; overflow:hidden;}
+            [class^="stit_regist"]:after {display:block; content:''; width:1px; height:18px; position:Absolute; left:0; top:0; background-color:#888; }
+            [class^="stit_regist"]:first-child:after {display:none;}
+            .stit_regist_end {}
                 .stit_text {width:50%;}
                 .stit_date {padding-left:10px; box-sizing:border-box;}
-    .view_area {padding:30px 20px; background:url('../img/board_dott.png') repeat-x left top; border-bottom:2px solid #343a40;}
+    .view_area {padding:30px 20px; border-bottom:2px solid #343a40;}
+    .view_area * {font-size:20px !important; line-height:32px !important;}
     .button_box_w {display:block; text-align:right;}
         .button_board_list {display:inline-block; margin-top:20px; padding:10px 15px; border-radius:5px; color:#fff; background-color:#343a40; font-weight:700; }
         .button_board_list:hover {text-decoration:underline;}
@@ -713,13 +716,17 @@ input,button,select {outline:none; border-radius:0;}
         .artgg_artist_list {margin-top:35px;}
             .aal_name {font-size:21px; padding-top:18px;}
     .business_info_w .mdil_cont:after {border-width:5px;}
-    /* T:공지사항 */
+    /* T:공지사항 상세 */
     .board_view_area {margin-top:35px;}
-    .top_title_faq {height:70px;}
-        .board_title {width:40%; font-size:20px;}
-        [class^="stit_regist"] {font-size:14px;}
+    .top_title_faq {height:50px; }
+        .stit_area {margin-top:10px;}
+        .board_title {font-size:18px;}
+        [class^="stit_regist"] {font-size:12px;}
         .stit_regist_end {margin-top:3px;}
-    .view_area {padding:20px 15px; font-size:16px;}
+    .view_area {padding:20px 15px; }
+        .view_area * {font-size:16px; line-height:24px !important;}
+
+
     /* T:보도자료 */
     .report_list_w {margin-top:25px;}
         .report_list_table th {font-size:20px;}
@@ -971,11 +978,11 @@ input,button,select {outline:none; border-radius:0;}
 
 
     /* M:공지사항 상세 */
-    .top_title_faq {height:60px;}
+    .top_title_faq {height:50px;}
     [class^="stit_regist"] {font-size:12px;}
     .stit_regist_end {margin-top:0;}
     .board_title {font-size:18px;}
-    .view_area {font-size:14px;}
+    .view_area * {font-size:14px;}
 
     /* M:보도자료 */
     .report_list_w {margin-top:15px;}
