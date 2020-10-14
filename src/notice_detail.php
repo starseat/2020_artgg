@@ -1,6 +1,7 @@
 <?php require_once('./fragment/header.php'); ?>
 
 <?php
+
 $notice_seq = 0;
 $is_access = false;
 if ($_SERVER['QUERY_STRING'] != '') {
@@ -27,9 +28,13 @@ $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 $notice_info = $result->fetch_array();
 $result->free();
 
-$view_count = intval($notice_info['view_count']) + 1;
-$sql  = "UPDATE artgg_notice SET view_count = " . $view_count . " WHERE seq = $notice_seq";
-$result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+// 조회수 처리
+$notice_view_cookie_name = 'notice_view_' . $notice_seq;
+if (!isset($_COOKIE[$notice_view_cookie_name]) || empty($_COOKIE[$notice_view_cookie_name])) {
+    $sql  = 'UPDATE artgg_notice set view_count = view_count + 1 WHERE seq = ' . $notice_seq;
+    $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+    setcookie($notice_view_cookie_name, 1, time() + (60 * 60 * 24), '/');  // 1 day
+}
 ?>
 
 <!-- 콘텐츠 -->
@@ -48,6 +53,10 @@ $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
                         <span class="stit_regist_end">
                             <span class="stit_text">수정일</span>
                             <em class="stit_date"><?php echo $notice_info['updated_at']; ?></em>
+                        </span>
+                        <span class="stit_regist_end">
+                            <span class="stit_text">조회수</span>
+                            <em class="stit_date"><?php echo $notice_info['view_count']; ?></em>
                         </span>
                     </li>
                 </ul>
