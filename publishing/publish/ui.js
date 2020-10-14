@@ -107,3 +107,9 @@ function vodlistHeight(){
     }
 
 }
+
+function layerpopupBtn(){
+    $('.btn_popup_close').click( function(){
+        $('.layer_popup_w').css('display','none');
+    });
+}
