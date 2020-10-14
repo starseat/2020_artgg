@@ -11,6 +11,12 @@ $(document).ready(function () {
         artggLnb();
         gnbSticky();
     }
+
+    $('#contents_move_top_btn').on('click', function(event) {
+        //location.href = '#container';
+        event.preventDefault();
+        $.smoothScroll({scrollTarget: '#container'});
+    });
 });
 
 $(window).resize(function () {
@@ -23,6 +29,21 @@ $(window).resize(function () {
     }
 });
 
+
+let isShowContentsMoveTopBtn = false;
+$(window).scroll(function () {
+    if($(document).scrollTop() > 600) {
+        if(!isShowContentsMoveTopBtn) {
+            $('#contents_move_top_btn').show();
+            isShowContentsMoveTopBtn = true;
+        }
+    }
+    else {
+        $('#contents_move_top_btn').hide();
+        isShowContentsMoveTopBtn = false;
+    }
+});
+    
 function isEmpty(param) {
     // 일반적인 비어있는지 검사
     if (!param || param == null || param == undefined || param == '' || param.length == 0) {

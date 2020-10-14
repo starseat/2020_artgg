@@ -8,9 +8,14 @@ include('./db_conn.php');
 ?>
 
 <body>
+    <ul id="skipNav">
+        <li><a href="#header">헤더 메뉴</a></li>
+        <li><a href="#container">본문컨텐츠</a></li>
+        <li><a href="#footer">푸터 메뉴</a></li>
+    </ul>
     <div class="wrap">
         <!-- GNB -->
-        <div class="common_gnb_w">
+        <div class="common_gnb_w" id="header">
             <!-- lnbtype_main / sticky / 모바일:gnb_open -->
             <div class="artgg_lnb_w">
                 <h1 class="artgg_h1_logo">
@@ -173,3 +178,5 @@ include('./db_conn.php');
                 <i class="snb_bg"></i>
             </div>
         </div>
+
+        <div id="container">
