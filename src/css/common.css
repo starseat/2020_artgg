@@ -217,7 +217,7 @@ input,button,select {outline:none; border-radius:0;}
     #main-swiper-container .swiper-slide {background-size:100% auto !important; background-repeat:no-repeat !important;}
 
 /* 메인 : 공지사항 */
-.section_notice_w {position:relative; margin-top:170px; min-height:300px; display:flex; overflow:hidden;}
+.section_notice_w {position:relative; margin:170px auto 0; max-width:1530px; min-height:300px; display:flex; overflow:hidden;}
 .section_notice_w:after {display:block; content:''; clear:both;}
     .notice_cont_l {float:left; width:50%; padding-right:18px; box-sizing:border-box;}
         .notice_list {padding-top:30px; }
@@ -230,7 +230,7 @@ input,button,select {outline:none; border-radius:0;}
         .notice_slide_w {position:absolute; left:50%; top:50%;}
 
 /* 메인 : 추진사업 */
-.section_service_w {margin-top:170px; }
+.section_service_w {margin:170px auto 0; max-width:1530px; }
     .service_list_w {}
         .service_list {display:flex; flex-wrap:wrap; width:calc(100% + 30px);}
         .service_list_w:after,
@@ -246,7 +246,7 @@ input,button,select {outline:none; border-radius:0;}
                                 .slt_info:after {display:block; content:''; position:Absolute; left:0; top:0; width:26px; height:2px; background-color:#6b6b6b;}
                                 .slt_date,
                                 .slt_date_text {display:block; margin-top:3px; font-size:13px;}
-                                .slt_text  {margin-top:15px; position:relative; z-index:2; font-size:13px; font-weight:400; line-height:1.5; display: -webkit-box; -webkit-box-orient: vertical;  -webkit-line-clamp: 4; overflow: hidden; text-overflow: ellipsis;}
+                                .slt_text  {max-height:76px; margin-top:15px; position:relative; z-index:2; font-size:13px; font-weight:400; line-height:1.5; display: -webkit-box; -webkit-box-orient: vertical;  -webkit-line-clamp: 4; overflow: hidden; text-overflow: ellipsis;}
                                 .slt_name {display:block; padding:0 9%; position:absolute; left:0; bottom:17px; z-index:2; font-size:27px; font-weight:700; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; box-sizing:border-box; width:100%;}
                                 .box_picker {display:block; position:absolute; left:-10px; top:50%; margin-top:-30px; z-index:1; margin-left:-30px; width:60px; height:60px; transform:rotate(45deg); background-color:#53ae6e; }
                         .sl_box_image_w {position:relative; padding-bottom:100%; overflow:hidden; box-sizing:border-box;}
@@ -274,7 +274,7 @@ input,button,select {outline:none; border-radius:0;}
                         .mdil_thumb_w {right: 0; width: 100%; transform: translate(50%,50%);}
                         .mdil_image,.mdil_thumb_w {position: absolute; top: 0; left: 0; height: 100%;}
                             .mdil_image {display: block; width: auto; transform: translate(-50%,-50%);}
-                    .module_image_list .mdil_text_w {display:none; position:Absolute; left:0; top:0; width:100%; height:100%; font-size:18px; line-height:26px; color:#fff; background-color:rgba(0,0,0,.5); text-align:center;}
+                    .module_image_list .mdil_text_w {display:none; position:Absolute; left:0; top:0; bottom:0; width:100%; height:100%; font-size:18px; line-height:26px; color:#fff; background-color:rgba(0,0,0,.5); text-align:center;}
                     .mdil_text {display:table-cell; padding:0 13%; width:100%; height:100%; vertical-align:middle; box-sizing:border-box;}
                     .module_image_list .mdil_cont:hover .mdil_text_w,
                     .module_image_list .mdil_cont:focus .mdil_text_w {display:table;}
@@ -377,9 +377,10 @@ input,button,select {outline:none; border-radius:0;}
 
 /* 서브: 사업소개 */
 .business_info_w {}
-    .section_artgg_text {display:table; overflow:hidden; position:relative; padding-left:650px; min-height:410px;}
-        .bns_artgg_logo {display:table-cell; position:absolute; left:0; top:0; width:300px; height:300px;}
-        .bns_text {display:table-cell; vertical-align:middle; padding-left:20px; font-size:24px; box-sizing:border-box; font-weight:700; word-break:keep-all;}
+    .section_artgg_text {overflow:hidden; position:relative; box-sizing:border-box;}
+        .bns_artgg_logo {float:left; }
+        .bns_text_box {display:table; float:left; width:60%; font-size:24px; box-sizing:border-box; font-weight:700; word-break:keep-all;}
+            .bns_text {display:table-cell; vertical-align:middle; }
     /* 협력사업자 */
     .business_list_box {margin-top:130px;}
         .business_info_w .module_image_list_w {margin-top:90px;}
@@ -666,7 +667,7 @@ input,button,select {outline:none; border-radius:0;}
     #business-artgg-image-swiper-container .swiper-pagination {bottom:0;}
     .section_artgg_text {padding-left:0;}
     #business-artgg-image-swiper-container {position:relative;}
-    .bns_text {display:block; margin-top:50px; font-size:21px; padding-left:0; line-height:32px;}
+    .bns_text {font-size:21px; padding-left:0; line-height:32px;}
     .business_list_box,
     .artgg_artist_list_box {margin-top:130px;}
         .business_info_w .module_image_list_w {margin-top:50px;}
@@ -915,7 +916,9 @@ input,button,select {outline:none; border-radius:0;}
 
     /* M: 협력사업자 */
     .section_artgg_text {min-height:auto;}
-        .bns_artgg_logo {display:block;}
+        .bns_artgg_logo {display:block; float:none !important;}
+        #business-artgg-image-swiper-container {width:100% !important;}
+    .bns_text_box {display:block; margin-top:15px; float:none; width:100%;}
         .bns_text {font-size:18px; line-height:30px;}
     .section_artgg_text {padding:0 25px;}
     .artgg_artist_list_box {overflow:hidden;}
