@@ -27,7 +27,7 @@ function getDirecionMap() {
     let $markerTag = '';
     $markerTag += '<div style="width:150px;text-align:center;padding:6px 0;">';
     $markerTag += '<a id="direction_map_marker_link" ';
-    $markerTag += 'href="https://map.kakao.com/" target="_blank">';
+    $markerTag += 'href="https://map.kakao.com/link/map/' + marker_name + ',' + map_y + ',' + map_x + '" target="_blank">';
     $markerTag += marker_name;
     $markerTag += '</a></div>';
 
