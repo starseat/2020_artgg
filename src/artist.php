@@ -24,7 +24,7 @@
                 </select>
             </div>
         </div>
-        <div class="module_image_list_w">
+        <div class="module_image_list_w artist_list_w">
             <ul class="module_image_list" id="artist_list">
             </ul>
         </div>

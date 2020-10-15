@@ -462,8 +462,8 @@ input,button,select {outline:none; border-radius:0;}
 /* 아트샵 */
 .ready_service_area {padding:5%; margin-top:100px; border:2px solid #000; text-align:center;}
     .rsa_cont {display:block; margin-top:15px; line-height:24px;}
-    .rsa_title {position:relative; display:inline-block; font-size:24px; }
-    .rsa_title:before {display:block; content:''; position:Absolute; left:0; bottom:0; width:100%; height:17px; transition:width .4s cubic-bezier(.51,.18,0,.88) .1s; background-color:#53ae6e; opacity:0.2;}
+    .rsa_title {position:relative; display:inline; font-size:24px; box-shadow:inset 0 -0.5em 0 0 rgba(83,174,110,.2); background-image: linear-gradient(to right, #fff 0, #fff 100%); background-position:0 0.1em; background-size:100% 100%; transition:background .5s;}
+    /*.rsa_title:before {display:block; content:''; position:Absolute; left:0; bottom:0; width:100%; height:17px; transition:width .4s cubic-bezier(.51,.18,0,.88) .1s; background-color:#53ae6e; opacity:0.2;}*/
     .rsa_list {margin-top:20px;overflow:hidden; position:Relative; left:-20px;}
         .rsa_inner {min-height:22px; margin-top:5px;}
             .rsa_link {display:block; position:Relative; padding-left:50%;}
@@ -654,7 +654,7 @@ input,button,select {outline:none; border-radius:0;}
             .pn_collaborate {padding-left:26px;}
             .pn_collaborate:after {width:4px;}
     .program_name_w {font-size:24px;}
-        .pn_date {margin-top:3px; font-size:20px;}
+        .pn_date {margin-top:7px; font-size:20px;}
         .program_info_box {margin-top:85px;}
             .info_title {font-size:24px;}
             .info_cont,
@@ -675,6 +675,8 @@ input,button,select {outline:none; border-radius:0;}
         .artgg_artist_list {margin-top:32px;}
             .aal_name {font-size:18px; padding-top:13px;}
     .business_info_w .mdil_cont:after {border-width:5px;}
+    .business_info_w .mdil_thumb_w {height:calc(100% - 4px);}
+
 
     /* T:공지사항 상세 */
     .board_view_area {margin-top:35px;}
@@ -690,6 +692,8 @@ input,button,select {outline:none; border-radius:0;}
     .report_list_w {margin-top:25px;}
         .report_list_table th {font-size:20px;}
         .report_list_table td {font-size:16px;}
+        .tl_cont {font-size:14px; }
+        .tl_cont .text:after {top:3px; width:3px; height:15px;}
 
     /* T : 모듈 가로타입 리스트 : 미디어룸 */
     .mediaroom_vod_w {}
@@ -738,7 +742,7 @@ input,button,select {outline:none; border-radius:0;}
             .footer_cont_l img {display:block; width:100%;}
             .fcl_gg img {width:58px;}
             .fcl_gc {width:79px;}
-            .fcr_sl_link {display:inline-block; padding:0 12px;}
+            .fcr_sl_link {display:inline-block; padding:0 27%;}
 
     /* M:GNB */
     .common_gnb_w {height:75px; padding:0;}
@@ -794,6 +798,7 @@ input,button,select {outline:none; border-radius:0;}
 
     /* M:공지사항 */
     .section_notice_w {margin-top:95px; display:block;}
+    .notice_cont_l {padding-left:25px;}
         .notice_cont_r,
         .notice_cont_l {float:none; width:100%;}
         .notice_cont_r{margin-top:15px;min-height:330px; padding-bottom:50px;}
@@ -804,11 +809,13 @@ input,button,select {outline:none; border-radius:0;}
                  .nl_text:after {width:5px;}
                  .nl_text,.nl_date {padding-left:25px;}
     #artist-thumb-swiper-pagination {bottom:-50px;}
+    #artist-thumb-swiper-container {padding:0 25px !important; box-sizing:border-box;}
     #artist-thumb-swiper-container .swiper-button-prev {left:-25px !important;}
     #artist-thumb-swiper-container .swiper-button-next {right:-25px !important;}
 
     /* M:추진사업 */
     .business_list_box {margin-top:80px;}
+        [class$="_list_box"] .list_title {margin-left:25px;}
     .artgg_artist_list_box {margin-top:80px;}
     .business_end_w {padding:0 25px;}
     .service_list_w {overflow:hidden; overflow-x:auto; margin-left:25px; }
@@ -816,11 +823,12 @@ input,button,select {outline:none; border-radius:0;}
             .sl_inner {flex-shrink: 0; width:220px; padding:0 15px 0 0;}
             .sl_cont {color:#999;}
                 .sl_box_text {position:static; padding-bottom:50px; min-height:auto;}
+                .sl_box_text * {color:#999 !important;}
                     .sl_text_top {padding-right:0;}
                         .slt_num {top:-20px; font-size:20px; color:#999;}
                         .slt_info {font-size:14px;}
                         .slt_info:after {background-color:#999;}
-                        .slt_text {height:auto; max-height:55px; font-size:12px;}
+                        .slt_text {height:auto; max-height:55px; font-size:12px; -webkit-line-clamp:3; }
                         .slt_date, .slt_date_text {font-size:12px; font-weight:700;}
                         .slt_name {font-size:20px;}
 
@@ -833,7 +841,7 @@ input,button,select {outline:none; border-radius:0;}
     .section_programlist_w {margin-top:50px;}
     .program_list {margin-top:-45px;}
     .pl_inner {width:50%; padding-top:45px;}
-    .list_title {margin:0 25px; padding-left:19px; font-size:18px; line-height:27px;}
+    .list_title {margin-right:25px; padding-left:19px; font-size:18px; line-height:27px;}
     .list_title:after {width:5px; top:2px; height:calc(100% - 6px);}
     .select_box_w select {width:95px; padding:0 30px 0 10px; font-size:18px; background-position:right center; background-size:30px auto;}
     [class^="ptext_"] {padding-left:15px; margin-top:3px; font-size:12px !important; line-height:1.3em;}
@@ -848,9 +856,9 @@ input,button,select {outline:none; border-radius:0;}
     .program_name_w {margin-top:14px; font-size:18px;}
         .pn_date {font-size:15px;}
         .program_info_box {margin-top:45px;}
-            .info_title {font-size:15px;}
+            .info_title {font-size:18px;}
             .info_cont,
-            .info_cont p span {font-size:12px !important; line-height:24px !important;}
+            .info_cont p span {font-size:14px !important; line-height:28px !important;}
             .roadmap_box {min-height:215px;}
     .program_down_w {margin-top:55px;}
         .button_down_text {height:26px; line-height:20px;}
@@ -868,7 +876,12 @@ input,button,select {outline:none; border-radius:0;}
             .module_image_list {margin-top:-20px; width:calc(100% + 20px);}
                 .mdil_inner {width:50%; padding:20px 20px 0 0;}
                     .module_image_list_w .mdil_cont:hover .mdil_text,
-                    .module_image_list_w .mdil_cont:focus .mdil_text {position:absolute; left:0; top:50%; margin-top:-19px; font-size:12px; line-height:20px; height:38px; overflow:hidden; text-overflow:ellipsis; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient: vertical;}
+                    .module_image_list_w .mdil_cont:focus .mdil_text,
+                    .module_image_list_w .mdil_cont:visited .mdil_text,
+                    .module_image_list_w .mdil_cont:active .mdil_text {position:absolute; left:0; top:50%; margin-top:-19px; font-size:12px; line-height:20px; height:38px; overflow:hidden; text-overflow:ellipsis; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient: vertical;}
+                    .artist_list_w .mdil_thumb_w,
+                    .artist_list_w .mdil_image{transform:none; left:0; right:0; }
+                    .artist_list_w .module_image_list .mdil_cont:hover .mdil_image {transform:none; left:0; top:0;}
         .list_more_w {margin-top:40px; height:40px; line-height:40px; }
             .list_more_text .ir {font-size:12px;}
 
@@ -925,6 +938,12 @@ input,button,select {outline:none; border-radius:0;}
     .view_area {padding-top:6px !important;}
     .view_area * {font-size:14px !important;}
 
+    /* M:아트숍 */
+    .rsa_inner {margin-top:0;}
+        .rsa_title {font-size:18px;}
+        .rsa_cont {font-size:14px; font-weight:700;}
+        .rsa_list {font-size:12px;}
+
 
     /* M:보도자료 */
     .report_list_w {margin-top:15px;}
@@ -934,6 +953,7 @@ input,button,select {outline:none; border-radius:0;}
     /* M:미디어룸 */
     .section_mediaroom_w {margin-top:50px;}
     .vod_info_text {font-size:16px; line-height:22px;}
+    #target_mediaroom_title {height:100px;}
 
 }
 
