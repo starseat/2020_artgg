@@ -18,8 +18,22 @@
 .table-hover-pointer th,
 .table-hover-pointer td {
     text-align: center;
+    font-size:14px;
+    vertical-align:middle;
+}
+
+.table .thead-dark th{
+    font-size:16px;
+    vertical-align:middle;
 }
 
 .notice-title {
     text-align: left !important;
+}
+
+
+@media screen and (max-width:720px) {
+    .table .thead-dark th {font-size:14px;}
+    .thead-dark th:last-child {padding:0;}
+    .page-link {padding:0.2rem .55rem;}
 }
