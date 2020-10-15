@@ -131,7 +131,7 @@ include('./db_conn.php');
                                 <li class="ssnb_inner">
                                     <a href="./art_shop.php" class="ssnb_link">
                                         <span class="ssnb_txt_box">
-                                            <span class="ssnb_txt">Art Shop</span>
+                                            <span class="ssnb_txt">아트샵</span>
                                         </span>
                                     </a>
                                 </li>

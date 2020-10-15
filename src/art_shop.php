@@ -27,6 +27,7 @@
                     <li class="rsa_inner">
                         <a href="#" class="rsa_link">
                             <span class="rsa_name">아트플러스엑스: </span>
+                            <span class="rsa_number">suk8295@hanmail.net</span>
                         </a>
                     </li>
                     <li class="rsa_inner">
