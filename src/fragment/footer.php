@@ -42,7 +42,7 @@
                         </a>
                     </li> -->
                     <li class="fcr_sl_cont">
-                        <a href="https://www.flickr.com/explore" class="fcr_sl_link" title="플리커 바로가기" target="_blank">
+                        <a href="https://www.flickr.com/people/190658874@N08/" class="fcr_sl_link" title="플리커 바로가기" target="_blank">
                             <img src="../img/sns_fl.jpg" alt="플리커 아이콘" class="sns_icon_flickr">
                         </a>
                     </li>
