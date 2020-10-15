@@ -99,7 +99,7 @@ function mobilelnbOpen(){
 }
 
 function vodlistHeight(){
-    var vodboxHeight = $('.mediaroom_vod_w').outerHeight();
+    var vodboxHeight = $('.mediaroom_vod_w').outerHeight()-50+'px';
     $('.module_media_list_w').css('height',vodboxHeight);
 
     if (document.body.clientWidth < 970) {
