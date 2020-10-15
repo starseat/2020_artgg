@@ -33,7 +33,7 @@ $notice_view_cookie_name = 'notice_view_' . $notice_seq;
 if (!isset($_COOKIE[$notice_view_cookie_name]) || empty($_COOKIE[$notice_view_cookie_name])) {
     $sql  = 'UPDATE artgg_notice set view_count = view_count + 1 WHERE seq = ' . $notice_seq;
     $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
-    setcookie($notice_view_cookie_name, 1, time() + (60 * 60 * 24), '/');  // 1 day
+    // setcookie($notice_view_cookie_name, 1, time() + (60 * 60 * 24), '/');  // 1 day
 }
 ?>
 
