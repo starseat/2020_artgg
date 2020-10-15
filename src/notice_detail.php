@@ -40,30 +40,32 @@ if (!isset($_COOKIE[$notice_view_cookie_name]) || empty($_COOKIE[$notice_view_co
 <!-- 콘텐츠 -->
 <div class="container">
     <div class="content_inner">
-        <h2 class="content_title">공지사항</h2>
-        <div class="board_view_area">
-            <div class="top_title_faq">
-                <em class="board_title"><?php echo getNoticeListViewTitme(intval(RemoveXSS($notice_info['level'])), RemoveXSS($notice_info['title'])); ?></em>
-            </div>
-            <div class="stit_area">
-                <span class="stit_regist_day">
-                    <span class="stit_text">등록일 :</span>
-                    <span class="stit_date"><?php echo $notice_info['created_at']; ?></span>
-                </span>
-                <span class="stit_regist_end">
-                    <span class="stit_text">수정일 :</span>
-                    <em class="stit_date"><?php echo $notice_info['updated_at']; ?></em>
-                </span>
-                <span class="stit_regist_view">
-                    <span class="stit_text">조회수 :</span>
-                    <em class="stit_date"><?php echo $notice_info['view_count']; ?></em>
-                </span>
-            </div>
-            <div class="view_area"><?php echo RemoveXSS($notice_info['contents']); ?></div>
-            <div class="button_box_w">
-                <button type="button" class="button_board_list" onclick="javascript: location.href='./notice.php'; ">
-                    <span class="btn_bl_text">목록으로</span>
-                </button>
+        <div class="section_box_w">
+            <h2 class="content_title">공지사항</h2>
+            <div class="board_view_area">
+                <div class="top_title_faq">
+                    <em class="board_title"><?php echo getNoticeListViewTitme(intval(RemoveXSS($notice_info['level'])), RemoveXSS($notice_info['title'])); ?></em>
+                </div>
+                <div class="stit_area">
+                    <span class="stit_regist_day">
+                        <span class="stit_text">등록일 :</span>
+                        <span class="stit_date"><?php echo $notice_info['created_at']; ?></span>
+                    </span>
+                    <span class="stit_regist_end">
+                        <span class="stit_text">수정일 :</span>
+                        <em class="stit_date"><?php echo $notice_info['updated_at']; ?></em>
+                    </span>
+                    <span class="stit_regist_view">
+                        <span class="stit_text">조회수 :</span>
+                        <em class="stit_date"><?php echo $notice_info['view_count']; ?></em>
+                    </span>
+                </div>
+                <div class="view_area"><?php echo RemoveXSS($notice_info['contents']); ?></div>
+                <div class="button_box_w">
+                    <button type="button" class="button_board_list" onclick="javascript: location.href='./notice.php'; ">
+                        <span class="btn_bl_text">목록으로</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>

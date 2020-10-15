@@ -58,63 +58,61 @@
     </div> <!-- .section_visual_w -->
 
     <!-- 공지사항 영역-->
-    <div class="section_box_w">
-        <div class="section_notice_w">
-            <div class="notice_cont_l">
-                <h2 class="section_title">공지사항</h2>
-                <ul class="notice_list">
-                    <?php
+    <div class="section_notice_w">
+        <div class="notice_cont_l">
+            <h2 class="section_title">공지사항</h2>
+            <ul class="notice_list">
+                <?php
 
-                    $sql  = "SELECT seq, level, title, view_count, created_at FROM artgg_notice WHERE deleted_at IS NULL ORDER BY seq desc LIMIT 4";
-                    $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
-                    $notice_length = $result->num_rows;
+                $sql  = "SELECT seq, level, title, view_count, created_at FROM artgg_notice WHERE deleted_at IS NULL ORDER BY seq desc LIMIT 4";
+                $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+                $notice_length = $result->num_rows;
 
-                    if ($notice_length > 0) {
-                        while ($row = $result->fetch_array()) {
-                            $viewTitle = getNoticeListViewTitme(intval(RemoveXSS($row['level'])), RemoveXSS($row['title']));
-                            echo ('<li class="nl_inner">');
-                            echo ('<a href="./notice_detail.php?seq=' . RemoveXSS($row['seq']) . '" class="nl_cont">');
-                            echo ('<strong class="nl_text">' . $viewTitle . '</strong>');
-                            echo ('<span class="nl_date">' . $row['created_at'] . '</span>');
-                            echo ('</a>');
-                            echo ('</li>');
-                        }
-                    } else {
-                        echo ('<li class="nl_inner">등록된 공지사항이 없습니다.</li>');
+                if ($notice_length > 0) {
+                    while ($row = $result->fetch_array()) {
+                        $viewTitle = getNoticeListViewTitme(intval(RemoveXSS($row['level'])), RemoveXSS($row['title']));
+                        echo ('<li class="nl_inner">');
+                        echo ('<a href="./notice_detail.php?seq=' . RemoveXSS($row['seq']) . '" class="nl_cont">');
+                        echo ('<strong class="nl_text">' . $viewTitle . '</strong>');
+                        echo ('<span class="nl_date">' . $row['created_at'] . '</span>');
+                        echo ('</a>');
+                        echo ('</li>');
                     }
+                } else {
+                    echo ('<li class="nl_inner">등록된 공지사항이 없습니다.</li>');
+                }
 
-                    $result->free();
+                $result->free();
 
-                    ?>
-                </ul>
-            </div>
-            <div class="notice_cont_r">
-                <div class="notice_slide_w">
-                    <div id="artist-thumb-swiper-container">
-                        <div class="swiper-wrapper ssl_inner">
+                ?>
+            </ul>
+        </div>
+        <div class="notice_cont_r">
+            <div class="notice_slide_w">
+                <div id="artist-thumb-swiper-container">
+                    <div class="swiper-wrapper ssl_inner">
 
-                            <?php
-                            $sql = "SELECT seq, year, name, en_name, thumbnail FROM artgg_artist WHERE name != 'artist_greeting' ORDER BY name";
-                            $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
-                            $artist_length = $result->num_rows;
+                        <?php
+                        $sql = "SELECT seq, year, name, en_name, thumbnail FROM artgg_artist WHERE name != 'artist_greeting' ORDER BY name";
+                        $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+                        $artist_length = $result->num_rows;
 
-                            if ($artist_length > 0) {
-                                while ($artist_info = $result->fetch_array()) {
-                                    echo ('<div onclick="goArtistDetail(' . RemoveXSS($artist_info['seq']) . ')" class="swiper-slide" style="background-image:url(' . getImagePath(RemoveXSS($artist_info['thumbnail'])) . ')"></div>');
-                                }
+                        if ($artist_length > 0) {
+                            while ($artist_info = $result->fetch_array()) {
+                                echo ('<div onclick="goArtistDetail(' . RemoveXSS($artist_info['seq']) . ')" class="swiper-slide" style="background-image:url(' . getImagePath(RemoveXSS($artist_info['thumbnail'])) . ')"></div>');
                             }
+                        }
 
-                            $result->free();
-                            ?>
-                        </div>
-                        <!-- Add Pagination -->
-                        <div id="artist-thumb-swiper-pagination"></div>
-                        <!-- Add Arrows -->
-                        <div id="artist-thumb-swiper-button-prev" class="swiper-button-prev"></div>
-                        <div id="artist-thumb-swiper-button-next" class="swiper-button-next"></div>
+                        $result->free();
+                        ?>
                     </div>
-                </div> <!-- .notice_slide_w -->
-            </div>
+                    <!-- Add Pagination -->
+                    <div id="artist-thumb-swiper-pagination"></div>
+                    <!-- Add Arrows -->
+                    <div id="artist-thumb-swiper-button-prev" class="swiper-button-prev"></div>
+                    <div id="artist-thumb-swiper-button-next" class="swiper-button-next"></div>
+                </div>
+            </div> <!-- .notice_slide_w -->
         </div>
     </div>
 
