@@ -246,7 +246,8 @@ input,button,select {outline:none; border-radius:0;}
                                 .slt_info:after {display:block; content:''; position:Absolute; left:0; top:0; width:26px; height:2px; background-color:#6b6b6b;}
                                 .slt_date,
                                 .slt_date_text {display:block; margin-top:3px; font-size:13px;}
-                                .slt_text  {max-height:76px; margin-top:15px; position:relative; z-index:2; font-size:13px; font-weight:400; line-height:1.5; display: -webkit-box; -webkit-box-orient: vertical;  -webkit-line-clamp: 4; overflow: hidden; text-overflow: ellipsis;}
+                                .slt_text_cont {display:block; max-height:76px; margin-top:15px; }
+                                    .slt_text {position:relative; z-index:2; font-size:13px !important; font-weight:400; line-height:1.5; display: -webkit-box; -webkit-box-orient: vertical;  -webkit-line-clamp: 4; overflow: hidden; text-overflow: ellipsis; font-family:'malgun gothic' !important;}
                                 .slt_name {display:block; padding:0 9%; position:absolute; left:0; bottom:17px; z-index:2; font-size:27px; font-weight:700; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; box-sizing:border-box; width:100%;}
                                 .box_picker {display:block; position:absolute; left:-10px; top:50%; margin-top:-30px; z-index:1; margin-left:-30px; width:60px; height:60px; transform:rotate(45deg); background-color:#53ae6e; }
                         .sl_box_image_w {position:relative; padding-bottom:100%; overflow:hidden; box-sizing:border-box;}
