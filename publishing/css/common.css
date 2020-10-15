@@ -505,13 +505,15 @@ input,button,select {outline:none; border-radius:0;}
     .sl_inner {width:33.3%;}
 
     /* pc:작가리스트 */
-    .module_image_list_w {margin-top:240px;}
+    .module_image_list_w {margin-top:140px;}
         .module_image_list {margin-top:-62px; width:calc(100% + 62px);}
             .mdil_inner {width:25%; padding:62px 62px 0 0;}
     .info_text_w {font-size:24px;}
 
     /* pc:footer */
     .footer{padding:170px 40px 200px;}
+    .contents_top_btn {width:60px; height:60px;}
+    .icon_toparrow {margin:-12px 0 0 -18px; background-size:36px auto;}
 }
 
 /* 메인 : 태블릿 제어 */
