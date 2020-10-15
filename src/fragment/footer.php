@@ -36,9 +36,14 @@
                             <img src="./img/sns_yt.jpg" alt="유튜브 아이콘" class="sns_icon_youtube">
                         </a>
                     </li>
-                    <li class="fcr_sl_cont">
+                    <!-- <li class="fcr_sl_cont">
                         <a href="#blog" class="fcr_sl_link" title="공식 블로그 바로가기">
                             <img src="./img/sns_blog.jpg" alt="블로그 아이콘" class="sns_icon_blog">
+                        </a>
+                    </li> -->
+                    <li class="fcr_sl_cont">
+                        <a href="https://www.flickr.com/explore" class="fcr_sl_link" title="플리커 바로가기" target="_blank">
+                            <img src="../img/sns_fl.jpg" alt="플리커 아이콘" class="sns_icon_flickr">
                         </a>
                     </li>
                 </ul>
