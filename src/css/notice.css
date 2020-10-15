@@ -33,6 +33,7 @@
 
 
 @media screen and (max-width:720px) {
+    .board_title {padding:7px 15px;}
     .table .thead-dark th {font-size:14px;}
     .thead-dark th:last-child {padding:0;}
     .page-link {padding:0.2rem .55rem;}
