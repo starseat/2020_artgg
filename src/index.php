@@ -146,7 +146,7 @@
                         echo ('                    <span class="slt_date">' . RemoveXSS($row['program_date']) . '</span>');
                         echo ('                    <span class="slt_date_text">' . RemoveXSS($row['place']) . '</span>');
                         echo ('                </div>');
-                        echo ('                <span class="slt_text">' . RemoveXSS($row['introduction']) . '</span>');
+                        echo ('                <div class="slt_text_cont"><span class="slt_text">' . RemoveXSS($row['introduction']) . '</span></div>');
                         echo ('                <strong class="slt_name">' . RemoveXSS($row['name']) . '</strong>');
                         echo ('            </div>');
                         echo ('        </div>');
