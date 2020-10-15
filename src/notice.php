@@ -25,16 +25,14 @@ $paging_info = getPagingInfo($page, $total_count, $item_row_count, $page_block_c
 
 <div class="container">
     <div class="content_inner">
-        <div class="section_box_w">
-            <h2 class="content_title">공지사항</h2>
-        </div>
+        <h2 class="content_title">공지사항</h2>
         <br>
         <table class="table table-hover table-hover-pointer">
             <colgroup>
-                <col width="10%" />
-                <col width="60%" />
-                <col width="20%" />
-                <col width="10%" />
+                <col width="8%">
+                <col width="57%">
+                <col width="20%">
+                <col width="15%">
             </colgroup>
             <thead class="thead-dark">
                 <tr>
