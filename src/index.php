@@ -119,49 +119,47 @@
     </div>
 
     <!-- 추진사업 영역-->
-    <div class="section_box_w">
-        <div class="section_service_w">
-            <div class="service_list_w">
-                <!-- 세로모듈 -->
-                <ul class="service_list">
-                    <?php
+    <div class="section_service_w">
+        <div class="service_list_w">
+            <!-- 세로모듈 -->
+            <ul class="service_list">
+                <?php
 
-                    $sql  = "SELECT @rownum:=@rownum+1 as num, program.seq, program.year, program.name, program.thumbnail, ";
-                    $sql .= "program.program_date, program.place, program.event, program.introduction ";
-                    $sql .= "FROM artgg_program program WHERE (@rownum:=0)=0 AND year = (SELECT max(year) FROM artgg_program) ORDER BY name";
-                    $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
-                    $program_length = $result->num_rows;
+                $sql  = "SELECT @rownum:=@rownum+1 as num, program.seq, program.year, program.name, program.thumbnail, ";
+                $sql .= "program.program_date, program.place, program.event, program.introduction ";
+                $sql .= "FROM artgg_program program WHERE (@rownum:=0)=0 AND year = (SELECT max(year) FROM artgg_program) ORDER BY name";
+                $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+                $program_length = $result->num_rows;
 
-                    if ($program_length > 0) {
-                        while ($row = $result->fetch_array()) {
-                            echo ('<li class="sl_inner">');
-                            echo ('    <a href="./program_detail.php?seq=' . RemoveXSS($row['seq']) . '" class="sl_cont">');
-                            echo ('        <div class="sl_box_image_w">');
-                            echo ('            <div class="sl_box_image">');
-                            echo ('                <img src="' . getImagePath(RemoveXSS($row['thumbnail'])) . '" alt="" class="sl_img">');
-                            echo ('            </div>');
-                            echo ('        </div>');
-                            echo ('        <div class="sl_box_inner">');
-                            echo ('            <div class="sl_box_text">');
-                            echo ('                <div class="sl_text_top">');
-                            echo ('                    <span class="slt_num">' . RemoveXSS($row['num']) . '</span>');
-                            echo ('                    <span class="slt_info">' . RemoveXSS($row['event']) . '</span>');
-                            echo ('                    <span class="slt_date">' . RemoveXSS($row['program_date']) . '</span>');
-                            echo ('                    <span class="slt_date_text">' . RemoveXSS($row['place']) . '</span>');
-                            echo ('                </div>');
-                            echo ('                <span class="slt_text">' . RemoveXSS($row['introduction']) . '</span>');
-                            echo ('                <strong class="slt_name">' . RemoveXSS($row['name']) . '</strong>');
-                            echo ('            </div>');
-                            echo ('        </div>');
-                            echo ('    </a>');
-                            echo ('</li>');
-                        }
+                if ($program_length > 0) {
+                    while ($row = $result->fetch_array()) {
+                        echo ('<li class="sl_inner">');
+                        echo ('    <a href="./program_detail.php?seq=' . RemoveXSS($row['seq']) . '" class="sl_cont">');
+                        echo ('        <div class="sl_box_image_w">');
+                        echo ('            <div class="sl_box_image">');
+                        echo ('                <img src="' . getImagePath(RemoveXSS($row['thumbnail'])) . '" alt="" class="sl_img">');
+                        echo ('            </div>');
+                        echo ('        </div>');
+                        echo ('        <div class="sl_box_inner">');
+                        echo ('            <div class="sl_box_text">');
+                        echo ('                <div class="sl_text_top">');
+                        echo ('                    <span class="slt_num">' . RemoveXSS($row['num']) . '</span>');
+                        echo ('                    <span class="slt_info">' . RemoveXSS($row['event']) . '</span>');
+                        echo ('                    <span class="slt_date">' . RemoveXSS($row['program_date']) . '</span>');
+                        echo ('                    <span class="slt_date_text">' . RemoveXSS($row['place']) . '</span>');
+                        echo ('                </div>');
+                        echo ('                <span class="slt_text">' . RemoveXSS($row['introduction']) . '</span>');
+                        echo ('                <strong class="slt_name">' . RemoveXSS($row['name']) . '</strong>');
+                        echo ('            </div>');
+                        echo ('        </div>');
+                        echo ('    </a>');
+                        echo ('</li>');
                     }
+                }
 
-                    $result->free();
-                    ?>
-                </ul> <!-- .service_list -->
-            </div>
+                $result->free();
+                ?>
+            </ul> <!-- .service_list -->
         </div>
     </div>
 
