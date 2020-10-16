@@ -30,8 +30,8 @@ input,button,select {outline:none; border-radius:0;}
 .icn {position:absolute; display:block; .display:inline; .zoom:1;  font:0/0 arial; vertical-align:middle; overflow:hidden; background-repeat:no-repeat; background-color:transparent; background-image:url('../img/set_icon.png'); background-size:500px auto;}
 .wrap {background-color:#fff;}
 /*  바로가기 */
-.quick_link_w {text-align:right; margin-top:10px;}
-    .quick_link{display:inline-block; color:#000; padding-bottom:2px; font-size:24px; font-weight:800;}
+.quick_link_w {text-align:right; margin-top:1rem;}
+    .quick_link{display:inline-block; color:#000; padding-bottom:2px; font-size:20px; font-weight:800;}
         .qlink_text {display:inline-block; padding-right:20px; position:Relative;}
         .quick_link:hover .qlink_text:after {display:block; content:''; position:absolute; right:0; bottom:0; width:100%; height:2px; background-color:#000;}
         .qlink_text .icon_menu_arrow {display:block !important; right:0; top:50%; transform:rotate(270deg); background-image:url('../img/m_set_icn.png'); background-size:105px auto;}
@@ -247,14 +247,14 @@ input,button,select {outline:none; border-radius:0;}
             .sl_cont:after {display:block; content:''; box-sizing:border-box; position:absolute; left:0; top:0; width:100%; height:100%; border:1px solid rgba(0,0,0,.08);}
                 .sl_cont {position:relative; display:block; height:100%; color:#6b6b6b; }
                     .sl_box_inner {width:100%; box-sizing:border-box;}
-                        .sl_box_text {position:relative; padding:7% 8% 9%; box-sizing:border-box; font-family:'malgun gothic';}
+                        .sl_box_text {position:relative; padding:7% 8% 9%; box-sizing:border-box; font-family:'malgun gothic' !important;}
                             .sl_text_top {position:relative; padding-top:10px; z-index:2; line-height:1.4; }
                                 /*.slt_num {position:absolute; right:0; top:0; display:inline-block; height:45px; line-height:45px; font-size:3em; font-weight:800; color:#6b6b6b; font-family:'NanumSquare';}
                                 .slt_info {position:relative; display:block; padding-top:20px; font-size:15px; font-weight:800; letter-spacing:-0.06em;}*/
                                 .slt_date,
                                 .slt_date_text {display:block; margin-top:2px; font-size:13px; max-height:54px;  display: -webkit-box; -webkit-box-orient: vertical;  -webkit-line-clamp: 4; overflow: hidden; text-overflow: ellipsis;}
-                                .slt_text_cont {max-height:74px; margin-top:10px; display: -webkit-box; -webkit-box-orient: vertical;  -webkit-line-clamp: 4; overflow: hidden; text-overflow: ellipsis;}
-                                    .slt_text_cont * { font-size:13px !important; font-weight:400 !important; line-height:1.5 !important; }
+                                .slt_text_cont {max-height:70px; margin-top:10px; display: -webkit-box; -webkit-box-orient: vertical;  -webkit-line-clamp: 4; overflow: hidden; text-overflow: ellipsis;}
+                                    .slt_text_cont * { font-size:13px !important; font-weight:400 !important; line-height:17px !important; font-family:'malgun gothic' !important; }
                                     .slt_text  {display:block; position:relative; z-index:2;}
                                 .slt_name {display:block; position:Relative; padding-top:15px; line-height:24px; z-index:2; font-size:18px; font-weight:700; width:100%;}
                                     .slt_name:after {display:block; content:''; position:Absolute; left:0; top:0; width:26px; height:2px; background-color:#6b6b6b;}
