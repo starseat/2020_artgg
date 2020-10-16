@@ -352,7 +352,7 @@ input,button,select {outline:none; border-radius:0;}
 
 /* 서브: 프로그램 엔드 */
 .section_program_w {}
-    .program_poster_w {margin-top:80px; position:Relative; }
+    .program_poster_w {display:inline-block;margin-top:80px; position:Relative; }
         .poster_image {display:block; max-width:100%;}
         .program_poster_w:after {display:block; content:''; position:Absolute; left:0; top:0; width:100%; height:100%;  border:1px solid rgba(0,0,0,.1); box-sizing:border-box;}
     .program_name_w {margin-top:30px; font-size:30px; font-weight:800;}
