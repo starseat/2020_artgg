@@ -29,6 +29,12 @@ input,button,select {outline:none; border-radius:0;}
 .ir {zoom:-10; z-index:-1; position:relative; display:block; width:100%; font-size:0px; text-align:center; white-space:nowrap; overflow:hidden;}
 .icn {position:absolute; display:block; .display:inline; .zoom:1;  font:0/0 arial; vertical-align:middle; overflow:hidden; background-repeat:no-repeat; background-color:transparent; background-image:url('../img/set_icon.png'); background-size:500px auto;}
 .wrap {background-color:#fff;}
+/*  바로가기 */
+.quick_link_w {}
+    .quick_link{display:inline-block; color:#000; padding-bottom:2px; font-size:24px; font-weight:800;}
+        .qlink_text {display:inline-block; padding-right:20px; position:Relative;}
+        .quick_link:hover .qlink_text:after {display:block; content:''; position:absolute; right:0; bottom:0; width:100%; height:2px; background-color:#000;}
+        .qlink_text .icon_menu_arrow {display:block !important; right:0; top:50%; transform:rotate(270deg); background-image:url('../img/m_set_icn.png'); background-size:105px auto;}
 .container {padding:158px 100px 0;}
     .content_inner {position:relative; padding-top:100px; max-width:1530px; box-sizing:border-box; margin:0 auto;}
         .section_box_w {max-width:1530px; margin:0 auto; box-sizing:border-box;}
@@ -103,6 +109,8 @@ input,button,select {outline:none; border-radius:0;}
                                 .menu_hover .slnb_link:before,
                                 .slnb_link.current:before {display:block;}
                                 .icon_menu_arrow {display:none;}
+                                .icon_menu_arrow {right:0; top:50%; margin-top:-4px; width:16px; height:8px; background-position:-20px -60px; }
+                                .menu_hover .icon_menu_arrow {background-position:0 -60px; }
 
 .artgg_snb {position:absolute; top:-1000px; left:0; overflow:hidden; width:170px; height:0; opacity:0; transition:opacity 0.5s ease 0s; }
 .slnb_inner.menu_hover .artgg_snb {height:220px !important; opacity:1; top:100px;}
@@ -287,7 +295,7 @@ input,button,select {outline:none; border-radius:0;}
 /* 서브 : 작가리스트 엔드 */
 .section_artist_w {margin-top:140px;}
 .section_artist_w img {max-width:100%;}
-    .artist_slide_w {}
+    .artist_slide_w {margin:0 auto; max-width:80%; }
         .slide_text_w {margin-top:25px; padding-left:10px; }
             .slide_text_title {font-size:27px; font-style:italic; font-weight:800;}
                 .slide_info_list {font-size:16px;}
@@ -352,7 +360,7 @@ input,button,select {outline:none; border-radius:0;}
 
 /* 서브: 프로그램 엔드 */
 .section_program_w {}
-    .program_poster_w {display:inline-block;margin-top:80px; position:Relative; }
+    .program_poster_w {display:inline-block; max-width:80%; margin-top:80px; position:Relative; }
         .poster_image {display:block; max-width:100%;}
         .program_poster_w:after {display:block; content:''; position:Absolute; left:0; top:0; width:100%; height:100%;  border:1px solid rgba(0,0,0,.1); box-sizing:border-box;}
     .program_name_w {margin-top:30px; font-size:30px; font-weight:800;}
@@ -589,7 +597,7 @@ input,button,select {outline:none; border-radius:0;}
     #artist-thumb-swiper-pagination {font-size:14px;}
 
     .sl_box_text {padding:7% 8% 8%; min-height:0;}
-    .slt_text_cont {}
+    .slt_text_cont {max-height:87px;}
 
     /* T:공지사항 */
     .section_notice_w {margin-top:85px;}
@@ -624,6 +632,7 @@ input,button,select {outline:none; border-radius:0;}
             .list_more_text .ir {font-size:14px; z-index:0; color:#888;}
 
     /* T:작가엔드 */
+    .artist_slide_w {max-width:100%;}
     .section_artist_w {margin-top:50px;}
     .article_artist_box {margin-top:85px;}
         .slide_text_title {font-size:21px;}
@@ -658,7 +667,7 @@ input,button,select {outline:none; border-radius:0;}
 
 
     /* T:프로그램엔드 */
-    .program_poster_w {margin-top:50px;}
+    .program_poster_w {margin-top:50px; max-width:100%;}
         .program_name_w {margin-top:25px;}
             .pn_title {margin-right:20px;}
             .pn_collaborate {padding-left:26px;}
@@ -788,8 +797,7 @@ input,button,select {outline:none; border-radius:0;}
                         .slnb_txt_box {margin-top:0; position:static; height:auto; line-height:45px;}
                         .menu_hover .slnb_txt_box:after {width:100%;}
                         .gnb_open .menu_hover .artgg_snb {position:static; height:auto !important; padding-bottom:30px;}
-                            .icon_menu_arrow {display:block; right:0; top:50%; margin-top:-4px; width:16px; height:8px; background-position:-20px -60px; }
-                            .menu_hover .icon_menu_arrow {background-position:0 -60px; }
+                        .icon_menu_arrow {display:block;}
 
     /* M:메인비주얼 */
     .section_visual_w {margin:0 25px; padding-bottom:30px; overflow:hidden;}
@@ -835,7 +843,7 @@ input,button,select {outline:none; border-radius:0;}
         .service_list {flex-wrap:nowrap; }
             .sl_inner {flex-shrink: 0; width:220px; padding:0 15px 0 0;}
             .sl_cont {color:#999;}
-                .sl_box_text {position:static; padding-bottom:50px; min-height:auto;}
+                .sl_box_text {position:static; min-height:auto;}
                 .sl_box_text * {color:#999 !important;}
                     .sl_text_top {padding-right:0;}
                         .slt_num {top:-20px; font-size:20px; color:#999;}
@@ -843,7 +851,8 @@ input,button,select {outline:none; border-radius:0;}
                         .slt_info:after {background-color:#999;}
                         .slt_text {height:auto; max-height:55px; font-size:12px; -webkit-line-clamp:3; }
                         .slt_date, .slt_date_text {font-size:12px; font-weight:700;}
-                        .slt_name {font-size:20px;}
+                        .slt_date_text {max-height:75px; line-height:18px !important;}
+                        .slt_name {font-size:14px;}
 
     /* M:아트경기 소개 */
     .section_info_w {margin-top:95px; min-height:auto; box-sizing:border-box;}
