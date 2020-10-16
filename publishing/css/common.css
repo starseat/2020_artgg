@@ -271,7 +271,7 @@ input,button,select {outline:none; border-radius:0;}
 .section_info_w {overflow:hidden; position:relative; display:table; width:100%; min-height:297px; margin-top:170px;}
     .info_image {display:table-cell; width:13%; max-width:263px; vertical-align:top; }
         .info_img {display:inline-block; max-width:100%; height:auto;}
-    .info_text_w {display:table-cell; padding-top:1%; padding-left:7%; max-width:980px; box-sizing:border-box; vertical-align:top; font-size:26px; line-height:1.5; font-weight:400;}
+    .info_text_w {display:table-cell; padding-top:1%; padding-left:7%; max-width:980px; box-sizing:border-box; vertical-align:top; font-size:24px; line-height:1.5; font-weight:400;}
 
 /* 서브 : 작가리스트 */
 .module_image_list_w {margin-top:170px; overflow:hidden;}
