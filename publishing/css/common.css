@@ -558,7 +558,6 @@ input,button,select {outline:none; border-radius:0;}
             .content_title_c {font-size:47px; height:30px !important; line-height:30px !important; }
                 .artist_name {font-size:18px; left:2px;}
 
-
     /* T:footer */
     .footer {margin-top:140px; padding:0 25px 70px; }
     .contents_top_btn_w {right:10px; bottom:10px;}
@@ -620,6 +619,7 @@ input,button,select {outline:none; border-radius:0;}
         .info_text_w {font-size:18px; padding-left:30px;}
         .slt_date, .slt_date_text {font-size:12px;}
         .info_img {position:relative; top:10px;}
+    .qlink_text {font-size:18px;}
 
     /* T:작가리스트 */
     .content_info_text {margin-top:35px; font-size:18px; line-height:40px;}
