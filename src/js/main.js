@@ -66,10 +66,10 @@ function initSwiper(mode) {
             delay: 3000,
             disableOnInteraction: false,
         },
-        pagination: {
-            el: '#artist-thumb-swiper-pagination',
-            type: 'fraction',
-        },
+        // pagination: {
+        //     el: '#artist-thumb-swiper-pagination',
+        //     type: 'fraction',
+        // },
         navigation: {
             nextEl: '#artist-thumb-swiper-button-next',
             prevEl: '#artist-thumb-swiper-button-prev',

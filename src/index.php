@@ -88,6 +88,8 @@
                 ?>
             </ul>
         </div>
+
+        <!-- 작가 썸네일 -->
         <div class="notice_cont_r">
             <div class="notice_slide_w">
                 <div id="artist-thumb-swiper-container">
@@ -108,7 +110,7 @@
                         ?>
                     </div>
                     <!-- Add Pagination -->
-                    <div id="artist-thumb-swiper-pagination"></div>
+                    <!-- <div id="artist-thumb-swiper-pagination"></div> -->
                     <!-- Add Arrows -->
                     <div id="artist-thumb-swiper-button-prev" class="swiper-button-prev"></div>
                     <div id="artist-thumb-swiper-button-next" class="swiper-button-next"></div>

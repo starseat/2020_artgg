@@ -377,11 +377,12 @@ input,button,select {outline:none; border-radius:0;}
 
 /* 서브: 사업소개 */
 .business_info_w {}
-    .section_artgg_text {overflow:hidden; position:relative; box-sizing:border-box; padding-left:640px; min-height:410px;}
-        .bns_artgg_logo {position:Absolute; left:0; top:0; }
-        .bns_text_box {display:block; width:100%; box-sizing:border-box; font-weight:700; word-break:keep-all;}
-            .bns_text {display:block; width:100%; padding-left:20px; font-size:24px; }
-            .bns_text * {font-size:24px !important; }
+    .section_artgg_text {overflow:hidden; position:relative; box-sizing:border-box;}
+    .artgg_swiper_w {float:left; width:40%; }
+        .bns_artgg_logo{padding-top:56.25%;}
+        .bns_text_box {float:left; display:table; width:60%; box-sizing:border-box; font-weight:700; word-break:keep-all;}
+            .bns_text {display:table-cell; vertical-align:middle; width:100%; height:100%; padding-left:2rem; font-size:24px; }
+            .bns_text,.bns_text * {font-size:24px !important; font-weight:400 !important; font-family:'malgun gothic','맑은 고딕' !important;}
     /* 협력사업자 */
     .business_list_box {margin-top:130px;}
         .business_info_w .module_image_list_w {margin-top:90px;}
@@ -517,6 +518,9 @@ input,button,select {outline:none; border-radius:0;}
     .footer{padding:170px 40px 200px;}
     .contents_top_btn {width:60px; height:60px;}
     .icon_toparrow {margin:-12px 0 0 -18px; background-size:36px auto;}
+
+    /* 협력사업자 */
+    .bns_text,.bns_text * {font-size:18px !important; line-height:26px !important;}
 }
 
 /* 메인 : 태블릿 제어 */
@@ -665,21 +669,22 @@ input,button,select {outline:none; border-radius:0;}
             .button_down_text {font-size:31px;}
 
     /* T:협력사업자 */
-    #business-artgg-image-swiper-container .swiper-pagination {bottom:0;}
-    .section_artgg_text {padding-left:0;}
-    #business-artgg-image-swiper-container {position:relative;}
-    .bns_text_box {width:100%; margin-top:25px;}
-    .bns_text {padding-left:20px; font-size:21px; line-height:32px; }
-    .bns_text * {font-size:19px !important; line-height:30px !important; }
-    .business_list_box,
-    .artgg_artist_list_box {margin-top:130px;}
-        .business_info_w .module_image_list_w {margin-top:50px;}
-            .business_info_w .module_image_list {margin-top:-2%; width:102%;}
-                .business_info_w .mdil_inner {padding:2% 2% 0 0;}
-        .artgg_artist_list {margin-top:32px;}
-            .aal_name {font-size:18px; padding-top:13px;}
-    .business_info_w .mdil_cont:after {border-width:5px;}
-    .business_info_w .mdil_thumb_w {height:calc(100% - 4px);}
+    .artgg_swiper_w {float:none; width:100%;}
+        #business-artgg-image-swiper-container {position:relative; padding-bottom:30px;}
+            #business-artgg-image-swiper-container .swiper-pagination {bottom:0;}
+            .section_artgg_text {padding-left:0;}
+        .bns_text_box {width:100%; margin-top:25px; min-height:auto !important;}
+            .bns_text {display:block; padding-left:0; font-size:16px !important; line-height:24px !important;; }
+            .bns_text * {font-size:16px !important; line-height:24px !important; }
+        .business_list_box,
+        .artgg_artist_list_box {margin-top:130px;}
+            .business_info_w .module_image_list_w {margin-top:50px;}
+                .business_info_w .module_image_list {margin-top:-2%; width:102%;}
+                    .business_info_w .mdil_inner {padding:2% 2% 0 0;}
+            .artgg_artist_list {margin-top:32px;}
+                .aal_name {font-size:18px; padding-top:13px;}
+        .business_info_w .mdil_cont:after {border-width:5px;}
+        .business_info_w .mdil_thumb_w {height:calc(100% - 4px);}
 
 
     /* T:공지사항 상세 */
@@ -918,13 +923,13 @@ input,button,select {outline:none; border-radius:0;}
     .swiper-button-prev:before,.swiper-button-next:before {left:0; top:0;}
 
     /* M: 협력사업자 */
-    .section_artgg_text {min-height:auto;}
+    .section_artgg_text {}
         .bns_artgg_logo {display:block; float:none !important;}
         #business-artgg-image-swiper-container {width:100% !important;}
-    .bns_text_box {display:block; margin-top:25px; float:none; width:100%;}
+    .bns_text_box {display:block; margin-top:25px; width:100%;}
         .bns_text {padding-left:0;}
         .bns_text,
-        .bns_text * {font-size:17px !important; line-height:30px !important;}
+        .bns_text * {font-size:14px !important; line-height:20px !important;}
     .section_artgg_text {padding:0 25px;}
     .artgg_artist_list_box {overflow:hidden;}
         .business_info_w .module_image_list_w {margin-top:20px;}

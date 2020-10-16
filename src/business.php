@@ -23,36 +23,43 @@ $result->free();
             <div class="section_artgg_text">
 
                 <!-- Swiper -->
-                <div class="swiper-container bns_artgg_logo" id="business-artgg-image-swiper-container">
-                    <div class="swiper-wrapper">
-                        <?php
-                        $sql  = "SELECT seq, sort, file_name, upload_path, storage_type, image_type FROM artgg_image WHERE target_seq = $artgg_seq AND target_type = 'business' ORDER BY sort";
-                        $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
-                        $artgg_contents_count = $result->num_rows;
-                        $artgg_contents_list = array();
-                        while ($row = $result->fetch_array()) {
-                            echo ('<div class="swiper-slide">');
-                            if ($row['image_type'] == 'I') {
-                                echo ('<img class="swiper-lazy" src="' . RemoveXSS($row['upload_path']) . '" alt="2020 아트경기">');
-                            } else if ($row['image_type'] == 'V') {
-                                echo ('<div class="swiper-video-container" data-id="' . RemoveXSS($row['file_name']) . '">');
-                                echo ('<div class="swiper-video-iframe"></div>');
-                                echo ('<div class="swiper-video-play"></div>');
+                <div class="artgg_swiper_w">
+                    <div class="swiper-container bns_artgg_logo" id="business-artgg-image-swiper-container">
+                        <div class="swiper-wrapper">
+                            <?php
+                            $sql  = "SELECT seq, sort, file_name, upload_path, storage_type, image_type FROM artgg_image WHERE target_seq = $artgg_seq AND target_type = 'business' ORDER BY sort";
+                            $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+                            $artgg_contents_count = $result->num_rows;
+                            $artgg_contents_list = array();
+                            while ($row = $result->fetch_array()) {
+                                echo ('<div class="swiper-slide">');
+                                if ($row['image_type'] == 'I') {
+                                    echo ('<img class="swiper-lazy" src="' . RemoveXSS($row['upload_path']) . '" alt="2020 아트경기">');
+                                } else if ($row['image_type'] == 'V') {
+                                    $item  = '<iframe class="swiper-youtube-view" src="https://www.youtube.com/embed/';
+                                    $item .= RemoveXSS($row['file_name']);
+                                    $item .= '?rel=0&enablejsapi=1" ';
+                                    $item .= 'frameborder="0" ';
+                                    $item .= 'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ';
+                                    $item .= 'allowfullscreen></iframe>';
+                                    echo $item;
+                                }
                                 echo ('</div>');
                             }
-                            echo ('</div>');
-                        }
-                        $result->free();
-                        ?>
-                    </div>
+                            $result->free();
+                            ?>
+                        </div>
 
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
-                    <!-- Add Navigation -->
-                    <div class="swiper-button-prev swiper-button-color"></div>
-                    <div class="swiper-button-next swiper-button-color"></div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination swiper-move-button"></div>
+                        <!-- Add Navigation -->
+                        <div class="swiper-button-prev swiper-button-color swiper-move-button"></div>
+                        <div class="swiper-button-next swiper-button-color swiper-move-button"></div>
+                    </div>
                 </div>
-                <div class="bns_text"><?php echo RemoveXSS($artgg_info['introduction']); ?></div>
+                <div class="bns_text_box">
+                    <strong class="bns_text"><?php echo RemoveXSS($artgg_info['introduction']); ?></strong>
+                </div>
             </div>
             <!-- 협력사업자 -->
             <div class="business_list_box">
@@ -85,7 +92,7 @@ $result->free();
                 <h3 class="list_title">2020 아트경기 작가</h3>
                 <ul class="artgg_artist_list">
                     <?php
-                    
+
                     $sql  = "SELECT seq, year, name, en_name, thumbnail FROM artgg_artist ";
                     $sql .= "WHERE name != 'artist_greeting' ";
                     $sql .= "AND year = (SELECT max(artist.year) FROM artgg_artist artist WHERE name != 'artist_greeting') ";

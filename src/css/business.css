@@ -1,7 +1,8 @@
 @charset "utf-8";
+
 #business-artgg-image-swiper-container {
-    width: 100% !important;
-    height: auto;
+    width: 640px !important;
+    height: 410px;
     padding-bottom: 50px;
     background-color: #fff;
     box-sizing: border-box;
@@ -31,9 +32,9 @@
     background-size: cover;
     width: 100% !important;
     height: 0;
-    padding-top:56.25%;
-    position:Relative;
-    overflow:hidden;
+    padding-top: 56.25%;
+    position: Relative;
+    overflow: hidden;
 }
 
 #business-artgg-image-swiper-container .swiper-slide img {
@@ -48,6 +49,17 @@
     left: 50%;
     top: 50%;
 }
+
 .target_youtube_view {
-    display:block; width:100%; height:100%; position:Absolute; left:0; top:0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: Absolute;
+    left: 0;
+    top: 0;
 }
+
+#business-artgg-image-swiper-container .swiper-pagination-bullet-active {
+    background-color: #000 !important;
+}
+

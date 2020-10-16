@@ -52,7 +52,9 @@ $image_info = $result->fetch_array();
 ?>
 
 <style>
-    #directions_map { margin-top: 1rem; }
+    #directions_map {
+        margin-top: 1rem;
+    }
 </style>
 
 <!-- 콘텐츠 -->
@@ -77,45 +79,59 @@ $image_info = $result->fetch_array();
                 </div>
                 <div class="program_info_text_w">
                     <div class="program_info_box">
-                        <strong class="info_title">Off Line</strong>
-                        <span class="info_cont"><?php echo RemoveXSS($program_info['place']); ?></span>
+                        <strong class="info_title">장소</strong>
+                        <span class="info_cont">
+                            <?php 
+                            echo RemoveXSS($program_info['place']); 
+
+                            if( !isEMpty($program_info['online_name']) ) {
+                                echo ' / ';
+                                echo '<a href="' . RemoveXSS($program_info['online_url']) . '" target="_blank">' . RemoveXSS($program_info['online_name']) . '</a>';
+                            }
+                            ?>
+                        </span>
                     </div>
                     <div class="program_info_box">
-                        <strong class="info_title">On Line</strong>
-                        <a class="info_cont" href="<?php echo RemoveXSS($program_info['online_url']); ?>"><?php echo RemoveXSS($program_info['online_name']); ?></a>
+                        <strong class="info_title">프로그램 소개</strong>
+                        <span class="info_cont"><?php echo RemoveXSS($program_info['introduction']); ?> </span>
                     </div>
-                    <div class="program_info_box">
-                        <strong class="info_title">사업 소개</strong>
-                        <span class="info_cont"><?php echo RemoveXSS($program_info['introduction']); ?></span>
-                    </div>
-                    <div class="program_info_box">
-                        <strong class="info_title">Schedule</strong>
-                        <span class="info_cont"><?php echo RemoveXSS($program_info['schedule']); ?></span>
-                    </div>
-                    <div class="program_info_box">
-                        <strong class="info_title">행사 정보</strong>
-                        <span class="info_cont"><?php echo RemoveXSS($program_info['event']); ?></span>
-                    </div>
+                    <?php
+                    // Schedule, 행사 정보 삭제
+                    // <div class="program_info_box">
+                    //     <strong class="info_title">Schedule</strong>
+                    //     <span class="info_cont">
+                    //         echo RemoveXSS($program_info['schedule']); 
+                    //     </span>
+                    // </div>
+                    // echo RemoveXSS($program_info['event']);
+                    ?>
                 </div>
             </div>
         </div>
 
         <!-- 오시는 길 -->
-        <div class="section_box_w">
-            <div class="program_info_box pg_roadmap_w">
-                <strong class="info_title">오시는길</strong>
-                <div class="roadmap_box" id="directions_map"></div>
-                <input type="hidden" id="directions" value="<?php echo RemoveXSS($program_info['directions']); ?>">
-                <input type="hidden" id="directions_name" value="<?php echo RemoveXSS($program_info['directions_name']); ?>">
-                <input type="hidden" id="directions_map_x" value="<?php echo RemoveXSS($program_info['directions_map_x']); ?>">
-                <input type="hidden" id="directions_map_y" value="<?php echo RemoveXSS($program_info['directions_map_y']); ?>">
-            </div>
-            <!-- 자료다운 -->
-            <!-- <div class="program_down_w">
-                <button type="button" class="button_down_text"><span class="btn_dw_txt">2020아트경기 포스터 다운로드</span></button>
-                <button type="button" class="button_down_text"><span class="btn_dw_txt">아트X 리서치형 심의형 PDF 다운로드</span></button>
-            </div> -->
-        </div>
+        <?php 
+        if( !isEmpty(RemoveXSS($program_info['directions'])) ) {
+            echo ('<div class="section_box_w">');
+            echo ('    <div class="program_info_box pg_roadmap_w">');
+            echo ('        <strong class="info_title">오시는길</strong>');
+            echo ('        <div class="roadmap_box" id="directions_map"></div>');
+            echo ('        <input type="hidden" id="directions" value="' . RemoveXSS($program_info['directions']) . '">');
+            echo ('        <input type="hidden" id="directions_name" value="' . RemoveXSS($program_info['directions_name']) . '">');
+            echo ('        <input type="hidden" id="directions_map_x" value="' . RemoveXSS($program_info['directions_map_x']) . '">');
+            echo ('        <input type="hidden" id="directions_map_y" value="' . RemoveXSS($program_info['directions_map_y']) . '">');
+            echo ('    </div>');
+            echo ('    <!-- 자료다운 -->');
+            echo ('    <!-- <div class="program_down_w">');
+            echo ('        <button type="button" class="button_down_text"><span class="btn_dw_txt">2020아트경기 포스터 다운로드</span></button>');
+            echo ('        <button type="button" class="button_down_text"><span class="btn_dw_txt">아트X 리서치형 심의형 PDF 다운로드</span></button>');
+            echo ('    </div> -->');
+            echo ('</div>');
+        }
+        else {
+            echo ('        <input type="hidden" id="directions" value="' . RemoveXSS($program_info['directions']) . '">');
+        }
+        ?>        
     </div>
 
 </div>

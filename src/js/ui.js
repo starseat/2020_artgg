@@ -1,30 +1,5 @@
 /** 퍼블리셔용 **/
 
- $(document).ready(function () {
-    mainvisualSlick();
-
-    var mql = window.matchMedia("screen and (max-width: 720px)");
-    if (mql.matches) {
-        mobileGnb();
-        mobilelnbOpen();
-    } else {
-        artggLnb();
-        gnbSticky();
-    }
-});
-
-$(window).resize(function () {
-    if($(window).width() > 720) { 
-        artggLnb();
-        gnbSticky();
-    }
-    else {
-        mobileGnb();
-        mobilelnbOpen();
-    }
-});
-
-
 // lnb 메뉴
 function artggLnb() {
     var snbBg = $('.snb_bg');
@@ -131,4 +106,19 @@ function vodlistHeight(){
         $('.module_media_list_w').css('height','auto');
     }
 
+}
+
+function layerpopupBtn(){
+    $('.btn_popup_close').click( function(){
+        $('.layer_popup_w').css('display','none');
+    });
+}
+
+function bnsSwperTextbox(){
+    var vodboxHeight = $('.bns_artgg_logo ').outerHeight();
+    $('.bns_text_box').css('min-height',vodboxHeight);
+
+    if (document.body.clientWidth < 970) {
+        $('.module_media_list_w').css('height','auto');
+    }
 }
