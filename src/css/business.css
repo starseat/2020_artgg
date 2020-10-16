@@ -1,8 +1,8 @@
 @charset "utf-8";
 
 #business-artgg-image-swiper-container {
-    width: 100% !important;
-    height: auto;
+    width: 640px !important;
+    height: 410px;
     padding-bottom: 50px;
     background-color: #fff;
     box-sizing: border-box;
@@ -58,3 +58,8 @@
     left: 0;
     top: 0;
 }
+
+#business-artgg-image-swiper-container .swiper-pagination-bullet-active {
+    background-color: #000 !important;
+}
+
