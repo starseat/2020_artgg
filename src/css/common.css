@@ -223,9 +223,9 @@ input,button,select {outline:none; border-radius:0;}
         .notice_list {padding-top:30px; }
             .nl_inner {margin-top:30px;}
                 .nl_cont {position:relative; display:block;}
-                    .nl_text {display:block; position:relative; padding-left:43px; height:30px; line-height:30px; box-sizing:border-box; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:27px; font-weight:400;}
-                    .nl_text:after {display:block; content:''; position:absolute; left:0; top:0; width:9px; height:100%; background-color:#000;}
-                    .nl_date {display:block; padding-left:43px; height:20px; line-height:20px; margin-top:10px; font-size:21px; color:#6b6b6b;}
+                    .nl_text {display:block; position:relative; padding-left:43px; height:27px; line-height:27px; box-sizing:border-box; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:24px; font-weight:400;}
+                    .nl_text:after {display:block; content:''; position:absolute; left:0; top:0; width:7px; height:100%; background-color:#000;}
+                    .nl_date {display:block; padding-left:43px; height:20px; line-height:20px; margin-top:10px; font-size:20px; color:#6b6b6b;}
     .notice_cont_r {float:right; width:50%; position:relative;}
         .notice_slide_w {position:absolute; left:50%; top:50%;}
 
@@ -239,15 +239,17 @@ input,button,select {outline:none; border-radius:0;}
             .sl_cont:after {display:block; content:''; box-sizing:border-box; position:absolute; left:0; top:0; width:100%; height:100%; border:1px solid rgba(0,0,0,.08);}
                 .sl_cont {position:relative; display:block; height:100%; color:#6b6b6b; }
                     .sl_box_inner {width:100%; box-sizing:border-box;}
-                        .sl_box_text {position:relative; padding:12% 9% 70px; min-height:285px; box-sizing:border-box; font-family:'malgun gothic';}
-                            .sl_text_top {position:relative; z-index:2; padding-right:30%; line-height:1.4; }
-                                .slt_num {position:absolute; right:0; top:0; display:inline-block; height:45px; line-height:45px; font-size:3em; font-weight:800; color:#6b6b6b; font-family:'NanumSquare';}
-                                .slt_info {position:relative; display:block; padding-top:20px; font-size:15px; font-weight:800; letter-spacing:-0.06em;}
-                                .slt_info:after {display:block; content:''; position:Absolute; left:0; top:0; width:26px; height:2px; background-color:#6b6b6b;}
+                        .sl_box_text {position:relative; padding:7% 8% 9%; box-sizing:border-box; font-family:'malgun gothic';}
+                            .sl_text_top {position:relative; padding-top:10px; z-index:2; line-height:1.4; }
+                                /*.slt_num {position:absolute; right:0; top:0; display:inline-block; height:45px; line-height:45px; font-size:3em; font-weight:800; color:#6b6b6b; font-family:'NanumSquare';}
+                                .slt_info {position:relative; display:block; padding-top:20px; font-size:15px; font-weight:800; letter-spacing:-0.06em;}*/
                                 .slt_date,
-                                .slt_date_text {display:block; margin-top:3px; font-size:13px;}
-                                .slt_text  {max-height:76px; margin-top:15px; position:relative; z-index:2; font-size:13px; font-weight:400; line-height:1.5; display: -webkit-box; -webkit-box-orient: vertical;  -webkit-line-clamp: 4; overflow: hidden; text-overflow: ellipsis;}
-                                .slt_name {display:block; padding:0 9%; position:absolute; left:0; bottom:17px; z-index:2; font-size:27px; font-weight:700; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; box-sizing:border-box; width:100%;}
+                                .slt_date_text {display:block; margin-top:2px; font-size:13px; max-height:54px;  display: -webkit-box; -webkit-box-orient: vertical;  -webkit-line-clamp: 4; overflow: hidden; text-overflow: ellipsis;}
+                                .slt_text_cont {max-height:74px; margin-top:10px; display: -webkit-box; -webkit-box-orient: vertical;  -webkit-line-clamp: 4; overflow: hidden; text-overflow: ellipsis;}
+                                    .slt_text_cont * { font-size:13px !important; font-weight:400 !important; line-height:1.5 !important; }
+                                    .slt_text  {display:block; position:relative; z-index:2;}
+                                .slt_name {display:block; position:Relative; padding-top:15px; line-height:24px; z-index:2; font-size:18px; font-weight:700; width:100%;}
+                                    .slt_name:after {display:block; content:''; position:Absolute; left:0; top:0; width:26px; height:2px; background-color:#6b6b6b;}
                                 .box_picker {display:block; position:absolute; left:-10px; top:50%; margin-top:-30px; z-index:1; margin-left:-30px; width:60px; height:60px; transform:rotate(45deg); background-color:#53ae6e; }
                         .sl_box_image_w {position:relative; padding-bottom:100%; overflow:hidden; box-sizing:border-box;}
                         /*.sl_box_image_w:after {display:block; content:''; position:absolute; left:0; bottom:0; width:100%; height:1px; background-color:rgba(0,0,0,.1);}*/
@@ -350,20 +352,20 @@ input,button,select {outline:none; border-radius:0;}
 
 /* 서브: 프로그램 엔드 */
 .section_program_w {}
-    .program_poster_w {margin-top:80px; position:Relative; }
+    .program_poster_w {display:inline-block;margin-top:80px; position:Relative; }
         .poster_image {display:block; max-width:100%;}
         .program_poster_w:after {display:block; content:''; position:Absolute; left:0; top:0; width:100%; height:100%;  border:1px solid rgba(0,0,0,.1); box-sizing:border-box;}
-    .program_name_w {margin-top:30px; font-size:37px; font-weight:800;}
+    .program_name_w {margin-top:30px; font-size:30px; font-weight:800;}
         .pn_title {display:inline-block; font-weight:800; margin-right:25px; }
         .pn_collaborate {display:inline-block; padding-left:50px; position:relative;}
         .pn_collaborate:after {display:block; content:''; position:absolute; left:0; top:20%; width:7px; height:60%; background-color:#000;}
-        .pn_date {display:block; margin-top:10px; font-size:28px; color:#53ae6e;}
+        .pn_date {display:block; margin-top:10px; font-size:24px; color:#53ae6e;}
     .program_info_text_w {}
         .program_info_box {margin-top:130px;}
-            .info_title {display:block; font-size:40px; color:#53ae6e; font-weight:800;}
+            .info_title {display:block; font-size:32px; color:#53ae6e; font-weight:800;}
             .info_cont,
-            .info_cont p span {display:block !important; font-size:27px !important; color:#000 !important; line-height:55px !important; font-weight:700 !important; font-family:'NanumSquare', 'malgun gothic','맑은 고딕', sans-serif !important;}
-            .info_cont {padding-top:10px;}
+            .info_cont p span {display:block !important; font-size:22px !important; color:#000 !important; line-height:32px !important; font-weight:700 !important; font-family:'NanumSquare', 'malgun gothic','맑은 고딕', sans-serif !important;}
+            .info_cont {padding-top:15px;}
     /* 갤러리 */
     .pg_gallery_w .module_image_list_w {margin-top:10px;}
         .program_down_w {margin-top:130px;}
@@ -579,13 +581,15 @@ input,button,select {outline:none; border-radius:0;}
     /* T:메인:공지사항*/
     .notice_cont_r {top:-16px;}
     #artist-thumb-swiper-pagination {bottom:-15px !important;}
-    .sl_box_text {padding:9% 9% 60px; min-height:252px;}
     .slt_info {padding-top:10px;}
         .slt_text {font-size:12px !important; margin-top:10px;}
-            .slt_name {letter-spacing:-0.5px; font-size:22px;}
-    #artist-thumb-swiper-container .swiper-button-prev{left:-28px !important;}
-    #artist-thumb-swiper-container .swiper-button-next{right:-28px !important;}
+            .slt_name {letter-spacing:-0.5px; font-size:18px;}
+    #artist-thumb-swiper-container .swiper-button-prev{left:-37px !important;}
+    #artist-thumb-swiper-container .swiper-button-next{right:-37px !important;}
     #artist-thumb-swiper-pagination {font-size:14px;}
+
+    .sl_box_text {padding:7% 8% 8%; min-height:0;}
+    .slt_text_cont {}
 
     /* T:공지사항 */
     .section_notice_w {margin-top:85px;}
