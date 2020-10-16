@@ -2,6 +2,7 @@
 
 <style>
     #target_mediaroom_title { height: 156px; }
+    .section_mediaroom_w { margin-top: 2rem; }
 </style>
 
 <!-- 콘텐츠 -->
