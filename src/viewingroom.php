@@ -25,7 +25,7 @@
                         <span class="vt_text">아트경기2019 X Union Art Fair 2019</span>
                     </div>
                 </div> -->
-                <div class="title-box"><strong class="vt_title">아트경기 2020</strong></div>
+                <div class="title-box"><strong class="vt_title">온택트 아트경기 2020 온라인 뷰잉룸</strong></div>
                 <div class="viewing_cont_w">
                     <iframe width='853' height='480' src='https://my.matterport.com/show/?m=oVbQo1a8HsC' frameborder='0' allowfullscreen allow='xr-spatial-tracking'></iframe>
                 </div>
