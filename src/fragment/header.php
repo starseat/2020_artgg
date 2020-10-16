@@ -95,7 +95,7 @@ include('./db_conn.php');
                             <a href="#" class="slnb_link"> <!-- ./viewingroom.php -->
                                 <span class="slnb_txt_box">
                                     <span class="slnb_txt">
-                                        Space
+                                        VIEWING ROOMS
                                     </span>
                                 </span>
                                 <span class="icn icon_menu_arrow"><i class="ir">서브메뉴 보기</i></span>
@@ -122,7 +122,7 @@ include('./db_conn.php');
                             <a href="#" class="slnb_link">
                                 <span class="slnb_txt_box">
                                     <span class="slnb_txt">
-                                        Art Shop
+                                        PARTNER STORES
                                     </span>
                                 </span>
                                 <span class="icn icon_menu_arrow"><i class="ir">서브메뉴 보기</i></span>
@@ -131,7 +131,7 @@ include('./db_conn.php');
                                 <li class="ssnb_inner">
                                     <a href="./art_shop.php" class="ssnb_link">
                                         <span class="ssnb_txt_box">
-                                            <span class="ssnb_txt">아트샵</span>
+                                            <span class="ssnb_txt">파트너 스토어</span>
                                         </span>
                                     </a>
                                 </li>
