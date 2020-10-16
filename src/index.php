@@ -5,7 +5,8 @@
 <!-- 콘텐츠 -->
 <div class="container">
 
-    <!-- popup --> <!-- 임시 추가 -->
+    <!-- popup -->
+    <!-- 임시 추가 -->
     <div class="layer_popup_w" id="main-popup-1">
         <div class="layer_popup_inner">
             <div class="popup_image_w" onclick="javascript: location.href='./notice_detail.php?seq=2'">
@@ -16,8 +17,9 @@
             </button>
         </div>
     </div>
-    <!-- popup --> <!-- 임시 추가 -->
-    
+    <!-- popup -->
+    <!-- 임시 추가 -->
+
     <div class="content_inner">
         <div class="section_visual_w">
             <div id="main-swiper-container" class="swiper-container swiper-youtube-container">
@@ -150,7 +152,7 @@
                         echo ('                    <span class="slt_date">' . RemoveXSS($row['program_date']) . '</span>');
                         echo ('                    <span class="slt_date_text">' . RemoveXSS($row['place']) . '</span>');
                         echo ('                </div>');
-                        echo ('                <div class="slt_text_cont"><span class="slt_text">' . RemoveXSS($row['introduction']) . '</span></div>'); 
+                        echo ('                <div class="slt_text_cont"><span class="slt_text">' . RemoveXSS($row['introduction']) . '</span></div>');
                         echo ('            </div>');
                         echo ('        </div>');
                         echo ('    </a>');
@@ -185,15 +187,16 @@
                 echo ('<span class="info_image"><img src="' . getImagePath(RemoveXSS($artgg_img_info['upload_path'])) . '" alt="아트경기" class="info_img"></span>');
                 echo ('<div class="info_text_w">');
                 echo ($artgg_info['introduction']);
-                echo ('</div>');
+                echo ('    <!-- 자세히보기 링크 -->');
+                echo ('    <div class="quick_link_w">');
+                echo ('        <a href="./business.php" class="quick_link">');
+                echo ('            <span class="qlink_text">자세히보기 <span class="icn icon_menu_arrow"><i class="ir">arrow</i></span></span>');
+                echo ('        </a>');
+                echo ('    </div> <!-- 자세히보기 링크 -->');
+                echo ('</div> <!-- .info_text_w -->');
             }
             ?>
-        </div>
-        <!-- 자세히보기 링크 --> 
-        <div class="quick_link_w">
-            <a href=".//business.php" class="quick_link">
-                <span class="qlink_text">자세히보기 <span class="icn icon_menu_arrow"><i class="ir">arrow</i></span></span>
-            </a>
+
         </div>
     </div>
 </div>

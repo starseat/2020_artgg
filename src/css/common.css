@@ -30,8 +30,8 @@ input,button,select {outline:none; border-radius:0;}
 .icn {position:absolute; display:block; .display:inline; .zoom:1;  font:0/0 arial; vertical-align:middle; overflow:hidden; background-repeat:no-repeat; background-color:transparent; background-image:url('../img/set_icon.png'); background-size:500px auto;}
 .wrap {background-color:#fff;}
 /*  바로가기 */
-.quick_link_w {}
-    .quick_link{display:inline-block; color:#000; padding-bottom:2px; font-size:24px; font-weight:800;}
+.quick_link_w {text-align:right; margin-top:1rem;}
+    .quick_link{display:inline-block; color:#000; padding-bottom:2px; font-size:20px; font-weight:800;}
         .qlink_text {display:inline-block; padding-right:20px; position:Relative;}
         .quick_link:hover .qlink_text:after {display:block; content:''; position:absolute; right:0; bottom:0; width:100%; height:2px; background-color:#000;}
         .qlink_text .icon_menu_arrow {display:block !important; right:0; top:50%; transform:rotate(270deg); background-image:url('../img/m_set_icn.png'); background-size:105px auto;}
@@ -247,14 +247,14 @@ input,button,select {outline:none; border-radius:0;}
             .sl_cont:after {display:block; content:''; box-sizing:border-box; position:absolute; left:0; top:0; width:100%; height:100%; border:1px solid rgba(0,0,0,.08);}
                 .sl_cont {position:relative; display:block; height:100%; color:#6b6b6b; }
                     .sl_box_inner {width:100%; box-sizing:border-box;}
-                        .sl_box_text {position:relative; padding:7% 8% 9%; box-sizing:border-box; font-family:'malgun gothic';}
+                        .sl_box_text {position:relative; padding:7% 8% 9%; box-sizing:border-box; font-family:'malgun gothic' !important;}
                             .sl_text_top {position:relative; padding-top:10px; z-index:2; line-height:1.4; }
                                 /*.slt_num {position:absolute; right:0; top:0; display:inline-block; height:45px; line-height:45px; font-size:3em; font-weight:800; color:#6b6b6b; font-family:'NanumSquare';}
                                 .slt_info {position:relative; display:block; padding-top:20px; font-size:15px; font-weight:800; letter-spacing:-0.06em;}*/
                                 .slt_date,
                                 .slt_date_text {display:block; margin-top:2px; font-size:13px; max-height:54px;  display: -webkit-box; -webkit-box-orient: vertical;  -webkit-line-clamp: 4; overflow: hidden; text-overflow: ellipsis;}
-                                .slt_text_cont {max-height:74px; margin-top:10px; display: -webkit-box; -webkit-box-orient: vertical;  -webkit-line-clamp: 4; overflow: hidden; text-overflow: ellipsis;}
-                                    .slt_text_cont * { font-size:13px !important; font-weight:400 !important; line-height:1.5 !important; }
+                                .slt_text_cont {max-height:70px; margin-top:10px; display: -webkit-box; -webkit-box-orient: vertical;  -webkit-line-clamp: 4; overflow: hidden; text-overflow: ellipsis;}
+                                    .slt_text_cont * { font-size:13px !important; font-weight:400 !important; line-height:17px !important; font-family:'malgun gothic' !important; }
                                     .slt_text  {display:block; position:relative; z-index:2;}
                                 .slt_name {display:block; position:Relative; padding-top:15px; line-height:24px; z-index:2; font-size:18px; font-weight:700; width:100%;}
                                     .slt_name:after {display:block; content:''; position:Absolute; left:0; top:0; width:26px; height:2px; background-color:#6b6b6b;}
@@ -401,11 +401,11 @@ input,button,select {outline:none; border-radius:0;}
         .business_info_w .mdil_cont:after {display:block; content:''; position:absolute; left:0; top:0; width:100%; height:100%; border:10px solid #53ae6e; box-sizing:border-box;}
     /* 아트경기작가 */
     .artgg_artist_list_box {margin-top:130px;}
-        .artgg_artist_list {margin-top:25px; width:calc(100% + 25px);}
-            .all_link {position:relative; padding-bottom:5px;}
+        .artgg_artist_list {overflow:hidden; margin-top:25px; width:calc(100% + 25px);}
+            .all_link {position:relative; display:block; padding-bottom:5px;}
             .all_link:after {display:block; position:absolute; left:0; bottom:0; content:''; width:0; height:3px; background-color:#53ae6e; transition:width .4s cubic-bezier(0.51, 0.18, 0, 0.88) .02s;}
             .all_link:hover:after {width:100%;}
-                .aal_name {display:inline-block; font-size:24px; padding:15px 25px 0 0;}
+                .aal_name {display:block; float:left; box-sizing:border-box; width:135px; font-size:24px; padding:15px 25px 0 0;}
 
 /* 뷰잉룸 */
 .viewing_info_w {margin-top:100px; overflow:hidden; min-height:140px; position:Relative; padding:15px 0 15px 250px; border:1px solid #eaeaea; border-width:1px 0;}
@@ -558,7 +558,6 @@ input,button,select {outline:none; border-radius:0;}
             .content_title_c {font-size:47px; height:30px !important; line-height:30px !important; }
                 .artist_name {font-size:18px; left:2px;}
 
-
     /* T:footer */
     .footer {margin-top:140px; padding:0 25px 70px; }
     .contents_top_btn_w {right:10px; bottom:10px;}
@@ -620,6 +619,7 @@ input,button,select {outline:none; border-radius:0;}
         .info_text_w {font-size:18px; padding-left:30px;}
         .slt_date, .slt_date_text {font-size:12px;}
         .info_img {position:relative; top:10px;}
+    .qlink_text {font-size:18px;}
 
     /* T:작가리스트 */
     .content_info_text {margin-top:35px; font-size:18px; line-height:40px;}
@@ -858,6 +858,8 @@ input,button,select {outline:none; border-radius:0;}
     .section_info_w {margin-top:95px; min-height:auto; box-sizing:border-box;}
         .info_image {width:25%;}
         .info_text_w {padding-left:8%; font-size:14px;}
+        .qlink_text {font-size:14px; padding-right:17px;}
+            .qlink_text .icon_menu_arrow {width:20px; margin-top:-10px; background-position:-10px -30px; background-size:55px auto;}
 
     /* M:프로그램리스트 */
     .section_programlist_w {margin-top:50px;}
