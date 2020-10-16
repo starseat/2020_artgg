@@ -3,13 +3,14 @@ $(document).ready(function () {
 });
 
 function getDirecionMap() {
+    const directions = $('#directions').val();
+    if(directions == '') {
+        return false;
+    }
+
     const map_x = $('#directions_map_x').val();
     const map_y = $('#directions_map_y').val();
     const marker_name = $('#directions_name').val();
-
-    if(map_x == '' || map_y == '') {
-        return false;
-    }
     
     const coords = new kakao.maps.LatLng(map_y, map_x);
     const container = document.getElementById('directions_map');
