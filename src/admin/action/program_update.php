@@ -77,6 +77,10 @@ $program_directions = $_POST['program_directions'];
 if(!isEmpty($program_directions)) { $program_directions = mysqli_real_escape_string($conn, $program_directions); }
 $program_directions_name = $_POST['program_directions_name'];
 if(!isEmpty($program_directions_name)) { $program_directions_name = mysqli_real_escape_string($conn, $program_directions_name); }
+$directions_map_x = $_POST['directions_map_x'];
+if(!isEmpty($directions_map_x)) { $directions_map_x = mysqli_real_escape_string($conn, $directions_map_x); }
+$directions_map_y = $_POST['directions_map_y'];
+if(!isEmpty($directions_map_y)) { $directions_map_y = mysqli_real_escape_string($conn, $directions_map_y); }
 
 $sql  = "UPDATE artgg_program SET ";
 $sql .= "name = '" . $program_name . "', ";
@@ -93,7 +97,9 @@ $sql .= "introduction = '" . $program_introduction . "', ";
 $sql .= "schedule = '" . $program_schedule . "', ";
 $sql .= "event = '" . $program_event . "', ";
 $sql .= "directions = '" . $program_directions . "', ";
-$sql .= "directions_name = '" . $program_directions_name . "' ";
+$sql .= "directions_name = '" . $program_directions_name . "', ";
+$sql .= "directions_map_x = '" . $directions_map_x . "', ";
+$sql .= "directions_map_y = '" . $directions_map_y . "' ";
 
 $sql .= "WHERE seq = " . $program_seq;
 
