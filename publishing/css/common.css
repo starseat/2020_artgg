@@ -380,7 +380,7 @@ input,button,select {outline:none; border-radius:0;}
     .section_artgg_text {overflow:hidden; position:relative; box-sizing:border-box;}
         .bns_artgg_logo {float:left; }
         .bns_text_box {display:table; float:left; width:60%; box-sizing:border-box; font-weight:700; word-break:keep-all;}
-            .bns_text {display:table-cell; vertical-align:middle; font-size:24px; }
+            .bns_text {display:table-cell; padding-left:20px; vertical-align:middle; font-size:24px; }
             .bns_text * {font-size:24px !important; }
     /* 협력사업자 */
     .business_list_box {margin-top:130px;}
@@ -668,8 +668,8 @@ input,button,select {outline:none; border-radius:0;}
     #business-artgg-image-swiper-container .swiper-pagination {bottom:0;}
     .section_artgg_text {padding-left:0;}
     #business-artgg-image-swiper-container {position:relative;}
-    .bns_text {padding-left:0; font-size:21px; line-height:32px; }
-    .bns_text * {font-size:21px; line-height:32px; }
+    .bns_text {padding-left:20px; font-size:21px; line-height:32px; }
+    .bns_text * {font-size:19px; line-height:30px; }
     .business_list_box,
     .artgg_artist_list_box {margin-top:130px;}
         .business_info_w .module_image_list_w {margin-top:50px;}
@@ -920,7 +920,8 @@ input,button,select {outline:none; border-radius:0;}
     .section_artgg_text {min-height:auto;}
         .bns_artgg_logo {display:block; float:none !important;}
         #business-artgg-image-swiper-container {width:100% !important;}
-    .bns_text_box {display:block; margin-top:15px; float:none; width:100%;}
+    .bns_text_box {display:block; margin-top:25px; float:none; width:100%;}
+        .bns_text {padding-left:0;}
         .bns_text,
         .bns_text * {font-size:18px; line-height:30px;}
     .section_artgg_text {padding:0 25px;}
