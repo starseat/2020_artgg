@@ -143,14 +143,14 @@
                         echo ('        </div>');
                         echo ('        <div class="sl_box_inner">');
                         echo ('            <div class="sl_box_text">');
+                        echo ('                <strong class="slt_name">' . RemoveXSS($row['name']) . '</strong>');
                         echo ('                <div class="sl_text_top">');
-                        echo ('                    <span class="slt_num">' . RemoveXSS($row['num']) . '</span>');
-                        echo ('                    <span class="slt_info">' . RemoveXSS($row['event']) . '</span>');
+                        // echo ('                    <span class="slt_num">' . RemoveXSS($row['num']) . '</span>');
+                        // echo ('                    <span class="slt_info">' . RemoveXSS($row['event']) . '</span>');
                         echo ('                    <span class="slt_date">' . RemoveXSS($row['program_date']) . '</span>');
                         echo ('                    <span class="slt_date_text">' . RemoveXSS($row['place']) . '</span>');
                         echo ('                </div>');
-                        echo ('                <div class="slt_text_cont"><span class="slt_text">' . RemoveXSS($row['introduction']) . '</span></div>');
-                        echo ('                <strong class="slt_name">' . RemoveXSS($row['name']) . '</strong>');
+                        echo ('                <div class="slt_text_cont"><span class="slt_text">' . RemoveXSS($row['introduction']) . '</span></div>'); 
                         echo ('            </div>');
                         echo ('        </div>');
                         echo ('    </a>');
@@ -183,11 +183,17 @@
                 $result->free();
 
                 echo ('<span class="info_image"><img src="' . getImagePath(RemoveXSS($artgg_img_info['upload_path'])) . '" alt="아트경기" class="info_img"></span>');
-                echo ('<p class="info_text_w">');
+                echo ('<div class="info_text_w">');
                 echo ($artgg_info['introduction']);
-                echo ('</p>');
+                echo ('</div>');
             }
             ?>
+        </div>
+        <!-- 자세히보기 링크 --> 
+        <div class="quick_link_w">
+            <a href=".//business.php" class="quick_link">
+                <span class="qlink_text">자세히보기 <span class="icn icon_menu_arrow"><i class="ir">arrow</i></span></span>
+            </a>
         </div>
     </div>
 </div>
