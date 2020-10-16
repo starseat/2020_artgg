@@ -113,3 +113,12 @@ function layerpopupBtn(){
         $('.layer_popup_w').css('display','none');
     });
 }
+
+function bnsSwperTextbox(){
+    var vodboxHeight = $('.bns_artgg_logo ').outerHeight();
+    $('.bns_text_box').css('min-height',vodboxHeight);
+
+    if (document.body.clientWidth < 970) {
+        $('.module_media_list_w').css('height','auto');
+    }
+}
