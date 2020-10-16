@@ -246,8 +246,7 @@ input,button,select {outline:none; border-radius:0;}
                                 .slt_info:after {display:block; content:''; position:Absolute; left:0; top:0; width:26px; height:2px; background-color:#6b6b6b;}
                                 .slt_date,
                                 .slt_date_text {display:block; margin-top:3px; font-size:13px;}
-                                .slt_text_cont {display:block; max-height:76px; margin-top:15px; }
-                                    .slt_text {position:relative; z-index:2; font-size:13px !important; font-weight:400; line-height:1.5; display: -webkit-box; -webkit-box-orient: vertical;  -webkit-line-clamp: 4; overflow: hidden; text-overflow: ellipsis; font-family:'malgun gothic' !important;}
+                                .slt_text  {max-height:76px; margin-top:15px; position:relative; z-index:2; font-size:13px; font-weight:400; line-height:1.5; display: -webkit-box; -webkit-box-orient: vertical;  -webkit-line-clamp: 4; overflow: hidden; text-overflow: ellipsis;}
                                 .slt_name {display:block; padding:0 9%; position:absolute; left:0; bottom:17px; z-index:2; font-size:27px; font-weight:700; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; box-sizing:border-box; width:100%;}
                                 .box_picker {display:block; position:absolute; left:-10px; top:50%; margin-top:-30px; z-index:1; margin-left:-30px; width:60px; height:60px; transform:rotate(45deg); background-color:#53ae6e; }
                         .sl_box_image_w {position:relative; padding-bottom:100%; overflow:hidden; box-sizing:border-box;}
@@ -481,26 +480,24 @@ input,button,select {outline:none; border-radius:0;}
         .vod_inner_box iframe {position:absolute; left:0; top:0; width:100% !important; height:100% !important;}
             .vod_info_text {display:block; padding:5% 3%; font-size:24px; line-height:34px; border:1px solid #ddd; border-top:0; box-sizing:border-box;}
     /* 리스트 */
-    .mediaroom_list_w {position:relative;  width:35%; float:right; padding-top:50px; border:1px solid #ddd; box-sizing:border-box; border-width:1px 1px 0 0;}
-        .media_list_title {display:block; padding:0 25px; background-color:#fff; position:Absolute; left:0; top:5px; width:100%; height:50px; line-height:50px; font-size:17px; box-sizing:border-box; }
-        .module_media_list_w {position:relative; overflow:hidden; overflow-y:auto; padding:1% 2%; border:1px solid #ddd; border-width:0 1px 1px 0; box-sizing:border-box;}
-            [class^="horizontal_thumbnail_w"] {}
-                .ht_inner {}
-                    .ht_link {display: block; padding: 10px 0;position: relative; height:90px;line-height:90px;color: #333;}
-                    .ht_link:hover .ht_title {text-decoration:underline;}
-                        .ht_img_w {display: block; overflow: hidden; position: absolute; top: 10px; left: 0;width:120px;padding-bottom:90px;}
-                            .ht_img,.ht_img_w:before {top:0; width:100%; display:block; position:absolute; left:0;}
-                            .ht_img_w:before {z-index: 2;content: '';box-sizing: border-box; height: 100%;border: 1px solid rgba(0,0,0,.1);}
-                            .ht_img { z-index: 1; height: auto;min-height:100%;}
-                            .ht_img_w .icon_play {bottom: 8px;left: 8px;}
-                            .ht_cont_w {display: inline-block; padding-left:142px;vertical-align: middle; max-width: 100%; box-sizing: border-box;}
-                                .ht_title_w { display: block; margin: 0 0 8px;font-weight: 400;font-size: 14px;}
-                                .horizontal_thumbnail_w_type2 .ht_title_w {margin: 0 0 5px;}
-                                    .ht_title {display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; text-overflow:ellipsis; max-height:40px;  line-height:19px;}
-                                        .ht_subtxt,.ht_txt {display: block; overflow: hidden; text-overflow: ellipsis;}
-                                        .ht_txt {line-height:19px; height: 20px; font-weight:700;}
-                                        .ht_subtxt {display: -webkit-box; line-height: 16px; max-height: 32px; -webkit-line-clamp: 2; -webkit-box-orient: vertical;}
-                .current .ht_img_w:before {background-color:rgba(16,156,232,.5);}
+    .module_media_list_w {width:35%; float:right; overflow:hidden; overflow-y:auto; padding:1% 2%; border:1px solid #ddd; border-width:1px 1px 1px 0; box-sizing:border-box;}
+        [class^="horizontal_thumbnail_w"] {}
+            .ht_inner {}
+                .ht_link {display: block; padding: 10px 0;position: relative; height:90px;line-height:90px;color: #333;}
+                .ht_link:hover .ht_title {text-decoration:underline;}
+                    .ht_img_w {display: block; overflow: hidden; position: absolute; top: 10px; left: 0;width:120px;padding-bottom:90px;}
+                        .ht_img,.ht_img_w:before {top:0; width:100%; display:block; position:absolute; left:0;}
+                        .ht_img_w:before {z-index: 2;content: '';box-sizing: border-box; height: 100%;border: 1px solid rgba(0,0,0,.1);}
+                        .ht_img { z-index: 1; height: auto;min-height:100%;}
+                        .ht_img_w .icon_play {bottom: 8px;left: 8px;}
+                        .ht_cont_w {display: inline-block; padding-left:142px;vertical-align: middle; max-width: 100%; box-sizing: border-box;}
+                            .ht_title_w { display: block; margin: 0 0 8px;font-weight: 400;font-size: 14px;}
+                            .horizontal_thumbnail_w_type2 .ht_title_w {margin: 0 0 5px;}
+                                .ht_title {display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; text-overflow:ellipsis; max-height:40px;  line-height:19px;}
+                                    .ht_subtxt,.ht_txt {display: block; overflow: hidden; text-overflow: ellipsis;}
+                                    .ht_txt {line-height:19px; height: 20px; font-weight:700;}
+                                    .ht_subtxt {display: -webkit-box; line-height: 16px; max-height: 32px; -webkit-line-clamp: 2; -webkit-box-orient: vertical;}
+            .current .ht_img_w:before {background-color:rgba(16,156,232,.5);}
 
 
 /* 메인 : pc 중간 제어 */
@@ -700,12 +697,10 @@ input,button,select {outline:none; border-radius:0;}
         .tl_cont .text:after {top:3px; width:3px; height:15px;}
 
     /* T : 모듈 가로타입 리스트 : 미디어룸 */
-    .mediaroom_list_w {width:100%; padding-top:45px; border-width:0 1px 1px 1px;}
-    .media_list_title {padding:0 15px; height:45px; line-height:45px; font-size:15px;}
     .mediaroom_vod_w {}
         .module_media_list_w {padding-top:13px; overflow-x:auto; overflow-y:hidden;}
     .mediaroom_vod_w,
-    .module_media_list_w{float:none; width:100%; border-width:0 0 1px 0;}
+    .module_media_list_w{float:none; width:100%; border-width:0 1px 1px;}
         .horizontal_thumbnail_w {display:flex;}
             .ht_inner {padding-right:15px;}
                 .ht_cont_w {padding-left:0;}
@@ -959,8 +954,6 @@ input,button,select {outline:none; border-radius:0;}
         .report_list_table td {font-size:14px;}
 
     /* M:미디어룸 */
-    .module_media_list_w {padding-top:0;}
-    .mediaroom_list_w {}
     .section_mediaroom_w {margin-top:50px;}
     .vod_info_text {font-size:16px; line-height:22px;}
     #target_mediaroom_title {height:100px;}
