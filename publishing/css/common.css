@@ -239,13 +239,13 @@ input,button,select {outline:none; border-radius:0;}
             .sl_cont:after {display:block; content:''; box-sizing:border-box; position:absolute; left:0; top:0; width:100%; height:100%; border:1px solid rgba(0,0,0,.08);}
                 .sl_cont {position:relative; display:block; height:100%; color:#6b6b6b; }
                     .sl_box_inner {width:100%; box-sizing:border-box;}
-                        .sl_box_text {position:relative; padding:8% 9% 55px; min-height:285px; box-sizing:border-box; font-family:'malgun gothic';}
+                        .sl_box_text {position:relative; padding:8% 9% 55px; min-height:245px; box-sizing:border-box; font-family:'malgun gothic';}
                             .sl_text_top {position:relative; z-index:2; line-height:1.4; }
-                                .slt_num {position:absolute; right:0; top:0; display:inline-block; height:45px; line-height:45px; font-size:3em; font-weight:800; color:#6b6b6b; font-family:'NanumSquare';}
-                                .slt_info {position:relative; display:block; padding-top:20px; font-size:15px; font-weight:800; letter-spacing:-0.06em;}
-                                .slt_info:after {display:block; content:''; position:Absolute; left:0; top:0; width:26px; height:2px; background-color:#6b6b6b;}
+                                /*.slt_num {position:absolute; right:0; top:0; display:inline-block; height:45px; line-height:45px; font-size:3em; font-weight:800; color:#6b6b6b; font-family:'NanumSquare';}
+                                .slt_info {position:relative; display:block; padding-top:20px; font-size:15px; font-weight:800; letter-spacing:-0.06em;}*/
+                                .sl_text_top:after {display:block; content:''; position:Absolute; left:0; top:0; width:26px; height:2px; background-color:#6b6b6b;}
                                 .slt_date,
-                                .slt_date_text {display:block; margin-top:3px; font-size:13px;}
+                                .slt_date_text {display:block; margin-top:3px; font-size:13px; max-height:54px;  display: -webkit-box; -webkit-box-orient: vertical;  -webkit-line-clamp: 4; overflow: hidden; text-overflow: ellipsis;}
                                 .slt_text_cont {max-height:74px; margin-top:10px; display: -webkit-box; -webkit-box-orient: vertical;  -webkit-line-clamp: 4; overflow: hidden; text-overflow: ellipsis;}
                                     .slt_text_cont * { font-size:13px !important; font-weight:400 !important; line-height:1.5 !important; }
                                     .slt_text  {display:block; position:relative; z-index:2;}
