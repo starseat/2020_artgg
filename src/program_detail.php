@@ -86,7 +86,7 @@ $image_info = $result->fetch_array();
 
                             if( !isEMpty($program_info['online_name']) ) {
                                 echo ' / ';
-                                echo '<a class="info_cont" href="' . RemoveXSS($program_info['online_url']) . '">' . RemoveXSS($program_info['online_name']) . '</a>';
+                                echo '<a href="' . RemoveXSS($program_info['online_url']) . '" target="_blank">' . RemoveXSS($program_info['online_name']) . '</a>';
                             }
                             ?>
                         </span>
