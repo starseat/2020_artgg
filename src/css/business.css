@@ -1,8 +1,8 @@
 @charset "utf-8";
 
 #business-artgg-image-swiper-container {
-    width: 40%;
-    height: auto;
+    width: 640px !important;
+    height: 410px;
     padding-bottom: 50px;
     background-color: #fff;
     box-sizing: border-box;
