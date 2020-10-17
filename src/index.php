@@ -6,7 +6,8 @@
 <div class="container">
 
     <!-- popup -->
-    <!-- 임시 추가 -->
+    <!-- 기간 끝나서 주석처리 -->
+    <!-- 
     <div class="layer_popup_w" id="main-popup-1">
         <div class="layer_popup_inner">
             <div class="popup_image_w" onclick="javascript: location.href='./notice_detail.php?seq=2'">
@@ -17,9 +18,9 @@
             </button>
         </div>
     </div>
+    -->
     <!-- popup -->
-    <!-- 임시 추가 -->
-
+    
     <div class="content_inner">
         <div class="section_visual_w">
             <div id="main-swiper-container" class="swiper-container swiper-youtube-container">
