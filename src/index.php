@@ -188,12 +188,12 @@
                 echo ('<span class="info_image"><img src="' . getImagePath(RemoveXSS($artgg_img_info['upload_path'])) . '" alt="아트경기" class="info_img"></span>');
                 echo ('<div class="info_text_w">');
                 echo ($artgg_info['introduction']);
-                echo ('    <!-- 자세히보기 링크 -->');
-                echo ('    <div class="quick_link_w">');
-                echo ('        <a href="./business.php" class="quick_link">');
-                echo ('            <span class="qlink_text">자세히보기 <span class="icn icon_menu_arrow"><i class="ir">arrow</i></span></span>');
-                echo ('        </a>');
-                echo ('    </div> <!-- 자세히보기 링크 -->');
+                // echo ('    <!-- 자세히보기 링크 -->');
+                // echo ('    <div class="quick_link_w">');
+                // echo ('        <a href="./business.php" class="quick_link">');
+                // echo ('            <span class="qlink_text">자세히보기 <span class="icn icon_menu_arrow"><i class="ir">arrow</i></span></span>');
+                // echo ('        </a>');
+                // echo ('    </div> <!-- 자세히보기 링크 -->');
                 echo ('</div> <!-- .info_text_w -->');
             }
             ?>
