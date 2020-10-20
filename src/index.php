@@ -2,6 +2,27 @@
 
 <link rel="stylesheet" type="text/css" href="./css/main.css" media="all" />
 
+<?php
+// 메인페이지 방문자수 처리
+if (!isset($_COOKIE['visit_main'])) {
+    $today = date("Ymd");
+    $sql = "SELECT count FROM artgg_visit WHERE date = '" . $today . "' AND type = 'main'";
+    $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+    $visit_length = $result->num_rows;
+    $result->free();
+    if($visit_length > 0) {
+        $sql = "UPDATE artgg_visit SET count = count+1 WHERE date = '" . $today . "' AND type = 'main'";
+    }
+    else {
+        $sql  = "INSERT INTO artgg_visit (date, type, count) VALUES ( ";
+        $sql .= "'" . $today . "', 'main', 1)";       
+    }
+    $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+
+    setcookie('visit_main');
+}
+?>
+
 <!-- 콘텐츠 -->
 <div class="container">
 

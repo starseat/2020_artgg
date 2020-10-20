@@ -1,5 +1,25 @@
 <?php require_once('./fragment/header.php'); ?>
 
+<?php
+// 뷰잉룸 방문자수 처리
+if (!isset($_COOKIE['visit_viewingroom'])) {
+    $today = date("Ymd");
+    $sql = "SELECT count FROM artgg_visit WHERE date = '" . $today . "' AND type = 'viewingroom'";
+    $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+    $visit_length = $result->num_rows;
+    $result->free();
+    if ($visit_length > 0) {
+        $sql = "UPDATE artgg_visit SET count = count+1 WHERE date = '" . $today . "' AND type = 'viewingroom'";
+    } else {
+        $sql  = "INSERT INTO artgg_visit (date, type, count) VALUES ( ";
+        $sql .= "'" . $today . "', 'viewingroom', 1)";
+    }
+    $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+
+    setcookie('visit_viewingroom');
+}
+?>
+
 <style>
     .viewing_info_w {
         padding: 0 !important;
