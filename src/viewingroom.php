@@ -37,19 +37,21 @@
                     <iframe width='853' height='480' src='https://my.matterport.com/show/?m=oVbQo1a8HsC' frameborder='0' allowfullscreen allow='xr-spatial-tracking'></iframe>
                 </div>
                 <br>
-                <div class="info_cont">
-                    <p><strong><u>"VR로 구현된 &lt;온택트 아트경기 2020&gt;의 온라인 뷰잉 스페이스에서 어디서든 편안하게 전시를 관람하고 작품을 소장해보세요."</u></strong></p>
-                    <br>
-                    <p>아트경기 미술장터 &lt;온택트 아트경기 2020&gt;의 VR 전시를 소개합니다.</p>
-                    <br>
-                    <p>'예술과 함께하는 삶'을 제안하는 &lt;온택트 아트경기 2020&gt;에서는 2020 아트경기 작가 60인전원의 작품 200여점을 만나볼 수 있습니다.</p>
-                    <br>
-                    <p>오프라인 전시와 온라인 VR 전시를 동시에 운영하여 시간과 장소의 제약 없이 2020 아트경기 작가의 작품을 감상하고 소장할 수 있습니다.</p>
-                    <br>
-                    <p>* 관람방법 : 플레이 버튼 클릭 후 마우스를 통해 이동이 가능합니다.</p>
-                    <p>* 문의 : 아트플러스엑스</p>
-                    <p style="padding-left: 66px;">suk8295@hanmail.net</p>
-                    <p style="padding-left: 66px;">인스타그램 @art_plus_x</p>
+                <div class="viewing_cont_text">
+                    <p class="vic_text">
+                        <strong class="vic_title">"VR로 구현된 &lt;온택트 아트경기 2020&gt;의 온라인 뷰잉 스페이스에서 어디서든 편안하게 전시를 관람하고 작품을 소장해보세요."</strong>
+                        아트경기 미술장터 &lt;온택트 아트경기 2020&gt;의 VR 전시를 소개합니다.<br />
+                        '예술과 함께하는 삶'을 제안하는 &lt;온택트 아트경기 2020&gt;에서는 2020 아트경기 작가 60인전원의 작품 200여점을 만나볼 수 있습니다.<br />
+                        오프라인 전시와 온라인 VR 전시를 동시에 운영하여 시간과 장소의 제약 없이 2020 아트경기 작가의 작품을 감상하고 소장할 수 있습니다.
+                    </p>
+                    <ul class="vic_route_list">
+                        <li class="vicr_inner">
+                            <strong class="icr_tit">관람방법 </strong>: 플레이 버튼 클릭 후 마우스를 통해 이동이 가능합니다.
+                        </li>
+                        <li class="vicr_inner">
+                            <strong class="icr_tit">문의 </strong>: 아트플러스엑스 <br />&nbsp; suk8295@hanmail.net <br />&nbsp; 인스타그램 @art_plus_x
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
