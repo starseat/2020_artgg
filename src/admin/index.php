@@ -7,7 +7,7 @@
 <h1 class="mt-4">Dashboard</h1>
 <ol class="breadcrumb mb-4">
     <li class="breadcrumb-item active">Dashboard</li>
-    <li class="breadcrumb-item"><?php echo($_SESSION['is_login']);  ?></li>
+    <li class="breadcrumb-item"><?php echo ($_SESSION['is_login']);  ?></li>
 </ol>
 <div class="row">
     <div class="col-xl-3 col-md-6">
@@ -559,5 +559,9 @@
 </div>
 
 <?php require_once('fragment/footer.php'); ?>
+
+<script src="assets/demo/chart-area-demo.js"></script>
+<script src="assets/demo/chart-bar-demo.js"></script>
+<script src="assets/demo/datatables-demo.js"></script>
 
 <?php require_once('fragment/tail.php'); ?>

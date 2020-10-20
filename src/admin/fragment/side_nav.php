@@ -48,6 +48,11 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-newspaper"></i></div>
                         보도자료
                     </a>
+                    <div class="sb-sidenav-menu-heading">Visit</div>
+                    <a class="nav-link" href="visit.php">
+                        <div class="sb-nav-link-icon"><i class="fas fa-sign-in-alt "></i></div>
+                        방문자수
+                    </a>
                 </div>
             </div>
         </nav>
