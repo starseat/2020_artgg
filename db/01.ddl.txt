@@ -165,6 +165,18 @@ CREATE TABLE artgg_press_release (
 ) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
 
 /**
+ * 아트경기 방문자수
+ */
+CREATE TABLE artgg_visit (
+	seq BIGINT NOT NULL AUTO_INCREMENT, 
+	date VARCHAR(8) NOT NULL, -- YYYYMMDD
+    type VARCHAR(16) NOT NULL, -- main, viewingroomt, ...
+    count INT NOT NULL DEFAULT 0, 
+	PRIMARY KEY (`seq`, `date` )
+) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
+
+
+/**
  * 아트경기 알람 - 알람은 어떤 형태로 뿌릴지 확인
  */
 CREATE TABLE artgg_alarm (
