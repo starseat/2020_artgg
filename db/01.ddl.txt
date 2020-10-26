@@ -157,6 +157,7 @@ CREATE TABLE artgg_press_release (
 	news_date VARCHAR(32), 
 	news_media VARCHAR(32), 
 	news_author VARCHAR(32), 
+	view_count INT NOT NULL DEFAULT 0, 
 	contents TEXT, 
 	created_at DATETIME NOT NULL DEFAULT now(),
 	updated_at DATETIME NOT NULL DEFAULT now(),
