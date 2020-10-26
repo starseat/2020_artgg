@@ -11,7 +11,7 @@
                 <ul class="text_link_list">
                     <?php
 
-                    $sql = "SELECT title, link FROM artgg_press_release ORDER BY seq DESC";
+                    $sql = "SELECT title, link FROM artgg_press_release WHERE deleted_at IS NULL ORDER BY seq DESC";
                     $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 
                     while ($row = $result->fetch_array()) {
