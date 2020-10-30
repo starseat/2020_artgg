@@ -164,7 +164,7 @@ include('./db_conn.php');
                                 <li class="ssnb_inner">
                                     <a href="./press_release.php" class="ssnb_link">
                                         <span class="ssnb_txt_box">
-                                            <span class="ssnb_txt">보도자료</span>
+                                            <span class="ssnb_txt">언론보도</span>
                                         </span>
                                     </a>
                                 </li>

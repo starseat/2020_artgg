@@ -4,9 +4,9 @@
 <div class="container">
     <div class="content_inner">
         <div class="section_box_w">
-            <h2 class="content_title">보도자료</h2>
+            <h2 class="content_title">언론보도</h2>
             <!-- <h3 class="content_title_d">서브텍스트있을경우해당태그사용</h3> -->
-            <!-- 보도자료 -->
+            <!-- 언론보도 -->
             <div class="section_report_w">
                 <ul class="text_link_list">
                     <?php
