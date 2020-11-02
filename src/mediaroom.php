@@ -28,7 +28,7 @@
                 <div class="module_media_list_w">
                     <ul class="horizontal_thumbnail_w">
                         <?php
-                        $sql = "SELECT seq, title, link, youtube_id FROM artgg_mediaroom ORDER BY seq";
+                        $sql = "SELECT seq, title, link, youtube_id FROM artgg_mediaroom ORDER BY seq DESC";
                         $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 
                         while ($row = $result->fetch_array()) {
