@@ -45,7 +45,7 @@ CREATE TABLE artgg_image (
 CREATE TABLE artgg_file (
 	seq BIGINT NOT NULL AUTO_INCREMENT, 
 	target_seq BIGINT NOT NULL, 
-    target_type VARCHAR(16) NOT NULL,   -- 'program, notice'
+    target_type VARCHAR(16) NOT NULL,   -- 'program, notice, promotion'
     file_name VARCHAR(128) NOT NULL, 
 	file_name_save VARCHAR(256) NOT NULL, 
     upload_path VARCHAR(1024) NOT NULL, 
@@ -176,6 +176,19 @@ CREATE TABLE artgg_visit (
 	PRIMARY KEY (`seq`, `date` )
 ) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
 
+/**
+ * 아트경기 홍보자료
+ */
+CREATE TABLE artgg_promotion (
+	seq BIGINT NOT NULL AUTO_INCREMENT, 
+    title VARCHAR(512) NOT NULL, 
+    contents TEXT NOT NULL,
+	view_count INT NOT NULL DEFAULT 0, 
+	created_at DATETIME NOT NULL DEFAULT now(),
+	updated_at DATETIME NOT NULL DEFAULT now(),
+	deleted_at DATETIME NULL DEFAULT NULL, 
+	PRIMARY KEY (`seq` )
+) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
 
 /**
  * 아트경기 알람 - 알람은 어떤 형태로 뿌릴지 확인

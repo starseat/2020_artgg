@@ -44,9 +44,13 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-exclamation-circle"></i></div>
                         공지사항
                     </a>
+                    <a class="nav-link" href="promotion.php">
+                        <div class="sb-nav-link-icon"><i class="fas fa-save"></i></div>
+                        홍보자료
+                    </a>
                     <a class="nav-link" href="press_release.php">
                         <div class="sb-nav-link-icon"><i class="fas fa-newspaper"></i></div>
-                        보도자료
+                        언론보도
                     </a>
                     <div class="sb-sidenav-menu-heading">Visit</div>
                     <a class="nav-link" href="visit.php">
