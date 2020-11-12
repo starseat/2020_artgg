@@ -177,6 +177,73 @@ function isUploadBannedItem($file_name) {
     return true;
 }
 
+
+
+function uploadFile($upload_file, $type){
+    $ret_upload_file_array_item = [
+        'upload_file_path' => '',
+        'file_name' => '',
+        'file_save_name' => ''
+    ];
+
+    $file_name = basename($upload_file['name']);
+
+    if (empty($file_name)) {
+        return null;
+    }
+
+    $file_temp_name = $upload_file['tmp_name'];
+
+    $upload_path = '../upload/' . $type . '/';
+    $real_upload_path = '../' . $upload_path;
+    if (!is_dir($real_upload_path)) {
+        mkdir($real_upload_path, 766, true);
+    }
+
+    $today = date("Ymd");
+    $file_save_name = $today . '_' . uuidgen() . '_' . $file_name;
+    $real_upload_file = $upload_path . $file_save_name;
+    //$move_resuslt = move_uploaded_file($file_temp_name, $upload_file);
+    // 경로를 action 으로 하나 더 줬으니 실제 저장되는 경로는 한단계 앞으로 가야함.
+    $move_resuslt = move_uploaded_file($file_temp_name, '../' . $real_upload_file);
+    $ret_upload_file_array_item = [
+        'upload_file_path' => $real_upload_file,
+        'file_name' => $file_name,
+        'file_save_name' => $file_save_name
+    ];
+
+    return $ret_upload_file_array_item;
+}
+
+function uploadFiles($upload_files, $type) {
+
+    $upload_file_count = count($upload_files['name']); // echo 'upload_file_count => ' . $upload_file_count;
+    $upload_file_names = array(); // /echo 'upload_file_names => ';  var_dump($upload_file_names);
+
+    for ($i = 0; $i < $upload_file_count; $i++) {
+        $temp_upload_file = [
+            'name' => $upload_files['name'][$i],
+            'tmp_name' => $upload_files['tmp_name'][$i],
+            'type' => $upload_files['type'][$i],
+            'size' => $upload_files['size'][$i],
+            'error' => $upload_files['error'][$i]
+        ];
+
+        $temp_upload_file_array_item = uploadFile($temp_upload_file, $type);
+        if ($temp_upload_file_array_item != null) {
+            array_push($upload_file_names, $temp_upload_file_array_item);
+        } else {
+            array_push($upload_file_names, [
+                'upload_file_path' => '',
+                'file_name' => '',
+                'file_save_name' => ''
+            ]);
+        }
+    } // end of for ($i = 0; $i <= $upload_file_count; $i++)
+
+    return $upload_file_names;
+} // end of function uploadFiles($upload_files, $type) 
+
 function SQLFiltering($sql){
     // 해킹 공격을 대비하기 위한 코드
     $sql = preg_replace("/\s{1,}1\=(.*)+/", "", $sql); // 공백이후 1=1이 있을 경우 제거

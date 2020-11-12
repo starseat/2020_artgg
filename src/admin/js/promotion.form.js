@@ -1,6 +1,7 @@
 $(document).ready(function () {
     setActiveNavMenu('promotion.php');
     initTextForm();
+    initUploadForm();
 
     const promotion_seq = getPromotionSeq();
     if(promotion_seq > 0) {
@@ -12,6 +13,15 @@ function initTextForm() {
     let option = getSummernoteDefaultOption();
     option.placeholder = '홍보자료 내용을 입력해 주세요.';
     $('#promotion_contents').summernote(option);
+}
+
+function initUploadForm() {
+    $('#promotion_upload_files').fileinput({
+        theme: 'fas',
+        language: 'kr',
+        uploadUrl: '#',
+        allowedFileExtensions: ['jpg', 'jpeg', 'png', 'gif', 'pdf', 'hwp', 'doc', 'docx', 'xls', 'xlsc', 'txt', 'zip']
+    });
 }
 
 function getPromotionSeq() {
@@ -52,6 +62,8 @@ function setPromotionInfo(promotionInfo) {
     $('#promotion_seq').val(promotionInfo.seq);
     $('#promotion_title').val(promotionInfo.title);
     $('#promotion_contents').summernote('code', promotionInfo.contents);
+
+    $('#promotion_upload_target_seq').val(promotionInfo.seq);
 }
 
 function doReset(event) {
@@ -86,7 +98,10 @@ function doSubmit(event) {
         success: function (result) {
             console.log('[doSubmit] result:: ', result);
             alert(result.message);
-            location.href = './promotion.php';
+            $('#promotion_upload_target_seq').val(result.target_seq);
+            uploadFile(function() {
+                location.href = './promotion.php';
+            }); 
         }, 
         error: function (xhr, status, error) {
             console.error('[doSubmit] ajax error:: ', error);
@@ -132,3 +147,21 @@ function doDelete(event) {
     }    
 }
 
+function uploadFile(callback) {
+    const formData = new FormData($('#promotion_from')[0]);
+    console.log(formData);
+    
+    $.ajax({
+        url: './action/promotion_upload.php',
+        type: 'post',
+        dataType: 'json',
+        data: formData,
+        cache: false,
+        processData: false,
+        contentType: false,
+        success: function (result) {
+            console.log('[uploadFile] ajax success result: ', result);
+            callback(result);
+        }
+    });
+}

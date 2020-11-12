@@ -14,6 +14,7 @@ $promotion_contents = mysqli_real_escape_string($conn, $_POST['contents']);
 
 $sql = '';
 $message = '';
+$result_seq = 0;
 
 // update
 if($promotion_seq > 0) {
@@ -24,6 +25,9 @@ if($promotion_seq > 0) {
     $sql .= "WHERE seq = " . $promotion_seq;
 
     $message = '홍보자료 글이 수정되었습니다.';
+
+    $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+    $result_seq = $promotion_seq;
 }
 // insert
 else {
@@ -33,12 +37,14 @@ else {
     $sql .= "'" . $promotion_contents . "') ";    
 
     $message = '홍보자료 글이 등록되었습니다.';
-}
 
-$result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+    $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+    $result_seq = $conn->insert_id;
+}
 
 $result_array['message'] = $message;
 $result_array['result'] = 1;
+$result_array['target_seq'] = $result_seq;
 
 echo json_encode($result_array, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 

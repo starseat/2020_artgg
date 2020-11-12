@@ -24,6 +24,8 @@ if($seq > 0) {
     $sql .= "WHERE seq = " . $seq;
 
     $message = '작가 소개글이 수정되었습니다.';
+
+    $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 }
 // insert
 else {
@@ -35,11 +37,11 @@ else {
 
     $message = '작가 소개글이 등록되었습니다.';
 
+    $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+
     //$seq = mysqli_insert_id($conn);
     $seq = $conn->insert_id;
 }
-
-$result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 
 mysqli_close($conn);
 flush();
