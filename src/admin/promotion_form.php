@@ -13,8 +13,22 @@
         display: none;
     }
 
-    .btn.fileinput-upload.fileinput-upload-button {
+    #promotion_uploaded_file_group,
+    .btn.fileinput-upload.fileinput-upload-button,
+    .btn-kv.kv-file-upload {
         display: none;
+    }
+
+    #promotion_file_box_header {
+        background-color: black;
+    }
+
+    #promotion_file_box_button {
+        color: wheat;
+    }
+
+    #promotion_uploaded_file_box_button {
+        color: black;
     }
 </style>
 
@@ -55,18 +69,37 @@
                 <label for="promotion_contents">* 홍보자료 내용</label>
                 <div id="promotion_contents" class="form-control"></div>
             </div>
+            <div class="form-group" id="promotion_uploaded_file_group">
+                <!-- <label for="promotion_contents">파일 업로드</label> -->
+                <div class="accordion" id="promotion_uploaded_file_accordion">
+                    <div class="card">
+                        <div class="card-header" id="promotion_uploaded_file_box_header">
+                            <h2 class="mb-0">
+                                <button id="promotion_uploaded_file_box_button" class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#promotion_uploaded_file_box_body" aria-expanded="true" aria-controls="promotion_uploaded_file_box_body">
+                                    업로드된 파일
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="promotion_uploaded_file_box_body" class="collapse show" aria-labelledby="promotion_uploaded_file_box_header" data-parent="#promotion_uploaded_file_accordion">
+                            <div class="card-body row" id="promotion_uploaded_file_list">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="form-group">
                 <!-- <label for="promotion_contents">파일 업로드</label> -->
-                <div class="accordion" id="promotion_file_container">
+                <div class="accordion" id="promotion_file_accordion">
                     <div class="card">
                         <div class="card-header" id="promotion_file_box_header">
                             <h2 class="mb-0">
-                                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#promotion_file_box_body" aria-expanded="true" aria-controls="promotion_file_box_body">
+                                <button id="promotion_file_box_button" class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#promotion_file_box_body" aria-expanded="true" aria-controls="promotion_file_box_body">
                                     파일 업로드
                                 </button>
                             </h2>
                         </div>
-                        <div id="promotion_file_box_body" class="collapse show" aria-labelledby="promotion_file_box_header" data-parent="#promotion_file_container">
+                        <div id="promotion_file_box_body" class="collapse show" aria-labelledby="promotion_file_box_header" data-parent="#promotion_file_accordion">
                             <div class="card-body">
                                 <input id="promotion_upload_files" name="promotion_upload_files[]" type="file" multiple>
                             </div>

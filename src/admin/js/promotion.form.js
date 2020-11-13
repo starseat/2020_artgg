@@ -5,6 +5,7 @@ $(document).ready(function () {
 
     const promotion_seq = getPromotionSeq();
     if(promotion_seq > 0) {
+        $('#promotion_uploaded_file_group').show();
         getPromotionInfo(promotion_seq);
     }
 });
@@ -20,6 +21,7 @@ function initUploadForm() {
         theme: 'fas',
         language: 'kr',
         uploadUrl: '#',
+        browseOnZoneClick: true,
         allowedFileExtensions: ['jpg', 'jpeg', 'png', 'gif', 'pdf', 'hwp', 'doc', 'docx', 'xls', 'xlsc', 'txt', 'zip']
     });
 }
@@ -39,10 +41,11 @@ function getPromotionInfo(promotion_seq) {
         data: {seq: promotion_seq},
         url: './action/promotion_get.php',
         success: function (result) {
-            //console.log('[getPromotionInfo] result:: ', result);
+            console.log('[getPromotionInfo] result:: ', result);
             const resultObj = JSON.parse(result);
-            //console.log('[getPromotionInfo] resultObj:: ', resultObj);
+            console.log('[getPromotionInfo] resultObj:: ', resultObj);
             setPromotionInfo(resultObj.promotion_info);
+            setUploadFileInfo(resultObj.file_info);
         }, 
         error: function (xhr, status, error) {
             console.error('[getPromotionInfo] ajax error:: ', error);
@@ -66,12 +69,66 @@ function setPromotionInfo(promotionInfo) {
     $('#promotion_upload_target_seq').val(promotionInfo.seq);
 }
 
+function setUploadFileInfo(fileList) {
+    for(let i=0; i<fileList.length; i++) {
+        let $uploadFile = '';
+        // $uploadFile += '<button type="button" class="btn btn-outline-dark m-2" id="uploaded_file_' + fileList[i].seq + '" ';
+        // $uploadFile += 'onclick="doFileDelete(' + fileList[i].seq + ', \'' + fileList[i].file_name + '\')">';
+        // $uploadFile += fileList[i].file_name;
+        // $uploadFile += ' <i class="fa fa-trash"></i>'
+        // $uploadFile += '</button>';
+
+        $uploadFile += '<div class="col-3" id="uploaded_file_' + fileList[i].seq + '">';
+        $uploadFile += '<div class="card"><div class="card-body row justify-content-between">';
+
+        $uploadFile += '<div class="col-6">' + fileList[i].file_name + '</div>';
+        
+        $uploadFile += '<div class="col-6" style="text-align: right;">';
+        $uploadFile += ' <a class="btn btn-outline-secondary" ';
+        $uploadFile += 'href="' + fileList[i].upload_path + '" download="' +  fileList[i].file_name + '">';
+        $uploadFile += '<i class="fa fa-download"></i>';
+        $uploadFile += '</a>';
+
+        $uploadFile += ' <button type="button" class="btn btn-outline-danger" ';
+        $uploadFile += 'onclick="doFileDelete(' + fileList[i].seq + ', \'' + fileList[i].file_name + '\')">';
+        $uploadFile += '<i class="fa fa-trash"></i>';
+        $uploadFile += '</button>';
+        $uploadFile += '</div>';
+
+        $uploadFile += '</div></div>';
+        $uploadFile += '</div>';
+
+        $('#promotion_uploaded_file_list').append($uploadFile);
+        console.log('[setUploadFileInfo] fileList[' + i + '] :: ', fileList[i]);
+    }
+}
+
+function doFileDelete(file_seq, filename) {
+    if(confirm(filename + ' 파일을 삭제하시겠습니까?')) {
+        $.ajax({
+            type: 'post',
+            url: './action/file_delete.php',
+            data: { seq: file_seq },
+            dataType: 'json',
+            success: function (result) {
+                console.log('[doFileDelete] ajax result:: ', result);
+                $('#uploaded_file_' + file_seq).remove();
+                alert(filename + ' 파일이 삭제되었습니다.');
+            }, 
+            error: function (xhr, status, error) {
+                console.error('[doFileDelete] ajax error:: ', error);
+            }, 
+        });
+    }
+}
+
 function doReset(event) {
     event.preventDefault();
     event.stopPropagation();
 
     $('#promotion_title').val('');
     $('#promotion_contents').summernote('reset');
+    $('#promotion_upload_files').fileinput('reset');
 }
 
 function doSubmit(event) {
@@ -105,8 +162,7 @@ function doSubmit(event) {
         }, 
         error: function (xhr, status, error) {
             console.error('[doSubmit] ajax error:: ', error);
-        },
-        
+        },        
     });
 }
 

@@ -74,13 +74,19 @@ $paging_info = getPagingInfo($page, $total_count, $item_row_count, $page_block_c
         <tbody>
             <?php
 
-            $sql  = "SELECT seq, title, view_count, created_at FROM artgg_promotion WHERE deleted_at IS NULL ORDER BY seq desc LIMIT " . $paging_info['page_db'] . ", $item_row_count";
+            $sql  = "SELECT promotion.seq, promotion.title, promotion.view_count, promotion.created_at, ";
+            $sql .= " (SELECT count(*) as file_count FROM artgg_file WHERE target_type = 'promotion' AND target_seq = promotion.seq) as file_count";
+            $sql .= " FROM artgg_promotion promotion ";
+            $sql .= " WHERE deleted_at IS NULL ORDER BY seq desc LIMIT " . $paging_info['page_db'] . ", $item_row_count";
             $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
             $promotion_length = $result->num_rows;
 
-            if ($promotion_length > 0) {                
+            if ($promotion_length > 0) {
                 while ($row = $result->fetch_array()) {
                     $viewTitle = RemoveXSS($row['title']);
+                    if($row['file_count'] > 0) {
+                        $viewTitle = '<i class="fa fa-paperclip"></i> ' . $viewTitle;
+                    }
                     echo ('<tr onclick=getPromotionInfo(' . RemoveXSS($row['seq']) . ')>');
                     echo ('    <th scope="row">' . RemoveXSS($row['seq']) . '</th>');
                     echo ('    <td class="promotion-title">' . $viewTitle . '</td>');
