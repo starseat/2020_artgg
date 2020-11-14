@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+.text_link_list { padding-bottom: 5px; }
+
+dl,
+ol,
+ul { margin-top: 0; margin-bottom: 1rem; }
+
+a { text-decoration: none; color: #000; }
+a:hover { color: #000; }
+
+.page-link-dark {
+    color: #343a40;
+}
+
+.page-item.active-dark .page-link {
+    z-index: 3;
+    color: white;
+    background-color: #343a40;
+    border-color: #343a40
+}
+
+.section_report_w { margin-top: 4rem; }
+
+@media screen and (max-width:720px) {
+    .page-link {padding:0.2rem .55rem;}
+}

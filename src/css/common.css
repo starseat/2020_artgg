@@ -195,6 +195,21 @@ input,button,select {outline:none; border-radius:0;}
 .sticky .artgg_lnb,.sticky .slnb_inner {height:100px;}
 .sticky .snb_bg,.sticky .slnb_inner.menu_hover .artgg_snb {top:100px;}
 
+/* 모듈 : 페이징 */
+.paging_btnlist_w {margin-top:20px; width:100%; text-align:center;}
+    .paging_btnlist_inner {padding:0 20px; position:relative; display:inline-block; }
+    [class^="paging_arrow_"] {position:Absolute; top:5px; width: 0px; height: 0px; border-top:7px solid transparent; border-right:14px solid #343a40; border-bottom:7px solid transparent;}
+    .disable {display:none;}
+    .paging_arrow_prev {left:0;}
+    .paging_arrow_next {right:0; transform:rotate(180deg);}
+        .paging_btn_list {text-align:center; }
+            .pbl_cont {display:inline-block; margin:0 5px;}
+            .pbl_cont.current {}
+                .pbl_link {display:block; width:20px; height:20px; line-height:20px; background-color:#fff; border:1px solid #ddd; color:#333; box-sizing:border-box; text-align:center; font-size:12px;}
+                .pbl_cont.current .pbl_link {border:1px solid #343a40; color:#fff; font-weight:bold; background-color:#343a40;}
+
+
+
 /* 공통 : footer */
 .footer {max-width:1430px; margin:0 auto 0; padding:170px 100px 100px; color:#6b6b6b;;}
     .footer_inner {display:table; width:100%; overflow:hidden;}
