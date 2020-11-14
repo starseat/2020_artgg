@@ -463,10 +463,10 @@ input,button,select {outline:none; border-radius:0;}
         .button_board_list:hover {text-decoration:underline;}
             .btn_bl_text {}
 /* 공지사항 : 파일첨부 */
-.file_area {position:Relative; margin:15px 20px 0; padding-left:70px; font-size:14px;}
-    .area_title {position:absolute; left:0; top:0;}
-    .file_name {}
-        .fn_text {display:inline-block; padding:0 10px; color:#333; }
+.file_area {margin-top:20px; padding:0 20px; font-size:14px; border:1px solid #eee; border-width:1px 0;}
+    .area_title {position:absolute; left:0; top:0; height:39px; line-height:39px;}
+    .file_name {position:Relative; padding-left:70px; }
+        .fn_text {display:inline-block; padding:10px; color:#333; }
         .fn_text:hover {text-decoration:underline;}
 
 
@@ -749,7 +749,8 @@ input,button,select {outline:none; border-radius:0;}
         .view_area * {font-size:16px !important; line-height:24px !important;}
     .button_board_list {padding:8px 10px;}
     .file_area {margin-bottom:15px; }
-
+        .area_title {height:29px; line-height:29px;}
+        .fn_text {padding:5px 10px;}
     /* T:보도자료 */
     .report_list_w {margin-top:25px;}
         .report_list_table th {font-size:20px;}

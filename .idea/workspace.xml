@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="50f1b65e-e3fc-462e-a329-e7122708e51c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/publishing/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/publishing/css/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/publishing/publish/notice_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/publishing/publish/notice_view.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1i4zl3dE6Ac3OP2th8Xt5hV9zuY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.CSS" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="50f1b65e-e3fc-462e-a329-e7122708e51c" name="Default Changelist" comment="" />
+      <created>1601181799548</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601181799548</updated>
+      <workItem from="1601181800595" duration="12708000" />
+      <workItem from="1601209683821" duration="8926000" />
+      <workItem from="1601356124454" duration="35472000" />
+      <workItem from="1601716831293" duration="19320000" />
+      <workItem from="1601784111805" duration="2788000" />
+      <workItem from="1601903831890" duration="2663000" />
+      <workItem from="1601988457358" duration="15276000" />
+      <workItem from="1602064972832" duration="2311000" />
+      <workItem from="1602154380534" duration="7664000" />
+      <workItem from="1602216970078" duration="21079000" />
+      <workItem from="1602240686039" duration="1338000" />
+      <workItem from="1602406317358" duration="26495000" />
+      <workItem from="1602504110411" duration="10660000" />
+      <workItem from="1602593331877" duration="9468000" />
+      <workItem from="1602603587616" duration="1147000" />
+      <workItem from="1602605836126" duration="477000" />
+      <workItem from="1602680476845" duration="15547000" />
+      <workItem from="1602774117994" duration="4077000" />
+      <workItem from="1603018673236" duration="929000" />
+      <workItem from="1605338607606" duration="1361000" />
+    </task>
+    <task id="LOCAL-00015" summary="아트경기 사업협력사 소개 pc,태블릿 완료">
+      <created>1602162073645</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1602162073645</updated>
+    </task>
+    <task id="LOCAL-00016" summary="아트경기 사업협력사 모바일 완료">
+      <created>1602219346621</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1602219346621</updated>
+    </task>
+    <task id="LOCAL-00017" summary="아트경기 사업협력사 모바일 완료2">
+      <created>1602221033922</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1602221033922</updated>
+    </task>
+    <task id="LOCAL-00018" summary="메인개발기준 수정">
+      <created>1602223705831</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1602223705831</updated>
+    </task>
+    <task id="LOCAL-00019" summary="메인 개발화면 기준 css수정">
+      <created>1602224657544</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1602224657544</updated>
+    </task>
+    <task id="LOCAL-00020" summary="메인 개발화면 기준 css수정2">
+      <created>1602225049181</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1602225049181</updated>
+    </task>
+    <task id="LOCAL-00021" summary="메인 개발화면 기준 css수정3">
+      <created>1602226084773</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1602226084773</updated>
+    </task>
+    <task id="LOCAL-00022" summary="메인 개발화면 기준 css수정4">
+      <created>1602226885162</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1602226885162</updated>
+    </task>
+    <task id="LOCAL-00023" summary="메인 개발화면 기준 css수정5">
+      <created>1602227778405</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1602227778405</updated>
+    </task>
+    <task id="LOCAL-00024" summary="뷰잉룸 추가">
+      <created>1602233259834</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1602233259834</updated>
+    </task>
+    <task id="LOCAL-00025" summary="작가리스트페이지 디테일">
+      <created>1602237003018</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1602237003018</updated>
+    </task>
+    <task id="LOCAL-00026" summary="작가리스트페이지 작가명추가">
+      <created>1602239031691</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1602239031691</updated>
+    </task>
+    <task id="LOCAL-00027" summary="게시판 상세보기 추가">
+      <created>1602412910772</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1602412910772</updated>
+    </task>
+    <task id="LOCAL-00028" summary="sns아이콘 수정, 협력사업자상세 추가">
+      <created>1602414485760</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1602414485760</updated>
+    </task>
+    <task id="LOCAL-00029" summary="gnb min-width수정">
+      <created>1602415227705</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1602415227705</updated>
+    </task>
+    <task id="LOCAL-00030" summary="작가리스트 더보기버튼 추가">
+      <created>1602418205265</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1602418205265</updated>
+    </task>
+    <task id="LOCAL-00031" summary="모바일 푸터 디테일 수정,&#10;모바일 작가리스트 hover 효과 수정">
+      <created>1602419368070</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1602419368070</updated>
+    </task>
+    <task id="LOCAL-00032" summary="top버튼, skipNav 추가">
+      <created>1602423976401</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1602423976401</updated>
+    </task>
+    <task id="LOCAL-00033" summary="탑버튼 변경">
+      <created>1602425451271</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1602425451271</updated>
+    </task>
+    <task id="LOCAL-00034" summary="작가리스트 php 추가">
+      <created>1602425852141</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1602425852141</updated>
+    </task>
+    <task id="LOCAL-00035" summary="폰트수정">
+      <created>1602428384210</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1602428384210</updated>
+    </task>
+    <task id="LOCAL-00036" summary="이미지크기 수정">
+      <created>1602433153707</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1602433153707</updated>
+    </task>
+    <task id="LOCAL-00037" summary="프로그램 폰트 수정">
+      <created>1602438504286</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1602438504286</updated>
+    </task>
+    <task id="LOCAL-00038" summary="작가리스트 hover 텍스트 센터정렬">
+      <created>1602441752835</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1602441752835</updated>
+    </task>
+    <task id="LOCAL-00039" summary="작가리스트 엔드페이지 css제어">
+      <created>1602442251121</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1602442251121</updated>
+    </task>
+    <task id="LOCAL-00040" summary="swipe 화살표 제어">
+      <created>1602506467782</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1602506467783</updated>
+    </task>
+    <task id="LOCAL-00041" summary="작가리스트 년도선택 추가&#10;프로그램,작가페이지 타이틀명s추가">
+      <created>1602509559701</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1602509559701</updated>
+    </task>
+    <task id="LOCAL-00042" summary="작가리스트 캡션 제어">
+      <created>1602512806435</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1602512806435</updated>
+    </task>
+    <task id="LOCAL-00043" summary="작가리스트 폰트수정">
+      <created>1602514099084</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1602514099084</updated>
+    </task>
+    <task id="LOCAL-00044" summary="작가리스트 연도 폰트크기 수정">
+      <created>1602514706533</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1602514706533</updated>
+    </task>
+    <task id="LOCAL-00045" summary="미디어룸 유튜브타입 추가완료">
+      <created>1602596067290</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1602596067290</updated>
+    </task>
+    <task id="LOCAL-00046" summary="메인 스와이프 dott,arrow 수정">
+      <created>1602598363365</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1602598363365</updated>
+    </task>
+    <task id="LOCAL-00047" summary="메인 큐브 arrow 수정">
+      <created>1602599959205</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1602599959205</updated>
+    </task>
+    <task id="LOCAL-00048" summary="스와이프 arrow 효과 수정">
+      <created>1602600901616</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1602600901616</updated>
+    </task>
+    <task id="LOCAL-00049" summary="footer 수정">
+      <created>1602602118605</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1602602118605</updated>
+    </task>
+    <task id="LOCAL-00050" summary="협력사페이지 dott 위치 수정">
+      <created>1602602537829</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1602602537829</updated>
+    </task>
+    <task id="LOCAL-00051" summary="유튜브 리스트 width 수정">
+      <created>1602604126889</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1602604126889</updated>
+    </task>
+    <task id="LOCAL-00052" summary="팝업닫기버튼추가, 크기수정">
+      <created>1602684206834</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1602684206834</updated>
+    </task>
+    <task id="LOCAL-00053" summary="스와이프 화살표 컬러변경">
+      <created>1602685606530</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1602685606530</updated>
+    </task>
+    <task id="LOCAL-00054" summary="작가상세화면 폰트 변경">
+      <created>1602687430111</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1602687430111</updated>
+    </task>
+    <task id="LOCAL-00055" summary="블랙타입 화살표 추가. 스와이프 arrow 정리">
+      <created>1602690161539</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1602690161539</updated>
+    </task>
+    <task id="LOCAL-00056" summary="스와이프 arrow 정리2">
+      <created>1602692108539</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1602692108539</updated>
+    </task>
+    <task id="LOCAL-00057" summary="공지사항 조회수 추가">
+      <created>1602695328747</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1602695328747</updated>
+    </task>
+    <task id="LOCAL-00058" summary="공지사항 조회수 추가2">
+      <created>1602695355960</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1602695355960</updated>
+    </task>
+    <task id="LOCAL-00059" summary="최상단바로가기 버튼 기본 none 변경">
+      <created>1602695605980</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1602695605980</updated>
+    </task>
+    <task id="LOCAL-00060" summary="ie말줄임처리로인한 태그추가">
+      <created>1602775832064</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1602775832065</updated>
+    </task>
+    <task id="LOCAL-00061" summary="미디어룸 타이틀 추가">
+      <created>1602778174859</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1602778174859</updated>
+    </task>
+    <task id="LOCAL-00062" summary="경기아트페이지 스와이프 width 100%로 변경">
+      <created>1603018924005</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1603018924005</updated>
+    </task>
+    <task id="LOCAL-00063" summary="공지사항 파일첨부 영역 추가">
+      <created>1605339225809</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1605339225809</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="작가리스트 엔드페이지 css제어" />
+    <MESSAGE value="swipe 화살표 제어" />
+    <MESSAGE value="작가리스트 년도선택 추가&#10;프로그램,작가페이지 타이틀명s추가" />
+    <MESSAGE value="작가리스트 캡션 제어" />
+    <MESSAGE value="작가리스트 폰트수정" />
+    <MESSAGE value="작가리스트 연도 폰트크기 수정" />
+    <MESSAGE value="미디어룸 유튜브타입 추가완료" />
+    <MESSAGE value="메인 스와이프 dott,arrow 수정" />
+    <MESSAGE value="메인 큐브 arrow 수정" />
+    <MESSAGE value="스와이프 arrow 효과 수정" />
+    <MESSAGE value="footer 수정" />
+    <MESSAGE value="협력사페이지 dott 위치 수정" />
+    <MESSAGE value="유튜브 리스트 width 수정" />
+    <MESSAGE value="팝업닫기버튼추가, 크기수정" />
+    <MESSAGE value="스와이프 화살표 컬러변경" />
+    <MESSAGE value="작가상세화면 폰트 변경" />
+    <MESSAGE value="블랙타입 화살표 추가. 스와이프 arrow 정리" />
+    <MESSAGE value="스와이프 arrow 정리2" />
+    <MESSAGE value="공지사항 조회수 추가" />
+    <MESSAGE value="공지사항 조회수 추가2" />
+    <MESSAGE value="최상단바로가기 버튼 기본 none 변경" />
+    <MESSAGE value="ie말줄임처리로인한 태그추가" />
+    <MESSAGE value="미디어룸 타이틀 추가" />
+    <MESSAGE value="경기아트페이지 스와이프 width 100%로 변경" />
+    <MESSAGE value="공지사항 파일첨부 영역 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="공지사항 파일첨부 영역 추가" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1474" y="256" width="765" height="1091" key="CommitChangelistDialog2" timestamp="1605339225093">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1474" y="256" width="765" height="1091" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1605339225093" />
+    <state x="1100" y="401" key="RollbackChangesDialog" timestamp="1602008347316">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1100" y="401" key="RollbackChangesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1602008347316" />
+    <state x="358" y="322" key="SettingsEditor" timestamp="1601184806860">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="358" y="322" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1601184806860" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1605339227316">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1605339227316" />
+    <state x="1095" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605339198838">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1095" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1605339198838" />
+    <state x="505" y="110" width="1126" height="1387" key="dock-window-1" timestamp="1602154602618">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="505" y="110" width="1126" height="1387" key="dock-window-1/0.0.2560.1400@0.0.2560.1400" timestamp="1602154602618" />
+    <state x="936" y="330" key="run.anything.popup" timestamp="1602599608743">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="936" y="330" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1602599608743" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1602776662598">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1602776662598" />
+  </component>
+</project>
