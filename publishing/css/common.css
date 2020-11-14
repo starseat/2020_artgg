@@ -462,6 +462,14 @@ input,button,select {outline:none; border-radius:0;}
         .button_board_list {display:inline-block; margin-top:20px; padding:10px 15px; border-radius:5px; color:#fff; background-color:#343a40; font-weight:700; }
         .button_board_list:hover {text-decoration:underline;}
             .btn_bl_text {}
+/* 공지사항 : 파일첨부 */
+.file_area {position:Relative; margin:15px 20px 0; padding-left:70px; font-size:14px;}
+    .area_title {position:absolute; left:0; top:0;}
+    .file_name {}
+        .fn_text {display:inline-block; padding:0 10px; color:#333; }
+        .fn_text:hover {text-decoration:underline;}
+
+
 
 /* 보도자료 */
 .report_list_w {margin-top:50px;}
@@ -538,6 +546,7 @@ input,button,select {outline:none; border-radius:0;}
             .current .ht_img_w:before {background-color:rgba(16,156,232,.5);}
 
 
+
 /* 메인 : pc 중간 제어 */
 @media screen and (max-width:1350px) {
     .container{padding:158px 40px 0;}
@@ -561,6 +570,7 @@ input,button,select {outline:none; border-radius:0;}
     /* 뷰잉룸 */
     .viewing_cont_w {max-width:100%; padding-top:56.25%;}
 }
+
 
 /* 메인 : 태블릿 제어 */
 @media screen and (max-width:970px) {
@@ -738,6 +748,7 @@ input,button,select {outline:none; border-radius:0;}
     .view_area {padding:20px 15px; }
         .view_area * {font-size:16px !important; line-height:24px !important;}
     .button_board_list {padding:8px 10px;}
+    .file_area {margin-bottom:15px; }
 
     /* T:보도자료 */
     .report_list_w {margin-top:25px;}
