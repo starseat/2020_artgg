@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+.table-hover-pointer tbody tr:hover {
+    cursor: pointer;
+}
+
+.page-link-dark {
+    color: #343a40;
+}
+
+.page-item.active-dark .page-link {
+    z-index: 3;
+    color: white;
+    background-color: #343a40;
+    border-color: #343a40
+}
+
+.table-hover-pointer th,
+.table-hover-pointer td {
+    text-align: center;
+    font-size:14px;
+    vertical-align:middle;
+}
+
+.table .thead-dark th{
+    font-size:16px;
+    vertical-align:middle;
+}
+
+.promotion-title {
+    text-align: left !important;
+}
+
+
+@media screen and (max-width:720px) {
+    .board_title {padding:7px 15px;}
+    .table .thead-dark th {font-size:14px;}
+    .thead-dark th:last-child {padding:0;}
+    .page-link {padding:0.2rem .55rem;}
+}

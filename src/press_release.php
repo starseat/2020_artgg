@@ -33,8 +33,7 @@ $paging_info = getPagingInfo($page, $total_count, $item_row_count, $page_block_c
             <div class="section_report_w">
                 <ul class="text_link_list">
                     <?php
-
-                    // $sql = "SELECT title, link FROM artgg_press_release WHERE deleted_at IS NULL ORDER BY seq DESC";
+                    
                     $sql  = "SELECT title, link FROM artgg_press_release WHERE deleted_at IS NULL ORDER BY seq desc LIMIT " . $paging_info['page_db'] . ", $item_row_count";
                     $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 
