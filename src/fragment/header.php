@@ -168,6 +168,13 @@ include('./db_conn.php');
                                         </span>
                                     </a>
                                 </li>
+                                <li class="ssnb_inner">
+                                    <a href="./promotion.php" class="ssnb_link">
+                                        <span class="ssnb_txt_box">
+                                            <span class="ssnb_txt">홍보자료</span>
+                                        </span>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
