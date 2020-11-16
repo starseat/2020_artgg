@@ -42,9 +42,9 @@ function getPromotionInfo(promotion_seq) {
         data: {seq: promotion_seq},
         url: './action/promotion_get.php',
         success: function (result) {
-            console.log('[getPromotionInfo] result:: ', result);
+            //console.log('[getPromotionInfo] result:: ', result);
             const resultObj = JSON.parse(result);
-            console.log('[getPromotionInfo] resultObj:: ', resultObj);
+            //console.log('[getPromotionInfo] resultObj:: ', resultObj);
             setPromotionInfo(resultObj.promotion_info);
             setUploadFileInfo(resultObj.file_info);
         }, 
@@ -100,7 +100,7 @@ function setUploadFileInfo(fileList) {
         $uploadFile += '</div>';
 
         $('#promotion_uploaded_file_list').append($uploadFile);
-        console.log('[setUploadFileInfo] fileList[' + i + '] :: ', fileList[i]);
+        //console.log('[setUploadFileInfo] fileList[' + i + '] :: ', fileList[i]);
     }
 }
 
@@ -206,7 +206,7 @@ function doDelete(event) {
 
 function uploadFile(callback) {
     const formData = new FormData($('#promotion_from')[0]);
-    console.log(formData);
+    //console.log(formData);
     
     $.ajax({
         url: './action/promotion_upload.php',
@@ -220,7 +220,7 @@ function uploadFile(callback) {
             var xhr = $.ajaxSettings.xhr();
             xhr.upload.onprogress = function(e) { //progress 이벤트 리스너 추가
                 var percent = e.loaded * 100 / e.total;
-                console.log('upload... ', percent);
+                //console.log('upload... ', percent);
             };
             return xhr;
         },
