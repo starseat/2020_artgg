@@ -177,7 +177,12 @@ function isUploadBannedItem($file_name) {
     return true;
 }
 
+function getFileExtension($file_name) {
+    $exp_file_name = explode('.', $file_name);
 
+    // 확장자 소문자로 가져오기
+    return strtolower($exp_file_name[sizeof($exp_file_name) - 1]);
+}
 
 function uploadFile($upload_file, $type){
     $ret_upload_file_array_item = [
@@ -187,7 +192,6 @@ function uploadFile($upload_file, $type){
     ];
 
     $file_name = basename(convertUTF8String($upload_file['name']));
-
     if (empty($file_name)) {
         return null;
     }
@@ -201,7 +205,8 @@ function uploadFile($upload_file, $type){
     }
 
     $today = date("Ymd");
-    $file_save_name = $today . '_' . uuidgen() . '_' . $file_name;
+    //$file_save_name = $today . '_' . uuidgen() . '_' . $file_name;
+    $file_save_name = $today . '_' . uuidgen() . getFileExtension($file_name);
     $real_upload_file = $upload_path . $file_save_name;
     //$move_resuslt = move_uploaded_file($file_temp_name, $upload_file);
     // 경로를 action 으로 하나 더 줬으니 실제 저장되는 경로는 한단계 앞으로 가야함.
