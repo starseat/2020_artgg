@@ -47,9 +47,9 @@ CREATE TABLE artgg_file (
 	target_seq BIGINT NOT NULL, 
     target_type VARCHAR(16) NOT NULL,   -- 'program, notice, promotion'
 	sort TINYINT, 
-    file_name VARCHAR(128) NOT NULL, 
-	file_name_save VARCHAR(256) NOT NULL, 
-    upload_path VARCHAR(1024) NOT NULL, 
+    file_name VARCHAR(256) NOT NULL, 
+	file_name_save VARCHAR(512) NOT NULL, 
+    upload_path VARCHAR(2048) NOT NULL, 
     created_at DATETIME NOT NULL DEFAULT now(),
 	PRIMARY KEY (`seq`, `target_seq`, `target_type` )
 ) COLLATE='utf8mb4_unicode_ci' ENGINE=InnoDB;
