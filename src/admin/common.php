@@ -76,13 +76,13 @@ function uploadImage($upload_file, $type) {
         'file_save_name' => ''
     ];
 
-    $file_name = basename($upload_file['name']);
+    $file_name = basename(convertUTF8String($upload_file['name']));
 
     if (empty($file_name)) {
         return null;
     }
 
-    $file_temp_name = $upload_file['tmp_name'];
+    $file_temp_name = convertUTF8String($upload_file['tmp_name']);
     //$file_type = $upload_files['type'][$i];
     //$file_size = $upload_files['size'][$i];
     //$file_error = $upload_files['error'][$i];
@@ -186,13 +186,13 @@ function uploadFile($upload_file, $type){
         'file_save_name' => ''
     ];
 
-    $file_name = basename($upload_file['name']);
+    $file_name = basename(convertUTF8String($upload_file['name']));
 
     if (empty($file_name)) {
         return null;
     }
 
-    $file_temp_name = $upload_file['tmp_name'];
+    $file_temp_name = convertUTF8String($upload_file['tmp_name']);
 
     $upload_path = '../upload/' . $type . '/';
     $real_upload_path = '../' . $upload_path;
@@ -403,4 +403,12 @@ function getNoticeListViewTitme($level, $title) {
     return $retViewTitle;
 }
 
+function convertUTF8String($str) {
+    $enc = mb_detect_encoding($str, array("UTF-8", "EUC-KR", "SJIS"));
+    if($str != "UTF-8") {
+        $str = iconv($enc, "UTF-8", $str);
+    }
+
+    return $str;
+}
 ?>

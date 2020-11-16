@@ -153,10 +153,10 @@ function doSubmit(event) {
         data: { seq: promotion_seq, title: promotion_title, contents: promotion_contents },
         dataType: 'json',
         success: function (result) {
-            console.log('[doSubmit] result:: ', result);
-            alert(result.message);
+            console.log('[doSubmit] result:: ', result);            
             $('#promotion_upload_target_seq').val(result.target_seq);
             uploadFile(function() {
+                alert(result.message);
                 location.href = './promotion.php';
             }); 
         }, 
