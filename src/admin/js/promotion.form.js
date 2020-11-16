@@ -17,13 +17,14 @@ function initTextForm() {
 }
 
 function initUploadForm() {
-    $('#promotion_upload_files').fileinput({
-        theme: 'fas',
-        language: 'kr',
-        uploadUrl: '#',
-        browseOnZoneClick: true,
-        allowedFileExtensions: ['jpg', 'jpeg', 'png', 'gif', 'pdf', 'hwp', 'doc', 'docx', 'xls', 'xlsc', 'txt', 'zip']
-    });
+    // hwp, pdf 같은거 올릴때 서버에서 받아주질 못함..
+    // $('#promotion_upload_files').fileinput({
+    //     theme: 'fas',
+    //     language: 'kr',
+    //     uploadUrl: '#',
+    //     browseOnZoneClick: true,
+    //     allowedFileExtensions: ['jpg', 'jpeg', 'png', 'gif', 'pdf', 'hwp', 'doc', 'docx', 'xls', 'xlsc', 'txt', 'zip']
+    // });
 }
 
 function getPromotionSeq() {
@@ -215,6 +216,14 @@ function uploadFile(callback) {
         cache: false,
         processData: false,
         contentType: false,
+        xhr: function() { //XMLHttpRequest 재정의 가능
+            var xhr = $.ajaxSettings.xhr();
+            xhr.upload.onprogress = function(e) { //progress 이벤트 리스너 추가
+                var percent = e.loaded * 100 / e.total;
+                console.log('upload... ', percent);
+            };
+            return xhr;
+        },
         success: function (result) {
             console.log('[uploadFile] ajax success result: ', result);
             callback(result);
