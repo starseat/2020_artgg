@@ -7,7 +7,7 @@
 #skipNav a:active{top: 0;}
 
 /* RESET */
-html,body{-webkit-text-size-adjust:none; color:#000; font-weight:400; line-height: 1.4; letter-spacing: -0.018em;}
+html,body{-webkit-text-size-adjust:none; color:#000; font-weight:400; line-height: 1.4; letter-spacing: -0.018em; overflow:hidden; overflow-y:auto;}
 body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select,img,div {margin:0; padding:0;}
 body {position:relative; font-family: 'NanumSquare', 'malgun gothic','맑은 고딕', sans-serif; }
 img,fieldset{border:0}
