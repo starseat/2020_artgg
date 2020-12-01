@@ -46,10 +46,11 @@ $paging_info = getPagingInfo($page, $total_count, $item_row_count, $page_block_c
             <tbody>
                 <?php
 
-                $sql  = "SELECT promotion.seq, promotion.title, promotion.view_count, promotion.created_at, ";
+                $sql  = "SELECT @rownum:=@rownum-1 as num, promotion.seq, promotion.title, promotion.view_count, promotion.created_at, ";
                 $sql .= " (SELECT count(*) as file_count FROM artgg_file WHERE target_type = 'promotion' AND target_seq = promotion.seq) as file_count";
                 $sql .= " FROM artgg_promotion promotion ";
-                $sql .= " WHERE deleted_at IS NULL ORDER BY seq desc LIMIT " . $paging_info['page_db'] . ", $item_row_count";
+                $sql .= " WHERE (@rownum:=(SELECT count(temp1.seq) +1 FROM artgg_promotion temp1) ) = (SELECT count(temp2.seq)+1 FROM artgg_promotion temp2) ";
+                $sql .= " AND deleted_at IS NULL ORDER BY seq desc LIMIT " . $paging_info['page_db'] . ", $item_row_count";
                 $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
                 $promotion_length = $result->num_rows;
 
@@ -60,7 +61,7 @@ $paging_info = getPagingInfo($page, $total_count, $item_row_count, $page_block_c
                             $viewTitle = '<i class="fa fa-paperclip"></i> ' . $viewTitle;
                         }
                         echo ('<tr onclick=getPromotionInfo(' . RemoveXSS($row['seq']) . ')>');
-                        echo ('    <th scope="row">' . RemoveXSS($row['seq']) . '</th>');
+                        echo ('    <th scope="row">' . RemoveXSS($row['num']) . '</th>');
                         echo ('    <td class="promotion-title">' . $viewTitle . '</td>');
                         echo ('    <td>' . $row['created_at'] . '</td>');
                         echo ('    <td>' . RemoveXSS($row['view_count']) . '</td>');
