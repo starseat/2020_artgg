@@ -120,7 +120,8 @@ function uploadImage($upload_file, $type) {
     }
 
     $today = date("Ymd");
-    $file_save_name = $today . '_' . uuidgen() . '_' . $file_name;
+    //$file_save_name = $today . '_' . uuidgen() . '_' . $file_name;
+    $file_save_name = $today . '_' . uuidgen() . '.' . getFileExtension($file_name);
     $real_upload_file = $upload_path . $file_save_name;
     //$move_resuslt = move_uploaded_file($file_temp_name, $upload_file);
     // 경로를 action 으로 하나 더 줬으니 실제 저장되는 경로는 한단계 앞으로 가야함.
@@ -205,8 +206,8 @@ function uploadFile($upload_file, $type){
     }
 
     $today = date("Ymd");
-    $file_save_name = $today . '_' . uuidgen() . '_' . $file_name;
-    //$file_save_name = $today . '_' . uuidgen() . '.' . getFileExtension($file_name);
+    //$file_save_name = $today . '_' . uuidgen() . '_' . $file_name;
+    $file_save_name = $today . '_' . uuidgen() . '.' . getFileExtension($file_name);
     $real_upload_file = $upload_path . $file_save_name;
     //$move_resuslt = move_uploaded_file($file_temp_name, $upload_file);
     // 경로를 action 으로 하나 더 줬으니 실제 저장되는 경로는 한단계 앞으로 가야함.
