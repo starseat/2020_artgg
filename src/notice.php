@@ -45,13 +45,22 @@ $paging_info = getPagingInfo($page, $total_count, $item_row_count, $page_block_c
             <tbody>
                 <?php
 
-                $sql  = "SELECT @rownum:=@rownum-1 as num, notice.seq, notice.level, notice.title, notice.view_count, notice.created_at ";
-                $sql .= " FROM artgg_notice notice ";
-                $sql .= " WHERE (@rownum:=(SELECT count(temp1.seq)+1 FROM artgg_notice temp1) ) = (SELECT count(temp2.seq)+1 FROM artgg_notice temp2) ";
-                $sql .= " AND deleted_at IS NULL ORDER BY seq desc LIMIT " . $paging_info['page_db'] . ", $item_row_count";
+                // $sql  = "SELECT notice_page.* FROM ( ";
+                // $sql .= "SELECT @rownum:=@rownum-1 as num, notice.seq, notice.level, notice.title, notice.view_count, notice.created_at ";
+                // $sql .= " FROM artgg_notice notice ";
+                // $sql .= " WHERE deleted_at IS NULL ";
+                // $sql .= "   AND (@rownum:= (select count(*) from artgg_notice) ) = (select count(*) from artgg_notice) ";
+                // $sql .= " ORDER BY seq desc ";
+                // $sql .= " ) notice_page LIMIT " . $paging_info['page_db'] . ", $item_row_count";
+
+                $sql  = "SELECT notice_page.* FROM ( ";
+                $sql .=  "SELECT @rownum:=@rownum-1 as num, notice.seq, notice.level, notice.title, notice.view_count, notice.created_at ";
+                $sql .= " FROM artgg_notice notice, (SELECT @rownum:=(select count(*) from artgg_notice)) rownum_temp ";
+                $sql .= " WHERE notice.deleted_at IS NULL ORDER BY notice.seq desc ";
+                $sql .= " ) notice_page LIMIT " . $paging_info['page_db'] . ", $item_row_count";
                 $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
                 $notice_length = $result->num_rows;
-
+                
                 if ($notice_length > 0) {
                     while ($row = $result->fetch_array()) {
                         $viewTitle = getNoticeListViewTitme(intval(RemoveXSS($row['level'])), RemoveXSS($row['title']));
