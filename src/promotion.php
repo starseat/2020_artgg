@@ -49,7 +49,7 @@ $paging_info = getPagingInfo($page, $total_count, $item_row_count, $page_block_c
                 $sql  = "SELECT promotion_page.* FROM ( ";
                 $sql .= "SELECT @rownum:=@rownum-1 as num, promotion.seq, promotion.title, promotion.view_count, promotion.created_at, ";
                 $sql .= " (SELECT count(*) as file_count FROM artgg_file WHERE target_type = 'promotion' AND target_seq = promotion.seq) as file_count ";
-                $sql .= " FROM artgg_promotion promotion, (SELECT @rownum:=(select count(*) from artgg_promotion)+1) rownum_temp ";
+                $sql .= " FROM artgg_promotion promotion, (SELECT @rownum:=(select count(*) from artgg_promotion  WHERE deleted_at IS NULL)+1) rownum_temp ";
                 $sql .= " WHERE promotion.deleted_at IS NULL ORDER BY promotion.seq desc  ";
                 $sql .= " ) promotion_page LIMIT " . $paging_info['page_db'] . ", $item_row_count";
 
