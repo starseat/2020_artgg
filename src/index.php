@@ -150,9 +150,12 @@ if (!isset($_COOKIE['visit_main'])) {
             <ul class="service_list">
                 <?php
 
-                $sql  = "SELECT @rownum:=@rownum+1 as num, program.seq, program.year, program.name, program.thumbnail, ";
-                $sql .= "program.program_date, program.place, program.event, program.introduction ";
-                $sql .= "FROM artgg_program program WHERE (@rownum:=0)=0 AND year = (SELECT max(year) FROM artgg_program) ORDER BY name";
+                //$sql  = "SELECT @rownum:=@rownum+1 as num, program.seq, program.year, program.name, program.thumbnail, ";
+                //$sql .= "program.program_date, program.place, program.event, program.introduction ";
+                //$sql .= "FROM artgg_program program WHERE (@rownum:=0)=0 AND year = (SELECT max(year) FROM artgg_program) ORDER BY name";
+                $sql  = "SELECT program.seq, program.year, program.name, program.thumbnail, ";
+                $sql .= "program.program_date, program.place, program.introduction ";
+                $sql .= "FROM artgg_program program WHERE year = (SELECT max(year) FROM artgg_program) ORDER BY name";
                 $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
                 $program_length = $result->num_rows;
 
@@ -169,12 +172,13 @@ if (!isset($_COOKIE['visit_main'])) {
                         echo ('            <div class="sl_box_text">');
                         echo ('                <strong class="slt_name">' . RemoveXSS($row['name']) . '</strong>');
                         echo ('                <div class="sl_text_top">');
-                        // echo ('                    <span class="slt_num">' . RemoveXSS($row['num']) . '</span>');
-                        // echo ('                    <span class="slt_info">' . RemoveXSS($row['event']) . '</span>');
                         echo ('                    <span class="slt_date">' . RemoveXSS($row['program_date']) . '</span>');
                         echo ('                    <span class="slt_date_text">' . RemoveXSS($row['place']) . '</span>');
                         echo ('                </div>');
-                        echo ('                <div class="slt_text_cont"><span class="slt_text">' . RemoveXSS($row['introduction']) . '</span></div>');
+                        // strip_tags() - html 태그 제거
+                        // mb_strimwidth() - 글자 제거 후 ... 처리
+                        $temp_introduction = mb_strimwidth(strip_tags(RemoveXSS($row['introduction'])), '0', '100', '...', 'utf-8');
+                        echo ('                <div class="slt_text_cont"><span class="slt_text">' . $temp_introduction . '</span></div>');
                         echo ('            </div>');
                         echo ('        </div>');
                         echo ('    </a>');
