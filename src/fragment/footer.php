@@ -22,7 +22,8 @@
             <div class="footer_cont_r">
                 <ul class="fcr_sns_list">
                     <li class="fcr_sl_cont">
-                        <a href="https://www.facebook.com/2019artgg" class="fcr_sl_link" title="공식 페이스북 바로가기" target="_blank">
+                        <!-- <a href="https://www.facebook.com/2019artgg" class="fcr_sl_link" title="공식 페이스북 바로가기" target="_blank"> -->
+                        <a href="https://www.facebook.com/artgg.official" class="fcr_sl_link" title="공식 페이스북 바로가기" target="_blank">
                             <img src="./img/sns_fb.jpg" alt="페이스북 아이콘" class="sns_icon_facebook">
                         </a>
                     </li>
