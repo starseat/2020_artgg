@@ -10,7 +10,7 @@
     #notice_form_delete_btn { display: none; }
 </style>
 
-<h1 class="mt-4 mb-4">공자사항</h1>
+<h1 class="mt-4 mb-4">공지사항</h1>
 
 <div class="card mt-2">
     <div class="card-body">

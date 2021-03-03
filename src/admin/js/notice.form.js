@@ -72,7 +72,7 @@ function doSubmit(event) {
     const notice_level = parseInt($('#notice_level').val(), 10);
     const notice_title = $('#notice_title').val();
     if (notice_title == '') {
-        alert('공자사항 제목을 입력해주세요.');
+        alert('공지사항 제목을 입력해주세요.');
         return false;
     }
     if ($('#notice_contents').summernote('isEmpty')) {
