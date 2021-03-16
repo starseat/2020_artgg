@@ -6,7 +6,7 @@
         <div class="section_box_w">
             <h2 class="content_title">Programs</h2>
             <div class="list_title_w">
-                <h3 class="list_title">2020 아트경기 프로그램</h3>
+                <h3 class="list_title">아트경기 | Art Gyeonggi 프로그램</h3>
                 <!-- 옵션 select -->
                 <div class="select_box_w">
                     <label for="yearSelect"><i class="blind">연도를 선택해주세요</i></label>
@@ -46,7 +46,7 @@
                         echo ('</li>');
                     }
                     ?>
-                    
+
                 </ul>
             </div>
         </div>

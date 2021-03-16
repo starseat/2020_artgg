@@ -34,7 +34,7 @@ $result->free();
                             while ($row = $result->fetch_array()) {
                                 echo ('<div class="swiper-slide">');
                                 if ($row['image_type'] == 'I') {
-                                    echo ('<img class="swiper-lazy" src="' . RemoveXSS($row['upload_path']) . '" alt="2020 아트경기">');
+                                    echo ('<img class="swiper-lazy" src="' . RemoveXSS($row['upload_path']) . '" alt="아트경기">');
                                 } else if ($row['image_type'] == 'V') {
                                     $item  = '<iframe class="swiper-youtube-view" src="https://www.youtube.com/embed/';
                                     $item .= RemoveXSS($row['file_name']);
@@ -77,7 +77,7 @@ $result->free();
             </div>
             <!-- 협력사업자 -->
             <div class="business_list_box">
-                <h3 class="list_title">2020 아트경기 협력사업자</h3>
+                <h3 class="list_title">아트경기 | Art Gyeonggi 협력사업자</h3>
                 <div class="module_image_list_w">
                     <ul class="module_image_list">
                         <?php
@@ -103,7 +103,7 @@ $result->free();
 
             <!-- 아트경기작가 -->
             <div class="artgg_artist_list_box">
-                <h3 class="list_title">2020 아트경기 작가</h3>
+                <h3 class="list_title">아트경기 | Art Gyeonggi 작가</h3>
                 <ul class="artgg_artist_list">
                     <?php
 

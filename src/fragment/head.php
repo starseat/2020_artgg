@@ -8,7 +8,7 @@ ob_start(); // Initiate the output buffer
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>2020 아트경기</title>
+    <title>아트경기 | Art Gyeonggi</title>
     <meta name="description" content="아트경기 Art Gyeonggi ">
     <meta property="og:type" content="website">
     <meta property="og:title" content="아트경기 Art Gyeonggi ">

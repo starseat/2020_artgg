@@ -15,7 +15,7 @@
                 <a href="https://www.ggcf.kr/" class="fcl_gc" title="경기문화재단 홈페이지 바로가기" target="_blank"><img src="./img/footer_02.jpg" alt="경기문화재단"></a>
             </div>
             <div class="footer_cont_copy">
-                <strong class="fcc_copy">Copyright ⓒ 2020 아트경기</strong>
+                <strong class="fcc_copy">Copyright ⓒ 아트경기 | Art Gyeonggi</strong>
                 <span class="fcc_tel">문의 T.<a href="031-231-7237">031-231-7237~8</a></span>
                 <span class="fcc_email">artgg@ggcf.or.kr</span>
             </div>

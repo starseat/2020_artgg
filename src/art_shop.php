@@ -9,7 +9,7 @@
                 <strong class="rsa_title">아트경기 작품 구입 및 렌탈 서비스를 준비중입니다.</strong>
                 <p class="rsa_cont">
                     온라인에서 편리하게 작품을 소장해보세요!<br />
-                    현재 작품 구입은 2020 아트경기 협력사업자를 통해 가능합니다.
+                    현재 작품 구입은 "아트경기 | Art Gyeonggi" 협력사업자를 통해 가능합니다.
                 </p>
                 <ul class="rsa_list">
                     <li class="rsa_inner">
