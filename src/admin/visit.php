@@ -3,8 +3,14 @@
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
 
 <script>
-    const _visit_main_list = { date: [], count: [] };
-    const _visit_viewing_list = { date: [], count: [] };
+    const _visit_main_list = {
+        date: [],
+        count: []
+    };
+    const _visit_viewing_list = {
+        date: [],
+        count: []
+    };
 </script>
 <?php
 
@@ -13,9 +19,10 @@ include('db_conn.php');
 
 $today = date("Ymd");
 
-function changeDateFormat($_dateStr) {
-    return substr($_dateStr, 0, 4) 
-        . '-' . substr($_dateStr, 4, 2) 
+function changeDateFormat($_dateStr)
+{
+    return substr($_dateStr, 0, 4)
+        . '-' . substr($_dateStr, 4, 2)
         . '-' . substr($_dateStr, 6, 2);
 }
 
@@ -68,6 +75,18 @@ $result->free();
 
 
 <h1 class="mt-4">방문자 수</h1>
+
+<div class="row" style="text-align: right;">
+    <div class="col-md-6"></div>
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-xl-4"><input id="excel_start_date" class="date-picker form-control" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'" onblur="this.type='text'" pattern="\d{4}-\d{2}-\d{2}"></div>
+            <div class="col-xl-1">~ </div>
+            <div class="col-xl-4"><input id="excel_end_date" class="date-picker form-control" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'" onblur="this.type='text'" pattern="\d{4}-\d{2}-\d{2}"></div>
+            <div class="col-xl-3"><button class="btn btn-outline-dark" onclick="getExcelVisitData();">Excel 다운로드</button></div>
+        </div>
+    </div>
+</div>
 
 <div class="row mt-4">
     <div class="col-xl-3 col-md-6">
@@ -136,6 +155,11 @@ flush();
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/lang/summernote-ko-KR.js"></script>
+
+<script src="./vendor/jw-excel/sheetjs/xlsx.full.min.js"></script>
+<script src="./vendor/jw-excel/FileSaver/FileSaver.min.js"></script>
+<script src="./vendor/jw-excel/jw.excel.js"></script>
+
 <script src="./js/common.js"></script>
 <script src="./js/visit.js"></script>
 
