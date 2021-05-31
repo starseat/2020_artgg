@@ -13,6 +13,12 @@ include('db_conn.php');
 
 $today = date("Ymd");
 
+function changeDateFormat($_dateStr) {
+    return substr($_dateStr, 0, 4) 
+        . '-' . substr($_dateStr, 4, 2) 
+        . '-' . substr($_dateStr, 6, 2);
+}
+
 // ----------------------------------------------------------------------------------------------------
 // visit - main
 $sql = "SELECT IFNULL(SUM(count), 0) as total FROM artgg_visit WHERE type = 'main'";
@@ -25,11 +31,11 @@ $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 $visit_main_today = $result->fetch_array();
 $result->free();
 
-$sql = "SELECT temp2.* FROM (SELECT temp1.* FROM artgg_visit as temp1 WHERE type = 'main' ORDER BY date DESC) as temp2 ORDER BY temp2.date ASC LIMIT 7";
+$sql = "SELECT temp2.* FROM (SELECT temp1.* FROM artgg_visit as temp1 WHERE type = 'main' ORDER BY date DESC LIMIT 7) as temp2 ORDER BY temp2.date ASC ";
 $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 echo '<script>';
 while ($row = $result->fetch_array()) {
-    echo " _visit_main_list.date.push('" . $row['date'] . "'); ";
+    echo " _visit_main_list.date.push('" . changeDateFormat($row['date']) . "'); ";
     echo " _visit_main_list.count.push(" . $row['count'] . "); ";
 }
 echo '</script>';
@@ -48,11 +54,11 @@ $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 $visit_viewingroom_today = $result->fetch_array();
 $result->free();
 
-$sql = "SELECT temp2.* FROM (SELECT temp1.* FROM artgg_visit as temp1 WHERE type = 'viewingroom' ORDER BY date DESC) as temp2 ORDER BY temp2.date ASC LIMIT 7";
+$sql = "SELECT temp2.* FROM (SELECT temp1.* FROM artgg_visit as temp1 WHERE type = 'viewingroom' ORDER BY date DESC LIMIT 7) as temp2 ORDER BY temp2.date ASC ";
 $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 echo '<script>';
 while ($row = $result->fetch_array()) {
-    echo " _visit_viewing_list.date.push('" . $row['date'] . "'); ";
+    echo " _visit_viewing_list.date.push('" . changeDateFormat($row['date']) . "'); ";
     echo " _visit_viewing_list.count.push(" . $row['count'] . "); ";
 }
 echo '</script>';
