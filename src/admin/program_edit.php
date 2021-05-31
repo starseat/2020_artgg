@@ -177,7 +177,8 @@ include('common.php');
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/lang/summernote-ko-KR.js"></script>
 <script src="vendor/image-uploader/dist/image-uploader.min.js"></script>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ec6b3e1f28bbc62cb020b79094f74664&libraries=services"></script>
+<!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ec6b3e1f28bbc62cb020b79094f74664&libraries=services"></script> REST API 키 -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=157370e23b303ffd4b4f4cef2f8c9913&libraries=services"></script> <!-- JavaScript 키로 변경 -->
 <script src="./js/common.js"></script>
 <script src="./js/program.edit.js"></script>
 

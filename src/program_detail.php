@@ -81,10 +81,10 @@ $image_info = $result->fetch_array();
                     <div class="program_info_box">
                         <strong class="info_title">장소</strong>
                         <span class="info_cont">
-                            <?php 
-                            echo RemoveXSS($program_info['place']); 
+                            <?php
+                            echo RemoveXSS($program_info['place']);
 
-                            if( !isEMpty($program_info['online_name']) ) {
+                            if (!isEMpty($program_info['online_name'])) {
                                 echo ' / ';
                                 echo '<a href="' . RemoveXSS($program_info['online_url']) . '" target="_blank">' . RemoveXSS($program_info['online_name']) . '</a>';
                             }
@@ -110,8 +110,8 @@ $image_info = $result->fetch_array();
         </div>
 
         <!-- 오시는 길 -->
-        <?php 
-        if( !isEmpty(RemoveXSS($program_info['directions'])) ) {
+        <?php
+        if (!isEmpty(RemoveXSS($program_info['directions']))) {
             echo ('<div class="section_box_w">');
             echo ('    <div class="program_info_box pg_roadmap_w">');
             echo ('        <strong class="info_title">오시는길</strong>');
@@ -127,18 +127,18 @@ $image_info = $result->fetch_array();
             echo ('        <button type="button" class="button_down_text"><span class="btn_dw_txt">아트X 리서치형 심의형 PDF 다운로드</span></button>');
             echo ('    </div> -->');
             echo ('</div>');
-        }
-        else {
+        } else {
             echo ('        <input type="hidden" id="directions" value="' . RemoveXSS($program_info['directions']) . '">');
         }
-        ?>        
+        ?>
     </div>
 
 </div>
 
 <?php require_once('./fragment/footer.php'); ?>
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ec6b3e1f28bbc62cb020b79094f74664"></script>
+<!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ec6b3e1f28bbc62cb020b79094f74664"></script> REST API 키 -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=157370e23b303ffd4b4f4cef2f8c9913"></script> <!-- JavaScript 키로 변경 -->
 <script src="./js/program.detail.js"></script>
 
 <?php require_once('./fragment/tail.php'); ?>

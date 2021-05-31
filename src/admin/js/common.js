@@ -1,5 +1,6 @@
 
 const KAKAO_KEY_REST = 'ec6b3e1f28bbc62cb020b79094f74664';
+const KAKAO_KEY_JS = '157370e23b303ffd4b4f4cef2f8c9913';
 
 function readURL(input, previewElId) {
     if (input.files && input.files[0]) {
@@ -131,7 +132,7 @@ function initKakaoMap() {
     const tag_map = document.createElement('script');
     //tag_map.src = '//dapi.kakao.com/v2/maps/sdk.js?appkey=' + KAKAO_KEY_REST + '&libraries=services,clusterer,drawing';
     tag_map.type = 'text/javascript';
-    tag_map.src = '//dapi.kakao.com/v2/maps/sdk.js?appkey=' + KAKAO_KEY_REST + '&libraries=services';
+    tag_map.src = '//dapi.kakao.com/v2/maps/sdk.js?appkey=' + KAKAO_KEY_JS + '&libraries=services';
 
     const scriptTags = document.getElementsByTagName('script');
     const targetScriptTag = scriptTags[scriptTags.length-1];
