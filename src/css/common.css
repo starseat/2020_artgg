@@ -1,5 +1,55 @@
 ﻿@charset "utf-8";
 
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/noto-sans-kr-v13-latin_korean-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('../fonts/noto-sans-kr-v13-latin_korean-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/noto-sans-kr-v13-latin_korean-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/noto-sans-kr-v13-latin_korean-regular.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/noto-sans-kr-v13-latin_korean-regular.svg#NotoSansKR') format('svg'); /* Legacy iOS */
+}
+/* noto-sans-kr-700 - latin_korean */
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/noto-sans-kr-v13-latin_korean-700.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('../fonts/noto-sans-kr-v13-latin_korean-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/noto-sans-kr-v13-latin_korean-700.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/noto-sans-kr-v13-latin_korean-700.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/noto-sans-kr-v13-latin_korean-700.svg#NotoSansKR') format('svg'); /* Legacy iOS */
+}
+
+/* noto-sans-sc-regular - latin_chinese-simplified */
+@font-face {
+    font-family: 'Noto Sans SC';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/noto-sans-sc-v12-latin_chinese-simplified-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('../fonts/noto-sans-sc-v12-latin_chinese-simplified-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/noto-sans-sc-v12-latin_chinese-simplified-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/noto-sans-sc-v12-latin_chinese-simplified-regular.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/noto-sans-sc-v12-latin_chinese-simplified-regular.svg#NotoSansSC') format('svg'); /* Legacy iOS */
+}
+/* noto-sans-sc-700 - latin_chinese-simplified */
+@font-face {
+    font-family: 'Noto Sans SC';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/noto-sans-sc-v12-latin_chinese-simplified-700.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('../fonts/noto-sans-sc-v12-latin_chinese-simplified-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/noto-sans-sc-v12-latin_chinese-simplified-700.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/noto-sans-sc-v12-latin_chinese-simplified-700.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/noto-sans-sc-v12-latin_chinese-simplified-700.svg#NotoSansSC') format('svg'); /* Legacy iOS */
+}
+
+
 /* Skip Navigation */
 #skipNav{position:relative;z-index:9999; text-align:center;}
 #skipNav a{position: absolute; top: -200px; left:0; width:100%; line-height: 40px; border: 1px solid #dedede; background-color: #333; color:#fff; font-weight:bold;}
@@ -9,7 +59,7 @@
 /* RESET */
 html,body{-webkit-text-size-adjust:none; color:#000; font-weight:400; line-height: 1.4; letter-spacing: -0.018em; overflow:hidden; overflow-y:auto;}
 body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select,img,div {margin:0; padding:0;}
-body {position:relative; font-family: 'NanumSquare', 'malgun gothic','맑은 고딕', sans-serif; }
+body {position:relative; font-family: 'Noto Sans KR', 'Noto Sans SC', 'malgun gothic' , '맑은 고딕' , sans-serif; }
 img,fieldset{border:0}
 button {background:none; border:0; cursor:pointer;}
 ul,ol{list-style:none}
@@ -97,7 +147,7 @@ input,button,select {outline:none; border-radius:0;}
         .artgg_h1_logo {position:Relative; float:left; z-index:98; width:315px; height:100px;}
             .logolink_main {display:block; position:relative; width:100%; height:100%;}
                 .icon_logo_gnb {top:50%; left:0; margin-top:-30px; width:192px; height:60px; background-position:0 0;}
-        .artgg_lnb_inner {float:left; width:calc(100% - 315px); font-family:'NanumSquare', 'malgun gothic','맑은 고딕', sans-serif !important;}
+        .artgg_lnb_inner {float:left; width:calc(100% - 315px); font-family: 'Noto Sans KR', 'Noto Sans SC', 'malgun gothic' , '맑은 고딕' , sans-serif !important;}
             .artgg_allmenu_w {display:none;}
                 .artgg_lnb {position:relative; right:0; display:flex; justify-content:space-between; z-index:100; height:100px; margin:0 auto; box-sizing:border-box;}
                     .slnb_inner {position:relative; height:100px; transition: all ease-in-out 0.5s;}
@@ -343,7 +393,7 @@ input,button,select {outline:none; border-radius:0;}
                 .article_artist_box * {margin-top:20px !important; font-size:24px !important; line-height:24px !important;  }
                 .article_artist_box > * {padding-left:40px !important; font-family:'malgun gothic','맑은 고딕', sans-serif !important;}
                 .content_title_c + * {margin-top:30px !important; }
-                .article_artist_box .content_title_c {font-size:33px !important; line-height:33px !important; font-family:'NanumSquare' !important;}
+                .article_artist_box .content_title_c {font-size:33px !important; line-height:33px !important; font-family: 'Noto Sans KR', 'Noto Sans SC' !important;}
                 .abl_inner:first-child,
                 .article_artist_box p:first-child {margin-top:0 !important;}
             .artist_qa_list {margin-top:70px;}
@@ -356,7 +406,7 @@ input,button,select {outline:none; border-radius:0;}
 
 /* 서브: 프로그램리스트 */
 .select_box_w {float:right; position:relative; top:-2px;}
-    .select_box_w select { font-family:'NanumSquare' !important; width:175px; height:35px; padding-left:20px; box-sizing:border-box; font-size:28px; color:#53ae6e; border:0; background:url('../img/select_arrow.gif') 122px center no-repeat; background-color:#fff; appearance:none; -webkit-appearance:none; -moz-appearance:none; -o-appearance:none; font-weight:800;}
+    .select_box_w select { font-family: 'Noto Sans KR', 'Noto Sans SC' !important; width:175px; height:35px; padding-left:20px; box-sizing:border-box; font-size:28px; color:#53ae6e; border:0; background:url('../img/select_arrow.gif') 122px center no-repeat; background-color:#fff; appearance:none; -webkit-appearance:none; -moz-appearance:none; -o-appearance:none; font-weight:800;}
     .select_box_w select::-ms-expand {display:none;}
         .select_box_w option { background-color:#53ae6e; color:#fff;}
 .section_programlist_w {overflow:hidden; margin-top:130px; }
@@ -387,7 +437,7 @@ input,button,select {outline:none; border-radius:0;}
         .program_info_box {margin-top:130px;}
             .info_title {display:block; font-size:32px; color:#53ae6e; font-weight:800;}
             .info_cont,
-            .info_cont p span {display:block !important; font-size:17px !important; color:#000 !important; line-height:32px !important; font-weight:700 !important; font-family:'NanumSquare', 'malgun gothic','맑은 고딕', sans-serif !important;}
+            .info_cont p span {display:block !important; font-size:17px !important; color:#000 !important; line-height:32px !important; font-weight:700 !important; font-family: 'Noto Sans KR', 'Noto Sans SC', 'malgun gothic' , '맑은 고딕' , sans-serif !important;}
             .info_cont {padding-top:15px;}
             .info_cont {}
     /* 갤러리 */
