@@ -23,14 +23,14 @@ $sql  = "
 ";
 
 $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
-$excel_data_count = $result->num_rows;
+$data_count = $result->num_rows;
 
 $result_array = array();
-if ($excel_data_count > 0) {
+if ($data_count > 0) {
 
-    $excel_data_list = array();
+    $data_list = array();
     while($row = $result->fetch_array()) {
-        array_push($excel_data_list, [
+        array_push($data_list, [
             'MainView' => $row['MainView'],
             'MainCount' => $row['MainCount'],
             'ViewingRoomView' => $row['ViewingRoomView'],
@@ -38,9 +38,9 @@ if ($excel_data_count > 0) {
         ]);
     }
 
-    $result_array['visit_excel_data'] = $excel_data_list;
+    $result_array['visit_data'] = $data_list;
 } else {
-    $result_array['visit_excel_data'] = array();
+    $result_array['visit_data'] = array();
 }
 
 $result->free();

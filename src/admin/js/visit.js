@@ -1,9 +1,9 @@
 $(function() {
-    initChartDateLabel();
-    loadVisitBarChart_main();
-    loadVisitBarChart_viewingroom();
-
+    initChartDateLabel(); 
     initDate();
+
+    //loadVisitBarChart_main();
+    //loadVisitBarChart_viewingroom();
 });
 
 // Set new default font family and font color to mimic Bootstrap's default styling
@@ -40,9 +40,12 @@ function initChartDateLabel() {
     }
 }
 
+let _main_chart = null;
+let _viewing_chart = null;
 function loadVisitBarChart_main() {
     var _chart = document.getElementById('visit_main_bar_chart');
-    var _lineChart = new Chart(_chart, {
+    //var _lineChart = new Chart(_chart, {
+    _main_chart = new Chart(_chart, {
         type: 'bar',
         data: {
             labels: _visit_main_list.date,
@@ -69,13 +72,12 @@ function loadVisitBarChart_main() {
             }
         }
     });
-
-    return _lineChart;
 }
 
 function loadVisitBarChart_viewingroom() {
     var _chart = document.getElementById('visit_viewroom_bar_chart');
-    var _lineChart = new Chart(_chart, {
+    //var _lineChart = new Chart(_chart, {
+    _viewing_chart = new Chart(_chart, {
         type: 'bar',
         data: {
             labels: _visit_viewing_list.date,
@@ -102,16 +104,16 @@ function loadVisitBarChart_viewingroom() {
             }
         }
     });
-
-    return _lineChart;
 }
 
 function initDate() {
     let lastWeekDate = new Date();
     let dayOfMonth = lastWeekDate.getDate();
     lastWeekDate.setDate(dayOfMonth - 6);
-    $('#excel_start_date').val(getFormatDate(lastWeekDate));
-    $('#excel_end_date').val(getFormatDate(new Date()));
+    $('#search_start_date').val(getFormatDate(lastWeekDate));
+    $('#search_end_date').val(getFormatDate(new Date()));
+
+    getVisitData('chart');
 }
 
 function getFormatDate(_date) {
@@ -123,13 +125,17 @@ function getFormatDate(_date) {
     return year + '-' + month + '-' + day;
 }
 
-function getExcelVisitData() {
-    const startDate = $('#excel_start_date').val();
-    const endDate = $('#excel_end_date').val();
+function getVisitData(_type) {
+    const startDate = $('#search_start_date').val();
+    const endDate = $('#search_end_date').val();
 
     if(startDate > endDate) {
         alert('시작날짜는 종료날짜보다 클 수 없습니다.');
         return false;
+    }
+
+    if(typeof _type == 'undefined' || _type == null) {
+        _type = '';
     }
 
     const dateObj = {
@@ -137,29 +143,79 @@ function getExcelVisitData() {
         end: endDate.replace('-', '').replace('-', '')
     };
 
-    console.log('[getExcelVisitData] dateObj:: ', dateObj);
+    //console.log('[getVisitData] dateObj:: ', dateObj);
 
     $.ajax({
         type: 'get',
         data: dateObj, 
-        url: './action/visit_excel_get.php',
+        url: './action/visit_get.php',
         success: function (result) {
-            // console.log('[getExcelVisitData] result:: ', result);
+            // console.log('[getVisitData] result:: ', result);
             const resultObj = JSON.parse(result);
-            // console.log('[getExcelVisitData] resultObj:: ', resultObj);
-            const excelData = resultObj.visit_excel_data;
-            if(excelData.length > 0) {
-                JwExcel.exportExcel(excelData, '아트경기_방문자수');
+            // console.log('[getVisitData] resultObj:: ', resultObj);
+            const visitData = resultObj.visit_data;
+            if(_type == 'excel') {
+                outputExcel(visitData);
             }
             else {
-                alert('엑셀로 출력할 데이터가 없습니다.');
+                outputChart(visitData);
             }
         }, 
         error: function (xhr, status, error) {
-            console.error('[getExcelVisitData] ajax error:: ', error);
+            console.error('[getVisitData] ajax error:: ', error);
         },
         
     });
+}
+
+function outputChart(_visit_data) {
+    chartClear();
+
+    if(_visit_data.length > 0) {
+        for(var i=0; i<_visit_data.length; i++) {
+            _visit_main_list.date.push(changeDateFormat(_visit_data[i].MainView));
+            _visit_main_list.count.push(_visit_data[i].MainCount);
+
+            _visit_viewing_list.date.push(changeDateFormat(_visit_data[i].ViewingRoomView));
+            _visit_viewing_list.count.push(_visit_data[i].ViewingRoomCount);
+        }
+
+        loadVisitBarChart_main();
+        loadVisitBarChart_viewingroom();
+    }
+}
+
+function outputExcel(_visit_data) {
+    if(_visit_data.length > 0) {
+        JwExcel.exportExcel(_visit_data, '아트경기_방문자수');
+    }
+    else {
+        alert('엑셀로 출력할 데이터가 없습니다.');
+    }
+}
+
+function changeDateFormat(_date) {
+    return _date.substr(0, 4)
+        + '-' + _date.substr(4, 2)
+        + '-' + _date.substr(6, 2);
+}
+
+function chartClear() {
+    _visit_main_list.date = [];
+    _visit_main_list.count = [];
+
+    _visit_viewing_list.date = [];
+    _visit_viewing_list.count = [];
+
+    if(_main_chart != null) {
+        _main_chart.update();
+        _main_chart.destroy();
+    }
+
+    if(_viewing_chart != null) {
+        _viewing_chart.update();
+        _viewing_chart.destroy();
+    }    
 }
 
 function timeFunctionLong(input) {
