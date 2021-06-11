@@ -406,7 +406,7 @@ input,button,select {outline:none; border-radius:0;}
 
 /* 서브: 프로그램리스트 */
 .select_box_w {float:right; position:relative; top:-2px;}
-    .select_box_w select { font-family: 'Noto Sans KR', 'Noto Sans SC' !important; width:175px; height:35px; padding-left:20px; box-sizing:border-box; font-size:28px; color:#53ae6e; border:0; background:url('../img/select_arrow.gif') 122px center no-repeat; background-color:#fff; appearance:none; -webkit-appearance:none; -moz-appearance:none; -o-appearance:none; font-weight:800;}
+    .select_box_w select { font-family: 'Noto Sans KR', 'Noto Sans SC' !important; width:175px; height:35px; padding-left:20px; box-sizing:border-box; font-size:28px; color:#53ae6e; border:0; background:url('../img/select_arrow.png') 122px center no-repeat; background-color:#fff; appearance:none; -webkit-appearance:none; -moz-appearance:none; -o-appearance:none; font-weight:800;}
     .select_box_w select::-ms-expand {display:none;}
         .select_box_w option { background-color:#53ae6e; color:#fff;}
 .section_programlist_w {overflow:hidden; margin-top:130px; }
