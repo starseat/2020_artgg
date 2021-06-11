@@ -10,7 +10,15 @@ $(document).ready(function () {
 
 function initTextForm() {
     let option = getSummernoteDefaultOption();
+    option.toolbar[1][1] = ['link', 'table', 'hr', 'picture', 'video'];
+    // 이미지 추가시 글 작성중에 이미지 삭제하면 db 및 실 파일은 남게 되므로 일단은 아래처리 주석함.
+    // option.callbacks = {
+    //     onImageUpload: function(files, editor, welEditable) {
+    //         sendImageFile(this, files[0], editor, welEditable);
+    //     }
+    // };
     option.placeholder = '공지사항 내용을 입력해 주세요.';
+    console.log('[initTextForm] option:: ', option);
     $('#notice_contents').summernote(option);
 }
 
@@ -135,3 +143,31 @@ function doDelete(event) {
     }    
 }
 
+function sendImageFile(element, file, editor, welEditable) {
+	const formData = new FormData();
+    formData.append('uploadImage', file);
+
+	const _url = '/admin/action/notice_image_submit.php';
+	$.ajax({
+		data : formData,
+		type : 'post',
+		url : _url,
+		cache : false,
+		processData : false,
+		contentType : false,
+		enctype: 'multipart/form-data',
+		// contentType: 'multipart/form-data',
+		success : function(resultData) {
+			const resultObj = JSON.parse(resultData);
+
+			if(resultObj.result) {
+				$(element).summernote('insertImage', resultObj.data);
+			}
+		}, 
+		error: function (jqXHR, textStatus, errorThrown) {
+			console.lot('[sendImageFile] ajax error :: ', textStatus + ' ' + errorThrown);
+		}
+	});
+
+
+}
