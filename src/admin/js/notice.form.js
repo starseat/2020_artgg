@@ -11,12 +11,11 @@ $(document).ready(function () {
 function initTextForm() {
     let option = getSummernoteDefaultOption();
     option.toolbar[1][1] = ['link', 'table', 'hr', 'picture', 'video'];
-    // 이미지 추가시 글 작성중에 이미지 삭제하면 db 및 실 파일은 남게 되므로 일단은 아래처리 주석함.
-    // option.callbacks = {
-    //     onImageUpload: function(files, editor, welEditable) {
-    //         sendImageFile(this, files[0], editor, welEditable);
-    //     }
-    // };
+    option.callbacks = {
+        onImageUpload: function(files, editor, welEditable) {
+            sendImageFile(this, files[0], editor, welEditable);
+        }
+    };
     option.placeholder = '공지사항 내용을 입력해 주세요.';
     console.log('[initTextForm] option:: ', option);
     $('#notice_contents').summernote(option);
