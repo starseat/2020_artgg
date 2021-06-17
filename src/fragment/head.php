@@ -9,13 +9,14 @@ ob_start(); // Initiate the output buffer
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>아트경기 | Art Gyeonggi</title>
-    <meta name="description" content="아트경기 Art Gyeonggi ">
+    <!-- <meta name="description" content="아트경기 Art Gyeonggi "> -->
+    <meta name="description" content="아트경기는 경기예술인의 작품 발굴, 전시, 유통 촉진과 미술시장 활성화를 위해 도민들이 미술품을 보다 쉽게 만날 수 있는 기회를 제공하는 사업입니다.">
     <meta property="og:type" content="website">
     <meta property="og:title" content="아트경기 Art Gyeonggi ">
     <meta property="og:description" content="아트경기 Art Gyeonggi ">
     <meta property="og:url" content="http://artgg.ggcf.kr/">
     <meta property="og:image" content="./img/meta_image.jpg" />
-    
+
     <link rel="apple-touch-icon" sizes="57x57" href="./img/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="./img/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="./img/favicon/apple-icon-72x72.png">
@@ -30,7 +31,7 @@ ob_start(); // Initiate the output buffer
     <link rel="icon" type="image/png" sizes="96x96" href="./img/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
     <link rel="manifest" href="./img/favicon/manifest.json">
-    
+
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="./img/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
