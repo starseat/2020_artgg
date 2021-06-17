@@ -13,7 +13,8 @@ ob_start(); // Initiate the output buffer
     <meta name="description" content="아트경기는 경기예술인의 작품 발굴, 전시, 유통 촉진과 미술시장 활성화를 위해 도민들이 미술품을 보다 쉽게 만날 수 있는 기회를 제공하는 사업입니다.">
     <meta property="og:type" content="website">
     <meta property="og:title" content="아트경기 Art Gyeonggi ">
-    <meta property="og:description" content="아트경기 Art Gyeonggi ">
+    <!-- <meta property="og:description" content="아트경기 Art Gyeonggi "> -->
+    <meta name="og:description" content="아트경기는 경기예술인의 작품 발굴, 전시, 유통 촉진과 미술시장 활성화를 위해 도민들이 미술품을 보다 쉽게 만날 수 있는 기회를 제공하는 사업입니다.">
     <meta property="og:url" content="http://artgg.ggcf.kr/">
     <meta property="og:image" content="./img/meta_image.jpg" />
 
