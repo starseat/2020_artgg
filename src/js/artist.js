@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    getArtistList('0', makeArtistInfo);
+    getArtistList($('#yearSelect').val(), makeArtistInfo);
 
     $('#yearSelect').on('change', function () {
         getArtistList($(this).val(), makeArtistInfo);

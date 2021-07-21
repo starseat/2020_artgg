@@ -10,14 +10,25 @@
             <div class="select_box_w">
                 <label for="yearSelect"><i class="blind">연도를 선택해주세요</i></label>
                 <select id="yearSelect" name="yearSelect" title="연도를 선택해주세요">
-                    <option value="title" selected=selected>전체</option>
+                    <option value="0">전체</option>
                     <?php
                     $sql  = "SELECT distinct year FROM artgg_artist WHERE name != 'artist_greeting' ORDER BY year desc";
                     $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
                     $year_length = $result->num_rows;
-
+                    
+                    // 전체가 아닌 첫번째 항목이 선택되도록 수정
+                    $yearIsFirst = true;  // selected=selected
                     while ($year_row = $result->fetch_array()) {
-                        echo ('<option value="' . RemoveXSS($year_row['year']) . '">' . RemoveXSS($year_row['year']) . '</option>');
+                        $yearOption = '<option value="' . RemoveXSS($year_row['year']) . '"';
+                        
+                        if($yearIsFirst) {
+                            $yearOption = $yearOption . ' selected=selected ';
+                            $yearIsFirst = false;
+                        }
+
+                        $yearOption = $yearOption . '>' . RemoveXSS($year_row['year']) . '</option>';
+
+                        echo $yearOption;
                     }
                     $result->free();
                     ?>
