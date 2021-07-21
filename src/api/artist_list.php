@@ -50,7 +50,7 @@ $sql = "SELECT seq, year, name, en_name, thumbnail FROM artgg_artist WHERE name 
 if($year > 0) {
     $sql .= " AND year = $year ";
 }
-$sql .= " ORDER BY name";
+$sql .= " ORDER BY year desc, name asc";
 
 $result = mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 $artist_length = $result->num_rows;
